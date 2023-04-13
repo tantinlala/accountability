@@ -10,9 +10,11 @@ setup(
     install_requires=[
         'langchain',
         'openai',
+        'pyyaml',
     ],
     entry_points={
         "console_scripts": [
+            "accountability_run = accountability.entry_points:run",
         ]
     },
     extras_require={
