@@ -20,6 +20,6 @@ setup(
     },
     extras_require={
         'testing': ['pytest', 'pytest-mock'],
-        'jupyter': ['jupyterlab']
+        'jupyter': ['jupyterlab', 'pandas']
     }
 )
