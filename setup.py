@@ -10,6 +10,7 @@ setup(
     install_requires=[
         'langchain',
         'openai',
+        'python-congress',
         'pyyaml',
     ],
     entry_points={
@@ -19,5 +20,6 @@ setup(
     },
     extras_require={
         'testing': ['pytest', 'pytest-mock'],
+        'jupyter': ['jupyterlab']
     }
 )
