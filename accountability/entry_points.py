@@ -14,15 +14,20 @@ def run_with_args(secrets_file):
     summarizer = Summarizer(secrets_parser)
 
 
+# This is an entry point
 def run():
     parser = argparse.ArgumentParser(
-        prog='Run main entrypoint')
-    parser.add_argument('secrets_file')  # positional argument
+        description='Run main entrypoint')
+    parser.add_argument('secrets_file', help='yaml file containing secrets needed for this program')  # positional argument
     args = parser.parse_args()
     run_with_args(args.secrets_file)
 
 
+# This is an entry point
 def setup():
+    parser = argparse.ArgumentParser(
+        description='Create a template yaml file for storing secrets')
+
     secrets_parser = SecretsParser()
 
     # Constructors should tell secrets_parser what secret it needs
