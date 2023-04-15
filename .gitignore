@@ -4,3 +4,4 @@ auth.yaml
 sandbox.ipynb
 sandbox-checkpoint.ipynb
 jupyter/.cache
+secrets.yaml

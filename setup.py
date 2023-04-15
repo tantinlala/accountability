@@ -16,6 +16,7 @@ setup(
     entry_points={
         "console_scripts": [
             "accountability_run = accountability.entry_points:run",
+            "accountability_setup = accountability.entry_points:setup",
         ]
     },
     extras_require={
