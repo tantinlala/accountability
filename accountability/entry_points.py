@@ -1,7 +1,7 @@
 import argparse
-from .secrets_parser import SecretsParser
-from .bill_scraper import BillScraper
-from .summarizer import Summarizer
+from secrets_parser import SecretsParser
+from bill_scraper import BillScraper
+from summarizer import Summarizer
 
 
 def run_with_args(secrets_file):
@@ -11,7 +11,12 @@ def run_with_args(secrets_file):
 
     # Required secrets will be provided to each class instance that uses it
     bill_scraper = BillScraper(secrets_parser)
+    bill_scraper.get_recent_senate_bills(2)
     summarizer = Summarizer(secrets_parser)
+
+
+if __name__ == '__main__':
+    run_with_args('secrets.yaml')
 
 
 # This is an entry point
