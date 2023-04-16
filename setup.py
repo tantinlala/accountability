@@ -13,10 +13,13 @@ setup(
         'python-congress',
         'pyyaml',
         'requests',
+        'tiktoken',
     ],
     entry_points={
         "console_scripts": [
-            "accountability_run = accountability.entry_points:run",
+            "accountability_calc_tokens = accountability.entry_points:calc_tokens",
+            "accountability_summarize = accountability.entry_points:summarize",
+            "accountability_get_senate_bills = accountability.entry_points:get_senate_bills",
             "accountability_setup = accountability.entry_points:setup",
         ]
     },
