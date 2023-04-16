@@ -6,7 +6,10 @@ from typing import List
 
 
 def grab_text_(root: ElementTree.Element) -> str:
-    """ Grab all text data in a <text> tag """
+    """ Grab all text data in a <text> tag
+    Based on: https://github.com/a5huynh/bill-analysis/blob/master/src/python/analysis/parser.py
+    and https://a5huynh.github.io/posts/2017/text-analysis-of-bills/
+    """
     text = []
 
     if root.text:
@@ -23,6 +26,8 @@ def grab_text_(root: ElementTree.Element) -> str:
 
 def find_text_tags_(root: ElementTree.Element) -> List[str]:
     """ Find all <text> tag children and grab the text content
+    Based on: https://github.com/a5huynh/bill-analysis/blob/master/src/python/analysis/parser.py
+    and https://a5huynh.github.io/posts/2017/text-analysis-of-bills/
     Args:
         root (ElementTree.Element): Root XML tag to start search
     """
@@ -38,7 +43,9 @@ def find_text_tags_(root: ElementTree.Element) -> List[str]:
 
 
 def get_text_from_bill_xml_url(bill_xml_url) -> str:
-    """ Read & parse a bill xml file
+    """ Extract a bill's text from a url containing an xml resource.
+    Based on: https://github.com/a5huynh/bill-analysis/blob/master/src/python/analysis/parser.py
+    and https://a5huynh.github.io/posts/2017/text-analysis-of-bills/
     Args:
         bill_xml_url (str): XML file path.
     Returns:
