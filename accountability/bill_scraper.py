@@ -75,6 +75,15 @@ class BillScraper:
         self.congress_ = Congress(self.api_key_)
 
     def get_recent_senate_bills(self, num_months, write_to_file=False):
+        """
+        Gets metadata and plaintext of bills that were voted upon over the past num_months
+        :param num_months: Number of months over which to get bill metadata and plaintext
+        :param write_to_file: Indicate whether the plain-text version of the bills should be written to a file named after its bill id
+        :return: metadata as a dictionary and names of filenames to which plaintext was written
+        """
+
+        # First, find all congressional votes that happened within the latest num_months
+        # TODO: account for num_months > 12
         current_year = datetime.date.today().year
         current_month = datetime.date.today().month
 
@@ -89,6 +98,7 @@ class BillScraper:
             months_votes = self.congress_.votes.by_month('senate', year=year, month=month)
             all_votes += months_votes['votes']
 
+        # Then, go through all the votes and find each one with a bill api_uri
         print("\n")
         bill_uris = list()
         for vote in all_votes:
@@ -102,8 +112,11 @@ class BillScraper:
             except KeyError:
                 pass
 
+        # Finally, go through each api uri, extract relevant metadata on the bill, and extract the bill's text
+        # If requested, save the bill's text to a .txt file
         print("\n")
-        bills = dict()
+        bill_metadata = dict()
+        bill_filenames = list()
         for bill_uri in bill_uris:
             headers = {'X-API-Key': self.api_key_}
             response = requests.get(bill_uri, headers=headers)
@@ -122,16 +135,19 @@ class BillScraper:
                             bill_id = result['bill_id']
                             bill_dict = dict()
                             bill_dict['text_url'] = version['url']
-                            bill_dict['summary'] = result['summary']
                             bill_dict['source'] = result
-                            bills[bill_id] = bill_dict
+                            bill_metadata[bill_id] = bill_dict
 
                             if write_to_file:
-                                with open(bill_id + '.txt', 'w') as file:
+                                bill_filename = bill_id + '.txt'
+                                with open(bill_filename, 'w') as file:
                                     bill_text = get_text_from_bill_xml_url(bill_dict['text_url'])
                                     file.write(bill_text)
+                                    bill_filenames.append(bill_filename)
 
-                            print(bills[bill_id]['text_url'])
+                            print(bill_metadata[bill_id]['text_url'])
                             break
             else:
                 print("An error occurred:", response.status_code)
+
+        return bill_filenames, bill_metadata

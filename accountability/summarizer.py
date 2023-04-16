@@ -5,3 +5,5 @@ class Summarizer:
     def __init__(self, secrets_parser):
         self.secret = secrets_parser.get_secret(self.SECRET_GROUP, self.SECRET_NAME)
 
+    def summarize_files(self, file_list):
+        pass

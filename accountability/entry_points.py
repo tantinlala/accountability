@@ -1,40 +1,26 @@
+"""
+This file contains functions that map to programs that can be called
+from the command line upon installing the accountability pip package.
+This should just map command line arguments to parameters passed into functions
+See entry_points in setup.py
+"""
+
 import argparse
-from accountability.secrets_parser import SecretsParser
-from accountability.bill_scraper import BillScraper
-from accountability.summarizer import Summarizer
+from accountability.pipelines import run_main_pipeline, run_setup_pipeline
 
 
-def run_with_args(secrets_file, num_months):
-    # Get secrets from a file
-    secrets_parser = SecretsParser()
-    secrets_parser.parse_secrets_file(secrets_file)
-
-    # Required secrets will be provided to each class instance that uses it
-    bill_scraper = BillScraper(secrets_parser)
-    bill_scraper.get_recent_senate_bills(num_months)
-    summarizer = Summarizer(secrets_parser)
-
-
-# This is an entry point
 def run():
     parser = argparse.ArgumentParser(
         description='Run main entrypoint')
-    parser.add_argument('secrets_file', help='yaml file containing secrets needed for this program')  # positional argument
+    parser.add_argument('secrets_file', help='yaml file containing secrets needed for this program')
     parser.add_argument('-m', '--months', type=int, default=6)
     args = parser.parse_args()
-    run_with_args(args.secrets_file, args.months)
+    run_main_pipeline(args.secrets_file, args.months)
 
 
-# This is an entry point
 def setup():
     parser = argparse.ArgumentParser(
         description='Create a template yaml file for storing secrets')
-
-    secrets_parser = SecretsParser()
-
-    # Constructors should tell secrets_parser what secret it needs
-    bill_scraper = BillScraper(secrets_parser)
-    summarizer = Summarizer(secrets_parser)
-
-    secrets_parser.create_template_secrets_file("template.yaml")
-
+    parser.add_argument('-t', '--template', default='template.yaml')
+    args = parser.parse_args()
+    run_setup_pipeline(args.template)
