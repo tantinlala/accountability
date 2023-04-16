@@ -17,7 +17,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "accountability_calc_tokens = accountability.entry_points:calc_tokens",
+            "accountability_estimate_summary_cost = accountability.entry_points:estimate_summary_cost",
             "accountability_summarize = accountability.entry_points:summarize",
             "accountability_get_senate_bills = accountability.entry_points:get_senate_bills",
             "accountability_setup = accountability.entry_points:setup",

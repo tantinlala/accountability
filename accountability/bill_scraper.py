@@ -77,9 +77,14 @@ class BillScraper:
                       "On the Motion to Proceed",
                       "On the Motion"]
 
-    def __init__(self, secrets_parser):
-        self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.SECRET_NAME)
-        self.congress_ = Congress(self.api_key_)
+    def __init__(self, secrets_parser=None, api_key=None):
+        if secrets_parser is not None:
+            api_key = secrets_parser.get_secret(self.SECRET_GROUP, self.SECRET_NAME)
+
+        if api_key is not None:
+            self.congress_ = Congress(api_key)
+
+        self.api_key_ = api_key
 
     def get_recent_senate_bills(self, num_months, write_to_file=False):
         """
