@@ -1,22 +1,18 @@
 import argparse
-from secrets_parser import SecretsParser
-from bill_scraper import BillScraper
-from summarizer import Summarizer
+from accountability.secrets_parser import SecretsParser
+from accountability.bill_scraper import BillScraper
+from accountability.summarizer import Summarizer
 
 
-def run_with_args(secrets_file):
+def run_with_args(secrets_file, num_months):
     # Get secrets from a file
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
 
     # Required secrets will be provided to each class instance that uses it
     bill_scraper = BillScraper(secrets_parser)
-    bill_scraper.get_recent_senate_bills(2)
+    bill_scraper.get_recent_senate_bills(num_months)
     summarizer = Summarizer(secrets_parser)
-
-
-if __name__ == '__main__':
-    run_with_args('secrets.yaml')
 
 
 # This is an entry point
@@ -24,8 +20,9 @@ def run():
     parser = argparse.ArgumentParser(
         description='Run main entrypoint')
     parser.add_argument('secrets_file', help='yaml file containing secrets needed for this program')  # positional argument
+    parser.add_argument('-m', '--months', type=int, default=6)
     args = parser.parse_args()
-    run_with_args(args.secrets_file)
+    run_with_args(args.secrets_file, args.months)
 
 
 # This is an entry point
@@ -40,3 +37,4 @@ def setup():
     summarizer = Summarizer(secrets_parser)
 
     secrets_parser.create_template_secrets_file("template.yaml")
+

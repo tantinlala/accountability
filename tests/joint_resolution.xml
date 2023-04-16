@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!DOCTYPE resolution PUBLIC "-//US Congress//DTDs/res.dtd//EN" "res.dtd">
+<resolution resolution-stage="Placed-on-Calendar-Senate" dms-id="H937051AED60B44E49C835003146B3EBC" public-private="public" resolution-type="house-joint" star-print="no-star-print" key="G" stage-count="1"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title>118 HJ 7 PCS: Relating to a national emergency declared by the President on March 13, 2020.</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date>2023-03-28</dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="yes">IIA</distribution-code><calendar>Calendar No. 33</calendar><congress display="yes">118th CONGRESS</congress><session display="yes">1st Session</session><legis-num display="yes">H. J. RES. 7</legis-num><current-chamber>IN THE SENATE OF THE UNITED STATES</current-chamber><action><action-date date="20230202">February 2, 2023</action-date><action-desc>Received; read twice and referred to the <committee-name committee-id="SSFI00">Committee on Finance</committee-name></action-desc></action><action><action-date date="20230328">March 28, 2023</action-date><action-desc>Committee discharged pursuant to <external-xref legal-doc="usc" parsable-cite="usc/50/1622">50 U.S.C. 1622</external-xref>, and placed on the calendar</action-desc></action><legis-type>JOINT RESOLUTION</legis-type><official-title display="yes">Relating to a national emergency declared by the President on March 13, 2020.</official-title></form><resolution-body style="traditional" id="H8DF0D5CE95584A1E900330FE8A3730A0"><section display-inline="yes-display-inline" section-type="undesignated-section" id="HC62D69E7CD204B06B51252796D01FC58"><enum/><text>That, pursuant to section 202 of the National Emergencies Act (<external-xref legal-doc="usc" parsable-cite="usc/50/1622">50 U.S.C. 1622</external-xref>), the national emergency declared by the finding of the President on March 13, 2020, in Proclamation 9994 (85 Fed. Reg. 15337) is hereby terminated.</text></section></resolution-body><attestation><attestation-group><attestation-date date="20230201" chamber="House">Passed the House of Representatives February 1, 2023.</attestation-date><attestor display="yes">Cheryl L. Johnson,</attestor><role>Clerk.</role></attestation-group></attestation><endorsement><action-date date="20230328">March 28, 2023</action-date><action-desc>Committee discharged pursuant to <external-xref legal-doc="usc" parsable-cite="usc/50/1622">50 U.S.C. 1622</external-xref>, and placed on the calendar</action-desc></endorsement></resolution>
