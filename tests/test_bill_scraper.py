@@ -17,7 +17,7 @@ class MockResponse:
 def test_When_JointResolutionURLProvided_Expect_JointResolutionTextReturned(mock_requests_get):
     url = 'https://www.govinfo.gov/content/pkg/BILLS-118hjres7pcs/xml/BILLS-118hjres7pcs.xml'
 
-    with open('joint_resolution.xml', 'r') as file:
+    with open('test_joint_resolution.xml', 'r') as file:
         bill_text = file.read()
 
     mock_requests_get.return_value = MockResponse(bill_text)
