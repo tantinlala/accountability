@@ -23,7 +23,8 @@ def setup():
 
 def get_senate_bills():
     parser = argparse.ArgumentParser(
-        description='Download text of bills voted upon within past m months')
+        description='Download text of senate bills voted upon within past m months and save them to a file. '
+                    'Also saves vote positions of each senator to a file.')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING)
     parser.add_argument('-m', '--months', type=int, default=6)
     args = parser.parse_args()

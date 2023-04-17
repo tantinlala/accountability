@@ -2,6 +2,7 @@
 This python package provides a command line interface with the following functionality:
 
 - Download all bills that have been voted upon by the senate within the past x months as .txt files
+- Download the vote positions of each senator for each bill
 - Ask OpenAI to provide a short summary of a .txt file (e.g. one of the bills downloaded)
 
 # Setup instructions 
@@ -21,6 +22,7 @@ The following usage instructions assume that you are still in the environment wh
 In the directory in which your .yml file is stored, run `accountability_get_senate_bills -s <name of the .yml file containing api keys> -m <# of months of data>`
 
 Bills in .txt format will be stored in the same directory in which you ran the command.
+In addition, the vote positions of each senator on the bill will be printed to a json file.
 
 ### Step 2: Estimate how much it will cost to summarize a bill
 In the directory in which you downloaded bills in .txt format, run `accountability_estimate_summary_cost -t <name of the bill .txt file>`
