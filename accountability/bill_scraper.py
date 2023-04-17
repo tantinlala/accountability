@@ -1,6 +1,7 @@
-from congress import Congress
 import datetime
 import requests
+import json
+from congress import Congress
 from xml.etree import ElementTree
 from typing import List
 
@@ -85,13 +86,13 @@ class BillScraper:
             self.congress_ = Congress(api_key)
 
         self.api_key_ = api_key
+        self.bill_metadata = dict()
 
-    def get_recent_senate_bills(self, num_months, write_to_file=False):
+    def download_recent_senate_bills_and_votes(self, num_months):
         """
-        Gets metadata and plaintext of bills that were voted upon over the past num_months
-        :param num_months: Number of months over which to get bill metadata and plaintext
-        :param write_to_file: Indicate whether the plain-text version of the bills should be written to a file named after its bill id
-        :return: metadata as a dictionary and names of filenames to which plaintext was written
+        Gets metadata of bills that were voted upon over the past num_months
+        :param num_months: Number of months over which to get bill metadata
+        :return: metadata as a dictionary
         """
 
         # First, find all congressional votes that happened within the latest num_months
@@ -110,56 +111,101 @@ class BillScraper:
             months_votes = self.congress_.votes.by_month('senate', year=year, month=month)
             all_votes += months_votes['votes']
 
-        # Then, go through all the votes and find each one with a bill api_uri
+        # Then, go through all the votes and find each one with a bill api_uri and a vote_uri
+        # TODO: check assumption that this is in reverse chronological order
         print("\n")
+        candidate_data = list()
         bill_uris = list()
         for vote in all_votes:
             try:
-                api_uri = vote['bill']['api_uri']
-                if (api_uri is not None) and (api_uri not in bill_uris) and (vote['question'] in self.QUESTION_TYPES):
-                    bill_uris.append(api_uri)
-                    print(api_uri)
+                bill_uri = vote['bill']['api_uri']
+                vote_uri = vote['vote_uri']
+                question = vote['question']
+                if (question in self.QUESTION_TYPES) and (bill_uri is not None) and (bill_uri not in bill_uris):
+                    if vote_uri is not None:
+                        candidate = dict()
+                        candidate['bill_uri'] = bill_uri
+                        candidate['vote_uri'] = vote_uri
+                        candidate['question'] = question
+                        candidate_data.append(candidate)
+
+                        bill_uris.append(bill_uri)
             except TypeError:
                 pass
             except KeyError:
                 pass
 
-        # Finally, go through each api uri, extract relevant metadata on the bill, and extract the bill's text
-        # If requested, save the bill's text to a .txt file
+        # Finally, go through each api uri, extract relevant metadata on the bill,
+        # save off results of vote on the bill, and extract the bill's text
+        # If requested, save the bill's text to a .txt file.
         print("\n")
-        bill_metadata = dict()
-        bill_filenames = list()
-        for bill_uri in bill_uris:
+        for candidate in candidate_data:
             headers = {'X-API-Key': self.api_key_}
-            response = requests.get(bill_uri, headers=headers)
+            response = requests.get(candidate['bill_uri'], headers=headers)
 
             # Check the status code to ensure the request was successful
             if response.status_code == 200:
                 bill_json = response.json()
-                if len(bill_json['results']) > 0:  # TODO: figure out whether there will ever be more than 1 result
+                if len(bill_json['results']) > 0:
+                    # TODO: figure out whether there will ever be more than 1 result
                     result = bill_json['results'][0]
 
                     # Loop through each version in reverse chronological order until we find one with a url for xml resource
+                    # TODO: double check to make sure this is listed in reverse chronological order
                     # TODO: filter based off of this?:
                     # https://www.senate.gov/legislative/KeytoVersionsofPrintedLegislation.htm
                     for version in result['versions']:
                         if '.xml' in version['url']:
-                            bill_id = result['bill_id']
-                            bill_dict = dict()
-                            bill_dict['text_url'] = version['url']
-                            bill_dict['source'] = result
-                            bill_metadata[bill_id] = bill_dict
+                            # Now try getting vote date
+                            headers = {'X-API-Key': self.api_key_}
+                            response = requests.get(candidate['vote_uri'], headers=headers)
 
-                            if write_to_file:
-                                bill_filename = bill_id + '.txt'
-                                with open(bill_filename, 'w') as file:
-                                    bill_text = get_text_from_bill_xml_url(bill_dict['text_url'])
-                                    file.write(bill_text)
-                                    bill_filenames.append(bill_filename)
+                            if response.status_code == 200:
+                                vote_json = response.json()
 
-                            print(bill_metadata[bill_id]['text_url'])
-                            break
+                                # Now we have all the information we need to build upon the metadata ditionary
+                                bill_id = result['bill_id']
+                                bill_dict = dict()
+                                bill_dict['text_url'] = version['url']
+                                bill_dict['bill_uri'] = candidate['bill_uri']
+                                bill_dict['vote_uri'] = candidate['vote_uri']
+                                bill_dict['question'] = candidate['question']
+                                bill_dict['positions'] = vote_json['results']['votes']['vote']['positions']
+                                self.bill_metadata[bill_id] = bill_dict
+                                break  # We got a valid version, no need to loop through subsequent versions
+                            else:
+                                print("An error occurred when getting vote data: ", response.status_code)
             else:
-                print("An error occurred:", response.status_code)
+                print("An error occurred when getting bill data: ", response.status_code)
 
-        return bill_filenames, bill_metadata
+        return self.bill_metadata
+
+    def write_senate_bills_to_file(self):
+        """
+        Downloads bill in text form and writes them to files
+        :return: list of names of files that were written
+        """
+        bill_filenames = list()
+        for bill_id in self.bill_metadata.keys():
+            bill_filename = bill_id + '.txt'
+            with open(bill_filename, 'w') as file:
+                bill_text = get_text_from_bill_xml_url(self.bill_metadata[bill_id]['text_url'])
+                file.write(bill_text)
+                bill_filenames.append(bill_filename)
+
+        return bill_filenames
+
+    def write_metadata_to_file(self):
+        """
+        Writes metadata for a bill to a file
+        :return: list of names of files that were written
+        """
+        metadata_filenames = list()
+        for bill_id in self.bill_metadata.keys():
+            vote_filename = 'data-' + bill_id + '.json'
+            json_object = json.dumps(self.bill_metadata[bill_id], indent=4)
+            with open(vote_filename, 'w') as file:
+                file.write(json_object)
+
+        return metadata_filenames
+

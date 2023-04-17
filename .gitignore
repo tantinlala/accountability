@@ -7,3 +7,4 @@ jupyter/.cache
 secrets.yaml
 .cache
 *.txt
+*.json

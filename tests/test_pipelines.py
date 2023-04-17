@@ -3,7 +3,7 @@ from accountability.pipelines import run_bill_getting_pipeline, run_summarize_pi
 
 # TODO: make tests automated with asserts
 
-def test_run_full_pipeline():
+def test_run_bill_getting_pipeline():
     run_bill_getting_pipeline('../secrets.yaml', 6)
 
 

@@ -24,7 +24,11 @@ def run_bill_getting_pipeline(secrets_file, num_months):
     bill_scraper = BillScraper(secrets_parser)
 
     # Get all the most recently voted upon senate bills
-    bill_scraper.get_recent_senate_bills(num_months, True)
+    bill_scraper.download_recent_senate_bills_and_votes(num_months)
+
+    # Write all data to files
+    bill_scraper.write_senate_bills_to_file()
+    bill_scraper.write_metadata_to_file()
 
 
 def run_estimate_summary_cost(text_file):
