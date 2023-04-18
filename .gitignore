@@ -1,10 +1,9 @@
 .idea/*
 *.egg-info/
 auth.yaml
-sandbox.ipynb
-sandbox-checkpoint.ipynb
-jupyter/.cache
 secrets.yaml
-.cache
+jupyter/sandbox/
+**/.cache/
+**/.ipynb_checkpoints/
 *.txt
 *.json
