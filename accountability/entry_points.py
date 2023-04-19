@@ -11,6 +11,7 @@ from accountability.pipelines import run_bill_getting_pipeline, run_setup_pipeli
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
 TEXT_FILE_HELP_STRING = 'Text file containing content you want summarized'
+SAVE_DIRECTORY_HELP_STRING = 'Directory to which you want to save file'
 
 
 def setup():
@@ -27,8 +28,9 @@ def get_senate_bills():
                     'Also saves vote positions of each senator to a file.')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING)
     parser.add_argument('-m', '--months', type=int, default=6)
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='')
     args = parser.parse_args()
-    run_bill_getting_pipeline(args.secrets_file, args.months)
+    run_bill_getting_pipeline(args.secrets_file, args.months, args.save_directory)
 
 
 def estimate_summary_cost():
@@ -44,5 +46,6 @@ def summarize():
         description='Summarize a text document')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING)
     parser.add_argument('-t', '--text_file', help=TEXT_FILE_HELP_STRING)
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='')
     args = parser.parse_args()
-    run_summarize_pipeline(args.secrets_file, args.text_file)
+    run_summarize_pipeline(args.secrets_file, args.text_file, args.save_directory)

@@ -169,6 +169,11 @@ class BillScraper:
                                 bill_dict['text_url'] = version['url']
                                 bill_dict['bill_uri'] = candidate['bill_uri']
                                 bill_dict['vote_uri'] = candidate['vote_uri']
+                                bill_dict['title'] = result['title']
+                                bill_dict['short_title'] = result['short_title']
+                                bill_dict['summary'] = result['summary']
+                                bill_dict['summary_short'] = result['summary_short']
+                                bill_dict['primary_subject'] = result['primary_subject']
                                 bill_dict['question'] = candidate['question']
                                 bill_dict['positions'] = vote_json['results']['votes']['vote']['positions']
                                 self.bill_metadata[bill_id] = bill_dict
@@ -180,14 +185,16 @@ class BillScraper:
 
         return self.bill_metadata
 
-    def write_senate_bills_to_file(self):
+    def write_senate_bills_to_file(self, save_directory):
         """
         Downloads bill in text form and writes them to files
         :return: list of names of files that were written
         """
         bill_filenames = list()
         for bill_id in self.bill_metadata.keys():
-            bill_filename = bill_id + '.txt'
+            if save_directory[-1] != '/':
+                save_directory = save_directory + '/'
+            bill_filename = save_directory + bill_id + '.txt'
             with open(bill_filename, 'w') as file:
                 bill_text = get_text_from_bill_xml_url(self.bill_metadata[bill_id]['text_url'])
                 file.write(bill_text)
@@ -195,14 +202,16 @@ class BillScraper:
 
         return bill_filenames
 
-    def write_metadata_to_file(self):
+    def write_metadata_to_file(self, save_directory):
         """
         Writes metadata for a bill to a file
         :return: list of names of files that were written
         """
         metadata_filenames = list()
         for bill_id in self.bill_metadata.keys():
-            vote_filename = 'data-' + bill_id + '.json'
+            if save_directory[-1] != '/':
+                save_directory = save_directory + '/'
+            vote_filename = save_directory + 'data-' + bill_id + '.json'
             json_object = json.dumps(self.bill_metadata[bill_id], indent=4)
             with open(vote_filename, 'w') as file:
                 file.write(json_object)

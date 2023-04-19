@@ -23,7 +23,7 @@ class Summarizer:
 
         self.encoding_ = tiktoken.encoding_for_model(self.MODEL_NAME)
 
-    def summarize_file(self, filename):
+    def summarize_file(self, filename, save_directory):
         """
         Uses an AI model to summarize the contents of a .txt file. Writes the summary to a new text file
         :param filename: Name of .txt file to summarize
@@ -41,7 +41,9 @@ class Summarizer:
         summary = chain.run(docs)
 
         base_filename = os.path.split(filename)
-        summary_filename = 'summary-' + base_filename[1]
+        if save_directory[-1] != '/':
+            save_directory = save_directory + '/'
+        summary_filename = save_directory + 'summary-' + base_filename[1]
         with open(summary_filename, 'w') as summary_file:
             summary_file.write(summary)
             print("\n" + summary, end="\n")

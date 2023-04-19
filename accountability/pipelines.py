@@ -15,7 +15,7 @@ def run_setup_pipeline(template_file):
     secrets_parser.create_template_secrets_file(template_file)
 
 
-def run_bill_getting_pipeline(secrets_file, num_months):
+def run_bill_getting_pipeline(secrets_file, num_months, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
@@ -27,8 +27,8 @@ def run_bill_getting_pipeline(secrets_file, num_months):
     bill_scraper.download_recent_senate_bills_and_votes(num_months)
 
     # Write all data to files
-    bill_scraper.write_senate_bills_to_file()
-    bill_scraper.write_metadata_to_file()
+    bill_scraper.write_senate_bills_to_file(save_directory)
+    bill_scraper.write_metadata_to_file(save_directory)
 
 
 def run_estimate_summary_cost(text_file):
@@ -37,7 +37,7 @@ def run_estimate_summary_cost(text_file):
     summarizer.print_estimated_cost_of_file_summary(text_file)
 
 
-def run_summarize_pipeline(secrets_file, text_file):
+def run_summarize_pipeline(secrets_file, text_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
@@ -46,4 +46,4 @@ def run_summarize_pipeline(secrets_file, text_file):
     summarizer = Summarizer(secrets_parser)
 
     # Summarize text file
-    summarizer.summarize_file(text_file)
+    summarizer.summarize_file(text_file, save_directory)
