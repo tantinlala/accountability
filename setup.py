@@ -21,6 +21,7 @@ setup(
             "accountability_summarize = accountability.entry_points:summarize",
             "accountability_get_senate_bills = accountability.entry_points:get_senate_bills",
             "accountability_setup = accountability.entry_points:setup",
+            "get_recent_bills = accountability.entry_points:get_recent_bills"
         ]
     },
     extras_require={
