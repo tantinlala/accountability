@@ -5,12 +5,7 @@ This should just map command line arguments to parameters passed into functions 
 See entry_points in setup.py
 """
 
-import os
 import argparse
-import json
-
-from accountability.congress_api import CongressGovAPI
-from accountability.secrets_parser import SecretsParser
 from accountability.pipelines import run_bill_getting_pipeline, run_setup_pipeline, \
     run_summarize_pipeline, run_estimate_summary_cost
 
@@ -27,13 +22,13 @@ def setup():
     run_setup_pipeline(args.template)
 
 
-def get_senate_bills():
+def get_bills():
     parser = argparse.ArgumentParser(
         description='Download text of senate bills voted upon within past m months and save them to a file. '
                     'Also saves vote positions of each senator to a file.')
-    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING)
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
     parser.add_argument('-m', '--months', type=int, default=6)
-    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='downloaded_bills')
     args = parser.parse_args()
     run_bill_getting_pipeline(args.secrets_file, args.months, args.save_directory)
 
@@ -49,40 +44,8 @@ def estimate_summary_cost():
 def summarize():
     parser = argparse.ArgumentParser(
         description='Summarize a text document')
-    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING)
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
     parser.add_argument('-t', '--text_file', help=TEXT_FILE_HELP_STRING)
-    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='bill_summaries')
     args = parser.parse_args()
     run_summarize_pipeline(args.secrets_file, args.text_file, args.save_directory)
-
-def get_recent_bills():
-    parser = argparse.ArgumentParser(
-        description='Get recent bills')
-    parser.add_argument('-s', '--secrets_file', default='secrets.yaml', help=SECRETS_FILE_HELP_STRING)
-    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='downloaded_bills')
-    args = parser.parse_args()
-
-    # Assuming the API key is stored in an environment variable for security reasons
-    # Get the API key from the secrets file
-    secrets_parser = SecretsParser()
-    secrets_parser.parse_secrets_file(args.secrets_file)
-    api_key = secrets_parser.get_secret('congress', 'CONGRESS_API_KEY')
-
-    if not api_key:
-        print("API key is not set. Please set the CONGRESS_API_KEY environment variable or provide it in the secrets file.")
-        return
-
-    # Initialize the CongressGovAPI class with the API key
-    congress_api = CongressGovAPI(api_key)
-
-    # Get recent bills from the past month
-    recent_bills = congress_api.get_recent_bills(months_back=1)
-
-    # Check if there are any bills returned
-    if recent_bills:
-        print("Recent Bills:")
-        for bill in recent_bills:
-            print(json.dumps(bill, indent=4))
-        congress_api.save_bills_as_text(args.save_directory)
-    else:
-        print("No recent bills found.")

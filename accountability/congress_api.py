@@ -4,8 +4,14 @@ import requests
 import pandas as pd
 import os
 
-class CongressGovAPI:
-    def __init__(self, api_key):
+class CongressAPI:
+    SECRET_GROUP = 'congress'
+    SECRET_NAME = 'CONGRESS_API_KEY'
+
+    def __init__(self, secrets_parser):
+        if secrets_parser is not None:
+            api_key = secrets_parser.get_secret(self.SECRET_GROUP, self.SECRET_NAME)
+
         self.api_key = api_key
         self.base_url = "https://api.congress.gov/v3"
         self.bills = None
@@ -29,7 +35,7 @@ class CongressGovAPI:
                 file.write(bill_text)
             print(f"Saved {bill_id} to {file_path}")
         
-    def get_recent_bills(self, months_back=1):
+    def get_recent_bills(self, months_back):
         end_date = datetime.datetime.today()
         start_date = end_date - timedelta(days=months_back*30)
         params = {
