@@ -28,7 +28,7 @@ def get_bills():
                     'Also saves vote positions of each senator to a file.')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
     parser.add_argument('-t', '--time_days', type=int, default=1)
-    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='downloaded_bills')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='bill_downloads')
     args = parser.parse_args()
     run_bill_getting_pipeline(args.secrets_file, args.time_days, args.save_directory)
 

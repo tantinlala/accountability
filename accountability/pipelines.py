@@ -8,8 +8,8 @@ def run_setup_pipeline(template_file):
     secrets_parser = SecretsParser()
 
     # Pass the secrets_parser into the constructors for these so that they can tell the parser what secrets they need
-    bill_scraper = CongressAPI(secrets_parser)
-    summarizer = Summarizer(secrets_parser)
+    CongressAPI(secrets_parser)
+    Summarizer(secrets_parser)
 
     # secrets_parser should now know how to create a template secrets file
     secrets_parser.create_template_secrets_file(template_file)
