@@ -75,24 +75,3 @@ class CongressAPI:
         text_response = requests.get(formatted_text_url)
         text_response.raise_for_status()
         return text_response.text
-
-    def get_bill_votes(self, bill_id):
-        response = requests.get(f"{self.BASE_URL}/bill/{bill_id}/votes", params={'api_key': self.api_key})
-        response.raise_for_status()
-        return response.json().get('votes', [])
-
-    def tabulate_votes(self, bill_id):
-        votes = self.get_bill_votes(bill_id)
-        vote_data = []
-        for vote in votes:
-            roll_call_id = vote.get('rollCallId')
-            vote_position = vote.get('position')
-            for member_vote in vote.get('members', []):
-                vote_data.append({
-                    'member_id': member_vote.get('id'),
-                    'name': member_vote.get('name'),
-                    'state': member_vote.get('state'),
-                    'party': member_vote.get('party'),
-                    'position': member_vote.get('vote')
-                })
-        return pd.DataFrame(vote_data)

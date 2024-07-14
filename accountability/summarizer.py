@@ -50,6 +50,9 @@ class Summarizer:
                 thread_id=thread.id, assistant_id=self.assistant_id_)
 
         messages = list(client.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
+
+        client.files.delete(message_file.id)
+
         message_content = messages[0].content[0].text
         annotations = message_content.annotations
 
