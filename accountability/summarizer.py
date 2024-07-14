@@ -26,7 +26,9 @@ class Summarizer:
         with open(filename, 'r') as text_file:
             full_text = text_file.read()
 
-        prompt = "Summarize the following bill for a layperson in terms of how it may impact the average American"
+        prompt = "Summarize the following bill for a layperson in terms of how it may impact the average American. \
+        Bullet point each key point. For each key point, provide a section number from the bill where one \
+        can find more information about that point."
 
         client = OpenAI(api_key=self.api_key_)
         message_file = client.files.create(
@@ -49,25 +51,24 @@ class Summarizer:
                 thread_id=thread.id, assistant_id=self.assistant_id_)
 
         messages = list(client.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
+        message_content = messages[0].content[0].text
+        annotations = message_content.annotations
 
-        summary = messages[0].content[0].text.value
-        words = summary.split()
-        lines = []
-        current_line = ""
-        for word in words:
-            if len(current_line) + len(word) > self.MAX_NUM_CHARS_PER_LINE:
-                lines.append(current_line.strip())
-                current_line = word + " "
-            else:
-                current_line += word + " "
+        for annotation in annotations:
+            message_content.value = message_content.value.replace(annotation.text, "")
 
-        lines.append(current_line.strip())
-        summary = "\n".join(lines)
+        summary = message_content.value
 
         base_filename = os.path.split(filename)
+
+        # Replace the file extension with .md
+        base_filename = os.path.splitext(base_filename[1])
+        base_filename = base_filename[0] + '.md'
+
         if save_directory[-1] != '/':
             save_directory = save_directory + '/'
-        summary_filename = save_directory + 'summary-' + base_filename[1]
+        summary_filename = save_directory + 'summary-' + base_filename
+
         with open(summary_filename, 'w') as summary_file:
             summary_file.write(summary)
 
