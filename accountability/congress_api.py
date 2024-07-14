@@ -29,20 +29,20 @@ class CongressAPI:
             bill_id = f"{bill['congress']}/{bill_type}/{bill['number']}"
             bill_text = self.download_bill_text(bill_id)
 
-            bill_file_name = f"{bill['congress']}-{bill_type}-{bill['number']}"
+            bill_file_name = f"{bill['updateDate']}-{bill['congress']}-{bill_type}-{bill['number']}"
             file_path = os.path.join(save_directory, f"{bill_file_name}.txt")
             with open(file_path, 'w') as file:
                 file.write(bill_text)
             print(f"Saved {bill_id} to {file_path}")
         
     def get_recent_bills(self, months_back):
-        end_date = datetime.datetime.today()
+        end_date = datetime.datetime.now()
         start_date = end_date - timedelta(days=months_back*30)
         params = {
             'api_key': self.api_key,
-            'fromDate': start_date.strftime('%Y-%m-%d'),
-            'toDate': end_date.strftime('%Y-%m-%d'),
-            'billStatus': 'Introduced'
+            'fromDateTime': start_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'toDateTime': end_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'limit': 250
         }
         response = requests.get(f"{self.base_url}/bill", params=params)
         response.raise_for_status()
@@ -59,7 +59,7 @@ class CongressAPI:
         if not text_versions:
             return "No text versions available"
         
-        most_recent_version = max(text_versions, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ"))
+        most_recent_version = max(text_versions, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ") if x['date'] else datetime.datetime.min)
         
         # Step 3: Look for the "Formatted Text" format
         formatted_text_url = next((format['url'] for format in most_recent_version['formats'] if format['type'] == "Formatted Text"), None)
