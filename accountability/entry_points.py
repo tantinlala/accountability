@@ -59,6 +59,7 @@ def get_recent_bills():
     parser = argparse.ArgumentParser(
         description='Get recent bills')
     parser.add_argument('-s', '--secrets_file', default='secrets.yaml', help=SECRETS_FILE_HELP_STRING)
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='downloaded_bills')
     args = parser.parse_args()
 
     # Assuming the API key is stored in an environment variable for security reasons
@@ -82,22 +83,6 @@ def get_recent_bills():
         print("Recent Bills:")
         for bill in recent_bills:
             print(json.dumps(bill, indent=4))
-    else:
-        print("No recent bills found.")
-    if not api_key:
-        print("API key is not set. Please set the CONGRESS_API_KEY environment variable.")
-        return
-
-    # Initialize the CongressGovAPI class with the API key
-    congress_api = CongressGovAPI(api_key)
-
-    # Get recent bills from the past month
-    recent_bills = congress_api.get_recent_bills(months_back=1)
-
-    # Check if there are any bills returned
-    if recent_bills:
-        print("Recent Bills:")
-        for bill in recent_bills:
-            print(json.dumps(bill, indent=4))
+        congress_api.save_bills_as_text(args.save_directory)
     else:
         print("No recent bills found.")
