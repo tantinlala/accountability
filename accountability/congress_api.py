@@ -19,17 +19,12 @@ class CongressGovAPI:
             os.makedirs(save_directory)
 
         for bill in self.bills:
-            bill_id = f"{bill['congress']}/{bill['type']}/{bill['number']}"
-            try:
-                bill_text = self.download_bill_text(bill_id)
-            except requests.exceptions.HTTPError as e:
-                if e.response.status_code == 404:
-                    print(f"Bill {bill_id} not found. Skipping...")
-                    continue
-                else:
-                    raise e
+            bill_type = bill['type'].lower()
+            bill_id = f"{bill['congress']}/{bill_type}/{bill['number']}"
             bill_text = self.download_bill_text(bill_id)
-            file_path = os.path.join(save_directory, f"{bill_id}.txt")
+
+            bill_file_name = f"{bill['congress']}-{bill_type}-{bill['number']}"
+            file_path = os.path.join(save_directory, f"{bill_file_name}.txt")
             with open(file_path, 'w') as file:
                 file.write(bill_text)
             print(f"Saved {bill_id} to {file_path}")
@@ -51,7 +46,25 @@ class CongressGovAPI:
     def download_bill_text(self, bill_id):
         response = requests.get(f"{self.base_url}/bill/{bill_id}/text", params={'api_key': self.api_key})
         response.raise_for_status()
-        return response.text
+        bill_data = response.json()
+        
+        # Step 1 & 2: Find the most recent text version
+        text_versions = bill_data.get('textVersions', [])
+        if not text_versions:
+            return "No text versions available"
+        
+        most_recent_version = max(text_versions, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ"))
+        
+        # Step 3: Look for the "Formatted Text" format
+        formatted_text_url = next((format['url'] for format in most_recent_version['formats'] if format['type'] == "Formatted Text"), None)
+        
+        if not formatted_text_url:
+            return "Formatted Text version not available"
+        
+        # Step 4: Download and return the content
+        text_response = requests.get(formatted_text_url)
+        text_response.raise_for_status()
+        return text_response.text
 
     def get_bill_votes(self, bill_id):
         response = requests.get(f"{self.base_url}/bill/{bill_id}/votes", params={'api_key': self.api_key})
