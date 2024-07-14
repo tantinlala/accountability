@@ -5,14 +5,16 @@ from openai import OpenAI
 
 class Summarizer:
     SECRET_GROUP = 'openai'
-    SECRET_NAME = 'OPENAI_API_KEY'
+    KEY_NAME = 'OPENAI_API_KEY'
+    ASSISTANT_NAME = "ASSISTANT_ID"
     MODEL_NAME = "gpt-4o"
     MODEL_COST_1000000TK = 5
     MAX_NUM_CHARS_PER_LINE = 80
 
     def __init__(self, secrets_parser=None, api_key=None):
         if secrets_parser is not None:
-            self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.SECRET_NAME)
+            self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.KEY_NAME)
+            self.assistant_id_ = secrets_parser.get_secret(self.SECRET_GROUP, self.ASSISTANT_NAME)
 
         self.encoding_ = tiktoken.encoding_for_model(self.MODEL_NAME)
 
@@ -24,21 +26,31 @@ class Summarizer:
         with open(filename, 'r') as text_file:
             full_text = text_file.read()
 
-        prompt = "Summarize the following bill:\n\n" + full_text
+        prompt = "Summarize the following bill for a layperson in terms of how it may impact the average American"
 
         client = OpenAI(api_key=self.api_key_)
-        response = client.chat.completions.create(
-            model=self.MODEL_NAME,  # Specify the engine to use for the completion
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt,  # Pass the full text as the prompt
-                }
-            ],
-            temperature=0.0,  # Adjust the temperature to control the randomness of the output
+        message_file = client.files.create(
+            file=open(filename, "rb"), purpose="assistants")
+
+        thread = client.beta.threads.create(
+          messages=[
+            {
+              "role": "user",
+              "content": prompt,
+              # Attach the new file to the message.
+              "attachments": [
+                { "file_id": message_file.id, "tools": [{"type": "file_search"}] }
+              ],
+            }
+          ]
         )
 
-        summary = response.choices[0].message.content
+        run = client.beta.threads.runs.create_and_poll(
+                thread_id=thread.id, assistant_id=self.assistant_id_)
+
+        messages = list(client.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
+
+        summary = messages[0].content[0].text.value
         words = summary.split()
         lines = []
         current_line = ""
