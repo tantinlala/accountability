@@ -9,7 +9,6 @@ class Summarizer:
     ASSISTANT_NAME = "ASSISTANT_ID"
     MODEL_NAME = "gpt-4o"
     MODEL_COST_1000000TK = 5
-    MAX_NUM_CHARS_PER_LINE = 80
 
     def __init__(self, secrets_parser=None, api_key=None):
         if secrets_parser is not None:
@@ -27,7 +26,7 @@ class Summarizer:
             full_text = text_file.read()
 
         prompt = "Summarize the following bill for a layperson in terms of how it may impact the average American. \
-        Bullet point each key point. For each key point, provide a section number from the bill where one \
+        Bullet point each key point. For each key point, provide a section number from within the bill I provided where one \
         can find more information about that point."
 
         client = OpenAI(api_key=self.api_key_)

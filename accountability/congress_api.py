@@ -29,7 +29,11 @@ class CongressAPI:
             bill_id = f"{bill['congress']}/{bill_type}/{bill['number']}"
             bill_text = self.download_bill_text(bill_id)
 
-            bill_file_name = f"{bill['updateDate']}-{bill['congress']}-{bill_type}-{bill['number']}"
+            if bill_text is None:
+                print(f"Skipping bill {bill_id} because no text was found")
+                continue
+
+            bill_file_name = f"{bill['updateDateIncludingText']}-{bill['congress']}-{bill_type}-{bill['number']}"
             file_path = os.path.join(save_directory, f"{bill_file_name}.txt")
             with open(file_path, 'w') as file:
                 file.write(bill_text)
@@ -57,7 +61,7 @@ class CongressAPI:
         # Step 1 & 2: Find the most recent text version
         text_versions = bill_data.get('textVersions', [])
         if not text_versions:
-            return "No text versions available"
+            return None
         
         most_recent_version = max(text_versions, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ") if x['date'] else datetime.datetime.min)
         
@@ -65,7 +69,7 @@ class CongressAPI:
         formatted_text_url = next((format['url'] for format in most_recent_version['formats'] if format['type'] == "Formatted Text"), None)
         
         if not formatted_text_url:
-            return "Formatted Text version not available"
+            return None
         
         # Step 4: Download and return the content
         text_response = requests.get(formatted_text_url)
