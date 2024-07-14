@@ -8,9 +8,7 @@ setup(
     license='',
     description='Keeping the man accountable',
     install_requires=[
-        'langchain',
         'openai',
-        'python-congress',
         'pyyaml',
         'requests',
         'tiktoken',

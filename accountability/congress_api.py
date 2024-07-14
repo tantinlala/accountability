@@ -7,13 +7,13 @@ import os
 class CongressAPI:
     SECRET_GROUP = 'congress'
     SECRET_NAME = 'CONGRESS_API_KEY'
+    BASE_URL = "https://api.congress.gov/v3"
 
     def __init__(self, secrets_parser):
         if secrets_parser is not None:
             api_key = secrets_parser.get_secret(self.SECRET_GROUP, self.SECRET_NAME)
 
         self.api_key = api_key
-        self.base_url = "https://api.congress.gov/v3"
         self.bills = None
 
     def save_bills_as_text(self, save_directory):
@@ -35,22 +35,22 @@ class CongressAPI:
                 file.write(bill_text)
             print(f"Saved {bill_id} to {file_path}")
         
-    def get_recent_bills(self, months_back):
+    def get_recent_bills(self, time_days):
         end_date = datetime.datetime.now()
-        start_date = end_date - timedelta(days=months_back*30)
+        start_date = end_date - timedelta(days=time_days)
         params = {
             'api_key': self.api_key,
             'fromDateTime': start_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
             'toDateTime': end_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
             'limit': 250
         }
-        response = requests.get(f"{self.base_url}/bill", params=params)
+        response = requests.get(f"{self.BASE_URL}/bill", params=params)
         response.raise_for_status()
         self.bills = response.json().get('bills', [])
         return self.bills
 
     def download_bill_text(self, bill_id):
-        response = requests.get(f"{self.base_url}/bill/{bill_id}/text", params={'api_key': self.api_key})
+        response = requests.get(f"{self.BASE_URL}/bill/{bill_id}/text", params={'api_key': self.api_key})
         response.raise_for_status()
         bill_data = response.json()
         
@@ -73,7 +73,7 @@ class CongressAPI:
         return text_response.text
 
     def get_bill_votes(self, bill_id):
-        response = requests.get(f"{self.base_url}/bill/{bill_id}/votes", params={'api_key': self.api_key})
+        response = requests.get(f"{self.BASE_URL}/bill/{bill_id}/votes", params={'api_key': self.api_key})
         response.raise_for_status()
         return response.json().get('votes', [])
 

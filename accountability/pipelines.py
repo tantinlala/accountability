@@ -15,7 +15,7 @@ def run_setup_pipeline(template_file):
     secrets_parser.create_template_secrets_file(template_file)
 
 
-def run_bill_getting_pipeline(secrets_file, num_months, save_directory):
+def run_bill_getting_pipeline(secrets_file, num_days, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
@@ -24,7 +24,7 @@ def run_bill_getting_pipeline(secrets_file, num_months, save_directory):
     bill_scraper = CongressAPI(secrets_parser)
 
     # Get all the most recently voted upon senate bills
-    bill_scraper.get_recent_bills(num_months)
+    bill_scraper.get_recent_bills(num_days)
 
     # Write all data to files
     bill_scraper.save_bills_as_text(save_directory)
