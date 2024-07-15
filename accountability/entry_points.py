@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.pipelines import run_bill_getting_pipeline, run_setup_pipeline, \
-    run_summarize_pipeline, run_estimate_summary_cost
+    run_summarize_pipeline, run_estimate_summary_cost, run_get_most_recently_voted_bill
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
 TEXT_FILE_HELP_STRING = 'Text file containing content you want summarized'
@@ -49,3 +49,12 @@ def summarize():
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='bill_summaries')
     args = parser.parse_args()
     run_summarize_pipeline(args.secrets_file, args.text_file, args.save_directory)
+
+
+def get_most_recently_voted_bill():
+    parser = argparse.ArgumentParser(
+        description='Download the text of the most recently voted upon HR bill')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='bill_downloads')
+    args = parser.parse_args()
+    run_get_most_recently_voted_bill(args.secrets_file, args.save_directory)

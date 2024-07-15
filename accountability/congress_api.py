@@ -16,28 +16,38 @@ class CongressAPI:
         self.api_key = api_key
         self.bills = None
 
+    def save_bill_as_text(self, bill_id, update_date, save_directory):
+        """
+        Download the text of a bill and save it to a file.
+        :param bill_id: The ID of the bill to download
+        :param save_directory: The directory where the bill text file will be saved.
+        """
+        if not os.path.exists(save_directory):
+            os.makedirs(save_directory)
+
+        bill_text = self.download_bill_text(bill_id)
+
+        if bill_text is None:
+            print(f"Skipping bill {bill_id} because no text was found")
+            return
+
+        bill_file_name = bill_id.replace('/', '-')
+        bill_file_name = f"{update_date}-{bill_file_name}"
+        file_path = os.path.join(save_directory, f"{bill_file_name}.txt")
+        with open(file_path, 'w') as file:
+            file.write(bill_text)
+        print(f"Saved {bill_id} to {file_path}")
+
     def save_bills_as_text(self, save_directory):
         """
         Goes through each bill found via get_recent_bills and stores each bill as plain text in a file.
         :param save_directory: The directory where the bill text files will be saved.
         """
-        if not os.path.exists(save_directory):
-            os.makedirs(save_directory)
 
         for bill in self.bills:
             bill_type = bill['type'].lower()
             bill_id = f"{bill['congress']}/{bill_type}/{bill['number']}"
-            bill_text = self.download_bill_text(bill_id)
-
-            if bill_text is None:
-                print(f"Skipping bill {bill_id} because no text was found")
-                continue
-
-            bill_file_name = f"{bill['updateDateIncludingText']}-{bill['congress']}-{bill_type}-{bill['number']}"
-            file_path = os.path.join(save_directory, f"{bill_file_name}.txt")
-            with open(file_path, 'w') as file:
-                file.write(bill_text)
-            print(f"Saved {bill_id} to {file_path}")
+            self.save_bill_as_text(bill_id, bill['updateDateIncludingText'], save_directory)
         
     def get_recent_bills(self, time_days):
         end_date = datetime.datetime.now()

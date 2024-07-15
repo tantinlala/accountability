@@ -1,6 +1,7 @@
 from accountability.secrets_parser import SecretsParser
 from accountability.summarizer import Summarizer
 from accountability.congress_api import CongressAPI
+from accountability.roll_call_processor import RollCallProcessor
 
 
 def run_setup_pipeline(template_file):
@@ -24,10 +25,25 @@ def run_bill_getting_pipeline(secrets_file, num_days, save_directory):
     bill_scraper = CongressAPI(secrets_parser)
 
     # Get all the most recently voted upon senate bills
-    bill_scraper.get_recent_bills(num_days)
+    bill_scraper.get_list_of_recent_bills(num_days)
 
     # Write all data to files
     bill_scraper.save_bills_as_text(save_directory)
+
+def run_get_most_recently_voted_bill(secrets_file, save_directory):
+    # Parse secrets from a file
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    bill_scraper = CongressAPI(secrets_parser)
+
+    roll_call_processor = RollCallProcessor()
+    roll_call_processor.process_roll_call(353)
+
+    # Get the most recently voted upon senate bill
+    bill_id = roll_call_processor.get_bill_id()
+    action_datetime = roll_call_processor.get_action_datetime()
+    bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
 
 
 def run_estimate_summary_cost(text_file):
