@@ -17,6 +17,13 @@ class RollCallProcessor:
 
         # Fetch the XML data
         response = requests.get(url)
+        if response.status_code == 404:
+            self.bill_id_ = None
+            self.yay_votes_ = []
+            self.nay_votes_ = []
+            self.action_datetime_ = None
+            return
+
         xml_data = response.content
 
         # Parse the XML data
