@@ -38,15 +38,15 @@ class CongressAPI:
 
         # Only save the bill if it doesn't already exist
         if os.path.exists(file_path):
-            print(f"Skipping bill {bill_id} version with timestamp {version_date} because it already exists")
-            return version_date
+            print(f"Skipping saving bill {bill_id} version with timestamp {version_date} because it already exists")
+            return (version_date, file_path)
 
         with open(file_path, 'w') as file:
             file.write(bill_text)
 
         print(f"Saved {bill_id} to {file_path}")
 
-        return version_date
+        return (version_date, file_path)
 
     def save_bills_as_text(self, save_directory):
         """

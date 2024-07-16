@@ -22,6 +22,20 @@ class Summarizer:
         Uses an AI model to summarize the contents of a .txt file. Writes the summary to a new text file
         :param filename: Name of .txt file to summarize
         """
+        base_filename = os.path.split(filename)
+
+        # Replace the file extension with .md
+        base_filename = os.path.splitext(base_filename[1])
+        base_filename = base_filename[0] + '.md'
+
+        if save_directory[-1] != '/':
+            save_directory = save_directory + '/'
+        summary_filename = save_directory + 'summary-' + base_filename
+
+        if os.path.exists(summary_filename):
+            print(f"Skipping summary for {filename} because it already exists")
+            return
+
         with open(filename, 'r') as text_file:
             full_text = text_file.read()
 
@@ -60,16 +74,6 @@ class Summarizer:
             message_content.value = message_content.value.replace(annotation.text, "")
 
         summary = message_content.value
-
-        base_filename = os.path.split(filename)
-
-        # Replace the file extension with .md
-        base_filename = os.path.splitext(base_filename[1])
-        base_filename = base_filename[0] + '.md'
-
-        if save_directory[-1] != '/':
-            save_directory = save_directory + '/'
-        summary_filename = save_directory + 'summary-' + base_filename
 
         with open(summary_filename, 'w') as summary_file:
             summary_file.write(summary)

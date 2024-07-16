@@ -59,7 +59,10 @@ def run_get_most_recently_voted_bills(secrets_file, save_directory):
             break
 
         action_datetime = hr_roll_call_processor.get_action_datetime()
-        version_date = bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
+        (version_date, file_path) = bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
+
+        summarizer = Summarizer(secrets_parser)
+        summarizer.summarize_file(file_path, save_directory)
 
         # Save the votes to a .md file as a markdown table
         votes = hr_roll_call_processor.get_votes()
@@ -69,8 +72,8 @@ def run_get_most_recently_voted_bills(secrets_file, save_directory):
 
         with open(file_path, 'w') as file:
             # Write the bill ID and version date
-            file.write(f"Bill ID: {bill_id}\n")
-            file.write(f"Version Date: {version_date}\n")
+            file.write(f"Bill ID: {bill_id}\n\n")
+            file.write(f"Version Date: {version_date}\n\n")
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
