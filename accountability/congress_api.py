@@ -1,9 +1,7 @@
 import datetime
 from datetime import timedelta
 import requests
-import pandas as pd
 import os
-import json
 
 class CongressAPI:
     SECRET_GROUP = 'congress'
@@ -41,12 +39,14 @@ class CongressAPI:
         # Only save the bill if it doesn't already exist
         if os.path.exists(file_path):
             print(f"Skipping bill {bill_id} version with timestamp {version_date} because it already exists")
-            return
+            return version_date
 
         with open(file_path, 'w') as file:
             file.write(bill_text)
 
         print(f"Saved {bill_id} to {file_path}")
+
+        return version_date
 
     def save_bills_as_text(self, save_directory):
         """
@@ -78,9 +78,6 @@ class CongressAPI:
         response.raise_for_status()
         bill_data = response.json()
 
-        # Print bill data with four spaces of indentation
-        print(json.dumps(bill_data, indent=4))
-        
         text_versions = bill_data.get('textVersions', [])
         if not text_versions:
             return None

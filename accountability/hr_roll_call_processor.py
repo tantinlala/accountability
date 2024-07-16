@@ -7,21 +7,20 @@ class HRRollCallProcessor:
     def __init__(self):
         self.BASE_URL = url = "https://clerk.house.gov/evs"
         self.bill_id_ = None
-        self.yay_votes_ = []
-        self.nay_votes_ = []
+        self.votes_ = []
         self.action_datetime_ = None
 
     def process_roll_call(self, year, roll_call_number):
+        self.bill_id_ = None
+        self.votes_ = []
+        self.action_datetime_ = None
+
         # Construct the URL with the roll call number
         url = f"{self.BASE_URL}/{year}/roll{roll_call_number}.xml"
 
         # Fetch the XML data
         response = requests.get(url)
         if response.status_code == 404:
-            self.bill_id_ = None
-            self.yay_votes_ = []
-            self.nay_votes_ = []
-            self.action_datetime_ = None
             return
 
         xml_data = response.content
@@ -62,24 +61,16 @@ class HRRollCallProcessor:
             vote_type = vote.find('vote').text
             party = legislator.get('party')
             state = legislator.get('state')
-            
-            if vote_type == 'Yea':
-                self.yay_votes_.append({'name': name, 'party': party, 'state': state})
-            elif vote_type == 'Nay':
-                self.nay_votes_.append({'name': name, 'party': party, 'state': state})
+            self.votes_.append({'name': name, 'party': party, 'state': state, 'vote': vote_type})
 
         # Sort the lists by state
-        self.yay_votes_.sort(key=lambda x: x['state'])
-        self.nay_votes_.sort(key=lambda x: x['state'])
+        self.votes_.sort(key=lambda x: x['state'])
 
     def get_bill_id(self):
         return self.bill_id_
     
-    def get_yay_votes(self):
-        return self.yay_votes_
-    
-    def get_nay_votes(self):
-        return self.nay_votes_
+    def get_votes(self):
+        return self.votes_
 
     def get_action_datetime(self):
         return self.action_datetime_

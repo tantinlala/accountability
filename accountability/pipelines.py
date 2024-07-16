@@ -1,4 +1,5 @@
 import datetime
+import os
 from accountability.secrets_parser import SecretsParser
 from accountability.summarizer import Summarizer
 from accountability.congress_api import CongressAPI
@@ -58,8 +59,30 @@ def run_get_most_recently_voted_bills(secrets_file, save_directory):
             break
 
         action_datetime = hr_roll_call_processor.get_action_datetime()
-        bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
+        version_date = bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
+
+        # Save the votes to a .md file as a markdown table
+        votes = hr_roll_call_processor.get_votes()
+
+        # Create file path for roll call
+        file_path = f"{save_directory}/{year}-{next_roll_call_id}.md"
+
+        with open(file_path, 'w') as file:
+            # Write the bill ID and version date
+            file.write(f"Bill ID: {bill_id}\n")
+            file.write(f"Version Date: {version_date}\n")
+
+            # Loop through each vote and write to the file as a markdown table
+            # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
+            file.write("| Name | Party | State | Vote |\n")
+            file.write("|------|-------|-------|------|\n")
+            for vote in votes:
+                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {vote['vote']} |\n")
+
+        print(f"Saved votes for {next_roll_call_id} to {file_path}")
+
         latest_roll_call_id = next_roll_call_id
+
 
     congress_db.update_hr_roll_call_id(year, latest_roll_call_id)
 
