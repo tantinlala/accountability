@@ -40,7 +40,7 @@ class CongressAPI:
 
     def save_bills_as_text(self, save_directory):
         """
-        Goes through each bill found via get_recent_bills and stores each bill as plain text in a file.
+        Goes through each bill found via get_recently_introduced_bills and stores each bill as plain text in a file.
         :param save_directory: The directory where the bill text files will be saved.
         """
 
@@ -49,7 +49,7 @@ class CongressAPI:
             bill_id = f"{bill['congress']}/{bill_type}/{bill['number']}"
             self.save_bill_as_text(bill_id, bill['updateDateIncludingText'], save_directory)
         
-    def get_recent_bills(self, time_days):
+    def get_recently_introduced_bills(self, time_days):
         end_date = datetime.datetime.now()
         start_date = end_date - timedelta(days=time_days)
         params = {

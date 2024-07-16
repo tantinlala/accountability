@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.pipelines import run_bill_getting_pipeline, run_setup_pipeline, \
-    run_summarize_pipeline, run_estimate_summary_cost, run_get_most_recently_voted_bill
+    run_summarize_pipeline, run_get_most_recently_voted_bill
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
 TEXT_FILE_HELP_STRING = 'Text file containing content you want summarized'
@@ -23,7 +23,7 @@ def setup():
     run_setup_pipeline(args.template, args.roll_call_id)
 
 
-def get_bills():
+def get_recently_introduced_bills():
     parser = argparse.ArgumentParser(
         description='Download text of senate bills voted upon within past m months and save them to a file. '
                     'Also saves vote positions of each senator to a file.')
@@ -32,14 +32,6 @@ def get_bills():
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='bill_downloads')
     args = parser.parse_args()
     run_bill_getting_pipeline(args.secrets_file, args.time_days, args.save_directory)
-
-
-def estimate_summary_cost():
-    parser = argparse.ArgumentParser(
-        description='Estimate the cost to summarize the contents of a text file')
-    parser.add_argument('-t', '--text_file', help=TEXT_FILE_HELP_STRING)
-    args = parser.parse_args()
-    run_estimate_summary_cost(args.text_file)
 
 
 def summarize():

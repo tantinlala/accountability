@@ -45,26 +45,23 @@ def run_get_most_recently_voted_bill(secrets_file, save_directory):
     bill_scraper = CongressAPI(secrets_parser)
     congress_db = CongressDatabase()
     year = datetime.datetime.now().year
-    roll_call_id = congress_db.get_most_recent_roll_call_id(year) + 1
 
     roll_call_processor = RollCallProcessor()
-    roll_call_processor.process_roll_call(roll_call_id)
+    latest_roll_call_id = congress_db.get_most_recent_roll_call_id(year)
 
-    # Get the most recently voted upon senate bill
-    bill_id = roll_call_processor.get_bill_id()
-    if bill_id is None:
-        print("No bill found")
-        return
+    while True:
+        next_roll_call_id = latest_roll_call_id + 1
+        roll_call_processor.process_roll_call(next_roll_call_id)
+        bill_id = roll_call_processor.get_bill_id()
+        if bill_id is None:
+            print(f"No roll call found for {next_roll_call_id}")
+            break
 
-    action_datetime = roll_call_processor.get_action_datetime()
-    bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
-    congress_db.update_roll_call_id(year, roll_call_id)
+        action_datetime = roll_call_processor.get_action_datetime()
+        bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
+        latest_roll_call_id = next_roll_call_id
 
-
-def run_estimate_summary_cost(text_file):
-    # Estimate the cost to summarize a text file
-    summarizer = Summarizer()
-    summarizer.print_estimated_cost_of_file_summary(text_file)
+    congress_db.update_roll_call_id(year, latest_roll_call_id)
 
 
 def run_summarize_pipeline(secrets_file, text_file, save_directory):

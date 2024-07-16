@@ -16,11 +16,10 @@ setup(
     entry_points={
         "console_scripts": [
             "accountability_get_bills = accountability.entry_points:get_bills",
-            "accountability_estimate_summary_cost = accountability.entry_points:estimate_summary_cost",
             "accountability_summarize = accountability.entry_points:summarize",
             "accountability_setup = accountability.entry_points:setup",
-            "get_recent_bills = accountability.entry_points:get_recent_bills",
-            "get_most_recently_voted_bill = accountability.entry_points:get_most_recently_voted_bill"
+            "accountability_get_recently_introduced_bills = accountability.entry_points:get_recently_introduced_bills",
+            "accountability_get_most_recently_voted_bill = accountability.entry_points:get_most_recently_voted_bill"
         ]
     },
     extras_require={
