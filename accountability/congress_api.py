@@ -3,6 +3,7 @@ from datetime import timedelta
 import requests
 import pandas as pd
 import os
+import json
 
 class CongressAPI:
     SECRET_GROUP = 'congress'
@@ -25,17 +26,26 @@ class CongressAPI:
         if not os.path.exists(save_directory):
             os.makedirs(save_directory)
 
-        bill_text = self.download_bill_text(bill_id)
+        result = self.download_bill_text(update_date, bill_id)
 
-        if bill_text is None:
+        if result is None:
             print(f"Skipping bill {bill_id} because no text was found")
             return
 
+        (bill_text, version_date) = result
+
         bill_file_name = bill_id.replace('/', '-')
-        bill_file_name = f"{update_date}-{bill_file_name}"
+        bill_file_name = f"{version_date}-{bill_file_name}"
         file_path = os.path.join(save_directory, f"{bill_file_name}.txt")
+
+        # Only save the bill if it doesn't already exist
+        if os.path.exists(file_path):
+            print(f"Skipping bill {bill_id} version with timestamp {version_date} because it already exists")
+            return
+
         with open(file_path, 'w') as file:
             file.write(bill_text)
+
         print(f"Saved {bill_id} to {file_path}")
 
     def save_bills_as_text(self, save_directory):
@@ -63,19 +73,28 @@ class CongressAPI:
         self.bills = response.json().get('bills', [])
         return self.bills
 
-    def download_bill_text(self, bill_id):
+    def download_bill_text(self, update_date, bill_id):
         response = requests.get(f"{self.BASE_URL}/bill/{bill_id}/text", params={'api_key': self.api_key})
         response.raise_for_status()
         bill_data = response.json()
+
+        # Print bill data with four spaces of indentation
+        print(json.dumps(bill_data, indent=4))
         
-        # Step 1 & 2: Find the most recent text version
         text_versions = bill_data.get('textVersions', [])
         if not text_versions:
             return None
         
-        most_recent_version = max(text_versions, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ") if x['date'] else datetime.datetime.min)
+        # Find the most recent text version that is older than update_date (which is a string)
+        update_date = datetime.datetime.strptime(update_date, "%Y-%m-%dT%H:%M:%SZ")
+        versions_less_than_update_date = [version for version in text_versions if version['date'] and datetime.datetime.strptime(version['date'], "%Y-%m-%dT%H:%M:%SZ") <= update_date]
+
+        if not versions_less_than_update_date:
+            return None
+
+        most_recent_version = max(versions_less_than_update_date, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ"))
         
-        # Step 3: Look for the "Formatted Text" format
+        # Look for the "Formatted Text" format
         formatted_text_url = next((format['url'] for format in most_recent_version['formats'] if format['type'] == "Formatted Text"), None)
         
         if not formatted_text_url:
@@ -84,4 +103,4 @@ class CongressAPI:
         # Step 4: Download and return the content
         text_response = requests.get(formatted_text_url)
         text_response.raise_for_status()
-        return text_response.text
+        return (text_response.text, most_recent_version['date'])

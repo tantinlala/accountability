@@ -36,7 +36,7 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def update_roll_call_id(self, year, roll_call_id):
+    def update_hr_roll_call_id(self, year, roll_call_id):
         """Update the roll call ID for a given year."""
         sql = """ 
             INSERT INTO RecentRollCall(Year, RollCallID)
@@ -50,7 +50,7 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def get_most_recent_roll_call_id(self, year):
+    def get_most_recent_hr_roll_call_id(self, year):
         """Retrieve the most recent roll call ID for a given year."""
         sql = "SELECT RollCallID FROM RecentRollCall WHERE Year = ?"
         try:

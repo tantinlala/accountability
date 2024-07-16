@@ -3,17 +3,17 @@ import requests
 import xml.etree.ElementTree as ET
 import datetime
 
-class RollCallProcessor:
+class HRRollCallProcessor:
     def __init__(self):
-        self.BASE_URL = url = "https://clerk.house.gov/evs/2024/roll"
+        self.BASE_URL = url = "https://clerk.house.gov/evs"
         self.bill_id_ = None
         self.yay_votes_ = []
         self.nay_votes_ = []
         self.action_datetime_ = None
 
-    def process_roll_call(self, roll_call_number):
+    def process_roll_call(self, year, roll_call_number):
         # Construct the URL with the roll call number
-        url = f"{self.BASE_URL}{roll_call_number}.xml"
+        url = f"{self.BASE_URL}/{year}/roll{roll_call_number}.xml"
 
         # Fetch the XML data
         response = requests.get(url)
@@ -83,9 +83,3 @@ class RollCallProcessor:
 
     def get_action_datetime(self):
         return self.action_datetime_
-
-# Example usage
-if __name__ == "__main__":
-    processor = RollCallProcessor()
-    roll_call_number = 353  # Example roll call number
-    processor.process_roll_call(roll_call_number)

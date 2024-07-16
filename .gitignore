@@ -6,3 +6,4 @@ jupyter/sandbox/
 *.txt
 *.json
 *.yaml
+*.db

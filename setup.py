@@ -19,7 +19,7 @@ setup(
             "accountability_summarize = accountability.entry_points:summarize",
             "accountability_setup = accountability.entry_points:setup",
             "accountability_get_recently_introduced_bills = accountability.entry_points:get_recently_introduced_bills",
-            "accountability_get_most_recently_voted_bill = accountability.entry_points:get_most_recently_voted_bill"
+            "accountability_get_most_recently_voted_bills = accountability.entry_points:get_most_recently_voted_bills"
         ]
     },
     extras_require={
