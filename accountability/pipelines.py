@@ -38,7 +38,7 @@ def run_bill_getting_pipeline(secrets_file, num_days, save_directory):
     # Write all data to files
     bill_scraper.save_bills_as_text(save_directory)
 
-def run_get_most_recently_voted_bills(secrets_file, save_directory):
+def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
