@@ -1,92 +1,58 @@
 import os
-import tiktoken
 from openai import OpenAI
 
 
 class Summarizer:
-    SECRET_GROUP = 'openai'
-    KEY_NAME = 'OPENAI_API_KEY'
-    ASSISTANT_NAME = "ASSISTANT_ID"
-    MODEL_NAME = "gpt-4o"
-    MODEL_COST_1000000TK = 5
+    def __init__(self, assistant, filename):
+        self.assistant_ = assistant
+        self.file_id_ = self.assistant_.create_file(filename)
 
-    def __init__(self, secrets_parser=None, api_key=None):
-        if secrets_parser is not None:
-            self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.KEY_NAME)
-            self.assistant_id_ = secrets_parser.get_secret(self.SECRET_GROUP, self.ASSISTANT_NAME)
+        # Get base filename without extension
+        self.base_filename_ = os.path.split(filename)
+        self.base_filename_ = os.path.splitext(self.base_filename_[1])
+        self.base_filename_ = self.base_filename_[0]
 
-        self.encoding_ = tiktoken.encoding_for_model(self.MODEL_NAME)
-
-    def summarize_file(self, filename, save_directory):
+    def summarize_file(self, save_directory):
         """
         Uses an AI model to summarize the contents of a .txt file. Writes the summary to a new text file
         :param filename: Name of .txt file to summarize
         """
-        base_filename = os.path.split(filename)
-
-        # Replace the file extension with .md
-        base_filename = os.path.splitext(base_filename[1])
-        base_filename = base_filename[0] + '.md'
 
         if save_directory[-1] != '/':
             save_directory = save_directory + '/'
-        summary_filename = save_directory + 'summary-' + base_filename
+        summary_filename = save_directory + 'summary-' + self.base_filename_ + '.md'
 
         if os.path.exists(summary_filename):
-            print(f"Skipping summary for {filename} because it already exists")
+            print(f"Skipping summary because {summary_filename} already exists")
             return
-
-        with open(filename, 'r') as text_file:
-            full_text = text_file.read()
 
         prompt = "Summarize the following bill for a layperson in terms of how it may impact the average American. \
         Bullet point each key point. For each key point, provide a section number from within the bill I provided where one \
         can find more information about that point."
 
-        client = OpenAI(api_key=self.api_key_)
-        message_file = client.files.create(
-            file=open(filename, "rb"), purpose="assistants")
-
-        thread = client.beta.threads.create(
-          messages=[
-            {
-              "role": "user",
-              "content": prompt,
-              # Attach the new file to the message.
-              "attachments": [
-                { "file_id": message_file.id, "tools": [{"type": "file_search"}] }
-              ],
-            }
-          ]
-        )
-
-        run = client.beta.threads.runs.create_and_poll(
-                thread_id=thread.id, assistant_id=self.assistant_id_)
-
-        messages = list(client.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
-
-        client.files.delete(message_file.id)
-
-        message_content = messages[0].content[0].text
-        annotations = message_content.annotations
-
-        for annotation in annotations:
-            message_content.value = message_content.value.replace(annotation.text, "")
-
-        summary = message_content.value
+        summary = self.assistant_.prompt_with_file(prompt, self.file_id_)
 
         with open(summary_filename, 'w') as summary_file:
             summary_file.write(summary)
 
-    def print_estimated_cost_of_file_summary(self, filename):
+    def summarize_file_diffs(self, diff_string, save_directory):
         """
-        Estimates the cost of summarizing a .txt file and prints the cost
-        :param filename: Name of .txt file to summarize
+        Uses an AI model to summarize the differences between two versions of a bill. Writes the summary to a new text file
+        :param diff_string: String containing the differences between two versions of a bill
+        :param save_directory: Directory to save the diff summary file
         """
-        with open(filename, 'r') as file:
-            text = file.read()
-            num_tokens = len(self.encoding_.encode(text))
-            cost = num_tokens * self.MODEL_COST_1000000TK / 1000000.0
-            print(filename)
-            print("Number of tokens: {}".format(num_tokens))
-            print("Cost: ${:.2f}".format(cost))
+
+        if save_directory[-1] != '/':
+            save_directory = save_directory + '/'
+        diff_summary_filename = save_directory + 'diffs-' + self.base_filename_ + '.md'
+
+        if os.path.exists(diff_summary_filename):
+            print(f"Skipping summary for {diff_summary_filename} because it already exists")
+            return
+
+        prompt = "Summarize the following diffs that are applied on top of the original version of the bill for a layperson: \n" + diff_string
+
+        summary = self.assistant_.prompt_with_file(prompt, self.file_id_)
+
+        with open(diff_summary_filename, 'w') as diff_summary_file:
+            diff_summary_file.write(summary)
