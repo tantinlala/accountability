@@ -9,7 +9,11 @@ class OpenAIAssistant:
     def __init__(self, secrets_parser=None):
         self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.KEY_NAME)
         self.assistant_id_ = secrets_parser.get_secret(self.SECRET_GROUP, self.ASSISTANT_NAME)
-        self.client_ = OpenAI(api_key=self.api_key_)
+
+        self.client_ = None
+        if self.api_key_ is not None:
+            self.client_ = OpenAI(api_key=self.api_key_)
+
         self.message_file_ = None
 
     def create_file(self, filename):
@@ -45,4 +49,5 @@ class OpenAIAssistant:
         return summary
 
     def __del__(self):
-        self.client_.files.delete(self.message_file_.id)
+        if self.client_ is not None:
+            self.client_.files.delete(self.message_file_.id)
