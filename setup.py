@@ -11,7 +11,6 @@ setup(
         'openai',
         'pyyaml',
         'requests',
-        'tiktoken',
     ],
     entry_points={
         "console_scripts": [
