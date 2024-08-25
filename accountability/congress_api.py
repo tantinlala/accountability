@@ -24,6 +24,7 @@ class CongressAPI:
         if not os.path.exists(save_directory):
             os.makedirs(save_directory)
 
+        print(f"Downloading bill {bill_id} text at {update_date}")
         result = self.download_bill_text(update_date, bill_id)
 
         if result is None:

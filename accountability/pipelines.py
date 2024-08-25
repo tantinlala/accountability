@@ -68,7 +68,7 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
         votes = hr_roll_call_processor.get_votes()
 
         # Create file path for roll call
-        file_path = f"{save_directory}/{year}-{next_roll_call_id}.md"
+        file_path = f"{save_directory}/{year}-{next_roll_call_id}-{bill_id.replace('/', '-')}.md"
 
         with open(file_path, 'w') as file:
             # Write the bill ID and version date
@@ -80,7 +80,13 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
             file.write("| Name | Party | State | Vote |\n")
             file.write("|------|-------|-------|------|\n")
             for vote in votes:
-                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {vote['vote']} |\n")
+                decision = vote['vote']
+                if decision == "No":
+                    decision = "Nay"
+                elif decision == "Aye":
+                    decision = "Yea"
+
+                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {decision} |\n")
 
         print(f"Saved votes for {next_roll_call_id} to {file_path}")
 

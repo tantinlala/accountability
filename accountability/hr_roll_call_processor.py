@@ -51,6 +51,8 @@ class HRRollCallProcessor:
             legis_num_ = legis_num_.replace('H J RES ', 'hjres/')
         elif re.match(r'^H RES \d+$', legis_num_):
             legis_num_ = legis_num_.replace('H RES ', 'hres/');
+        elif re.match(r'^S \d+$', legis_num_):
+            legis_num_ = legis_num_.replace('S ', 's/');
 
         self.bill_id_ = f"{congress_}/{legis_num_}"
 
