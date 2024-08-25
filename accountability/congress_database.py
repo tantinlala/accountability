@@ -87,8 +87,3 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
         return None
-
-# Example usage
-if __name__ == "__main__":
-    db = CongressDatabase()
-    # Example operations...
