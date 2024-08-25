@@ -7,3 +7,5 @@ jupyter/sandbox/
 *.json
 *.yaml
 *.db
+results
+archived
