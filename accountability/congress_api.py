@@ -88,9 +88,10 @@ class CongressAPI:
         versions_less_than_update_date = [version for version in text_versions if version['date'] and datetime.datetime.strptime(version['date'], "%Y-%m-%dT%H:%M:%SZ") <= update_date]
 
         if not versions_less_than_update_date:
-            return None
-
-        most_recent_version = max(versions_less_than_update_date, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ"))
+            # Return the most recent version if there are no versions older than update_date
+            most_recent_version = max(text_versions, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ"))
+        else:
+            most_recent_version = max(versions_less_than_update_date, key=lambda x: datetime.datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%SZ"))
         
         # Look for the "Formatted Text" format
         formatted_text_url = next((format['url'] for format in most_recent_version['formats'] if format['type'] == "Formatted Text"), None)
