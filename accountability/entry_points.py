@@ -6,7 +6,8 @@ See entry_points in setup.py
 """
 
 import argparse
-from accountability.runners import run_setup, run_summarize_bill, run_process_hr_rollcalls, run_get_bill, run_get_amendment
+from accountability.runners import run_setup, run_summarize_bill, run_process_hr_rollcalls, run_get_bill, \
+    run_get_amendment, run_diff_with_previous, run_summarize_diffs
 
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
@@ -55,6 +56,23 @@ def summarize_bill():
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
     run_summarize_bill(args.secrets_file, args.text_file, args.save_directory)
+
+
+def diff_with_previous():
+    parser = argparse.ArgumentParser(
+        description='Print the differences between two versions of a bill')
+    parser.add_argument('bill_path', help='The path to the bill txt file')
+    args = parser.parse_args()
+    run_diff_with_previous(args.bill_path)
+
+
+def summarize_diffs():
+    parser = argparse.ArgumentParser(
+        description='Summarize the differences between two versions of a bill')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
+    parser.add_argument('-f', '--filepath', help='The filename of the diffs to summarize')
+    args = parser.parse_args()
+    run_summarize_diffs(args.secrets_file, args.filepath)
 
 
 def process_hr_rollcalls():

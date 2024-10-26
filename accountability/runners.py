@@ -60,6 +60,34 @@ def run_summarize_bill(secrets_file, text_file, save_directory):
     summarizer.summarize_bill(save_directory, text_file)
 
 
+def run_diff_with_previous(bill_file_path):
+    # Get the part of the filename that is not part of the datetime
+    # There should be 2 dashes in the datetime string
+    bill_file_name = os.path.basename(bill_file_path)
+    dash_splits = bill_file_name.split("-")
+    bill_name = "-".join(dash_splits[3:])
+    bill_save_directory = os.path.dirname(bill_file_path)
+    bill_name_without_extension = os.path.splitext(bill_file_name)[0]
+
+    previous_version_file_path = get_previous_version_file(bill_file_path, bill_name)
+
+    if previous_version_file_path:
+        diff_text = get_diff(bill_file_path, previous_version_file_path)
+        save_if_not_exists(bill_save_directory, bill_name_without_extension + "-diffs", diff_text)
+
+
+def run_summarize_diffs(secrets_file, diff_file_path):
+    # Parse secrets from a file
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    openai_assistant = OpenAIAssistant(secrets_parser)
+
+    summarizer = Summarizer(openai_assistant)
+
+    save_directory = os.path.dirname(diff_file_path)
+    summarizer.summarize_bill_diffs(save_directory, diff_file_path)
+
 def run_process_hr_rollcalls(secrets_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
