@@ -14,11 +14,12 @@ class OpenAIAssistant:
         if self.api_key_ is not None:
             self.client_ = OpenAI(api_key=self.api_key_)
 
-        self.message_file_ = None
-
     def create_file(self, filename):
-        self.message_file_ = self.client_.files.create(file=open(filename, "rb"), purpose="assistants")
-        return self.message_file_.id
+        message_file = self.client_.files.create(file=open(filename, "rb"), purpose="assistants")
+        return message_file.id
+
+    def delete_file(self, file_id):
+        self.client_.files.delete(file_id)
 
     def prompt_with_file(self, prompt, file_id):
         thread = self.client_.beta.threads.create(
@@ -47,7 +48,3 @@ class OpenAIAssistant:
         summary = message_content.value
 
         return summary
-
-    def __del__(self):
-        if self.client_ is not None:
-            self.client_.files.delete(self.message_file_.id)

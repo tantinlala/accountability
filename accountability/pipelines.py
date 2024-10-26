@@ -60,23 +60,34 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
             break
 
         action_datetime = hr_roll_call_processor.get_action_datetime()
-        (bill_version_date, bill_file_path) = bill_scraper.save_bill_as_text(congress, bill_id, action_datetime, save_directory)
+
+        bill_save_directory = f"{save_directory}/{congress}-{bill_id.replace('/', '-')}"
+        if not os.path.exists(bill_save_directory):
+            os.makedirs(bill_save_directory)
+
+        bill_file_path = bill_scraper.save_bill_as_text(congress, bill_id, action_datetime, bill_save_directory)
 
         summarizer = Summarizer(openai_assistant, filename=bill_file_path)
-        summarizer.summarize_file(save_directory)
-        del summarizer
+        summarizer.summarize_file(bill_save_directory)
+
+        amendment_file_path = None
+        if hr_roll_call_processor.is_amendment_vote():
+            amendment_file_path = bill_scraper.save_amendment_as_text(congress, bill_id, action_datetime, bill_save_directory)
 
         # Save the votes to a .md file as a markdown table
         votes = hr_roll_call_processor.get_votes()
 
         # Create file path for roll call
-        bill_file_path = f"{save_directory}/{year}-{next_roll_call_id}-{bill_id.replace('/', '-')}.md"
+        roll_call_file = f"{bill_save_directory}/{action_datetime}-rollcall-{next_roll_call_id}.md"
 
-        with open(bill_file_path, 'w') as file:
-            # Write the bill ID and version date
-            file.write(f"Bill ID: {bill_id}\n\n")
+        with open(roll_call_file, 'w') as file:
+            # Get file name from file path
+            file_name = os.path.basename(bill_file_path)
+            file.write(f"Bill Version File: {file_name}\n\n")
+            file.write(f"Roll Call Time: {action_datetime}\n\n")
             file.write(f"Vote Question: {hr_roll_call_processor.get_vote_question()}\n\n")
-            file.write(f"Bill Version Date: {bill_version_date}\n\n")
+            if amendment_file_path is not None:
+                file.write(f"Amendment File: {os.path.basename(amendment_file_path)}\n\n")
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
@@ -91,7 +102,7 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
 
                 file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {decision} |\n")
 
-        print(f"Saved votes for {next_roll_call_id} to {bill_file_path}")
+        print(f"Saved votes for {next_roll_call_id} to {roll_call_file}")
 
         latest_roll_call_id = next_roll_call_id
 

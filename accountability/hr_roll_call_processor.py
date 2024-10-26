@@ -39,6 +39,8 @@ class HRRollCallProcessor:
         self.vote_question_ = root.find('.//vote-metadata/vote-question').text
         if root.find('.//vote-metadata/amendment-num') is not None:
             self.is_amendment_vote_ = True
+        else:
+            self.is_amendment_vote_ = False
 
         # Convert action_date to desired format
         action_date = datetime.datetime.strptime(action_date, "%d-%b-%Y").strftime("%Y-%m-%d")
@@ -47,7 +49,7 @@ class HRRollCallProcessor:
         time = re.search(r'(\d+:\d+)', action_time).group(1)
 
         # Combine action_date and time to get the desired format
-        self.action_datetime_ = f"{action_date}T{time}:00Z"
+        self.action_datetime_ = f"{action_date}T{time.zfill(5)}:00Z"
 
         # Use regex to check whether legis_num_ matches the format H R 1234
         legis_num_ = legis_num_.strip()

@@ -32,7 +32,7 @@ class CongressAPI:
         return file_path
 
     def _download_text(self, endpoint, action_datetime):
-        print(f"Downloading {endpoint} text at {action_datetime}")
+        print(f"Downloading {endpoint} at {action_datetime}")
         response = requests.get(endpoint, params={'api_key': self.api_key})
         response.raise_for_status()
         text_versions_data = response.json()
@@ -113,7 +113,7 @@ class CongressAPI:
 
         file_name = f"{version_date}-{congress}-{bill_id.replace('/', '-')}"
         file_path = self._save_if_not_exists(save_directory, file_name, bill_text)
-        return (version_date, file_path)
+        return file_path
         
     def save_amendment_as_text(self, congress, bill_id, action_datetime, save_directory):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
@@ -125,9 +125,19 @@ class CongressAPI:
             print(f"No amendments found for {congress}/{bill_id}")
             return None
 
-        # Find the amendment whose actionDate and actionTime are closest to the action_datetime
-        action_datetime = datetime.datetime.strptime(action_datetime, "%Y-%m-%dT%H:%M:%SZ")
-        closest_amendment = min(amendments, key=lambda x: abs(datetime.datetime.strptime(x['latestAction']['actionDate'] + x['latestAction']['actionTime'], "%Y-%m-%d%H:%M:%S") - action_datetime))
+        # Find the most recent amendment that is older than action date time (which is a string)
+        try:
+            action_datetime = datetime.datetime.strptime(action_datetime, "%Y-%m-%dT%H:%M:%SZ")
+        except ValueError:
+            action_datetime = datetime.datetime.strptime(action_datetime, "%Y-%m-%d")
+
+        amendments_older_than_action_datetime = [x for x in amendments if datetime.datetime.strptime(x['latestAction']['actionDate'] + x['latestAction']['actionTime'], "%Y-%m-%d%H:%M:%S") <= (action_datetime + timedelta(minutes=5))]
+
+        if not amendments_older_than_action_datetime:
+            # Return the most recent version if there are no versions older than update_date
+            closest_amendment = max(amendments, key=lambda x: datetime.datetime.strptime(x['latestAction']['actionDate'] + x['latestAction']['actionTime'], "%Y-%m-%d%H:%M:%S"))
+        else:
+            closest_amendment = max(amendments_older_than_action_datetime, key=lambda x: datetime.datetime.strptime(x['latestAction']['actionDate'] + x['latestAction']['actionTime'], "%Y-%m-%d%H:%M:%S"))
 
         amendment_type = closest_amendment['type'].lower()
         amendment_num = closest_amendment['number']
@@ -142,4 +152,4 @@ class CongressAPI:
 
         file_name = f"{version_date}-{congress}-{bill_id.replace('/', '-')}-{amendment_type}-{amendment_num}"
         file_path = self._save_if_not_exists(save_directory, file_name, amendment_text)
-        return (version_date, file_path)
+        return file_path

@@ -1,11 +1,9 @@
 import os
-from openai import OpenAI
-
 
 class Summarizer:
     def __init__(self, assistant, filename):
         self.assistant_ = assistant
-        self.file_id_ = self.assistant_.create_file(filename)
+        self.filename_ = filename
 
         # Get base filename without extension
         self.base_filename_ = os.path.split(filename)
@@ -20,17 +18,20 @@ class Summarizer:
 
         if save_directory[-1] != '/':
             save_directory = save_directory + '/'
-        summary_filename = save_directory + 'summary-' + self.base_filename_ + '.md'
+        summary_filename = save_directory + self.base_filename_ + '-summary.md'
 
         if os.path.exists(summary_filename):
             print(f"Skipping summary because {summary_filename} already exists")
             return
 
+        file_id = self.assistant_.create_file(self.filename_)
+
         prompt = "Summarize the following bill for a layperson in terms of how it may impact the average American. \
         Bullet point each key point. For each key point, provide a section number from within the bill I provided where one \
         can find more information about that point."
 
-        summary = self.assistant_.prompt_with_file(prompt, self.file_id_)
+        summary = self.assistant_.prompt_with_file(prompt, file_id)
+        self.assistant_.delete_file(file_id)
 
         with open(summary_filename, 'w') as summary_file:
             summary_file.write(summary)
@@ -50,9 +51,11 @@ class Summarizer:
             print(f"Skipping summary for {diff_summary_filename} because it already exists")
             return
 
+        file_id = self.assistant_.create_file(self.filename_)
+
         prompt = "Summarize the following diffs that are applied on top of the original version of the bill for a layperson: \n" + diff_string
 
-        summary = self.assistant_.prompt_with_file(prompt, self.file_id_)
+        summary = self.assistant_.prompt_with_file(prompt, file_id)
 
         with open(diff_summary_filename, 'w') as diff_summary_file:
             diff_summary_file.write(summary)
