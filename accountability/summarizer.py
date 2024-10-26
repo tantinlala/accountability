@@ -10,7 +10,7 @@ class Summarizer:
         self.base_filename_ = os.path.splitext(self.base_filename_[1])
         self.base_filename_ = self.base_filename_[0]
 
-    def summarize_file(self, save_directory):
+    def summarize_bill(self, save_directory):
         """
         Uses an AI model to summarize the contents of a .txt file. Writes the summary to a new text file
         :param filename: Name of .txt file to summarize

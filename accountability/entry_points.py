@@ -6,7 +6,8 @@ See entry_points in setup.py
 """
 
 import argparse
-from accountability.pipelines import run_setup_pipeline, run_summarize_pipeline, run_process_most_recently_voted_hr_bills, get_amendment
+from accountability.pipelines import run_setup, run_summarize_bill, run_process_hr_rollcalls, run_get_bill, run_get_amendment
+
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
 TEXT_FILE_HELP_STRING = 'Text file containing content you want summarized'
@@ -19,29 +20,22 @@ def setup():
     parser.add_argument('-t', '--template', default='template.yaml')
     parser.add_argument('-r', '--roll_call_id', type=int, default=0, help='The roll call ID to store in the database')
     args = parser.parse_args()
-    run_setup_pipeline(args.template, args.roll_call_id)
+    run_setup(args.template, args.roll_call_id)
 
 
-def summarize():
+def get_bill():
     parser = argparse.ArgumentParser(
-        description='Summarize a text document')
+        description='Print the text of a bill')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
-    parser.add_argument('-t', '--text_file', help=TEXT_FILE_HELP_STRING)
+    parser.add_argument('-c', '--congress', help='Congress number')
+    parser.add_argument('-b', '--bill_id', help='The bill id for which you want to get text')
+    parser.add_argument('-t', '--datetime', help='The datetime of the bill action')
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
-    run_summarize_pipeline(args.secrets_file, args.text_file, args.save_directory)
+    run_get_bill(args.secrets_file, args.congress, args.bill_id, args.datetime, args.save_directory)
 
 
-def process_most_recently_voted_hr_bills():
-    parser = argparse.ArgumentParser(
-        description='Download the text of the most recently voted upon HR bill')
-    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
-    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
-    args = parser.parse_args()
-    run_process_most_recently_voted_hr_bills(args.secrets_file, args.save_directory)
-
-
-def get_amendment_at_time_for_bill():
+def get_amendment():
     parser = argparse.ArgumentParser(
         description='Print the amendments for a bill')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
@@ -50,4 +44,23 @@ def get_amendment_at_time_for_bill():
     parser.add_argument('-t', '--datetime', help='The datetime of the bill action')
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
-    get_amendment(args.secrets_file, args.congress, args.bill_id, args.datetime, args.save_directory)
+    run_get_amendment(args.secrets_file, args.congress, args.bill_id, args.datetime, args.save_directory)
+
+
+def summarize_bill():
+    parser = argparse.ArgumentParser(
+        description='Summarize a text document')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
+    parser.add_argument('-t', '--text_file', help=TEXT_FILE_HELP_STRING)
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
+    args = parser.parse_args()
+    run_summarize_bill(args.secrets_file, args.text_file, args.save_directory)
+
+
+def process_hr_rollcalls():
+    parser = argparse.ArgumentParser(
+        description='Download the text of the most recently voted upon HR bill')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
+    args = parser.parse_args()
+    run_process_hr_rollcalls(args.secrets_file, args.save_directory)

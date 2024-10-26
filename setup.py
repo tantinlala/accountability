@@ -14,10 +14,11 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "accountability_summarize = accountability.entry_points:summarize",
             "accountability_setup = accountability.entry_points:setup",
-            "accountability_process_hr_roll_calls = accountability.entry_points:process_hr_roll_calls",
-            "accountability_get_amendment_at_time_for_bill = accountability.entry_points:get_amendment_at_time_for_bill"
+            "accountability_get_bill = accountability.entry_points:get_bill",
+            "accountability_get_amendment = accountability.entry_points:get_amendment",
+            "accountability_summarize_bill = accountability.entry_points:summarize_bill",
+            "accountability_process_hr_rollcalls = accountability.entry_points:process_hr_rollcalls"
         ]
     },
     extras_require={
