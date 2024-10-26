@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.pipelines import run_bill_getting_pipeline, run_setup_pipeline, \
-    run_summarize_pipeline, run_process_most_recently_voted_hr_bills
+    run_summarize_pipeline, run_process_most_recently_voted_hr_bills, get_amendment
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
 TEXT_FILE_HELP_STRING = 'Text file containing content you want summarized'
@@ -51,3 +51,14 @@ def process_most_recently_voted_hr_bills():
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
     run_process_most_recently_voted_hr_bills(args.secrets_file, args.save_directory)
+
+def get_amendment_at_time_for_bill():
+    parser = argparse.ArgumentParser(
+        description='Print the amendments for a bill')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
+    parser.add_argument('-c', '--congress', help='Congress number')
+    parser.add_argument('-b', '--bill_id', help='The bill id for which you want to get amendments')
+    parser.add_argument('-t', '--datetime', help='The datetime of the bill action')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
+    args = parser.parse_args()
+    get_amendment(args.secrets_file, args.congress, args.bill_id, args.datetime, args.save_directory)

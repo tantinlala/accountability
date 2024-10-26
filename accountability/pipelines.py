@@ -33,11 +33,8 @@ def run_bill_getting_pipeline(secrets_file, num_days, save_directory):
     # Allow bill scraper to get required secrets
     bill_scraper = CongressAPI(secrets_parser)
 
-    # Get all the most recently voted upon senate bills
-    bill_scraper.get_list_of_recent_bills(num_days)
-
     # Write all data to files
-    bill_scraper.save_bills_as_text(save_directory)
+    bill_scraper.save_bills_as_text(num_days, save_directory)
 
 def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
     # Parse secrets from a file
@@ -112,3 +109,10 @@ def run_summarize_pipeline(secrets_file, text_file, save_directory):
 
     # Summarize text file
     summarizer.summarize_file(save_directory)
+
+def get_amendment(secrets_file, congress, bill_id, datetime, save_directory):
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    bill_scraper = CongressAPI(secrets_parser)
+    bill_scraper.save_amendment_as_text(congress, bill_id, datetime, save_directory)
