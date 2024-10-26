@@ -37,7 +37,7 @@ class HRRollCallProcessor:
         action_date = root.find('.//vote-metadata/action-date').text
         action_time = root.find('.//vote-metadata/action-time').text
         self.vote_question_ = root.find('.//vote-metadata/vote-question').text
-        if root.find('.//vote-metadata/amendment-num').text is not None:
+        if root.find('.//vote-metadata/amendment-num') is not None:
             self.is_amendment_vote_ = True
 
         # Convert action_date to desired format
