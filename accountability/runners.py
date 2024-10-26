@@ -54,10 +54,10 @@ def run_summarize_bill(secrets_file, text_file, save_directory):
     openai_assistant = OpenAIAssistant(secrets_parser)
 
     # Allow summarizer to get required secrets
-    summarizer = Summarizer(openai_assistant, text_file)
+    summarizer = Summarizer(openai_assistant)
 
     # Summarize text file
-    summarizer.summarize_bill(save_directory)
+    summarizer.summarize_bill(save_directory, text_file)
 
 
 def run_process_hr_rollcalls(secrets_file, save_directory):
@@ -95,12 +95,14 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
         bill_file_path = save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name), bill_text)
 
         previous_version_file_path = get_previous_version_file(bill_file_path, bill_name + ".txt")
+
+        summarizer = Summarizer(openai_assistant)
         if previous_version_file_path:
             diff_text = get_diff(bill_file_path, previous_version_file_path)
-            save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name) + "-diffs", diff_text)
+            diff_file_path = save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name) + "-diffs", diff_text)
+            summarizer.summarize_bill_diffs(bill_save_directory, diff_file_path)
         else:
-            summarizer = Summarizer(openai_assistant, filename=bill_file_path)
-            summarizer.summarize_bill(bill_save_directory)
+            summarizer.summarize_bill(bill_save_directory, bill_file_path)
 
         # If the vote was on an amendment, download the amendment text
         amendment_file_path = None
