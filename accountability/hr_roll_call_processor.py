@@ -6,9 +6,12 @@ import datetime
 class HRRollCallProcessor:
     def __init__(self):
         self.BASE_URL = url = "https://clerk.house.gov/evs"
+        self.congress_ = None
         self.bill_id_ = None
         self.votes_ = []
         self.action_datetime_ = None
+        self.vote_question_ = None
+        self.is_amendment_vote_ = False
 
     def process_roll_call(self, year, roll_call_number):
         self.bill_id_ = None
@@ -30,9 +33,12 @@ class HRRollCallProcessor:
 
         # Extract the bill being voted upon
         legis_num_ = root.find('.//vote-metadata/legis-num').text
-        congress_ = root.find('.//vote-metadata/congress').text
+        congress = root.find('.//vote-metadata/congress').text
         action_date = root.find('.//vote-metadata/action-date').text
         action_time = root.find('.//vote-metadata/action-time').text
+        self.vote_question_ = root.find('.//vote-metadata/vote-question').text
+        if root.find('.//vote-metadata/amendment-num').text is not None:
+            self.is_amendment_vote_ = True
 
         # Convert action_date to desired format
         action_date = datetime.datetime.strptime(action_date, "%d-%b-%Y").strftime("%Y-%m-%d")
@@ -54,7 +60,8 @@ class HRRollCallProcessor:
         elif re.match(r'^S \d+$', legis_num_):
             legis_num_ = legis_num_.replace('S ', 's/');
 
-        self.bill_id_ = f"{congress_}/{legis_num_}"
+        self.congress_ = congress
+        self.bill_id_ = legis_num_
 
         # Iterate through the XML elements to extract the votes
         for vote in root.findall('.//recorded-vote'):
@@ -68,6 +75,9 @@ class HRRollCallProcessor:
         # Sort the lists by state
         self.votes_.sort(key=lambda x: x['state'])
 
+    def get_congress(self):
+        return self.congress_
+
     def get_bill_id(self):
         return self.bill_id_
     
@@ -76,3 +86,9 @@ class HRRollCallProcessor:
 
     def get_action_datetime(self):
         return self.action_datetime_
+
+    def get_vote_question(self):
+        return self.vote_question_
+    
+    def is_amendment_vote(self):
+        return self.is_amendment_vote_

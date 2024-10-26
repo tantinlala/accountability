@@ -53,15 +53,16 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
     while True:
         next_roll_call_id = latest_roll_call_id + 1
         hr_roll_call_processor.process_roll_call(year, next_roll_call_id)
+        congress = hr_roll_call_processor.get_congress()
         bill_id = hr_roll_call_processor.get_bill_id()
         if bill_id is None:
             print(f"No roll call found for {next_roll_call_id}")
             break
 
         action_datetime = hr_roll_call_processor.get_action_datetime()
-        (version_date, file_path) = bill_scraper.save_bill_as_text(bill_id, action_datetime, save_directory)
+        (bill_version_date, bill_file_path) = bill_scraper.save_bill_as_text(congress, bill_id, action_datetime, save_directory)
 
-        summarizer = Summarizer(openai_assistant, filename=file_path)
+        summarizer = Summarizer(openai_assistant, filename=bill_file_path)
         summarizer.summarize_file(save_directory)
         del summarizer
 
@@ -69,12 +70,13 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
         votes = hr_roll_call_processor.get_votes()
 
         # Create file path for roll call
-        file_path = f"{save_directory}/{year}-{next_roll_call_id}-{bill_id.replace('/', '-')}.md"
+        bill_file_path = f"{save_directory}/{year}-{next_roll_call_id}-{bill_id.replace('/', '-')}.md"
 
-        with open(file_path, 'w') as file:
+        with open(bill_file_path, 'w') as file:
             # Write the bill ID and version date
             file.write(f"Bill ID: {bill_id}\n\n")
-            file.write(f"Version Date: {version_date}\n\n")
+            file.write(f"Vote Question: {hr_roll_call_processor.get_vote_question()}\n\n")
+            file.write(f"Bill Version Date: {bill_version_date}\n\n")
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
@@ -89,7 +91,7 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
 
                 file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {decision} |\n")
 
-        print(f"Saved votes for {next_roll_call_id} to {file_path}")
+        print(f"Saved votes for {next_roll_call_id} to {bill_file_path}")
 
         latest_roll_call_id = next_roll_call_id
 
