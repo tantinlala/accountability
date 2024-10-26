@@ -14,11 +14,9 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "accountability_get_bills = accountability.entry_points:get_bills",
             "accountability_summarize = accountability.entry_points:summarize",
             "accountability_setup = accountability.entry_points:setup",
-            "accountability_get_recently_introduced_bills = accountability.entry_points:get_recently_introduced_bills",
-            "accountability_process_most_recently_voted_hr_bills = accountability.entry_points:process_most_recently_voted_hr_bills",
+            "accountability_process_hr_roll_calls = accountability.entry_points:process_hr_roll_calls",
             "accountability_get_amendment_at_time_for_bill = accountability.entry_points:get_amendment_at_time_for_bill"
         ]
     },

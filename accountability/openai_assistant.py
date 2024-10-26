@@ -39,6 +39,10 @@ class OpenAIAssistant:
 
         messages = list(self.client_.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
 
+        if len(messages) == 0: # Can happen if message rate exceeded
+            print("Unable to get response from OpenAI")
+            return ""
+
         message_content = messages[0].content[0].text
         annotations = message_content.annotations
 

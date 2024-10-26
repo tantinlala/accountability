@@ -6,6 +6,7 @@ from accountability.openai_assistant import OpenAIAssistant
 from accountability.congress_api import CongressAPI
 from accountability.hr_roll_call_processor import HRRollCallProcessor
 from accountability.congress_database import CongressDatabase
+from accountability.file_utils import file_exists, save_if_not_exists
 
 
 def run_setup_pipeline(template_file, roll_call_id):
@@ -25,17 +26,6 @@ def run_setup_pipeline(template_file, roll_call_id):
     congress_db.update_hr_roll_call_id(year, roll_call_id)
 
 
-def run_bill_getting_pipeline(secrets_file, num_days, save_directory):
-    # Parse secrets from a file
-    secrets_parser = SecretsParser()
-    secrets_parser.parse_secrets_file(secrets_file)
-
-    # Allow bill scraper to get required secrets
-    bill_scraper = CongressAPI(secrets_parser)
-
-    # Write all data to files
-    bill_scraper.save_bills_as_text(num_days, save_directory)
-
 def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
@@ -48,10 +38,11 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
     year = datetime.datetime.now().year
 
     hr_roll_call_processor = HRRollCallProcessor()
-    latest_roll_call_id = congress_db.get_most_recent_hr_roll_call_id(year)
+    next_roll_call_id = congress_db.get_most_recent_hr_roll_call_id(year)
 
     while True:
-        next_roll_call_id = latest_roll_call_id + 1
+        next_roll_call_id += 1
+        print(f"\nProcessing roll call {next_roll_call_id}")
         hr_roll_call_processor.process_roll_call(year, next_roll_call_id)
         congress = hr_roll_call_processor.get_congress()
         bill_id = hr_roll_call_processor.get_bill_id()
@@ -65,14 +56,19 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
         if not os.path.exists(bill_save_directory):
             os.makedirs(bill_save_directory)
 
-        bill_file_path = bill_scraper.save_bill_as_text(congress, bill_id, action_datetime, bill_save_directory)
+        (bill_name, bill_version_date, bill_text) = bill_scraper.download_bill_text(congress, bill_id, action_datetime)
+        bill_file_path = save_if_not_exists(bill_save_directory, f"{bill_version_date}-{bill_name}", bill_text)
+
+        # If a previous version of the bill exists, get the differences
+
 
         summarizer = Summarizer(openai_assistant, filename=bill_file_path)
         summarizer.summarize_file(bill_save_directory)
 
         amendment_file_path = None
         if hr_roll_call_processor.is_amendment_vote():
-            amendment_file_path = bill_scraper.save_amendment_as_text(congress, bill_id, action_datetime, bill_save_directory)
+            (amendment_name, amendment_version_date, amendment_text) = bill_scraper.download_amendment_text(congress, bill_id, action_datetime)
+            save_if_not_exists(bill_save_directory, f"{amendment_version_date}-{amendment_name}", amendment_text)
 
         # Save the votes to a .md file as a markdown table
         votes = hr_roll_call_processor.get_votes()
@@ -103,11 +99,7 @@ def run_process_most_recently_voted_hr_bills(secrets_file, save_directory):
                 file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {decision} |\n")
 
         print(f"Saved votes for {next_roll_call_id} to {roll_call_file}")
-
-        latest_roll_call_id = next_roll_call_id
-
-
-    congress_db.update_hr_roll_call_id(year, latest_roll_call_id)
+        congress_db.update_hr_roll_call_id(year, next_roll_call_id)
 
 
 def run_summarize_pipeline(secrets_file, text_file, save_directory):
@@ -128,4 +120,9 @@ def get_amendment(secrets_file, congress, bill_id, datetime, save_directory):
     secrets_parser.parse_secrets_file(secrets_file)
 
     bill_scraper = CongressAPI(secrets_parser)
-    bill_scraper.save_amendment_as_text(congress, bill_id, datetime, save_directory)
+    bill_scraper.download_amendment_text(congress, bill_id, datetime, save_directory)
+    (amendment_name, amendment_version_date, amendment_text) = bill_scraper.download_amendment_text(congress, bill_id, datetime, save_directory)
+    save_if_not_exists(save_directory, f"{amendment_version_date}-{amendment_name}", amendment_text)
+
+if __name__ == '__main__':
+    run_process_most_recently_voted_hr_bills('secrets.yaml', 'results')

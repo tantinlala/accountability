@@ -1,0 +1,1 @@
+find ./results -type d -exec sh -c 'find "$0" -maxdepth 1 -type f -name "*summary*" | grep -q . || echo "$0"' {} \;

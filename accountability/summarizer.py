@@ -33,8 +33,9 @@ class Summarizer:
         summary = self.assistant_.prompt_with_file(prompt, file_id)
         self.assistant_.delete_file(file_id)
 
-        with open(summary_filename, 'w') as summary_file:
-            summary_file.write(summary)
+        if summary:
+            with open(summary_filename, 'w') as summary_file:
+                summary_file.write(summary)
 
     def summarize_file_diffs(self, diff_string, save_directory):
         """
@@ -45,7 +46,7 @@ class Summarizer:
 
         if save_directory[-1] != '/':
             save_directory = save_directory + '/'
-        diff_summary_filename = save_directory + 'diffs-' + self.base_filename_ + '.md'
+        diff_summary_filename = save_directory + self.base_filename_ + '-diffs.md'
 
         if os.path.exists(diff_summary_filename):
             print(f"Skipping summary for {diff_summary_filename} because it already exists")
