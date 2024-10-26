@@ -58,5 +58,6 @@ class Summarizer:
 
         summary = self.assistant_.prompt_with_file(prompt, file_id)
 
-        with open(diff_summary_filename, 'w') as diff_summary_file:
-            diff_summary_file.write(summary)
+        if summary:
+            with open(diff_summary_filename, 'w') as diff_summary_file:
+                diff_summary_file.write(summary)

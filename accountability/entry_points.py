@@ -6,7 +6,7 @@ See entry_points in setup.py
 """
 
 import argparse
-from accountability.pipelines import run_setup, run_summarize_bill, run_process_hr_rollcalls, run_get_bill, run_get_amendment
+from accountability.runners import run_setup, run_summarize_bill, run_process_hr_rollcalls, run_get_bill, run_get_amendment
 
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'

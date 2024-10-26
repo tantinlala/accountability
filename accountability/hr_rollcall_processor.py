@@ -2,6 +2,7 @@ import re
 import requests
 import xml.etree.ElementTree as ET
 import datetime
+import os
 
 class HRRollCallProcessor:
     def __init__(self):
@@ -12,14 +13,15 @@ class HRRollCallProcessor:
         self.action_datetime_ = None
         self.vote_question_ = None
         self.is_amendment_vote_ = False
+        self.rollcall_number_ = None
 
-    def process_roll_call(self, year, roll_call_number):
+    def process_rollcall(self, year, rollcall_number):
         self.bill_id_ = None
         self.votes_ = []
         self.action_datetime_ = None
 
         # Construct the URL with the roll call number
-        url = f"{self.BASE_URL}/{year}/roll{roll_call_number}.xml"
+        url = f"{self.BASE_URL}/{year}/roll{rollcall_number}.xml"
 
         # Fetch the XML data
         response = requests.get(url)
@@ -76,6 +78,7 @@ class HRRollCallProcessor:
 
         # Sort the lists by state
         self.votes_.sort(key=lambda x: x['state'])
+        self.rollcall_number_ = rollcall_number
 
     def get_congress(self):
         return self.congress_
@@ -83,14 +86,38 @@ class HRRollCallProcessor:
     def get_bill_id(self):
         return self.bill_id_
     
-    def get_votes(self):
-        return self.votes_
-
     def get_action_datetime(self):
         return self.action_datetime_
 
-    def get_vote_question(self):
-        return self.vote_question_
-    
     def is_amendment_vote(self):
         return self.is_amendment_vote_
+
+    def save_rollcall_as_md(self, save_directory, bill_file_path, amendment_file_path=None):
+        # Save information on the rollcall to an .md file
+
+        # Create file path for roll call
+        rollcall_file = f"{save_directory}/{self.action_datetime_}-rollcall-{self.rollcall_number_}.md"
+
+        with open(rollcall_file, 'w') as file:
+            # Get file name from file path
+            file_name = os.path.basename(bill_file_path)
+            file.write(f"Bill Version File: {file_name}\n\n")
+            file.write(f"Roll Call Time: {self.action_datetime_}\n\n")
+            file.write(f"Vote Question: {self.vote_question_}\n\n")
+            if amendment_file_path is not None:
+                file.write(f"Amendment File: {os.path.basename(amendment_file_path)}\n\n")
+
+            # Loop through each vote and write to the file as a markdown table
+            # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
+            file.write("| Name | Party | State | Vote |\n")
+            file.write("|------|-------|-------|------|\n")
+            for vote in self.votes_:
+                decision = vote['vote']
+                if decision == "No":
+                    decision = "Nay"
+                elif decision == "Aye":
+                    decision = "Yea"
+
+                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {decision} |\n")
+
+        print(f"Saved votes for {self.rollcall_number_} to {rollcall_file}")

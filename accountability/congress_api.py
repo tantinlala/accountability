@@ -75,7 +75,7 @@ class CongressAPI:
 
         (bill_text, version_date) = result
 
-        bill_name = f"{congress}-{bill_id.replace('/', '-')}"
+        bill_name = f"{congress}-{bill_id.replace('/', '-')}-bill"
         return (bill_name, version_date, bill_text)
         
     def download_amendment_text(self, congress, bill_id, action_datetime):
