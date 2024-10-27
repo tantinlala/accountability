@@ -77,20 +77,6 @@ def run_diff_with_previous(bill_filepath):
         save_if_not_exists(bill_save_directory, bill_name_without_extension + "-diffs", diff_text)
 
 
-def run_summarize_diffs(secrets_file, filepath):
-    secrets_parser = SecretsParser()
-    secrets_parser.parse_secrets_file(secrets_file)
-
-    openai_assistant = OpenAIAssistant(secrets_parser)
-    summarizer = Summarizer(openai_assistant)
-
-    if file_exists(summary_filepath := make_summary_filepath(filepath)):
-        print(f"Skipping summary because {summary_filepath} already exists")
-    elif summary := summarizer.summarize_bill_diffs(filepath):
-        with open(summary_filepath, 'w') as summary_file:
-            summary_file.write(summary)
-
-
 def run_process_hr_rollcalls(secrets_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
