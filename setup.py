@@ -19,7 +19,6 @@ setup(
             "accountability_get_amendment = accountability.entry_points:get_amendment",
             "accountability_summarize = accountability.entry_points:summarize",
             "accountability_diff_with_previous = accountability.entry_points:diff_with_previous",
-            "accountability_summarize_diffs = accountability.entry_points:summarize_diffs",
             "accountability_process_hr_rollcalls = accountability.entry_points:process_hr_rollcalls"
         ]
     },
