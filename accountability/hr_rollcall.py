@@ -97,7 +97,7 @@ class HRRollCall:
     def get_vote_question(self):
         return self.vote_question_
 
-    def save_rollcall_as_md(self, save_directory, bill_file_path, amendment_file_path=None):
+    def save_rollcall_as_md(self, save_directory, bill_filepath, amendment_filepath=None):
         # Save information on the rollcall to an .md file
 
         # Create file path for roll call
@@ -105,12 +105,12 @@ class HRRollCall:
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
-            file_name = os.path.basename(bill_file_path)
+            file_name = os.path.basename(bill_filepath)
             file.write(f"Bill Version File: {file_name}\n\n")
             file.write(f"Roll Call Time: {self.action_datetime_}\n\n")
             file.write(f"Vote Question: {self.vote_question_}\n\n")
-            if amendment_file_path is not None:
-                file.write(f"Amendment File: {os.path.basename(amendment_file_path)}\n\n")
+            if amendment_filepath is not None:
+                file.write(f"Amendment File: {os.path.basename(amendment_filepath)}\n\n")
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}

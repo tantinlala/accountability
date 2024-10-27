@@ -6,7 +6,7 @@ See entry_points in setup.py
 """
 
 import argparse
-from accountability.runners import run_setup, run_summarize_bill, run_process_hr_rollcalls, run_get_bill, \
+from accountability.runners import run_setup, run_summarize, run_process_hr_rollcalls, run_get_bill, \
     run_get_amendment, run_diff_with_previous, run_summarize_diffs
 
 
@@ -48,14 +48,13 @@ def get_amendment():
     run_get_amendment(args.secrets_file, args.congress, args.bill_id, args.datetime, args.save_directory)
 
 
-def summarize_bill():
+def summarize():
     parser = argparse.ArgumentParser(
         description='Summarize a text document')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
-    parser.add_argument('-t', '--text_file', help=TEXT_FILE_HELP_STRING)
-    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
+    parser.add_argument('-f', '--filepath', help=TEXT_FILE_HELP_STRING)
     args = parser.parse_args()
-    run_summarize_bill(args.secrets_file, args.text_file, args.save_directory)
+    run_summarize(args.secrets_file, args.filepath)
 
 
 def diff_with_previous():
@@ -64,15 +63,6 @@ def diff_with_previous():
     parser.add_argument('bill_path', help='The path to the bill txt file')
     args = parser.parse_args()
     run_diff_with_previous(args.bill_path)
-
-
-def summarize_diffs():
-    parser = argparse.ArgumentParser(
-        description='Summarize the differences between two versions of a bill')
-    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
-    parser.add_argument('-f', '--filepath', help='The filename of the diffs to summarize')
-    args = parser.parse_args()
-    run_summarize_diffs(args.secrets_file, args.filepath)
 
 
 def process_hr_rollcalls():
