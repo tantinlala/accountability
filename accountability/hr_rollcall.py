@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 import datetime
 import os
 
-class HRRollCallProcessor:
+class HRRollCall:
     def __init__(self):
         self.BASE_URL = url = "https://clerk.house.gov/evs"
         self.congress_ = None
@@ -15,57 +15,48 @@ class HRRollCallProcessor:
         self.is_amendment_vote_ = False
         self.rollcall_number_ = None
 
-    def process_rollcall(self, year, rollcall_number):
-        self.bill_id_ = None
-        self.votes_ = []
-        self.action_datetime_ = None
-
+    def process_rollcall(self, year, rollcall_id):
         # Construct the URL with the roll call number
-        url = f"{self.BASE_URL}/{year}/roll{rollcall_number}.xml"
+        url = f"{self.BASE_URL}/{year}/roll{rollcall_id}.xml"
 
         # Fetch the XML data
         response = requests.get(url)
         if response.status_code == 404:
-            return
-
-        xml_data = response.content
+            return False
 
         # Parse the XML data
+        xml_data = response.content
         root = ET.fromstring(xml_data)
 
         # Extract the bill being voted upon
-        legis_num_ = root.find('.//vote-metadata/legis-num').text
-        congress = root.find('.//vote-metadata/congress').text
-        action_date = root.find('.//vote-metadata/action-date').text
-        action_time = root.find('.//vote-metadata/action-time').text
+        self.congress_ = root.find('.//vote-metadata/congress').text
         self.vote_question_ = root.find('.//vote-metadata/vote-question').text
+
+        # Check whether the vote is for an amendment vote
         if root.find('.//vote-metadata/amendment-num') is not None:
             self.is_amendment_vote_ = True
         else:
             self.is_amendment_vote_ = False
 
-        # Convert action_date to desired format
+        # Combine action_date and action_time to get a datetime
+        action_date = root.find('.//vote-metadata/action-date').text
+        action_time = root.find('.//vote-metadata/action-time').text
         action_date = datetime.datetime.strptime(action_date, "%d-%b-%Y").strftime("%Y-%m-%d")
-
-        # Extract the time from action_time
         time = re.search(r'(\d+:\d+)', action_time).group(1)
-
-        # Combine action_date and time to get the desired format
         self.action_datetime_ = f"{action_date}T{time.zfill(5)}:00Z"
 
-        # Use regex to check whether legis_num_ matches the format H R 1234
-        legis_num_ = legis_num_.strip()
-        if re.match(r'^H R \d+$', legis_num_):
-            legis_num_ = legis_num_.replace('H R ', 'hr/')
-        elif re.match(r'^H J RES \d+$', legis_num_):
-            legis_num_ = legis_num_.replace('H J RES ', 'hjres/')
-        elif re.match(r'^H RES \d+$', legis_num_):
-            legis_num_ = legis_num_.replace('H RES ', 'hres/');
-        elif re.match(r'^S \d+$', legis_num_):
-            legis_num_ = legis_num_.replace('S ', 's/');
-
-        self.congress_ = congress
-        self.bill_id_ = legis_num_
+        # Use regex to extract the bill id from the legis_num
+        legis_num = root.find('.//vote-metadata/legis-num').text
+        legis_num = legis_num.strip()
+        if re.match(r'^H R \d+$', legis_num):
+            legis_num = legis_num.replace('H R ', 'hr/')
+        elif re.match(r'^H J RES \d+$', legis_num):
+            legis_num = legis_num.replace('H J RES ', 'hjres/')
+        elif re.match(r'^H RES \d+$', legis_num):
+            legis_num = legis_num.replace('H RES ', 'hres/');
+        elif re.match(r'^S \d+$', legis_num):
+            legis_num = legis_num.replace('S ', 's/');
+        self.bill_id_ = legis_num
 
         # Iterate through the XML elements to extract the votes
         for vote in root.findall('.//recorded-vote'):
@@ -78,7 +69,8 @@ class HRRollCallProcessor:
 
         # Sort the lists by state
         self.votes_.sort(key=lambda x: x['state'])
-        self.rollcall_number_ = rollcall_number
+        self.rollcall_number_ = rollcall_id
+        return True
 
     def get_congress(self):
         return self.congress_
@@ -91,6 +83,9 @@ class HRRollCallProcessor:
 
     def is_amendment_vote(self):
         return self.is_amendment_vote_
+
+    def get_votes(self):
+        return self.votes_
 
     def save_rollcall_as_md(self, save_directory, bill_file_path, amendment_file_path=None):
         # Save information on the rollcall to an .md file

@@ -30,8 +30,14 @@ def make_bill_directory(base, congress, bill_id):
     return f"{base}/{congress}-{bill_id.replace('/', '-')}"
 
 
-def get_previous_version_file(file_path, ending_matcher):
-    save_directory = os.path.split(file_path)[0]
+def get_previous_version_file(file_path):
+    # Get the part of the filename that is not part of the datetime
+    # There should be 2 dashes in the datetime string
+    file_name = os.path.basename(file_path)
+    dash_splits = file_name.split("-")
+    ending_matcher = "-".join(dash_splits[3:])
+    save_directory = os.path.dirname(file_path)
+
     file_name = os.path.split(file_path)[1]
     previous_versions = [file for file in os.listdir(save_directory) if file.endswith(ending_matcher) and file != file_name]
     if len(previous_versions) > 0:

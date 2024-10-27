@@ -74,6 +74,30 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
+    def year_exists(self, year):
+        """Check if a year exists in the database."""
+        sql = "SELECT * FROM RecentRollCall WHERE Year = ?"
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (year,))
+            return c.fetchone() is not None
+        except sqlite3.Error as e:
+            print(e)
+        return False
+
+    def add_year(self, year):
+        """Initialize the roll call ID for a given year."""
+        sql = """ 
+            INSERT INTO RecentRollCall(Year, RollCallID)
+            VALUES(?, 0); 
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (year,))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(e)
+
     def get_last_hr_rollcall_for_year(self, year):
         """Retrieve the most recent roll call ID for a given year."""
         sql = "SELECT RollCallID FROM RecentRollCall WHERE Year = ?"
