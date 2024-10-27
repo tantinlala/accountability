@@ -1,6 +1,7 @@
 import datetime
 from datetime import timedelta
 import requests
+import json
 
 class CongressAPI:
     SECRET_GROUP = 'congress'
@@ -112,3 +113,21 @@ class CongressAPI:
 
         amendment_name = f"{congress}-{bill_id.replace('/', '-')}-{amendment_type}-{amendment_num}"
         return (amendment_name, version_date, amendment_text)
+
+    def get_rollcalls_for_bill(self, congress, bill_id):
+        response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/actions", params={'api_key': self.api_key})
+        response.raise_for_status()
+        # Pretty print json
+        print(json.dumps(response.json(), indent=4))
+
+        rollcalls = []
+
+        for action in response.json()['actions']:
+            # Check whether "recordedVotes" key is in the action dictionary
+            if 'recordedVotes' in action:
+                for recorded_vote in action['recordedVotes']:
+                    # Add url to rollcalls if not already in rollcall list
+                    if recorded_vote['chamber'] == 'House' and recorded_vote['url'] not in rollcalls:
+                        rollcalls.append(recorded_vote['url'])
+
+        print(rollcalls)

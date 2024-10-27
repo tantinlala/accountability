@@ -77,6 +77,13 @@ def run_diff_with_previous(bill_filepath):
         save_if_not_exists(bill_save_directory, bill_name_without_extension + "-diffs", diff_text)
 
 
+def run_get_rollcalls_for_bill(secrets_file, congress, bill_id):
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    bill_scraper = CongressAPI(secrets_parser)
+    bill_scraper.get_rollcalls_for_bill(congress, bill_id)
+
 def run_process_hr_rollcalls(secrets_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()

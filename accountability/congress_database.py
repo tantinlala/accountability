@@ -111,8 +111,23 @@ class CongressDatabase:
             print(e)
         return None
 
+    def rollcall_exists(self, rollcall_id, year):
+        """Check if a roll call exists in the database."""
+        sql = "SELECT * FROM RollCalls WHERE RollCallID = ? AND Year = ?"
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (rollcall_id, year))
+            return c.fetchone() is not None
+        except sqlite3.Error as e:
+            print(e)
+        return False
+
     def add_rollcall_data(self, rollcall_id, year, question, bill_name, amendment_name):
         """Insert a roll call into the database."""
+        # Return if the roll call already exists
+        if self.rollcall_exists(rollcall_id, year):
+            return
+
         sql = """ 
             INSERT INTO RollCalls(RollCallID, Year, Question, BillName, AmendmentName)
             VALUES(?, ?, ?, ?, ?); 
@@ -126,6 +141,10 @@ class CongressDatabase:
 
     def add_congressman(self, congressman_id, name, state, party):
         """Insert a congressman into the database."""
+        # Return if the congressman already exists
+        if self.congressman_exists(congressman_id):
+            return
+
         sql = """ 
             INSERT INTO Congressmen(CongressmanID, Name, State, Party)
             VALUES(?, ?, ?, ?); 
