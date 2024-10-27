@@ -88,6 +88,7 @@ def run_summarize_diffs(secrets_file, diff_file_path):
     save_directory = os.path.dirname(diff_file_path)
     summarizer.summarize_bill_diffs(save_directory, diff_file_path)
 
+
 def run_process_hr_rollcalls(secrets_file, save_directory):
     # Parse secrets from a file
     secrets_parser = SecretsParser()
