@@ -19,9 +19,9 @@ def setup():
     parser = argparse.ArgumentParser(
         description='Create a template yaml file for storing secrets (e.g. api keys)')
     parser.add_argument('-t', '--template', default='template.yaml')
-    parser.add_argument('-r', '--roll_call_id', type=int, default=0, help='The roll call ID to store in the database')
+    parser.add_argument('-r', '--rollcall_id', type=int, default=0, help='The roll call ID to store in the database')
     args = parser.parse_args()
-    run_setup(args.template, args.roll_call_id)
+    run_setup(args.template, args.rollcall_id)
 
 
 def get_bill():
