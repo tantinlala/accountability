@@ -121,23 +121,34 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
 
         (bill_name, bill_version_date, bill_text) = bill_scraper.download_bill_text(congress, bill_id, action_datetime)
         bill_file_path = save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name), bill_text)
-        previous_version_file_path = get_previous_version_file(bill_file_path)
 
         summarizer = Summarizer(openai_assistant)
+        amendment_name = None
         amendment_file_path = None
 
         if hr_rollcall.is_amendment_vote():
             (amendment_name, amendment_version_date, amendment_text) = bill_scraper.download_amendment_text(congress, bill_id, action_datetime)
-            save_if_not_exists(bill_save_directory, make_filename(amendment_version_date, amendment_name), amendment_text)
+            amendment_file_path = save_if_not_exists(bill_save_directory, make_filename(amendment_version_date, amendment_name), amendment_text)
             # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
 
-        if previous_version_file_path:
+        if previous_version_file_path := get_previous_version_file(bill_file_path):
             diff_text = get_diff(bill_file_path, previous_version_file_path)
             diff_file_path = save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name) + "-diffs", diff_text)
             summarizer.summarize_bill_diffs(bill_save_directory, diff_file_path)
+            # TODO: check whether there was a previous vote for the same question and find all of the changes in votes?
 
         else:
             summarizer.summarize_bill(bill_save_directory, bill_file_path)
+
+        # Add the roll call data to the database
+        congress_db.add_rollcall_data(next_rollcall_id, year, hr_rollcall.get_vote_question(), bill_name, amendment_name)
+
+        # Save information on each congressman and each congressman's vote to the database
+        for vote in hr_rollcall.get_votes():
+            congressman_id = vote['id']
+            if not congress_db.congressman_exists(congressman_id):
+                congress_db.add_congressman(congressman_id, vote['name'], vote['state'], vote['party'])
+            congress_db.add_vote(next_rollcall_id, congressman_id, vote['vote'])
 
         hr_rollcall.save_rollcall_as_md(bill_save_directory, bill_file_path, amendment_file_path)
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)

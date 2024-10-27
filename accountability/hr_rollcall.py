@@ -62,10 +62,17 @@ class HRRollCall:
         for vote in root.findall('.//recorded-vote'):
             legislator = vote.find('legislator')
             name = legislator.text
-            vote_type = vote.find('vote').text
+
+            vote_string = vote.find('vote').text
+            if vote_string == "No":
+                vote_string = "Nay"
+            elif vote_string == "Aye":
+                vote_string = "Yea"
+
             party = legislator.get('party')
             state = legislator.get('state')
-            self.votes_.append({'name': name, 'party': party, 'state': state, 'vote': vote_type})
+            id = legislator.get('name-id')
+            self.votes_.append({'id': id, 'name': name, 'party': party, 'state': state, 'vote': vote_string})
 
         # Sort the lists by state
         self.votes_.sort(key=lambda x: x['state'])
@@ -87,6 +94,9 @@ class HRRollCall:
     def get_votes(self):
         return self.votes_
 
+    def get_vote_question(self):
+        return self.vote_question_
+
     def save_rollcall_as_md(self, save_directory, bill_file_path, amendment_file_path=None):
         # Save information on the rollcall to an .md file
 
@@ -107,12 +117,6 @@ class HRRollCall:
             file.write("| Name | Party | State | Vote |\n")
             file.write("|------|-------|-------|------|\n")
             for vote in self.votes_:
-                decision = vote['vote']
-                if decision == "No":
-                    decision = "Nay"
-                elif decision == "Aye":
-                    decision = "Yea"
-
-                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {decision} |\n")
+                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {vote['vote']} |\n")
 
         print(f"Saved votes for {self.rollcall_number_} to {rollcall_file}")

@@ -37,7 +37,8 @@ class CongressDatabase:
             CREATE TABLE IF NOT EXISTS Congressmen (
                 CongressmanID TEXT PRIMARY KEY,
                 Name TEXT,
-                State TEXT
+                State TEXT,
+                Party TEXT
             ); 
         """
         create_hr_votes_sql = """ 
@@ -123,15 +124,15 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def add_congressman(self, congressman_id, name, state):
+    def add_congressman(self, congressman_id, name, state, party):
         """Insert a congressman into the database."""
         sql = """ 
-            INSERT INTO Congressmen(CongressmanID, Name, State)
-            VALUES(?, ?, ?); 
+            INSERT INTO Congressmen(CongressmanID, Name, State, Party)
+            VALUES(?, ?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id, name, state))
+            c.execute(sql, (congressman_id, name, state, party))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
