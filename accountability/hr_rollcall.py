@@ -91,8 +91,9 @@ class HRRollCall:
     def get_bill_id(self):
         return self.bill_id_
     
-    def get_datetime_string(self):
-        return self.datetime_string_
+    def get_datetime(self):
+        #Turn the datetime string into a datetime object
+        return datetime.datetime.strptime(self.datetime_string_, "%Y-%m-%dT%H:%M:%SZ")
 
     def is_amendment_vote(self):
         return self.is_amendment_vote_

@@ -15,12 +15,6 @@ class CongressAPI:
         self.api_key = api_key
         self.bills = None
 
-    def _convert_to_datetime(self, action_datetime_string):
-        try:
-            return datetime.datetime.strptime(action_datetime_string, "%Y-%m-%dT%H:%M:%SZ")
-        except ValueError:
-            return datetime.datetime.strptime(action_datetime_string, "%Y-%m-%d %H:%M:%S")
-
     def _download_text(self, endpoint, action_datetime):
         # Find the most recent text version that is older than action date time (which is a string)
         print(f"Downloading {endpoint} associated with action at {action_datetime}")
@@ -58,7 +52,7 @@ class CongressAPI:
         text_response.raise_for_status()
         return (text_response.text, most_recent_version['date'])
 
-    def download_bill_text(self, congress, bill_id, action_datetime_string):
+    def download_bill_text(self, congress, bill_id, action_datetime):
         """
         Download the text of a bill and save it to a file.
         :param congress: The congress number of the bill
@@ -68,7 +62,6 @@ class CongressAPI:
         """
 
         endpoint = f"{self.BASE_URL}/bill/{congress}/{bill_id}/text"
-        action_datetime = self._convert_to_datetime(action_datetime_string)
         result = self._download_text(endpoint, action_datetime)
 
         if result is None:
@@ -79,7 +72,7 @@ class CongressAPI:
         bill_name = f"{congress}-{bill_id.replace('/', '-')}-bill"
         return (bill_name, version_date, bill_text)
         
-    def download_amendment_text(self, congress, bill_id, action_datetime_string):
+    def download_amendment_text(self, congress, bill_id, action_datetime):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
         response.raise_for_status()
         amendment_data = response.json()
@@ -89,9 +82,7 @@ class CongressAPI:
             print(f"No amendments found for {congress}/{bill_id}")
             return None
 
-        # Find the most recent amendment that is older than action date time (which is a string)
-        action_datetime = self._convert_to_datetime(action_datetime_string)
-
+        # Find the most recent amendment that is older than action date time
         amendments_older_than_action_datetime = [x for x in amendments if datetime.datetime.strptime(x['latestAction']['actionDate'] + x['latestAction']['actionTime'], "%Y-%m-%d%H:%M:%S") <= (action_datetime + timedelta(minutes=5))]
 
         if not amendments_older_than_action_datetime:
@@ -114,22 +105,31 @@ class CongressAPI:
         amendment_name = f"{congress}-{bill_id.replace('/', '-')}-{amendment_type}-{amendment_num}"
         return (amendment_name, version_date, amendment_text)
 
-    def get_older_rollcalls_for_bill(self, congress, bill_id, present_rollcall):
+    def get_older_rollcalls_for_bill(self, congress, bill_id, present_rollcall, present_year):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/actions", params={'api_key': self.api_key})
         response.raise_for_status()
-        # Pretty print json
-        print(json.dumps(response.json(), indent=4))
 
         rollcalls = []
-
         for action in response.json()['actions']:
             # Check whether "recordedVotes" key is in the action dictionary
             if 'recordedVotes' in action:
                 for recorded_vote in action['recordedVotes']:
-                    # Add url to rollcalls if not already in rollcall list
-                    # TODO: account for different years
-                    if recorded_vote['chamber'] == 'House' and recorded_vote['url'] not in rollcalls and recorded_vote['rollNumber'] < present_rollcall:
-                        rollcalls.append(recorded_vote['url'])
-                        # TODO: organize in chronological order using date?
+                    recorded_vote_year = int(recorded_vote['date'].split('-')[0])
+
+                    if recorded_vote['chamber'] != 'House':
+                        continue
+
+                    if recorded_vote['url'] in rollcalls:
+                        continue
+
+                    if recorded_vote_year > present_year:
+                        continue
+
+                    if recorded_vote_year == present_year and recorded_vote['rollNumber'] >= present_rollcall:
+                        continue
+
+                    rollcalls.append(recorded_vote['url'])
+
+        print(rollcalls)
 
         return rollcalls

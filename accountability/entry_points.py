@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.runners import run_setup, run_summarize, run_process_hr_rollcalls, run_get_bill, \
-    run_get_amendment, run_diff_with_previous, run_get_rollcalls_for_bill
+    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill
 
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
@@ -65,14 +65,17 @@ def diff_with_previous():
     run_diff_with_previous(args.bill_path)
 
 
-def get_rollcalls_for_bill():
+def get_older_rollcalls_for_bill():
     parser = argparse.ArgumentParser(
         description='Get the roll calls for a bill')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
     parser.add_argument('-c', '--congress', help='Congress number')
     parser.add_argument('-b', '--bill_id', help='The bill id for which you want to get roll calls')
+    parser.add_argument('-r', '--rollcall_id', type=int, default=0, help='The roll call for which you want to get older roll calls')
+    parser.add_argument('-y', '--year', type=int, default=2024, help='The year of the roll call')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
-    run_get_rollcalls_for_bill(args.secrets_file, args.congress, args.bill_id)
+    run_get_older_rollcalls_for_bill(args.secrets_file, args.congress, args.bill_id, args.rollcall_id, args.year, args.save_directory)
 
 
 def process_hr_rollcalls():

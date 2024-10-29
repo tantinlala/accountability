@@ -50,7 +50,7 @@ class CongressDatabase:
                 FOREIGN KEY (RollCallID) REFERENCES RollCalls (RollCallID),
                 FOREIGN KEY (Year) REFERENCES RollCalls (Year),
                 FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
-                CONSTRAINT VoteID PRIMARY KEY (RollCallID, Year, Congressman)
+                CONSTRAINT VoteID PRIMARY KEY (RollCallID, Year, CongressmanID)
             ); 
         """
 
