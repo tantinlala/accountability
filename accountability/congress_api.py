@@ -127,7 +127,9 @@ class CongressAPI:
             if 'recordedVotes' in action:
                 for recorded_vote in action['recordedVotes']:
                     # Add url to rollcalls if not already in rollcall list
-                    if recorded_vote['chamber'] == 'House' and recorded_vote['url'] not in rollcalls:
+                    # TODO: account for different years
+                    if recorded_vote['chamber'] == 'House' and recorded_vote['url'] not in rollcalls and recorded_vote['rollNumber'] < present_rollcall:
                         rollcalls.append(recorded_vote['url'])
+                        # TODO: organize in chronological order using date?
 
-        print(rollcalls)
+        return rollcalls

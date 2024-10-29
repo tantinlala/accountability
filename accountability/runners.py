@@ -113,9 +113,14 @@ def _save_rollcall_data(bill_scraper: CongressAPI, congress_db: CongressDatabase
 
     return (bill_filepath, amendment_filepath)
 
+# TODO: pass in roll call id and year
 def _generate_rollcall_report(hr_rollcall: HRRollCall, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_filepath, amendment_filepath, save_directory):
     summarizer = Summarizer(openai_assistant)
     bill_filename = os.path.basename(bill_filepath).split(".")[0]
+
+    # TODO: handle amendment
+    # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
+    # TODO: add data related to amendment to report
 
     if previous_version_filepath := get_previous_version_file(bill_filepath):
         diff_text = get_diff(bill_filepath, previous_version_filepath)
@@ -125,6 +130,8 @@ def _generate_rollcall_report(hr_rollcall: HRRollCall, openai_assistant: OpenAIA
         elif diff_summary := summarizer.summarize_bill_diffs(diff_filepath):
             with open(diff_summary_filepath, 'w') as summary_file:
                 summary_file.write(diff_summary)
+        # TODO: check whether there was a previous vote for the same question and find all of the changes in votes?
+        # TODO: create report specific to diffs in versions and votes
 
     else: # No previous version
         if file_exists(bill_summary_filepath := make_summary_filepath(bill_filepath)):
@@ -133,6 +140,7 @@ def _generate_rollcall_report(hr_rollcall: HRRollCall, openai_assistant: OpenAIA
             with open(bill_summary_filepath, 'w') as summary_file:
                 summary_file.write(bill_summary)
 
+    # TODO: create a reporter class
     hr_rollcall.save_rollcall_as_md(save_directory, bill_filepath, amendment_filepath)
 
 
@@ -172,6 +180,7 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
                 old_hr_rollcall.process_rollcall_url(url)
                 (bill_filepath, amendment_filepath) = _save_rollcall_data(bill_scraper, congress_db, old_hr_rollcall, bill_folder_string)
 
+                # TODO: make sure that we generate each report only after all rollcall data has been downloaded or after rollcall data for previous rollcall has been downloaded
                 _generate_rollcall_report(old_hr_rollcall, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
 
         (bill_filepath, amendment_filepath) = _save_rollcall_data(bill_scraper, congress_db, hr_rollcall, bill_folder_string)
