@@ -1,5 +1,6 @@
 import os
 import difflib
+import datetime
 
 def file_exists(filepath):
     if os.path.exists(filepath):
@@ -22,11 +23,19 @@ def save_if_not_exists(save_directory, file_name, content):
     return filepath
 
 
-def make_filename(date, name):
-    return f"{date}-{name}"
+def make_filename(datetime, name):
+    return f"{datetime}-{name}"
 
 
-def make_bill_directory(base, congress, bill_id):
+def get_datetime_and_name_in_filename(filename):
+    dash_splits = filename.split("-")
+    datetime_string = "-".join(dash_splits[:3])
+    datetime_obj = datetime.datetime.strptime(datetime_string, "%Y-%m-%dT%H:%M:%SZ")
+    name = "-".join(dash_splits[3:])
+    return (datetime_obj, name)
+
+
+def make_bill_path_string(base, congress, bill_id):
     return f"{base}/{congress}-{bill_id.replace('/', '-')}"
 
 
@@ -48,22 +57,28 @@ def make_summary_filepath(filepath):
 
 
 def get_previous_version_file(filepath):
-    # Get the part of the filename that is not part of the datetime
-    # There should be 2 dashes in the datetime string
     file_name = os.path.basename(filepath)
-    dash_splits = file_name.split("-")
-    ending_matcher = "-".join(dash_splits[3:])
-    save_directory = os.path.dirname(filepath)
+    (datetime_obj, ending_matcher) = get_datetime_and_name_in_filename(file_name)
+    file_directory = os.path.dirname(filepath)
 
-    file_name = os.path.split(filepath)[1]
-    previous_versions = [file for file in os.listdir(save_directory) if file.endswith(ending_matcher) and file != file_name]
-    if len(previous_versions) > 0:
-        # Get the version before this one.
-        # Datetime can be assumed to be in the filename before the ending matcher
-        previous_versions.sort(reverse=True)
-        previous_version_filepath = os.path.join(save_directory, previous_versions[0])
-        print(f"Found previous version: {previous_version_filepath}")
-        return previous_version_filepath
+    previous_version = None
+    for file in os.listdir(file_directory):
+        if file == file_name:
+            continue
+
+        if not file.endswith(ending_matcher):
+            continue
+
+        (older_datetime_obj, unused) = get_datetime_and_name_in_filename(file)
+
+        if older_datetime_obj >= datetime_obj:
+            continue
+
+        if previous_version is None or older_datetime_obj > previous_version['datetime']:
+            previous_version = {'datetime': older_datetime_obj, 'file': file}
+        
+    if previous_version:
+        return os.path.join(file_directory, previous_version['file'])
 
     return None
 

@@ -15,11 +15,11 @@ class CongressAPI:
         self.api_key = api_key
         self.bills = None
 
-    def _convert_to_datetime(self, action_datetime):
+    def _convert_to_datetime(self, action_datetime_string):
         try:
-            return datetime.datetime.strptime(action_datetime, "%Y-%m-%dT%H:%M:%SZ")
+            return datetime.datetime.strptime(action_datetime_string, "%Y-%m-%dT%H:%M:%SZ")
         except ValueError:
-            return datetime.datetime.strptime(action_datetime, "%Y-%m-%d %H:%M:%S")
+            return datetime.datetime.strptime(action_datetime_string, "%Y-%m-%d %H:%M:%S")
 
     def _download_text(self, endpoint, action_datetime):
         # Find the most recent text version that is older than action date time (which is a string)
@@ -58,7 +58,7 @@ class CongressAPI:
         text_response.raise_for_status()
         return (text_response.text, most_recent_version['date'])
 
-    def download_bill_text(self, congress, bill_id, action_datetime):
+    def download_bill_text(self, congress, bill_id, action_datetime_string):
         """
         Download the text of a bill and save it to a file.
         :param congress: The congress number of the bill
@@ -68,7 +68,7 @@ class CongressAPI:
         """
 
         endpoint = f"{self.BASE_URL}/bill/{congress}/{bill_id}/text"
-        action_datetime = self._convert_to_datetime(action_datetime)
+        action_datetime = self._convert_to_datetime(action_datetime_string)
         result = self._download_text(endpoint, action_datetime)
 
         if result is None:
@@ -79,7 +79,7 @@ class CongressAPI:
         bill_name = f"{congress}-{bill_id.replace('/', '-')}-bill"
         return (bill_name, version_date, bill_text)
         
-    def download_amendment_text(self, congress, bill_id, action_datetime):
+    def download_amendment_text(self, congress, bill_id, action_datetime_string):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
         response.raise_for_status()
         amendment_data = response.json()
@@ -90,7 +90,7 @@ class CongressAPI:
             return None
 
         # Find the most recent amendment that is older than action date time (which is a string)
-        action_datetime = self._convert_to_datetime(action_datetime)
+        action_datetime = self._convert_to_datetime(action_datetime_string)
 
         amendments_older_than_action_datetime = [x for x in amendments if datetime.datetime.strptime(x['latestAction']['actionDate'] + x['latestAction']['actionTime'], "%Y-%m-%d%H:%M:%S") <= (action_datetime + timedelta(minutes=5))]
 
@@ -114,7 +114,7 @@ class CongressAPI:
         amendment_name = f"{congress}-{bill_id.replace('/', '-')}-{amendment_type}-{amendment_num}"
         return (amendment_name, version_date, amendment_text)
 
-    def get_rollcalls_for_bill(self, congress, bill_id):
+    def get_older_rollcalls_for_bill(self, congress, bill_id, present_rollcall):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/actions", params={'api_key': self.api_key})
         response.raise_for_status()
         # Pretty print json

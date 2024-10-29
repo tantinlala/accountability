@@ -43,12 +43,14 @@ class CongressDatabase:
         """
         create_hr_votes_sql = """ 
             CREATE TABLE IF NOT EXISTS Votes (
-                VoteID INTEGER PRIMARY KEY AUTOINCREMENT,
-                RollCallID TEXT NOT NULL,
+                RollCallID INTEGER NOT NULL,
+                Year INTEGER NOT NULL,
                 CongressmanID TEXT NOT NULL,
                 Vote TEXT NOT NULL,
                 FOREIGN KEY (RollCallID) REFERENCES RollCalls (RollCallID),
-                FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID)
+                FOREIGN KEY (Year) REFERENCES RollCalls (Year),
+                FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
+                CONSTRAINT VoteID PRIMARY KEY (RollCallID, Year, Congressman)
             ); 
         """
 
@@ -167,15 +169,29 @@ class CongressDatabase:
             print(e)
         return False
 
-    def add_vote(self, rollcall_id, congressman_id, vote):
+    def vote_exists(self, rollcall_id, year, congressman_id):
+        """Check if a vote exists in the database."""
+        sql = "SELECT * FROM Votes WHERE RollCallID = ? AND Year = ? AND CongressmanID = ?"
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (rollcall_id, year, congressman_id))
+            return c.fetchone() is not None
+        except sqlite3.Error as e:
+            print(e)
+        return False
+
+    def add_vote(self, rollcall_id, year, congressman_id, vote):
+        if self.vote_exists(rollcall_id, year, congressman_id):
+            return
+
         """Insert a vote into the database."""
         sql = """ 
-            INSERT INTO Votes(RollCallID, CongressmanID, Vote)
-            VALUES(?, ?, ?); 
+            INSERT INTO Votes(RollCallID, Year, CongressmanID, Vote)
+            VALUES(?, ?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, congressman_id, vote))
+            c.execute(sql, (rollcall_id, year, congressman_id, vote))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)

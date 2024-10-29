@@ -6,7 +6,7 @@ from accountability.openai_assistant import OpenAIAssistant
 from accountability.congress_api import CongressAPI
 from accountability.hr_rollcall import HRRollCall
 from accountability.congress_database import CongressDatabase
-from accountability.file_utils import save_if_not_exists, make_bill_directory, make_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
+from accountability.file_utils import save_if_not_exists, make_bill_path_string, make_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
 
 
 def run_setup(template_file, rollcall_id):
@@ -32,7 +32,7 @@ def run_get_bill(secrets_file, congress, bill_id, datetime, save_directory):
 
     bill_scraper = CongressAPI(secrets_parser)
     (bill_name, bill_version_date, bill_text) = bill_scraper.download_bill_text(congress, bill_id, datetime)
-    bill_save_directory = make_bill_directory(save_directory, congress, bill_id)
+    bill_save_directory = make_bill_path_string(save_directory, congress, bill_id)
     save_if_not_exists(bill_save_directory, f"{bill_version_date}-{bill_name}", bill_text)
 
 
@@ -42,7 +42,7 @@ def run_get_amendment(secrets_file, congress, bill_id, datetime, save_directory)
 
     bill_scraper = CongressAPI(secrets_parser)
     (amendment_name, amendment_version_date, amendment_text) = bill_scraper.download_amendment_text(congress, bill_id, datetime)
-    bill_save_directory = make_bill_directory(save_directory, congress, bill_id)
+    bill_save_directory = make_bill_path_string(save_directory, congress, bill_id)
     save_if_not_exists(bill_save_directory, f"{amendment_version_date}-{amendment_name}", amendment_text)
 
 
@@ -84,15 +84,65 @@ def run_get_rollcalls_for_bill(secrets_file, congress, bill_id):
     bill_scraper = CongressAPI(secrets_parser)
     bill_scraper.get_rollcalls_for_bill(congress, bill_id)
 
+
+def _save_rollcall_data(bill_scraper: CongressAPI, congress_db: CongressDatabase, hr_rollcall: HRRollCall, save_directory):
+    rollcall_id = hr_rollcall.get_rollcall_id()
+    congress = hr_rollcall.get_congress()
+    bill_id = hr_rollcall.get_bill_id()
+    action_datetime_string = hr_rollcall.get_datetime_string()
+    question = hr_rollcall.get_vote_question()
+
+    (bill_name, bill_version_date, bill_text) = bill_scraper.download_bill_text(congress, bill_id, action_datetime_string)
+    bill_filepath = save_if_not_exists(save_directory, make_filename(bill_version_date, bill_name), bill_text)
+
+    amendment_filepath = None
+    if hr_rollcall.is_amendment_vote():
+        (amendment_name, amendment_version_date, amendment_text) = bill_scraper.download_amendment_text(congress, bill_id, action_datetime_string)
+        amendment_filepath = save_if_not_exists(save_directory, make_filename(amendment_version_date, amendment_name), amendment_text)
+
+    year = int(action_datetime_string[:4])
+
+    # Add the roll call data to the database
+    congress_db.add_rollcall_data(rollcall_id, year, question, bill_name, amendment_name)
+
+    # Save information on each congressman and each congressman's vote to the database
+    for vote in hr_rollcall.get_votes():
+        congressman_id = vote['id']
+        congress_db.add_congressman(congressman_id, vote['name'], vote['state'], vote['party'])
+        congress_db.add_vote(rollcall_id, year, congressman_id, vote['vote'])
+
+    return (bill_filepath, amendment_filepath)
+
+def _generate_rollcall_report(hr_rollcall: HRRollCall, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_filepath, amendment_filepath, save_directory):
+    summarizer = Summarizer(openai_assistant)
+    bill_filename = os.path.basename(bill_filepath).split(".")[0]
+
+    if previous_version_filepath := get_previous_version_file(bill_filepath):
+        diff_text = get_diff(bill_filepath, previous_version_filepath)
+        diff_filepath = save_if_not_exists(save_directory, bill_filename + "-diffs", diff_text)
+        if file_exists(diff_summary_filepath := make_summary_filepath(diff_filepath)):
+            print(f"Skipping summary because {diff_summary_filepath} already exists")
+        elif diff_summary := summarizer.summarize_bill_diffs(diff_filepath):
+            with open(diff_summary_filepath, 'w') as summary_file:
+                summary_file.write(diff_summary)
+
+    else: # No previous version
+        if file_exists(bill_summary_filepath := make_summary_filepath(bill_filepath)):
+            print(f"Skipping summary because {bill_summary_filepath} already exists")
+        elif bill_summary := summarizer.summarize_bill(bill_filepath):
+            with open(bill_summary_filepath, 'w') as summary_file:
+                summary_file.write(bill_summary)
+
+    hr_rollcall.save_rollcall_as_md(save_directory, bill_filepath, amendment_filepath)
+
+
 def run_process_hr_rollcalls(secrets_file, save_directory):
-    # Parse secrets from a file
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
-
     openai_assistant = OpenAIAssistant(secrets_parser)
-
     bill_scraper = CongressAPI(secrets_parser)
     congress_db = CongressDatabase()
+
     year = datetime.datetime.now().year
 
     if not congress_db.year_exists(year):
@@ -112,54 +162,21 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
 
         congress = hr_rollcall.get_congress()
         bill_id = hr_rollcall.get_bill_id()
-        action_datetime = hr_rollcall.get_action_datetime()
+        bill_folder_string = make_bill_path_string(save_directory, congress, bill_id)
 
-        bill_save_directory = make_bill_directory(save_directory, congress, bill_id)
-        if not os.path.exists(bill_save_directory):
-            os.makedirs(bill_save_directory)
+        if not os.path.exists(bill_folder_string):
+            os.makedirs(bill_folder_string)
+            rollcall_urls = bill_scraper.get_older_rollcalls_for_bill(congress, bill_id, next_rollcall_id)
+            for url in rollcall_urls:
+                old_hr_rollcall = HRRollCall()
+                old_hr_rollcall.process_rollcall_url(url)
+                (bill_filepath, amendment_filepath) = _save_rollcall_data(bill_scraper, congress_db, old_hr_rollcall, bill_folder_string)
 
-        (bill_name, bill_version_date, bill_text) = bill_scraper.download_bill_text(congress, bill_id, action_datetime)
-        bill_filepath = save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name), bill_text)
+                _generate_rollcall_report(old_hr_rollcall, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
 
-        summarizer = Summarizer(openai_assistant)
-        amendment_name = None
-        amendment_filepath = None
+        (bill_filepath, amendment_filepath) = _save_rollcall_data(bill_scraper, congress_db, hr_rollcall, bill_folder_string)
+        _generate_rollcall_report(hr_rollcall, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
 
-        if hr_rollcall.is_amendment_vote():
-            (amendment_name, amendment_version_date, amendment_text) = bill_scraper.download_amendment_text(congress, bill_id, action_datetime)
-            amendment_filepath = save_if_not_exists(bill_save_directory, make_filename(amendment_version_date, amendment_name), amendment_text)
-            # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
-            # TODO: add data related to amendment to report
-
-        if previous_version_filepath := get_previous_version_file(bill_filepath):
-            diff_text = get_diff(bill_filepath, previous_version_filepath)
-            diff_filepath = save_if_not_exists(bill_save_directory, make_filename(bill_version_date, bill_name) + "-diffs", diff_text)
-            if file_exists(diff_summary_filepath := make_summary_filepath(diff_filepath)):
-                print(f"Skipping summary because {diff_summary_filepath} already exists")
-            elif diff_summary := summarizer.summarize_bill_diffs(diff_filepath):
-                with open(diff_summary_filepath, 'w') as summary_file:
-                    summary_file.write(diff_summary)
-            # TODO: check whether there was a previous vote for the same question and find all of the changes in votes?
-            # TODO: create report specific to diffs in versions and votes
-
-        else: # No previous version
-            if file_exists(bill_summary_filepath := make_summary_filepath(bill_filepath)):
-                print(f"Skipping summary because {bill_summary_filepath} already exists")
-            elif bill_summary := summarizer.summarize_bill(bill_filepath):
-                with open(bill_summary_filepath, 'w') as summary_file:
-                    summary_file.write(bill_summary)
-
-        # Add the roll call data to the database
-        congress_db.add_rollcall_data(next_rollcall_id, year, hr_rollcall.get_vote_question(), bill_name, amendment_name)
-
-        # Save information on each congressman and each congressman's vote to the database
-        for vote in hr_rollcall.get_votes():
-            congressman_id = vote['id']
-            if not congress_db.congressman_exists(congressman_id):
-                congress_db.add_congressman(congressman_id, vote['name'], vote['state'], vote['party'])
-            congress_db.add_vote(next_rollcall_id, congressman_id, vote['vote'])
-
-        hr_rollcall.save_rollcall_as_md(bill_save_directory, bill_filepath, amendment_filepath)
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 
 

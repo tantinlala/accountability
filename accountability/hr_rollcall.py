@@ -10,15 +10,17 @@ class HRRollCall:
         self.congress_ = None
         self.bill_id_ = None
         self.votes_ = []
-        self.action_datetime_ = None
+        self.datetime_string_ = None
         self.vote_question_ = None
         self.is_amendment_vote_ = False
-        self.rollcall_number_ = None
+        self.rollcall_id_ = None
 
     def process_rollcall(self, year, rollcall_id):
         # Construct the URL with the roll call number
         url = f"{self.BASE_URL}/{year}/roll{rollcall_id}.xml"
+        self.process_rollcall_url(url)
 
+    def process_rollcall_url(self, url):
         # Fetch the XML data
         response = requests.get(url)
         if response.status_code == 404:
@@ -43,7 +45,7 @@ class HRRollCall:
         action_time = root.find('.//vote-metadata/action-time').text
         action_date = datetime.datetime.strptime(action_date, "%d-%b-%Y").strftime("%Y-%m-%d")
         time = re.search(r'(\d+:\d+)', action_time).group(1)
-        self.action_datetime_ = f"{action_date}T{time.zfill(5)}:00Z"
+        self.datetime_string_ = f"{action_date}T{time.zfill(5)}:00Z"
 
         # Use regex to extract the bill id from the legis_num
         legis_num = root.find('.//vote-metadata/legis-num').text
@@ -76,8 +78,12 @@ class HRRollCall:
 
         # Sort the lists by state
         self.votes_.sort(key=lambda x: x['state'])
-        self.rollcall_number_ = rollcall_id
+        self.rollcall_id_ = int(root.find('.//vote-metadata/rollcall-num').text)
+
         return True
+
+    def get_rollcall_id(self):
+        return self.rollcall_id_
 
     def get_congress(self):
         return self.congress_
@@ -85,8 +91,8 @@ class HRRollCall:
     def get_bill_id(self):
         return self.bill_id_
     
-    def get_action_datetime(self):
-        return self.action_datetime_
+    def get_datetime_string(self):
+        return self.datetime_string_
 
     def is_amendment_vote(self):
         return self.is_amendment_vote_
@@ -101,13 +107,13 @@ class HRRollCall:
         # Save information on the rollcall to an .md file
 
         # Create file path for roll call
-        rollcall_file = f"{save_directory}/{self.action_datetime_}-rollcall-{self.rollcall_number_}.md"
+        rollcall_file = f"{save_directory}/{self.datetime_string_}-rollcall-{self.rollcall_id_}.md"
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
             file_name = os.path.basename(bill_filepath)
             file.write(f"Bill Version File: {file_name}\n\n")
-            file.write(f"Roll Call Time: {self.action_datetime_}\n\n")
+            file.write(f"Roll Call Time: {self.datetime_string_}\n\n")
             file.write(f"Vote Question: {self.vote_question_}\n\n")
             if amendment_filepath is not None:
                 file.write(f"Amendment File: {os.path.basename(amendment_filepath)}\n\n")
@@ -119,4 +125,4 @@ class HRRollCall:
             for vote in self.votes_:
                 file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {vote['vote']} |\n")
 
-        print(f"Saved votes for {self.rollcall_number_} to {rollcall_file}")
+        print(f"Saved votes for {self.rollcall_id_} to {rollcall_file}")
