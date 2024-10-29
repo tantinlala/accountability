@@ -105,12 +105,8 @@ class CongressAPI:
         amendment_name = f"{congress}-{bill_id.replace('/', '-')}-{amendment_type}-{amendment_num}"
         return (amendment_name, version_date, amendment_text)
 
-    def get_older_rollcalls_for_bill(self, congress, bill_id, present_rollcall, present_year):
-        response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/actions", params={'api_key': self.api_key})
-        response.raise_for_status()
-
-        rollcalls = []
-        for action in response.json()['actions']:
+    def _get_urls_from_actions(self, rollcall_urls, actions, present_rollcall, present_year):
+        for action in actions:
             # Check whether "recordedVotes" key is in the action dictionary
             if 'recordedVotes' in action:
                 for recorded_vote in action['recordedVotes']:
@@ -119,7 +115,7 @@ class CongressAPI:
                     if recorded_vote['chamber'] != 'House':
                         continue
 
-                    if recorded_vote['url'] in rollcalls:
+                    if recorded_vote['url'] in rollcall_urls:
                         continue
 
                     if recorded_vote_year > present_year:
@@ -128,7 +124,14 @@ class CongressAPI:
                     if recorded_vote_year == present_year and recorded_vote['rollNumber'] >= present_rollcall:
                         continue
 
-                    rollcalls.append(recorded_vote['url'])
+                    rollcall_urls.append(recorded_vote['url'])
+
+    def get_older_rollcalls_for_bill(self, congress, bill_id, present_rollcall, present_year):
+        response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/actions", params={'api_key': self.api_key})
+        response.raise_for_status()
+
+        rollcalls = []
+        self._get_urls_from_actions(rollcalls, response.json()['actions'], present_rollcall, present_year)
 
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
         response.raise_for_status()
@@ -136,25 +139,6 @@ class CongressAPI:
         for amendment in response.json()['amendments']:
             response = requests.get(f"{self.BASE_URL}/amendment/{congress}/{amendment['type'].lower()}/{amendment['number']}/actions", params={'api_key': self.api_key})
             response.raise_for_status()
-            for action in response.json()['actions']:
-                if 'recordedVotes' in action:
-                    for recorded_vote in action['recordedVotes']:
-                        recorded_vote_year = int(recorded_vote['date'].split('-')[0])
-
-                        if recorded_vote['chamber'] != 'House':
-                            continue
-
-                        if recorded_vote['url'] in rollcalls:
-                            continue
-
-                        if recorded_vote_year > present_year:
-                            continue
-
-                        if recorded_vote_year == present_year and recorded_vote['rollNumber'] >= present_rollcall:
-                            continue
-
-                        rollcalls.append(recorded_vote['url'])
-
-        print(rollcalls)
+            self._get_urls_from_actions(rollcalls, response.json()['actions'], present_rollcall, present_year)
 
         return rollcalls
