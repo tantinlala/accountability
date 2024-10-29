@@ -130,6 +130,31 @@ class CongressAPI:
 
                     rollcalls.append(recorded_vote['url'])
 
+        response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
+        response.raise_for_status()
+        
+        for amendment in response.json()['amendments']:
+            response = requests.get(f"{self.BASE_URL}/amendment/{congress}/{amendment['type'].lower()}/{amendment['number']}/actions", params={'api_key': self.api_key})
+            response.raise_for_status()
+            for action in response.json()['actions']:
+                if 'recordedVotes' in action:
+                    for recorded_vote in action['recordedVotes']:
+                        recorded_vote_year = int(recorded_vote['date'].split('-')[0])
+
+                        if recorded_vote['chamber'] != 'House':
+                            continue
+
+                        if recorded_vote['url'] in rollcalls:
+                            continue
+
+                        if recorded_vote_year > present_year:
+                            continue
+
+                        if recorded_vote_year == present_year and recorded_vote['rollNumber'] >= present_rollcall:
+                            continue
+
+                        rollcalls.append(recorded_vote['url'])
+
         print(rollcalls)
 
         return rollcalls
