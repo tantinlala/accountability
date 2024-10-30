@@ -27,10 +27,10 @@ class CongressDatabase:
             CREATE TABLE IF NOT EXISTS RollCalls (
             RollCallID INTEGER NOT NULL,
             Year INTEGER NOT NULL,
+            ActionDateTime TIMESTAMP PRIMARY KEY,
             Question TEXT NOT NULL,
             BillName TEXT NOT NULL,
-            AmendmentName TEXT,
-            CONSTRAINT RollCallYearID PRIMARY KEY (RollCallID, Year)
+            AmendmentName TEXT
             ); 
         """
         create_congressmen_sql = """ 
@@ -43,14 +43,12 @@ class CongressDatabase:
         """
         create_hr_votes_sql = """ 
             CREATE TABLE IF NOT EXISTS Votes (
-                RollCallID INTEGER NOT NULL,
-                Year INTEGER NOT NULL,
                 CongressmanID TEXT NOT NULL,
                 Vote TEXT NOT NULL,
-                FOREIGN KEY (RollCallID) REFERENCES RollCalls (RollCallID),
-                FOREIGN KEY (Year) REFERENCES RollCalls (Year),
+                ActionDateTime TIMESTAMP NOT NULL,
+                FOREIGN KEY (ActionDateTime) REFERENCES RollCalls (ActionDateTime),
                 FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
-                CONSTRAINT VoteID PRIMARY KEY (RollCallID, Year, CongressmanID)
+                CONSTRAINT VoteID PRIMARY KEY (ActionDateTime, CongressmanID)
             ); 
         """
 
@@ -113,33 +111,82 @@ class CongressDatabase:
             print(e)
         return None
 
-    def rollcall_exists(self, rollcall_id, year):
+    def rollcall_exists(self, action_datetime):
         """Check if a roll call exists in the database."""
-        sql = "SELECT * FROM RollCalls WHERE RollCallID = ? AND Year = ?"
+        sql = "SELECT * FROM RollCalls WHERE ActionDateTime = ?"
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, year))
+            c.execute(sql, (action_datetime,))
             return c.fetchone() is not None
         except sqlite3.Error as e:
             print(e)
         return False
 
-    def add_rollcall_data(self, rollcall_id, year, question, bill_name, amendment_name):
+    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, amendment_name):
         """Insert a roll call into the database."""
         # Return if the roll call already exists
-        if self.rollcall_exists(rollcall_id, year):
+        if self.rollcall_exists(action_datetime):
             return
 
         sql = """ 
-            INSERT INTO RollCalls(RollCallID, Year, Question, BillName, AmendmentName)
-            VALUES(?, ?, ?, ?, ?); 
+            INSERT INTO RollCalls(RollCallID, Year, ActionDateTime, Question, BillName, AmendmentName)
+            VALUES(?, ?, ?, ?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, year, question, bill_name, amendment_name))
+            c.execute(sql, (rollcall_id, year, action_datetime, question, bill_name, amendment_name))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
+
+    def get_rollcall_data(self, rollcall_id, year):
+        """Retrieve all meta data for roll call as well as each vote and pack it up into a dictionary"""
+        rollcall_data = {}
+        
+        # Get roll call meta data
+        rollcall_sql = "SELECT * FROM RollCalls WHERE RollCallID = ? AND Year = ?"
+        try:
+            c = self.conn.cursor()
+            c.execute(rollcall_sql, (rollcall_id, year))
+            rollcall_meta = c.fetchone()
+            if rollcall_meta:
+                rollcall_data['RollCallID'] = rollcall_meta[0]
+                rollcall_data['Year'] = rollcall_meta[1]
+                rollcall_data['ActionDateTime'] = rollcall_meta[2]
+                rollcall_data['Question'] = rollcall_meta[3]
+                rollcall_data['BillName'] = rollcall_meta[4]
+                rollcall_data['AmendmentName'] = rollcall_meta[5]
+            else:
+                return None
+        except sqlite3.Error as e:
+            print(e)
+            return None
+
+        # Get votes for the roll call
+        votes_sql = "SELECT * FROM Votes WHERE ActionDateTime = ?"
+        try:
+            c.execute(votes_sql, (rollcall_data['ActionDateTime'],))
+            votes = c.fetchall()
+            rollcall_data['Votes'] = [{'CongressmanID': vote[0], 'Vote': vote[1]} for vote in votes]
+        except sqlite3.Error as e:
+            print(e)
+            return None
+
+        # Add congressman's name, state, and party to each vote
+        for vote in rollcall_data['Votes']:
+            congressman_sql = "SELECT * FROM Congressmen WHERE CongressmanID = ?"
+            try:
+                c.execute(congressman_sql, (vote['CongressmanID'],))
+                congressman = c.fetchone()
+                vote['Name'] = congressman[1]
+                vote['State'] = congressman[2]
+                vote['Party'] = congressman[3]
+            except sqlite3.Error as e:
+                print(e)
+                return None
+
+        return rollcall_data
+
 
     def add_congressman(self, congressman_id, name, state, party):
         """Insert a congressman into the database."""
@@ -169,29 +216,29 @@ class CongressDatabase:
             print(e)
         return False
 
-    def vote_exists(self, rollcall_id, year, congressman_id):
+    def vote_exists(self, action_datetime, congressman_id):
         """Check if a vote exists in the database."""
-        sql = "SELECT * FROM Votes WHERE RollCallID = ? AND Year = ? AND CongressmanID = ?"
+        sql = "SELECT * FROM Votes WHERE ActionDateTime = ? AND CongressmanID = ?"
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, year, congressman_id))
+            c.execute(sql, (action_datetime, congressman_id))
             return c.fetchone() is not None
         except sqlite3.Error as e:
             print(e)
         return False
 
-    def add_vote(self, rollcall_id, year, congressman_id, vote):
-        if self.vote_exists(rollcall_id, year, congressman_id):
+    def add_vote(self, action_datetime, congressman_id, vote):
+        if self.vote_exists(action_datetime, congressman_id):
             return
 
         """Insert a vote into the database."""
         sql = """ 
-            INSERT INTO Votes(RollCallID, Year, CongressmanID, Vote)
-            VALUES(?, ?, ?, ?); 
+            INSERT INTO Votes(ActionDateTime, CongressmanID, Vote)
+            VALUES(?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, year, congressman_id, vote))
+            c.execute(sql, (action_datetime, congressman_id, vote))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)

@@ -6,6 +6,7 @@ from accountability.openai_assistant import OpenAIAssistant
 from accountability.congress_api import CongressAPI
 from accountability.hr_rollcall import HRRollCall
 from accountability.congress_database import CongressDatabase
+from accountability.reporter import Reporter
 from accountability.file_utils import save_if_not_exists, make_bill_path_string, make_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
 
 
@@ -105,56 +106,34 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     question = hr_rollcall.get_vote_question()
 
     (bill_name, bill_version_date, bill_text) = congress_api.download_bill_text(congress, bill_id, action_datetime)
-    bill_filepath = save_if_not_exists(save_directory, make_filename(bill_version_date, bill_name), bill_text)
+    dated_bill_name = make_filename(bill_version_date, bill_name)
+    bill_filepath = save_if_not_exists(save_directory, dated_bill_name, bill_text)
 
-    amendment_name = None
+    dated_amendment_name = None
     amendment_filepath = None
     if hr_rollcall.is_amendment_vote():
         (amendment_name, amendment_version_date, amendment_text) = congress_api.download_amendment_text(congress, bill_id, action_datetime)
-        amendment_filepath = save_if_not_exists(save_directory, make_filename(amendment_version_date, amendment_name), amendment_text)
+        dated_amendment_name = make_filename(amendment_version_date, amendment_name)
+        amendment_filepath = save_if_not_exists(save_directory, dated_amendment_name, amendment_text)
 
     year = action_datetime.year
 
     # Add the roll call data to the database
-    congress_db.add_rollcall_data(rollcall_id, year, question, bill_name, amendment_name)
+    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, dated_bill_name, dated_amendment_name)
 
     # Save information on each congressman and each congressman's vote to the database
     for vote in hr_rollcall.get_votes():
         congressman_id = vote['id']
         congress_db.add_congressman(congressman_id, vote['name'], vote['state'], vote['party'])
-        congress_db.add_vote(rollcall_id, year, congressman_id, vote['vote'])
+        congress_db.add_vote(action_datetime, congressman_id, vote['vote'])
 
     return (bill_filepath, amendment_filepath)
 
-# TODO: pass in roll call id and year
-def _generate_rollcall_report(hr_rollcall: HRRollCall, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_filepath, amendment_filepath, save_directory):
+
+def _generate_rollcall_report(rollcall_id, year, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_filepath, amendment_filepath, save_directory):
     summarizer = Summarizer(openai_assistant)
-    bill_filename = os.path.basename(bill_filepath).split(".")[0]
-
-    # TODO: handle amendment
-    # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
-    # TODO: add data related to amendment to report
-
-    if previous_version_filepath := get_previous_version_file(bill_filepath):
-        diff_text = get_diff(bill_filepath, previous_version_filepath)
-        diff_filepath = save_if_not_exists(save_directory, bill_filename + "-diffs", diff_text)
-        if file_exists(diff_summary_filepath := make_summary_filepath(diff_filepath)):
-            print(f"Skipping summary because {diff_summary_filepath} already exists")
-        elif diff_summary := summarizer.summarize_bill_diffs(diff_filepath):
-            with open(diff_summary_filepath, 'w') as summary_file:
-                summary_file.write(diff_summary)
-        # TODO: check whether there was a previous vote for the same question and find all of the changes in votes?
-        # TODO: create report specific to diffs in versions and votes
-
-    else: # No previous version
-        if file_exists(bill_summary_filepath := make_summary_filepath(bill_filepath)):
-            print(f"Skipping summary because {bill_summary_filepath} already exists")
-        elif bill_summary := summarizer.summarize_bill(bill_filepath):
-            with open(bill_summary_filepath, 'w') as summary_file:
-                summary_file.write(bill_summary)
-
-    # TODO: create a reporter class
-    hr_rollcall.save_rollcall_as_md(save_directory, bill_filepath, amendment_filepath)
+    reporter = Reporter(summarizer)
+    reporter.write_rollcall_report(rollcall_id, year, congress_db, bill_filepath, amendment_filepath, save_directory)
 
 
 def run_process_hr_rollcalls(secrets_file, save_directory):
@@ -188,16 +167,22 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
         if not os.path.exists(bill_folder_string):
             os.makedirs(bill_folder_string)
             rollcall_urls = congress_api.get_older_rollcalls_for_bill(congress, bill_id, next_rollcall_id)
+            old_rollcall_info_list = []
             for url in rollcall_urls:
                 old_hr_rollcall = HRRollCall()
                 old_hr_rollcall.process_rollcall_url(url)
+                old_rollcall_info = dict()
+                old_rollcall_info['rollcall_id'] = old_hr_rollcall.get_rollcall_id()
+                old_rollcall_info['year'] = old_hr_rollcall.get_datetime().year
                 (bill_filepath, amendment_filepath) = _save_rollcall_data(congress_api, congress_db, old_hr_rollcall, bill_folder_string)
+                old_rollcall_info['bill'] = bill_filepath
+                old_rollcall_info['amendment'] = amendment_filepath
 
-                # TODO: make sure that we generate each report only after all rollcall data has been downloaded or after rollcall data for previous rollcall has been downloaded
-                _generate_rollcall_report(old_hr_rollcall, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
+            for old_rollcall_info in old_rollcall_info_list:
+                _generate_rollcall_report(old_rollcall_info['rollcall_id'], old_rollcall_info['year'], openai_assistant, congress_db, old_rollcall_info['bill'], old_rollcall_info['amendment'], bill_folder_string)
 
         (bill_filepath, amendment_filepath) = _save_rollcall_data(congress_api, congress_db, hr_rollcall, bill_folder_string)
-        _generate_rollcall_report(hr_rollcall, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
+        _generate_rollcall_report(next_rollcall_id, year, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
 
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 

@@ -18,7 +18,7 @@ class HRRollCall:
     def process_rollcall(self, year, rollcall_id):
         # Construct the URL with the roll call number
         url = f"{self.BASE_URL}/{year}/roll{rollcall_id}.xml"
-        self.process_rollcall_url(url)
+        return self.process_rollcall_url(url)
 
     def process_rollcall_url(self, url):
         # Fetch the XML data
@@ -103,27 +103,3 @@ class HRRollCall:
 
     def get_vote_question(self):
         return self.vote_question_
-
-    def save_rollcall_as_md(self, save_directory, bill_filepath, amendment_filepath=None):
-        # Save information on the rollcall to an .md file
-
-        # Create file path for roll call
-        rollcall_file = f"{save_directory}/{self.datetime_string_}-rollcall-{self.rollcall_id_}.md"
-
-        with open(rollcall_file, 'w') as file:
-            # Get file name from file path
-            file_name = os.path.basename(bill_filepath)
-            file.write(f"Bill Version File: {file_name}\n\n")
-            file.write(f"Roll Call Time: {self.datetime_string_}\n\n")
-            file.write(f"Vote Question: {self.vote_question_}\n\n")
-            if amendment_filepath is not None:
-                file.write(f"Amendment File: {os.path.basename(amendment_filepath)}\n\n")
-
-            # Loop through each vote and write to the file as a markdown table
-            # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
-            file.write("| Name | Party | State | Vote |\n")
-            file.write("|------|-------|-------|------|\n")
-            for vote in self.votes_:
-                file.write(f"| {vote['name']} | {vote['party']} | {vote['state']} | {vote['vote']} |\n")
-
-        print(f"Saved votes for {self.rollcall_id_} to {rollcall_file}")
