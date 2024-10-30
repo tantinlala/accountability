@@ -1,8 +1,14 @@
 import os
 from accountability.file_utils import make_summary_filepath, get_previous_version_file, get_diff, save_if_not_exists, file_exists
+from enum import Enum
 
 
 class Reporter:
+
+    class SummaryType(Enum):
+        BILL = "bill"
+        BILL_DIFFS = "bill_diffs"
+        NO_SUMMARY = "no_summary"
 
     def __init__(self, summarizer):
         self.summarizer_ = summarizer
@@ -11,28 +17,34 @@ class Reporter:
     def add_summary_filepath(self, summary_filepath):
         self.summary_filepath = summary_filepath
 
-    def write_rollcall_report(self, rollcall_id, year, congress_db, bill_filepath, amendment_filepath, save_directory):
+    def write_rollcall_report(self, rollcall_id, year, congress_db, bill_folder_string):
 
         # TODO: handle amendment
         # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
         # TODO: add data related to amendment to report
 
-        bill_filename = os.path.basename(bill_filepath).split(".")[0]
-        amendment_filename = os.path.basename(amendment_filepath).split(".")[0] if amendment_filepath else None
+        rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
+        bill_filename = rollcall_data['BillName']
+        bill_filepath = os.path.join(bill_folder_string, bill_filename)
+        if not bill_filepath.endswith('.txt'):
+            bill_filepath += '.txt'
+        amendment_filename = rollcall_data['AmendmentName']
 
         summary = None
+        summary_type = self.SummaryType.NO_SUMMARY
 
         if previous_version_filepath := get_previous_version_file(bill_filepath):
             diff_text = get_diff(bill_filepath, previous_version_filepath)
-            diff_filepath = save_if_not_exists(save_directory, bill_filename + "-diffs", diff_text)
+            diff_filepath = save_if_not_exists(bill_folder_string, bill_filename + "-diffs", diff_text)
             if file_exists(diff_summary_filepath := make_summary_filepath(diff_filepath)):
                 print(f"Skipping summary because {diff_summary_filepath} already exists")
-                # Check if file is empty
+                summary_type = self.SummaryType.BILL_DIFFS
             elif os.path.getsize(diff_filepath) == 0:
                 print(f"Skipping summary because {diff_filepath} is empty")
             elif summary := self.summarizer_.summarize_bill_diffs(diff_filepath):
                 with open(diff_summary_filepath, 'w') as summary_file:
                     summary_file.write(summary)
+                summary_type = self.SummaryType.BILL_DIFFS
 
         else: # No previous version
             if file_exists(bill_summary_filepath := make_summary_filepath(bill_filepath)):
@@ -40,13 +52,12 @@ class Reporter:
             elif summary := self.summarizer_.summarize_bill(bill_filepath):
                 with open(bill_summary_filepath, 'w') as summary_file:
                     summary_file.write(summary)
+            summary_type = self.SummaryType.BILL
 
 
         # Save information on the rollcall to an .md file
-        # Create file path for roll call
-        rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
         datetime_string = rollcall_data['ActionDateTime']
-        rollcall_file = f"{save_directory}/{datetime_string}-rollcall-{rollcall_id}.md"
+        rollcall_file = f"{bill_folder_string}/{datetime_string}-rollcall-{rollcall_id}.md"
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path

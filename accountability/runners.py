@@ -130,10 +130,10 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     return (bill_filepath, amendment_filepath)
 
 
-def _generate_rollcall_report(rollcall_id, year, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_filepath, amendment_filepath, save_directory):
+def _generate_rollcall_report(rollcall_id, year, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_folder_string):
     summarizer = Summarizer(openai_assistant)
     reporter = Reporter(summarizer)
-    reporter.write_rollcall_report(rollcall_id, year, congress_db, bill_filepath, amendment_filepath, save_directory)
+    reporter.write_rollcall_report(rollcall_id, year, congress_db, bill_folder_string)
 
 
 def run_process_hr_rollcalls(secrets_file, save_directory):
@@ -180,10 +180,10 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
                 old_rollcall_info_list.append(old_rollcall_info)
 
             for old_rollcall_info in old_rollcall_info_list:
-                _generate_rollcall_report(old_rollcall_info['rollcall_id'], old_rollcall_info['year'], openai_assistant, congress_db, old_rollcall_info['bill'], old_rollcall_info['amendment'], bill_folder_string)
+                _generate_rollcall_report(old_rollcall_info['rollcall_id'], old_rollcall_info['year'], openai_assistant, congress_db, bill_folder_string)
 
         (bill_filepath, amendment_filepath) = _save_rollcall_data(congress_api, congress_db, hr_rollcall, bill_folder_string)
-        _generate_rollcall_report(next_rollcall_id, year, openai_assistant, congress_db, bill_filepath, amendment_filepath, bill_folder_string)
+        _generate_rollcall_report(next_rollcall_id, year, openai_assistant, congress_db, bill_folder_string)
 
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 
