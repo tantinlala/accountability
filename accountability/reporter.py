@@ -27,6 +27,9 @@ class Reporter:
             diff_filepath = save_if_not_exists(save_directory, bill_filename + "-diffs", diff_text)
             if file_exists(diff_summary_filepath := make_summary_filepath(diff_filepath)):
                 print(f"Skipping summary because {diff_summary_filepath} already exists")
+                # Check if file is empty
+            elif os.path.getsize(diff_filepath) == 0:
+                print(f"Skipping summary because {diff_filepath} is empty")
             elif summary := self.summarizer_.summarize_bill_diffs(diff_filepath):
                 with open(diff_summary_filepath, 'w') as summary_file:
                     summary_file.write(summary)
