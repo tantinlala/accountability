@@ -166,7 +166,7 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
 
         if not os.path.exists(bill_folder_string):
             os.makedirs(bill_folder_string)
-            rollcall_urls = congress_api.get_older_rollcalls_for_bill(congress, bill_id, next_rollcall_id)
+            rollcall_urls = congress_api.get_older_rollcalls_for_bill(congress, bill_id, next_rollcall_id, year)
             old_rollcall_info_list = []
             for url in rollcall_urls:
                 old_hr_rollcall = HRRollCall()
@@ -177,6 +177,7 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
                 (bill_filepath, amendment_filepath) = _save_rollcall_data(congress_api, congress_db, old_hr_rollcall, bill_folder_string)
                 old_rollcall_info['bill'] = bill_filepath
                 old_rollcall_info['amendment'] = amendment_filepath
+                old_rollcall_info_list.append(old_rollcall_info)
 
             for old_rollcall_info in old_rollcall_info_list:
                 _generate_rollcall_report(old_rollcall_info['rollcall_id'], old_rollcall_info['year'], openai_assistant, congress_db, old_rollcall_info['bill'], old_rollcall_info['amendment'], bill_folder_string)

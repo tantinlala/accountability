@@ -185,6 +185,12 @@ class CongressDatabase:
                 print(e)
                 return None
 
+        # Format ActionDateTime in the following format: YYYY-MM-DDTHH:MM:SSZ
+        rollcall_data['ActionDateTime'] = rollcall_data['ActionDateTime'].replace(" ", "T") + "Z"
+
+        # Sort votes by state in alphabetical order
+        rollcall_data['Votes'] = sorted(rollcall_data['Votes'], key=lambda x: x['State'])
+
         return rollcall_data
 
 
