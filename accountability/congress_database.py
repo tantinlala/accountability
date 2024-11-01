@@ -249,18 +249,48 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def find_all_votes_from_previous_rollcall(self, rollcall_id):
-        """Find all votes from a previous roll call."""
-        # First, get the roll call ID that precedes the provided roll call ID that
-        # has the same bill name and question.
-
-        # TODO
-
-        sql = "SELECT * FROM Votes WHERE RollCallID = ?"
+    def get_previous_rollcall_data(self, rollcall_id, year, question):
+        """Retrieve the previous roll call data with the same question but a different version of the bill."""
+        sql = """
+            SELECT * FROM RollCalls
+            WHERE Question = ? AND ((RollCallID < ? AND Year = ?) OR Year < ?)
+            ORDER BY Year DESC, RollCallID DESC
+            LIMIT 1
+        """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id,))
-            return c.fetchall()
+            c.execute(sql, (question, rollcall_id, year, year))
+            previous_rollcall_meta = c.fetchone()
+            if not previous_rollcall_meta:
+                return None
+
+            previous_rollcall_data = {
+                'RollCallID': previous_rollcall_meta[0],
+                'Year': previous_rollcall_meta[1],
+                'ActionDateTime': previous_rollcall_meta[2],
+                'Question': previous_rollcall_meta[3],
+                'BillName': previous_rollcall_meta[4],
+                'AmendmentName': previous_rollcall_meta[5],
+                'Votes': []
+            }
+
+            votes_sql = "SELECT * FROM Votes WHERE ActionDateTime = ?"
+            c.execute(votes_sql, (previous_rollcall_data['ActionDateTime'],))
+            votes = c.fetchall()
+            previous_rollcall_data['Votes'] = [{'CongressmanID': vote[0], 'Vote': vote[1]} for vote in votes]
+
+            for vote in previous_rollcall_data['Votes']:
+                congressman_sql = "SELECT * FROM Congressmen WHERE CongressmanID = ?"
+                c.execute(congressman_sql, (vote['CongressmanID'],))
+                congressman = c.fetchone()
+                vote['Name'] = congressman[1]
+                vote['State'] = congressman[2]
+                vote['Party'] = congressman[3]
+
+            previous_rollcall_data['ActionDateTime'] = previous_rollcall_data['ActionDateTime'].replace(" ", "T") + "Z"
+            previous_rollcall_data['Votes'] = sorted(previous_rollcall_data['Votes'], key=lambda x: x['State'])
+
+            return previous_rollcall_data
         except sqlite3.Error as e:
             print(e)
-        return None
+            return None
