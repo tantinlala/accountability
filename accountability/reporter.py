@@ -50,7 +50,7 @@ class Reporter:
         rollcall_file = f"{bill_folder_string}/{datetime_string}-rollcall-{rollcall_id}.md"
 
         previous_rollcall_data = congress_db.get_previous_rollcall_data(rollcall_id, year, rollcall_data['Question'])
-        previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else {}
+        previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
@@ -62,11 +62,14 @@ class Reporter:
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
-            file.write("| Name | Party | State | Vote | Previous Vote |\n")
-            file.write("|------|-------|-------|------|---------------|\n")
+            file.write("| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
+            file.write("|------|-------|-------|------" + ("|---------------|\n" if previous_votes else "|\n"))
             for vote in rollcall_data['Votes']:
-                previous_vote = previous_votes.get(vote['CongressmanID'], 'N/A')
-                file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} | {previous_vote} |\n")
+                if previous_votes:
+                    previous_vote = previous_votes.get(vote['CongressmanID'])
+                    file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} | {previous_vote} |\n")
+                else:
+                    file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} |\n")
 
             if summary:
                 file.write("\n\nSummary:\n")

@@ -1,4 +1,5 @@
 import sqlite3
+from .file_utils import get_datetime_and_name_in_filename
 
 class CongressDatabase:
     def __init__(self, db_name="congress.db"):
@@ -251,15 +252,27 @@ class CongressDatabase:
 
     def get_previous_rollcall_data(self, rollcall_id, year, question):
         """Retrieve the previous roll call data with the same question but a different version of the bill."""
-        sql = """
-            SELECT * FROM RollCalls
-            WHERE Question = ? AND ((RollCallID < ? AND Year = ?) OR Year < ?)
-            ORDER BY Year DESC, RollCallID DESC
-            LIMIT 1
-        """
         try:
+            # Get the current roll call's bill name
+            current_bill_sql = "SELECT BillName FROM RollCalls WHERE RollCallID = ? AND Year = ?"
             c = self.conn.cursor()
-            c.execute(sql, (question, rollcall_id, year, year))
+            c.execute(current_bill_sql, (rollcall_id, year))
+            current_bill_name = c.fetchone()
+            if not current_bill_name:
+                return None
+
+            # Use get_datetime_and_name_in_filename to parse the bill name
+            _, bill_name_part = get_datetime_and_name_in_filename(current_bill_name[0])
+
+            # Query for the previous roll call data
+            sql = """
+                SELECT * FROM RollCalls
+                WHERE Question = ? AND ((RollCallID < ? AND Year = ?) OR Year < ?)
+                AND BillName LIKE ?
+                ORDER BY Year DESC, RollCallID DESC
+                LIMIT 1
+            """
+            c.execute(sql, (question, rollcall_id, year, year, f"%{bill_name_part}"))
             previous_rollcall_meta = c.fetchone()
             if not previous_rollcall_meta:
                 return None
