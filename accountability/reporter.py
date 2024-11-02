@@ -67,15 +67,15 @@ class Reporter:
             file.write(f"\nRoll Call Time: {datetime_string}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
             file.write(f"\nBill Version: {rollcall_data['BillName']}\n")
-            # TODO: provide summary of or complete amendment if vote was on amendment instead
-            if summary:
-                file.write(f"\n{summary}\n")
 
             if amendment_filename := rollcall_data['AmendmentName']:
                 amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
                 amendment_str = open(amendment_filepath).read()
-                file.write(f"\nAmendment Version File: {amendment_filename}\n")
-                file.write(f"\nAmendment Summary: {amendment_str}\n")
+                file.write(f"\nAmendment Version: {amendment_filename}\n")
+                file.write(f"\n# Amendment Summary\n{amendment_str}\n")
+
+            if summary:
+                file.write(f"\n{summary}\n")
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
