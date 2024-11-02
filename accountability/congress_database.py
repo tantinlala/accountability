@@ -250,29 +250,36 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def get_previous_rollcall_data(self, rollcall_id, year, question):
+    def get_previous_rollcall_data(self, rollcall_id, year):
         """Retrieve the previous roll call data with the same question but a different version of the bill."""
         try:
             # Get the current roll call's bill name
-            current_bill_sql = "SELECT BillName FROM RollCalls WHERE RollCallID = ? AND Year = ?"
+            current_bill_sql = "SELECT BillName, AmendmentName, Question FROM RollCalls WHERE RollCallID = ? AND Year = ?"
             c = self.conn.cursor()
             c.execute(current_bill_sql, (rollcall_id, year))
-            current_bill_name = c.fetchone()
-            if not current_bill_name:
+            present_rollcall_data = c.fetchone()
+            if not present_rollcall_data:
                 return None
 
             # Use get_datetime_and_name_in_filename to parse the bill name
-            _, bill_name_part = get_datetime_and_name_in_filename(current_bill_name[0])
+            _, bill_name_part = get_datetime_and_name_in_filename(present_rollcall_data[0])
+            if amendment_name := present_rollcall_data[1]:
+                _, amendment_name_part = get_datetime_and_name_in_filename(amendment_name)
+            else:
+                amendment_name_part = "UNDEFINED"
+            question = present_rollcall_data[2]
 
             # Query for the previous roll call data
             sql = """
                 SELECT * FROM RollCalls
-                WHERE Question = ? AND ((RollCallID < ? AND Year = ?) OR Year < ?)
+                WHERE Question = ? 
+                AND ((RollCallID < ? AND Year = ?) OR Year < ?)
                 AND BillName LIKE ?
+                AND (AmendmentName LIKE ? OR (AmendmentName IS NULL AND ? IS NULL))
                 ORDER BY Year DESC, RollCallID DESC
                 LIMIT 1
             """
-            c.execute(sql, (question, rollcall_id, year, year, f"%{bill_name_part}"))
+            c.execute(sql, (question, rollcall_id, year, year, f"%{bill_name_part}%", f"%{amendment_name_part}%", amendment_name))
             previous_rollcall_meta = c.fetchone()
             if not previous_rollcall_meta:
                 return None

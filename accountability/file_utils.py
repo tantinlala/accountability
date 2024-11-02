@@ -7,11 +7,11 @@ def file_exists(filepath):
         return True
     return False
 
-def save_if_not_exists(save_directory, file_name, content):
+def save_txt_if_not_exists(save_directory, file_name, content):
     if not os.path.exists(save_directory):
         os.makedirs(save_directory)
 
-    filepath = os.path.join(save_directory, f"{file_name}.txt")
+    filepath = make_txt_filepath(save_directory, file_name)
 
     if not file_exists(filepath):
         with open(filepath, 'w') as file:
@@ -37,6 +37,12 @@ def get_datetime_and_name_in_filename(filename):
 
 def make_bill_path_string(base, congress, bill_id):
     return f"{base}/{congress}-{bill_id.replace('/', '-')}"
+
+
+def make_txt_filepath(folder, name):
+    if not name.endswith('.txt'):
+        name += '.txt'
+    return os.path.join(folder, name)
 
 
 def make_summary_filepath(filepath):

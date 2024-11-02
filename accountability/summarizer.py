@@ -54,7 +54,8 @@ class Summarizer:
         summary = chain.run(input_documents=docs)
 
         # Remove leading and trailing whitespace
-        summary = summary.strip()
+        if summary is not None:
+            summary = summary.strip()
 
         return summary
 

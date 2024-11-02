@@ -1,5 +1,5 @@
 import os
-from accountability.file_utils import make_summary_filepath, get_previous_version_file, get_diff, save_if_not_exists, file_exists
+from accountability.file_utils import make_summary_filepath, make_txt_filepath, get_diff, save_txt_if_not_exists, file_exists
 
 class Reporter:
 
@@ -7,62 +7,77 @@ class Reporter:
         self.summarizer_ = summarizer
         self.summary_filepath = None
 
-    def add_summary_filepath(self, summary_filepath):
-        self.summary_filepath = summary_filepath
 
-    def write_rollcall_report(self, rollcall_id, year, congress_db, bill_folder_string):
-
-        # TODO: handle amendment
-        # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
-        # TODO: add data related to amendment to report
-
-        rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
-        bill_filename = rollcall_data['BillName']
-        bill_filepath = os.path.join(bill_folder_string, bill_filename)
-        if not bill_filepath.endswith('.txt'):
-            bill_filepath += '.txt'
-        amendment_filename = rollcall_data['AmendmentName']
+    def generate_summary(self, present_rollcall_data, previous_rollcall_data, bill_folder_string):
+        bill_name = present_rollcall_data['BillName']
+        bill_filepath = make_txt_filepath(bill_folder_string, bill_name)
 
         summary = None
-        if previous_version_filepath := get_previous_version_file(bill_filepath):
-            diff_text = get_diff(bill_filepath, previous_version_filepath)
-            diff_filepath = save_if_not_exists(bill_folder_string, bill_filename + "-diffs", diff_text)
-            if file_exists(diff_summary_filepath := make_summary_filepath(diff_filepath)):
-                print(f"Skipping summary because {diff_summary_filepath} already exists")
-                summary = open(diff_summary_filepath).read()
+
+        # Previous rollcall related to same bill, question, and amendment exists,
+        # but the bill version changed between rollcalls
+        if (previous_rollcall_data is not None) and \
+            (bill_name != previous_rollcall_data['BillName']):
+            previous_version_bill_name = previous_rollcall_data['BillName']
+            previous_version_bill_filepath = make_txt_filepath(bill_folder_string, previous_version_bill_name)
+
+            diff_string = get_diff(bill_filepath, previous_version_bill_filepath)
+            diff_filepath = save_txt_if_not_exists(bill_folder_string, bill_name + "-diffs", diff_string)
+            if file_exists(summary_filepath := make_summary_filepath(diff_filepath)):
+                print(f"Skipping summary because {summary_filepath} already exists")
+                summary = open(summary_filepath).read()
             elif os.path.getsize(diff_filepath) == 0:
                 print(f"Skipping summary because {diff_filepath} is empty")
+                summary = "" # TODO: get summary for previous version instead
             elif summary := self.summarizer_.summarize_bill_diffs(diff_filepath):
-                with open(diff_summary_filepath, 'w') as summary_file:
+                with open(summary_filepath, 'w') as summary_file:
                     summary_file.write(summary)
-
-        else: # No previous version
-            if file_exists(bill_summary_filepath := make_summary_filepath(bill_filepath)):
-                print(f"Skipping summary because {bill_summary_filepath} already exists")
-                summary = open(bill_summary_filepath).read()
+            else:
+                print(f"Failed to summarize diffs for {diff_filepath}")
+                summary = "No summary available for diffs"
+            summary = f"Summary of diffs between {bill_name} and {previous_version_bill_name}:\n\n{summary}"
+        # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
+        else:
+            if file_exists(summary_filepath := make_summary_filepath(bill_filepath)):
+                print(f"Skipping summary because {summary_filepath} already exists")
+                summary = open(summary_filepath).read()
             elif summary := self.summarizer_.summarize_bill(bill_filepath):
-                with open(bill_summary_filepath, 'w') as summary_file:
+                with open(summary_filepath, 'w') as summary_file:
                     summary_file.write(summary)
+            else:
+                print(f"Failed to summarize {bill_filepath}")
+                summary = "No summary available for bill"
+            summary = f"Summary of {bill_name}:\n{summary}"
+
+        return summary
 
 
-        # Save information on the rollcall to an .md file
+    def write_rollcall_report(self, rollcall_id, year, congress_db, bill_folder_string):
+        rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
+        previous_rollcall_data = congress_db.get_previous_rollcall_data(rollcall_id, year)
+
+        summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
+
         datetime_string = rollcall_data['ActionDateTime']
         rollcall_file = f"{bill_folder_string}/{datetime_string}-rollcall-{rollcall_id}.md"
 
-        previous_rollcall_data = congress_db.get_previous_rollcall_data(rollcall_id, year, rollcall_data['Question'])
-        previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
-
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
-            file.write(f"Roll Call Time: {datetime_string}\n\n")
-            file.write(f"Vote Question: {rollcall_data['Question']}\n\n")
-            file.write(f"Bill Version File: {bill_filename}\n\n")
+            file.write(f"Roll Call Time: {datetime_string}\n")
+            file.write(f"\nVote Question: {rollcall_data['Question']}\n")
+            file.write(f"\nBill Version File: {rollcall_data['BillName']}\n")
+            amendment_filename = rollcall_data['AmendmentName']
             if amendment_filename is not None:
                 file.write(f"Amendment File: {amendment_filename}\n\n")
 
+            # TODO: provide summary of or complete amendment if vote was on amendment instead
+            if summary:
+                file.write(f"\n{summary}")
+
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
-            file.write("| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
+            previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
+            file.write("\n\n| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
             file.write("|------|-------|-------|------" + ("|---------------|\n" if previous_votes else "|\n"))
             for vote in rollcall_data['Votes']:
                 if previous_votes:
@@ -70,9 +85,5 @@ class Reporter:
                     file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} | {previous_vote} |\n")
                 else:
                     file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} |\n")
-
-            if summary:
-                file.write("\n\nSummary:\n")
-                file.write(summary)
 
         print(f"Saved votes for {rollcall_id} to {rollcall_file}")
