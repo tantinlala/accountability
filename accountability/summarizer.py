@@ -10,19 +10,22 @@ class Summarizer:
     SECRET_GROUP = 'openai'
     KEY_NAME = 'OPENAI_API_KEY'
 
-    BILL_MAP_PROMPT = "Summarize the following bill for a layperson in terms of how it may impact the average American. \
-    Bullet point each key point. For each key point, provide a section number from within the bill I provided where one \
-    can find more information about that point: \n"
+    #BILL_MAP_PROMPT = "Bullet point each key point in this section of a bill that has the potential to impact the average American. For each key point, attach a section number from within the bill where one \
+    #can find more information."
 
-    BILL_DIFFS_MAP_PROMPT = "Summarize the diffs for a bill provided in the attached file for a layperson: \n"
+    BILL_MAP_PROMPT = "You are an expert summarizer. Please provide a concise summary of the following text which comes from a congress bill. When possible, cite a section number from within the bill."
 
-    COMBINE_PROMPT = "You have been provided with a list of summaries. Please combine them into a final, comprehensive summary: \n"
+    BILL_DIFFS_PROMPT = "Summarize the following diffs between bills for a layperson."
+
+    #BILL_COMBINE_PROMPT = "Provide a final list of points summarizing how the bill will impact the average American. For each key point, cite a section number from within the bill where one can find more information."
+
+    BILL_COMBINE_PROMPT = "You have been provided with a list of summaries. Please combine them into a final, comprehensive summary. When possible, cite section numbers from within the bill."
 
     def __init__(self, secrets_parser):
         self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.KEY_NAME)
 
 
-    def _summarize_file(self, filepath, map_prompt):
+    def _summarize_file(self, filepath, map_prompt, combine_prompt):
 
         # Step 1: Load Your Text Data
         loader = TextLoader(filepath)
@@ -46,19 +49,11 @@ class Summarizer:
         print(f"Summarizing {filepath}")
 
         map_prompt = PromptTemplate.from_template(
-            """
-            You are an expert summarizer. Please provide a concise summary of the following text:
-
-            {text}
-            """
+            map_prompt + "\n\n{text}"
         )
 
         combine_prompt = PromptTemplate.from_template(
-            """
-            You have been provided with a list of summaries. Please combine them into a final, comprehensive summary:
-
-            {text}
-            """
+            combine_prompt + "\n\n{text}"
         )
 
         # Step 5: Set Up the Summarization Chain
@@ -72,8 +67,8 @@ class Summarizer:
 
 
     def summarize_bill(self, filepath):
-        return self._summarize_file(filepath, self.BILL_MAP_PROMPT)
+        return self._summarize_file(filepath, self.BILL_MAP_PROMPT, self.BILL_COMBINE_PROMPT)
 
 
     def summarize_bill_diffs(self, filepath):
-        return self._summarize_file(filepath, self.BILL_DIFFS_MAP_PROMPT)
+        return self._summarize_file(filepath, self.BILL_DIFFS_PROMPT, self.BILL_DIFFS_PROMPT)
