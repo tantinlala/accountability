@@ -47,7 +47,7 @@ class Reporter:
             else:
                 print(f"Failed to summarize {bill_filepath}")
                 summary = "No summary available for bill"
-            summary = f"Summary of {bill_name}:\n{summary}"
+            summary = f"Bill Summary:\n{summary}"
 
         return summary
 
@@ -66,18 +66,20 @@ class Reporter:
             file.write(f"Roll Call Time: {datetime_string}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
             file.write(f"\nBill Version File: {rollcall_data['BillName']}\n")
-            amendment_filename = rollcall_data['AmendmentName']
-            if amendment_filename is not None:
-                file.write(f"Amendment File: {amendment_filename}\n\n")
-
             # TODO: provide summary of or complete amendment if vote was on amendment instead
             if summary:
-                file.write(f"\n{summary}")
+                file.write(f"\n{summary}\n")
+
+            if amendment_filename := rollcall_data['AmendmentName']:
+                amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
+                amendment_str = open(amendment_filepath).read()
+                file.write(f"\nAmendment Version File: {amendment_filename}\n")
+                file.write(f"\nAmendment Summary: {amendment_str}\n")
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
             previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
-            file.write("\n\n| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
+            file.write("\n| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
             file.write("|------|-------|-------|------" + ("|---------------|\n" if previous_votes else "|\n"))
             for vote in rollcall_data['Votes']:
                 if previous_votes:
