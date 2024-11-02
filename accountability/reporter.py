@@ -59,7 +59,7 @@ class Reporter:
         summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
 
         datetime_string = rollcall_data['ActionDateTime']
-        rollcall_file = f"{save_directory}/rollcalls/{datetime_string}-rollcall-{rollcall_id}.md"
+        rollcall_file = f"{save_directory}/rollcalls/{datetime_string}-rollcall-{year}-{rollcall_id}.md"
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
