@@ -4,21 +4,27 @@ from langchain_openai import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 from langchain.prompts import PromptTemplate
+import textwrap
 
 class Summarizer:
     SECRET_GROUP = 'openai'
     KEY_NAME = 'OPENAI_API_KEY'
 
-    #BILL_MAP_PROMPT = "Bullet point each key point in this section of a bill that has the potential to impact the average American. For each key point, attach a section number from within the bill where one \
-    #can find more information."
+    BILL_MAP_PROMPT = textwrap.dedent("""
+    You are an expert analyst specializing in legislative summaries. Given the following passage from a US Congress bill, please:
 
-    BILL_MAP_PROMPT = "You are an expert summarizer. Please provide a concise summary of the following text which comes from a congress bill. When possible, cite a section number from within the bill."
+	1. Provide a concise summary of the key points in this passage.
+    2. Identify and explain any potential impacts or implications these points may have on middle-class Americans, focusing on economic, social, and legal aspects.
+    """)
 
     BILL_DIFFS_PROMPT = "Summarize the following diffs between bills for a layperson."
 
-    #BILL_COMBINE_PROMPT = "Provide a final list of points summarizing how the bill will impact the average American. For each key point, cite a section number from within the bill where one can find more information."
+    BILL_COMBINE_PROMPT = textwrap.dedent("""
+    As a legislative summary expert, please synthesize the following summaries and impact assessments into a comprehensive overview of the US Congress bill. Your summary should:
 
-    BILL_COMBINE_PROMPT = "You have been provided with a list of summaries. Please combine them into a final, comprehensive summary. When possible, cite section numbers from within the bill."
+	1. Highlight the main objectives and provisions of the bill.
+    2. Provide an integrated analysis of the potential impacts on middle-class Americans, consolidating specific effects identified in the summaries that follow.
+    """)
 
     def __init__(self, secrets_parser):
         self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.KEY_NAME)
