@@ -35,7 +35,7 @@ class Reporter:
             else:
                 print(f"Failed to summarize diffs for {diff_filepath}")
                 summary = "No summary available for diffs"
-            summary = f"Summary of diffs between {bill_name} and {previous_version_bill_name}:\n\n{summary}"
+            summary = f"# Summary of Diffs Between {bill_name} and {previous_version_bill_name}:\n{summary}"
         # TODO: check whether there was a previous vote on this amendment and find all of the changes in votes?
         else:
             if file_exists(summary_filepath := make_summary_filepath(bill_filepath)):
@@ -47,25 +47,26 @@ class Reporter:
             else:
                 print(f"Failed to summarize {bill_filepath}")
                 summary = "No summary available for bill"
-            summary = f"Bill Summary:\n{summary}"
+            summary = f"# Bill Summary\n{summary}"
 
         return summary
 
 
-    def write_rollcall_report(self, rollcall_id, year, congress_db, bill_folder_string):
+    def write_rollcall_report(self, rollcall_id, year, congress_db, save_directory, bill_folder_string):
         rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
         previous_rollcall_data = congress_db.get_previous_rollcall_data(rollcall_id, year)
 
         summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
 
         datetime_string = rollcall_data['ActionDateTime']
-        rollcall_file = f"{bill_folder_string}/{datetime_string}-rollcall-{rollcall_id}.md"
+        rollcall_file = f"{save_directory}/rollcalls/{datetime_string}-rollcall-{rollcall_id}.md"
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
-            file.write(f"Roll Call Time: {datetime_string}\n")
+            file.write(f"# Roll Call {year}-{rollcall_id}\n")
+            file.write(f"\nRoll Call Time: {datetime_string}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
-            file.write(f"\nBill Version File: {rollcall_data['BillName']}\n")
+            file.write(f"\nBill Version: {rollcall_data['BillName']}\n")
             # TODO: provide summary of or complete amendment if vote was on amendment instead
             if summary:
                 file.write(f"\n{summary}\n")
@@ -79,6 +80,7 @@ class Reporter:
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
             previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
+            file.write("\n# Votes\n")
             file.write("\n| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
             file.write("|------|-------|-------|------" + ("|---------------|\n" if previous_votes else "|\n"))
             for vote in rollcall_data['Votes']:

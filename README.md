@@ -1,33 +1,28 @@
 # Summary 
 This python package provides a command line interface with the following functionality:
 
-- Download all bills that have been voted upon by the senate within the past x months as .txt files
-- Download the vote positions of each senator for each bill
-- Ask OpenAI to provide a short summary of a .txt file (e.g. one of the bills downloaded)
+- Processes all votes (i.e. rollcalls) on legislation (i.e. bills) that have happened in the House of Representatives from a certain point of time onwards.
+- Summarizes the bill that was voted upon.
+- Downloads the vote positions of each congressperson for all votes.
+- Outputs a report providing a summary of the bill and the vote positions of each congressperson on the bill.
 
 # Setup instructions 
 1. Make sure you at least have Python 3.9 installed
-2. Clone this repository onto your machine
+2. Clone this repository onto your computer
 3. Run the following command in the root directory of the repo (preferably in a venv): `pip install -e .`
-4. In the environment in which you pip installed the package, run the following script: `accountability_setup`
-   1. This will create a template.yml file that you should fill in with the api keys needed for this application to work.
-   2. Google instructions on how to get an api key for each api listed in the template.yml file
-5. Fill in the blanks of template.yml (optionally renaming the file to something else)
+4. In the environment in which you pip installed the package, run the following script: `accountability_setup -r <rollcall_id>`
+   1. This will create a template.yaml file that you should fill in with the api keys needed for this application to work (e.g. the OpenAI API and Congress API)
+   2. Google instructions on how to get an api key for each api listed in the template.yaml file
+   3. This setup script will also create a congress.db database that stores data needed to keep track of what rollcalls have been processed so far.
+5. Fill in the blanks of template.yaml (optionally renaming the file to something else)
 
 
 # Usage instructions
-The following usage instructions assume that you are still in the environment where you pip installed this package (e.g. via `source venv/bin/activate`)
+The following usage instructions assume that you are still in the environment where you pip installed this package (e.g. by running `source venv/bin/activate`)
 
-### Step 1: Download senate bills that had been voted upon during the last few months
-In the directory in which your .yml file is stored, run `accountability_get_senate_bills -s <name of the .yml file containing api keys> -m <# of months of data>`
+# Process the most recent HR roll calls
+In the directory in which your .yaml file is stored, run `accountability_process_hr_rollcalls -s <name of the .yaml file containing api keys> -d <directory to save results>`
 
-Bills in .txt format will be stored in the same directory in which you ran the command.
-In addition, the vote positions of each senator on the bill will be printed to a json file.
+This will create a folder called "rollcalls" under the specified directory storing reports on each rollcall after the rollcall_id that you had passed into the accountability_setup script.
 
-### Step 2: Estimate how much it will cost to summarize a bill
-In the directory in which you downloaded bills in .txt format, run `accountability_estimate_summary_cost -t <name of the bill .txt file>`
-
-### Step 3: Have OpenAI provide a short summary of one of the bills that was downloaded
-In the directory in which you downloaded bills in .txt format, run `accountability_summarize -s <name of the .yml file containing api keys> -t <name of the bill .txt file>`
-
-A summary in .txt format will be stored in the same directory in which you ran the command.
+This will also create folders for each bill that had been voted upon storing the original text of the bill version and a generated summary of the bill version.
