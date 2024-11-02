@@ -1,7 +1,7 @@
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAI
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 from langchain.prompts import PromptTemplate
 import textwrap
@@ -11,19 +11,15 @@ class Summarizer:
     KEY_NAME = 'OPENAI_API_KEY'
 
     BILL_MAP_PROMPT = textwrap.dedent("""
-    You are an expert analyst specializing in legislative summaries. Given the following passage from a US Congress bill, please:
-
-	1. Provide a concise summary of the key points in this passage.
-    2. Identify and explain any potential impacts or implications these points may have on middle-class Americans, focusing on economic, social, and legal aspects.
+    You are an expert analyst specializing in legislative summaries. Given the following passage from a US Congress bill, please 
+	provide a concise summary of the key points in this passage focusing on economic, social, and legal aspects.
     """)
 
     BILL_DIFFS_PROMPT = "Summarize the following diffs between bills for a layperson."
 
     BILL_COMBINE_PROMPT = textwrap.dedent("""
-    As a legislative summary expert, please synthesize the following summaries and impact assessments into a comprehensive overview of the US Congress bill. Your summary should:
-
-	1. Highlight the main objectives and provisions of the bill.
-    2. Provide an integrated analysis of the potential impacts on middle-class Americans, consolidating specific effects identified in the summaries that follow.
+    As a legislative summary expert, please synthesize the following summaries and impact assessments into a comprehensive overview of the US Congress bill. Your summary should
+	highlight the main objectives and provisions of the bill, focusing on notable economic, social, and legal impacts.
     """)
 
     def __init__(self, secrets_parser):
@@ -37,21 +33,17 @@ class Summarizer:
         documents = loader.load()
 
         # Step 2: Split the Text for Better Handling
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000,
-            chunk_overlap=100,
-            separators=["\n\n", "\n", " ", ""]
-        )
+        text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=1000, chunk_overlap=0)
         docs = text_splitter.split_documents(documents)
 
         print(f"Summarizing {filepath}")
 
         map_prompt = PromptTemplate.from_template(
-            map_prompt + "\n\n{text}"
+            map_prompt + "\nBILL PASSAGE:\n{text}\nSUMMARY:"
         )
 
         combine_prompt = PromptTemplate.from_template(
-            combine_prompt + "\n\n{text}"
+            combine_prompt + "\nSUMMARIES:\n{text}\nFINAL SUMMARY:"
         )
 
         # Step 5: Set Up the Summarization Chain
@@ -60,6 +52,9 @@ class Summarizer:
 
         # Step 6: Run the Summarization Chain on the Documents
         summary = chain.run(input_documents=docs)
+
+        # Remove leading and trailing whitespace
+        summary = summary.strip()
 
         return summary
 
