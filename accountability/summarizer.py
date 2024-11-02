@@ -1,5 +1,4 @@
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -38,13 +37,6 @@ class Summarizer:
             separators=["\n\n", "\n", " ", ""]
         )
         docs = text_splitter.split_documents(documents)
-
-        # Step 3: Create Embeddings Using OpenAI
-        # Use the API key from the secrets parser
-        embeddings = OpenAIEmbeddings(api_key=self.api_key_)
-
-        # Step 4: Set Up Chroma as the Vector Store
-        vector_store = Chroma.from_documents(docs, embeddings)
 
         print(f"Summarizing {filepath}")
 

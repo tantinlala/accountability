@@ -12,7 +12,6 @@ setup(
         'pyyaml',
         'requests',
         'langchain',
-        'chromadb',
         'langchain-openai',
         'langchain-community',
     ],
