@@ -12,14 +12,14 @@ class Summarizer:
 
     BILL_MAP_PROMPT = textwrap.dedent("""
     You are an expert analyst specializing in legislative summaries. Given the following passage from a US Congress bill, please 
-	provide a concise summary of the key points in this passage focusing on economic, social, and legal aspects.
+	provide a concise summary of the key objectives in this passage.
     """)
 
     BILL_DIFFS_PROMPT = "Summarize the following diffs between bills for a layperson."
 
     BILL_COMBINE_PROMPT = textwrap.dedent("""
     As a legislative summary expert, please synthesize the following summaries and impact assessments into a comprehensive overview of the US Congress bill. Your summary should
-	highlight the main objectives and provisions of the bill, focusing on notable economic, social, and legal impacts.
+	highlight the main objectives and provisions of the bill in layman's terms.
     """)
 
     def __init__(self, secrets_parser):
