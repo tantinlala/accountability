@@ -2,7 +2,6 @@ import datetime
 import os
 from accountability.secrets_parser import SecretsParser
 from accountability.summarizer import Summarizer
-from accountability.openai_assistant import OpenAIAssistant
 from accountability.congress_api import CongressAPI
 from accountability.hr_rollcall import HRRollCall
 from accountability.congress_database import CongressDatabase
@@ -16,7 +15,7 @@ def run_setup(template_file, rollcall_id):
 
     # Pass the secrets_parser into the constructors for these so that they can tell the parser what secrets they need
     CongressAPI(secrets_parser)
-    OpenAIAssistant(secrets_parser)
+    Summarizer(secrets_parser)
 
     # secrets_parser should now know how to create a template secrets file
     secrets_parser.create_template_secrets_file(template_file)
@@ -53,8 +52,7 @@ def run_summarize(secrets_file, filepath):
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
 
-    openai_assistant = OpenAIAssistant(secrets_parser)
-    summarizer = Summarizer(openai_assistant)
+    summarizer = Summarizer(secrets_parser)
 
     if "diffs" in filepath:
         summarize_function = summarizer.summarize_bill_diffs
@@ -130,8 +128,7 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     return (bill_filepath, amendment_filepath)
 
 
-def _generate_rollcall_report(rollcall_id, year, openai_assistant: OpenAIAssistant, congress_db: CongressDatabase, bill_folder_string):
-    summarizer = Summarizer(openai_assistant)
+def _generate_rollcall_report(rollcall_id, year, summarizer: Summarizer, congress_db: CongressDatabase, bill_folder_string):
     reporter = Reporter(summarizer)
     reporter.write_rollcall_report(rollcall_id, year, congress_db, bill_folder_string)
 
@@ -139,9 +136,10 @@ def _generate_rollcall_report(rollcall_id, year, openai_assistant: OpenAIAssista
 def run_process_hr_rollcalls(secrets_file, save_directory):
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
-    openai_assistant = OpenAIAssistant(secrets_parser)
+
     congress_api = CongressAPI(secrets_parser)
     congress_db = CongressDatabase()
+    summarizer = Summarizer(secrets_parser)
 
     year = datetime.datetime.now().year
 
@@ -180,10 +178,10 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
                 old_rollcall_info_list.append(old_rollcall_info)
 
             for old_rollcall_info in old_rollcall_info_list:
-                _generate_rollcall_report(old_rollcall_info['rollcall_id'], old_rollcall_info['year'], openai_assistant, congress_db, bill_folder_string)
+                _generate_rollcall_report(old_rollcall_info['rollcall_id'], old_rollcall_info['year'], summarizer, congress_db, bill_folder_string)
 
         (bill_filepath, amendment_filepath) = _save_rollcall_data(congress_api, congress_db, hr_rollcall, bill_folder_string)
-        _generate_rollcall_report(next_rollcall_id, year, openai_assistant, congress_db, bill_folder_string)
+        _generate_rollcall_report(next_rollcall_id, year, summarizer, congress_db, bill_folder_string)
 
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 

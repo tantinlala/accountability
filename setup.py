@@ -11,6 +11,10 @@ setup(
         'openai',
         'pyyaml',
         'requests',
+        'langchain',
+        'chromadb',
+        'langchain-openai',
+        'langchain-community',
     ],
     entry_points={
         "console_scripts": [
