@@ -1,6 +1,6 @@
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import TextLoader
-from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 from langchain.prompts import PromptTemplate
@@ -47,7 +47,7 @@ class Summarizer:
         )
 
         # Step 5: Set Up the Summarization Chain
-        llm = OpenAI(api_key=self.api_key_, temperature=0.7)  # You can adjust temperature for more or less creativity
+        llm = ChatOpenAI(api_key=self.api_key_, model='gpt-4o', temperature=0, max_tokens=None, timeout=None, max_retries=2)  # You can adjust temperature for more or less creativity
         chain = load_summarize_chain(llm, chain_type="map_reduce", map_prompt=map_prompt, combine_prompt=combine_prompt, combine_document_variable_name="text", map_reduce_document_variable_name="text")
 
         # Step 6: Run the Summarization Chain on the Documents
