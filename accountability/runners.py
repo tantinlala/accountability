@@ -9,7 +9,7 @@ from accountability.reporter import Reporter
 from accountability.file_utils import save_txt_if_not_exists, make_bill_path_string, make_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
 
 
-def run_setup(template_file, rollcall_id):
+def run_setup(template_file, rollcall_id, year):
     # First, create a secrets parser
     secrets_parser = SecretsParser()
 
@@ -22,7 +22,8 @@ def run_setup(template_file, rollcall_id):
 
     congress_db = CongressDatabase()
 
-    year = datetime.datetime.now().year
+    if year is None:
+        year = datetime.datetime.now().year
     congress_db.update_last_hr_rollcall_for_year(year, rollcall_id)
 
 

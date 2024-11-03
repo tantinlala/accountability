@@ -20,8 +20,9 @@ def setup():
         description='Create a template yaml file for storing secrets (e.g. api keys)')
     parser.add_argument('-t', '--template', default='template.yaml')
     parser.add_argument('-r', '--rollcall_id', type=int, default=0, help='The roll call ID to store in the database')
+    parser.add_argument('-y', '--year', type=int, default=None, help='The year of the roll call. If not passed in, will use the current year')
     args = parser.parse_args()
-    run_setup(args.template, args.rollcall_id)
+    run_setup(args.template, args.rollcall_id, args.year)
 
 
 def get_bill():
