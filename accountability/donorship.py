@@ -52,61 +52,53 @@ class Donorship:
         }
         return make_request(self.base_url, params)
 
-    def get_all_legislators(self):
-        """
-        Fetches a list of current legislators for all U.S. states.
-
-        :return: Dictionary with state abbreviations as keys and legislator data as values.
-        """
-        all_legislators = {}
-        for state_abbr in self.state_abbreviations:
-            legislators = self.get_legislators(state_abbr)
-            if legislators:
-                all_legislators[state_abbr] = legislators
-            else:
-                print(f"Failed to retrieve data for {state_abbr}.")
-        return all_legislators
-
-    def get_all_legislators_and_contributors(self, cycle=''):
-        """
-        Fetches the top contributing industries for each legislator across all U.S. states.
-
-        :param cycle: Election cycle (e.g., '2022'). Defaults to the most recent cycle if blank.
-        :return: Dictionary with legislator IDs as keys and their top industries as values.
-        """
-        all_legislators = self.get_all_legislators()
-        for state, legislators in all_legislators.items():
-            if 'response' in legislators and 'legislator' in legislators['response']:
-                for legislator in legislators['response']['legislator']:
-                    cid = legislator['@attributes']['cid']
-                    print(f"Fetching top industries for legislator {cid} in state {state} for cycle {cycle}...")
-                    industries = self.get_top_industry_contributors(cid, cycle)
-                    if industries:
-                        legislator['top_industries'] = industries
-                    else:
-                        print(f"Failed to retrieve industries for CID {cid}.")
-        return all_legislators
-
     def write_top_industries_to_files(self, cycle=''):
         """
         Writes the top industry contributors for each representative to a file.
 
         :param cycle: Election cycle (e.g., '2022'). Defaults to the most recent cycle if blank.
         """
-        all_legislators = self.get_all_legislators_and_contributors(cycle)
-        output_dir = 'top_industries'
+        output_dir = 'profiles'
         os.makedirs(output_dir, exist_ok=True)
         
-        for state, legislators in all_legislators.items():
+        for state_abbr in self.state_abbreviations:
+            legislators = self.get_legislators(state_abbr)
             if 'response' in legislators and 'legislator' in legislators['response']:
                 for legislator in legislators['response']['legislator']:
                     cid = legislator['@attributes']['cid']
                     lastname = legislator['@attributes']['lastname']
-                    if 'top_industries' in legislator:
-                        file_path = os.path.join(output_dir, f"{state}_{lastname}_top_industries.txt")
+                    firstlast = legislator['@attributes']['firstlast']
+                    party = legislator['@attributes']['party']
+                    office = legislator['@attributes']['office']
+                    phone = legislator['@attributes']['phone']
+                    fax = legislator['@attributes']['fax']
+                    website = legislator['@attributes']['website']
+                    webform = legislator['@attributes']['webform']
+                    twitter_id = legislator['@attributes']['twitter_id']
+                    
+                    print(f"Fetching top industries for legislator {cid} in state {state_abbr} for cycle {cycle}...")
+                    industries = self.get_top_industry_contributors(cid, cycle)
+                    file_path = os.path.join(output_dir, f"profile_{state_abbr}_{lastname}.txt")
+                    if not os.path.exists(file_path):
                         with open(file_path, 'w') as file:
-                            file.write(str(legislator['top_industries']))
-                        print(f"Wrote top industries for legislator {cid} to {file_path}")
+                            file.write(f"Name: {firstlast}\n")
+                            file.write(f"CID: {cid}\n")
+                            file.write(f"Party: {party}\n")
+                            file.write(f"Office: {office}\n")
+                            file.write(f"Phone: {phone}\n")
+                            file.write(f"Fax: {fax}\n")
+                            file.write(f"Website: {website}\n")
+                            file.write(f"Webform: {webform}\n")
+                            file.write(f"Twitter: {twitter_id}\n")
+                            file.write("Top Industry Donors:\n")
+                            if industries:
+                                for industry in industries['response']['industries']['industry']:
+                                    industry_name = industry['@attributes']['industry_name']
+                                    total = industry['@attributes']['total']
+                                    file.write(f"  - {industry_name}: ${total}\n")
+                        print(f"Wrote information for legislator {cid} to {file_path}")
+                    else:
+                        print(f"Skipping saving {file_path} because it already exists")
 
 if __name__ == '__main__':
     secrets_parser = SecretsParser()
