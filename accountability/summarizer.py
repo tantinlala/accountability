@@ -26,7 +26,7 @@ class Summarizer:
         self.api_key_ = secrets_parser.get_secret(self.SECRET_GROUP, self.KEY_NAME)
 
 
-    def _summarize_file(self, filepath, map_prompt, combine_prompt):
+    def _map_reduce_file(self, filepath, map_prompt, combine_prompt):
 
         # Step 1: Load Your Text Data
         loader = TextLoader(filepath)
@@ -61,8 +61,9 @@ class Summarizer:
 
 
     def summarize_bill(self, filepath):
-        return self._summarize_file(filepath, self.BILL_MAP_PROMPT, self.BILL_COMBINE_PROMPT)
+        return self._map_reduce_file(filepath, self.BILL_MAP_PROMPT, self.BILL_COMBINE_PROMPT)
 
 
     def summarize_bill_diffs(self, filepath):
-        return self._summarize_file(filepath, self.BILL_DIFFS_PROMPT, self.BILL_DIFFS_PROMPT)
+        return self._map_reduce_file(filepath, self.BILL_DIFFS_PROMPT, self.BILL_DIFFS_PROMPT)
+

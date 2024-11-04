@@ -7,6 +7,7 @@ from accountability.hr_rollcall import HRRollCall
 from accountability.congress_database import CongressDatabase
 from accountability.reporter import Reporter
 from accountability.file_utils import save_txt_if_not_exists, make_bill_path_string, make_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
+from accountability.donorship import Donorship
 
 
 def run_setup(template_file, rollcall_id, year):
@@ -16,6 +17,7 @@ def run_setup(template_file, rollcall_id, year):
     # Pass the secrets_parser into the constructors for these so that they can tell the parser what secrets they need
     CongressAPI(secrets_parser)
     Summarizer(secrets_parser)
+    Donorship(secrets_parser)
 
     # secrets_parser should now know how to create a template secrets file
     secrets_parser.create_template_secrets_file(template_file)
