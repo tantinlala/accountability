@@ -28,7 +28,6 @@ class Donorship:
         :param cycle: Election cycle (e.g., '2022'). Defaults to the most recent cycle if blank.
         :return: Parsed response data or None if an error occurs.
         """
-        print(f"Fetching top industry contributors for candidate {candidate_id} for cycle {cycle}...")
         params = {
             'method': 'candIndustry',
             'cid': candidate_id,
@@ -76,7 +75,7 @@ class Donorship:
                     webform = legislator['@attributes']['webform']
                     twitter_id = legislator['@attributes']['twitter_id']
                     
-                    print(f"Fetching top industries for legislator {cid} in state {state_abbr} for cycle {cycle}...")
+                    print(f"Fetching top industries for legislator {firstlast} in state {state_abbr} for cycle {cycle}...")
                     industries = self.get_top_industry_contributors(cid, cycle)
                     file_path = os.path.join(output_dir, f"profile_{state_abbr}_{lastname}.txt")
                     if not os.path.exists(file_path):
@@ -90,7 +89,7 @@ class Donorship:
                             file.write(f"Website: {website}\n")
                             file.write(f"Webform: {webform}\n")
                             file.write(f"Twitter: {twitter_id}\n")
-                            file.write("Top Industry Donors:\n")
+                            file.write(f"Top Industry Donors for {industries['response']['industries']['last_updated']}:\n")
                             if industries:
                                 for industry in industries['response']['industries']['industry']:
                                     industry_name = industry['@attributes']['industry_name']
@@ -107,5 +106,5 @@ if __name__ == '__main__':
 
     # Fetch top contributing industries for all legislators and write to files
     print("Starting to fetch top contributing industries for all legislators and write to files...")
-    donorship.write_top_industries_to_files()
+    donorship.write_top_industries_to_files('2023')
     print("Finished fetching and writing top contributing industries for all legislators.")

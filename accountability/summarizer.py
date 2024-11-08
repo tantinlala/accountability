@@ -67,3 +67,5 @@ class Summarizer:
     def summarize_bill_diffs(self, filepath):
         return self._map_reduce_file(filepath, self.BILL_DIFFS_PROMPT, self.BILL_DIFFS_PROMPT)
 
+    def summarize_representative(self):
+        pass
