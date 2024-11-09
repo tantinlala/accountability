@@ -14,9 +14,8 @@ setup(
         'langchain',
         'langchain-openai',
         'langchain-community',
-        'sentence-transformers',
-        'chromadb',
-        'nltk',
+        'transformers',
+        'torch',
     ],
     entry_points={
         "console_scripts": [
