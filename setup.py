@@ -27,6 +27,7 @@ setup(
             "accountability_diff_with_previous = accountability.entry_points:diff_with_previous",
             "accountability_get_older_rollcalls_for_bill = accountability.entry_points:get_older_rollcalls_for_bill",
             "accountability_process_hr_rollcalls = accountability.entry_points:process_hr_rollcalls",
+            "accountability_classify_bills_industry = accountability.entry_points:classify_bills_industry",
         ]
     },
     extras_require={

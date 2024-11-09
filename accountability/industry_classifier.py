@@ -1,9 +1,8 @@
 import torch
 from transformers import pipeline
-import argparse
 
 class IndustryClassifier:
-    def __init__(self, candidate_labels=None):
+    def __init__(self, candidate_labels):
         """
         Initializes the IndustryClassifier with a list of industry labels.
         If no labels are provided, a default list of industries is used.
@@ -11,31 +10,7 @@ class IndustryClassifier:
         Args:
             candidate_labels (list, optional): A list of industry categories.
         """
-        if candidate_labels is None:
-            self.candidate_labels = [
-                "Healthcare",
-                "Agriculture",
-                "Finance",
-                "Technology",
-                "Education",
-                "Manufacturing",
-                "Energy",
-                "Transportation",
-                "Retail",
-                "Entertainment",
-                "Real Estate",
-                "Hospitality",
-                "Legal",
-                "Marketing",
-                "Non-Profit",
-                "Government",
-                "Telecommunications",
-                "Pharmaceuticals",
-                "Food and Beverage",
-                "Environmental Services",
-            ]
-        else:
-            self.candidate_labels = candidate_labels
+        self.candidate_labels = candidate_labels
 
         # Initialize the zero-shot classification pipeline with a pre-trained model
         if torch.backends.mps.is_available():
@@ -55,22 +30,16 @@ class IndustryClassifier:
             text (str): The text to classify.
         
         Returns:
-            str: The industry category with the highest score.
+            str: List of industry labels and scores sorted in descending order of score.
         """
         result = self.classifier(text, candidate_labels=self.candidate_labels)
-        return result['labels'][0]  # Return the top predicted industry
 
-# Example usage
-if __name__ == "__main__":
-    # Set up argument parser
-    parser = argparse.ArgumentParser(description="Classify text into industry categories.")
-    parser.add_argument("file_path", type=str, help="Path to the text file containing the sample text.")
-    args = parser.parse_args()
+        # Return a list of labels and scores sorted in descending order of score
+        result_list = []
+        for label, score in zip(result['labels'], result['scores']):
+            result_item = dict()
+            result_item['label'] = label
+            result_item['score'] = score
+            result_list.append(result_item)
 
-    # Read sample text from file
-    with open(args.file_path, "r") as file:
-        sample_text = file.read()
-
-    classifier = IndustryClassifier()
-    industry = classifier.classify(sample_text)
-    print(f"The text relates to the industry: {industry}")
+        return result_list

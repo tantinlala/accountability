@@ -9,6 +9,7 @@ from accountability.reporter import Reporter
 from accountability.file_utils import save_txt_if_not_exists, make_bill_path_string, make_dated_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
 from accountability.donorship import Donorship
 from accountability.crp_categories import process_crp_categories
+from accountability.industry_classifier import IndustryClassifier
 
 
 def run_setup(template_file, rollcall_id, year, crp_filepath):
@@ -198,24 +199,18 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 
 
-def run_get_donors_for_legislator(secrets_file, last_name, state_code):
-    secrets_parser = SecretsParser()
-    secrets_parser.parse_secrets_file(secrets_file)
+def run_classify_bills_industry(text_filepath):
+    congress_db = CongressDatabase()
+    industries = congress_db.get_all_industries()
 
-    donorship = Donorship(secrets_parser)
-    donorship.get_top_donors(last_name, state_code)
+    with open(text_filepath, 'r') as file:
+        text = file.read()
 
+    classifier = IndustryClassifier(candidate_labels=industries)
+    result_list = classifier.classify(text)
 
-def run_create_hr_legislator_profile(secrets_file, last_name, state_code):
-    secrets_parser = SecretsParser()
-    secrets_parser.parse_secrets_file(secrets_file)
-
-    donorship = Donorship(secrets_parser)
-
-
-    # First, check whether the legislator is already in the database
-
-    donorship.get_top_donors(last_name, state_code)
+    for result in result_list:
+        print(f"{result['label']}: {result['score']}")
 
 if __name__ == '__main__':
     run_process_hr_rollcalls('secrets.yaml', 'results')

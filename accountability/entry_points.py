@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.runners import run_setup, run_summarize, run_process_hr_rollcalls, run_get_bill, \
-    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill 
+    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill, run_classify_bills_industry
 
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
@@ -87,3 +87,11 @@ def process_hr_rollcalls():
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
     run_process_hr_rollcalls(args.secrets_file, args.save_directory)
+
+
+def classify_bills_industry():
+    parser = argparse.ArgumentParser(
+        description='Classify a text according to an industry from a list of industries')
+    parser.add_argument('-f', '--file', help='File containing text to classify')
+    args = parser.parse_args()
+    run_classify_bills_industry(args.file)

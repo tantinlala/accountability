@@ -9,40 +9,16 @@ def process_crp_categories(file_path):
                 catorder = parts[2]
                 industry = parts[3].replace('"', '')
 
-                if industry == "Unknown":
-                    continue
+                excluded_industries = [
+                    "Unknown", "Other", "Misc Issues", "Misc Services", "Misc Defense", 
+                    "Misc Transport", "Non-contribution", "Retired", "Misc Agriculture", 
+                    "Republican/Conservative", "Democratic/Liberal", "Leadership PACs", 
+                    "No Employer Listed or Found", "Generic Occupation/Category Unknown", 
+                    "Employer Listed/Category Unknown", "Balance Forward", "Misc Energy",
+                    "Misc Health", "Misc Business", "Misc Finance", "Candidate Self-finance"
+                ]
 
-                if industry == "Other":
-                    continue
-
-                if industry == "Misc Issues":
-                    continue
-
-                if industry == "Non-contribution":
-                    continue
-
-                if industry == "Retired":
-                    continue
-
-                if industry == "Misc Agriculture":
-                    continue
-
-                if industry == "Republican/Conservative":
-                    continue
-
-                if industry == "Democratic/Liberal":
-                    continue
-
-                if industry == "Leadership PACs":
-                    continue
-
-                if industry == "No Employer Listed or Found":
-                    continue
-
-                if industry == "Generic Occupation/Category Unknown":
-                    continue
-
-                if industry == "Employer Listed/Category Unknown":
+                if industry in excluded_industries:
                     continue
 
                 if catorder not in catorder_industry:

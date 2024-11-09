@@ -360,3 +360,15 @@ class CongressDatabase:
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
+
+    def get_all_industries(self):
+        """Retrieve all industries from the CRPCategories table."""
+        sql = "SELECT Industry FROM CRPCategories"
+        try:
+            c = self.conn.cursor()
+            c.execute(sql)
+            industries = [row[0] for row in c.fetchall()]
+            return industries
+        except sqlite3.Error as e:
+            print(e)
+            return []
