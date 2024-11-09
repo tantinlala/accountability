@@ -124,11 +124,15 @@ class Reporter:
         # Get top industry donors
         top_donors = self.congress_db_.get_top_donors(congressman_id)
 
-        # Get related bills
-        related_bills = self.congress_db_.get_related_bills(congressman_id)
+        # Get related roll call votes
+        related_votes = self.congress_db_.get_related_rollcall_votes(congressman_id)
+
+        # Create {save_directory}/hr_legislators directory if it doesn't exist
+        if not os.path.exists(f"{save_directory}/hr_legislators"):
+            os.makedirs(f"{save_directory}/hr_legislators")
 
         # Create report file
-        report_file = f"{save_directory}/hr_legislators/{state_code}_{last_name}_report.md"
+        report_file = f"{save_directory}/hr_legislators/{state_code}-{last_name}.md"
         with open(report_file, 'w') as file:
             file.write(f"# Report for {last_name} ({state_code})\n")
             file.write("\n## Top Industry Donors\n")
@@ -137,10 +141,10 @@ class Reporter:
             for donor in top_donors:
                 file.write(f"| {donor['Description']} | ${donor['DonationAmount']:,.2f} |\n")
 
-            file.write("\n## Related Bills\n")
-            file.write("| Bill Name |\n")
-            file.write("|-----------|\n")
-            for bill in related_bills:
-                file.write(f"| {bill[0]} |\n")
+            file.write("\n## Roll Call Votes Related To Top Industry Donors\n")
+            file.write("| Bill Name | Bill DateTime | Roll Call ID | Year | Question | Vote | Related Industries |\n")
+            file.write("|-----------|---------------|---------------|------|------|----------|--------------------|\n")
+            for vote in related_votes:
+                file.write(f"| {vote['BillName']} | {vote['BillDateTime']} | {vote['RollCallID']} | {vote['Year']} | {vote['Question']} | {vote['Vote']} | {', '.join(vote['RelatedIndustries'])} |\n")
 
         print(f"Report saved to {report_file}")

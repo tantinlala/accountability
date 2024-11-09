@@ -38,7 +38,7 @@ def get_datetime_and_name_in_filename(filename):
 
 
 def make_bill_path_string(base, congress, bill_id):
-    return f"{base}/{congress}-{bill_id.replace('/', '-')}"
+    return f"{base}/bills/{congress}-{bill_id.replace('/', '-')}"
 
 
 def make_txt_filepath(folder, name):

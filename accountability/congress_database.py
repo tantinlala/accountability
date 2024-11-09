@@ -441,15 +441,16 @@ class CongressDatabase:
     def get_top_donors(self, congressman_id):
         """Retrieve the top industry donors for a congressman."""
         sql = """
-            SELECT IndustryID, DonationAmount
-            FROM CongressmanIndustries
-            WHERE CongressmanID = ?
-            ORDER BY DonationAmount DESC
+            SELECT i.Description, ci.DonationAmount
+            FROM CongressmanIndustries ci
+            JOIN Industries i ON ci.IndustryID = i.ID
+            WHERE ci.CongressmanID = ?
+            ORDER BY ci.DonationAmount DESC
         """
         try:
             c = self.conn.cursor()
             c.execute(sql, (congressman_id,))
-            return c.fetchall()
+            return [{'Description': row[0], 'DonationAmount': row[1]} for row in c.fetchall()]
         except sqlite3.Error as e:
             print(e)
             return []
@@ -490,3 +491,25 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
             return None
+
+    def get_related_rollcall_votes(self, congressman_id):
+        """Retrieve all roll call votes for bills that are related to at least one of the congressman's donors."""
+        sql = """
+            SELECT rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question, GROUP_CONCAT(i.Description)
+            FROM RollCalls rc
+            JOIN Votes v ON rc.ActionDateTime = v.ActionDateTime
+            JOIN BillIndustries bi ON rc.BillName = bi.BillName
+            JOIN Industries i ON bi.IndustryID = i.ID
+            WHERE bi.IndustryID IN (
+            SELECT IndustryID FROM CongressmanIndustries WHERE CongressmanID = ?
+            )
+            AND v.CongressmanID = ?
+            GROUP BY rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (congressman_id, congressman_id))
+            return [{'BillName': row[0], 'BillDateTime': row[1], 'RollCallID': row[2], 'Year': row[3], 'Vote': row[4], 'Question': row[5], 'RelatedIndustries': row[6].split(',')} for row in c.fetchall()]
+        except sqlite3.Error as e:
+            print(e)
+            return []
