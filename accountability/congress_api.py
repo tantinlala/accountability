@@ -50,7 +50,9 @@ class CongressAPI:
         # Download and return the content
         text_response = requests.get(formatted_text_url)
         text_response.raise_for_status()
-        return (text_response.text, most_recent_version['date'])
+
+        most_recent_version_datetime = datetime.datetime.strptime(most_recent_version['date'], "%Y-%m-%dT%H:%M:%SZ")
+        return (text_response.text, most_recent_version_datetime)
 
     def download_bill_text(self, congress, bill_id, action_datetime):
         """
@@ -67,10 +69,10 @@ class CongressAPI:
         if result is None:
             return None
 
-        (bill_text, version_date) = result
+        (bill_text, bill_datetime) = result
 
         bill_name = f"{congress}-{bill_id.replace('/', '-')}-bill"
-        return (bill_name, version_date, bill_text)
+        return (bill_name, bill_datetime, bill_text)
         
     def download_amendment_text(self, congress, bill_id, action_datetime):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
@@ -98,12 +100,12 @@ class CongressAPI:
 
         if result is None: 
             amendment_text = closest_amendment['description']
-            version_date = closest_amendment['updateDate']
+            amendment_datetime = datetime.datetime.strptime(closest_amendment['updateDate'], "%Y-%m-%dT%H:%M:%SZ")
         else:
-            (amendment_text, version_date) = result
+            (amendment_text, amendment_datetime) = result
 
         amendment_name = f"{congress}-{bill_id.replace('/', '-')}-{amendment_type}-{amendment_num}"
-        return (amendment_name, version_date, amendment_text)
+        return (amendment_name, amendment_datetime, amendment_text)
 
     def _get_urls_from_actions(self, rollcall_urls, actions, present_rollcall, present_year):
         for action in actions:

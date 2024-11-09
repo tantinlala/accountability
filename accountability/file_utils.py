@@ -23,7 +23,9 @@ def save_txt_if_not_exists(save_directory, file_name, content):
     return filepath
 
 
-def make_filename(datetime, name):
+def make_dated_filename(datetime, name):
+    # Convert datetime to string
+    datetime = datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
     return f"{datetime}-{name}"
 
 

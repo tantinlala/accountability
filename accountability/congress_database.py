@@ -1,5 +1,6 @@
 import sqlite3
 from .file_utils import get_datetime_and_name_in_filename
+from datetime import datetime
 
 class CongressDatabase:
     def __init__(self, db_name="congress.db"):
@@ -31,7 +32,9 @@ class CongressDatabase:
             ActionDateTime TIMESTAMP PRIMARY KEY,
             Question TEXT NOT NULL,
             BillName TEXT NOT NULL,
-            AmendmentName TEXT
+            BillDateTime TIMESTAMP NOT NULL,
+            AmendmentName TEXT,
+            FOREIGN KEY (BillName, BillDateTime) REFERENCES Bills (BillName, BillDateTime)
             ); 
         """
         create_congressmen_sql = """ 
@@ -52,30 +55,27 @@ class CongressDatabase:
                 CONSTRAINT VoteID PRIMARY KEY (ActionDateTime, CongressmanID)
             ); 
         """
-        create_congressmen_donors_sql = """ 
-            CREATE TABLE IF NOT EXISTS CongressmenDonors (
-            CongressmanID TEXT NOT NULL,
-            Industry TEXT NOT NULL,
-            DonationAmount REAL NOT NULL,
-            FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
-            CONSTRAINT DonorID PRIMARY KEY (CongressmanID, Industry)
-            ); 
-        """
         create_crp_categories_sql = """ 
             CREATE TABLE IF NOT EXISTS CRPCategories (
                 CatOrder TEXT PRIMARY KEY,
                 Industry TEXT NOT NULL
             ); 
         """
-
+        create_bills_sql = """ 
+            CREATE TABLE IF NOT EXISTS Bills (
+                BillName TEXT NOT NULL,
+                BillDateTime TIMESTAMP NOT NULL,
+                PRIMARY KEY (BillName, BillDateTime)
+            ); 
+        """
         try:
             c = self.conn.cursor()
             c.execute(create_last_hr_rollcall_for_year_sql)
             c.execute(create_hr_rollcalls_sql)
             c.execute(create_congressmen_sql)
             c.execute(create_hr_votes_sql)
-            c.execute(create_congressmen_donors_sql)
             c.execute(create_crp_categories_sql)
+            c.execute(create_bills_sql)
         except sqlite3.Error as e:
             print(e)
 
@@ -140,19 +140,36 @@ class CongressDatabase:
             print(e)
         return False
 
-    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, amendment_name):
+    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name):
         """Insert a roll call into the database."""
+
+        self.add_bill(bill_name, bill_datetime)
+
         # Return if the roll call already exists
         if self.rollcall_exists(action_datetime):
             return
 
         sql = """ 
-            INSERT INTO RollCalls(RollCallID, Year, ActionDateTime, Question, BillName, AmendmentName)
-            VALUES(?, ?, ?, ?, ?, ?); 
+            INSERT INTO RollCalls(RollCallID, Year, ActionDateTime, Question, BillName, BillDateTime, AmendmentName)
+            VALUES(?, ?, ?, ?, ?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, year, action_datetime, question, bill_name, amendment_name))
+            c.execute(sql, (rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(e)
+
+    def add_bill(self, bill_name, bill_datetime):
+        """Insert a bill into the database."""
+        sql = """ 
+            INSERT INTO Bills(BillName, BillDateTime)
+            VALUES(?, ?)
+            ON CONFLICT(BillName, BillDateTime) DO NOTHING; 
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (bill_name, bill_datetime))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
@@ -173,7 +190,8 @@ class CongressDatabase:
                 rollcall_data['ActionDateTime'] = rollcall_meta[2]
                 rollcall_data['Question'] = rollcall_meta[3]
                 rollcall_data['BillName'] = rollcall_meta[4]
-                rollcall_data['AmendmentName'] = rollcall_meta[5]
+                rollcall_data['BillDateTime'] = datetime.strptime(rollcall_meta[5], '%Y-%m-%d %H:%M:%S')
+                rollcall_data['AmendmentName'] = rollcall_meta[6]
             else:
                 return None
         except sqlite3.Error as e:
@@ -278,12 +296,8 @@ class CongressDatabase:
             if not present_rollcall_data:
                 return None
 
-            # Use get_datetime_and_name_in_filename to parse the bill name
-            _, bill_name_part = get_datetime_and_name_in_filename(present_rollcall_data[0])
-            if amendment_name := present_rollcall_data[1]:
-                _, amendment_name_part = get_datetime_and_name_in_filename(amendment_name)
-            else:
-                amendment_name_part = "UNDEFINED"
+            bill_name = present_rollcall_data[0]
+            amendment_name = present_rollcall_data[1]
             question = present_rollcall_data[2]
 
             # Query for the previous roll call data
@@ -291,12 +305,12 @@ class CongressDatabase:
                 SELECT * FROM RollCalls
                 WHERE Question = ? 
                 AND ((RollCallID < ? AND Year = ?) OR Year < ?)
-                AND BillName LIKE ?
-                AND (AmendmentName LIKE ? OR (AmendmentName IS NULL AND ? IS NULL))
+                AND BillName = ?
+                AND (AmendmentName = ? OR (AmendmentName IS NULL AND ? IS NULL))
                 ORDER BY Year DESC, RollCallID DESC
                 LIMIT 1
             """
-            c.execute(sql, (question, rollcall_id, year, year, f"%{bill_name_part}%", f"%{amendment_name_part}%", amendment_name))
+            c.execute(sql, (question, rollcall_id, year, year, bill_name, amendment_name, amendment_name))
             previous_rollcall_meta = c.fetchone()
             if not previous_rollcall_meta:
                 return None
@@ -304,10 +318,11 @@ class CongressDatabase:
             previous_rollcall_data = {
                 'RollCallID': previous_rollcall_meta[0],
                 'Year': previous_rollcall_meta[1],
-                'ActionDateTime': previous_rollcall_meta[2],
+                'ActionDateTime': datetime.strptime(previous_rollcall_meta[2], '%Y-%m-%d %H:%M:%S'),
                 'Question': previous_rollcall_meta[3],
                 'BillName': previous_rollcall_meta[4],
-                'AmendmentName': previous_rollcall_meta[5],
+                'BillDateTime': datetime.strptime(previous_rollcall_meta[5], '%Y-%m-%d %H:%M:%S'),
+                'AmendmentName': previous_rollcall_meta[6],
                 'Votes': []
             }
 
@@ -331,19 +346,6 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
             return None
-
-    def add_congressman_donor(self, congressman_id, industry, donation_amount):
-        """Insert a congressman donor into the database."""
-        sql = """ 
-            INSERT INTO CongressmenDonors(CongressmanID, Industry, DonationAmount)
-            VALUES(?, ?, ?); 
-        """
-        try:
-            c = self.conn.cursor()
-            c.execute(sql, (congressman_id, industry, donation_amount))
-            self.conn.commit()
-        except sqlite3.Error as e:
-            print(e)
 
     def add_crp_category(self, catorder, industry):
         """Insert a CRP category into the database."""

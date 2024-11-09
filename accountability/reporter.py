@@ -1,5 +1,5 @@
 import os
-from accountability.file_utils import make_summary_filepath, make_txt_filepath, get_diff, save_txt_if_not_exists, file_exists
+from accountability.file_utils import make_summary_filepath, make_txt_filepath, get_diff, save_txt_if_not_exists, file_exists, make_dated_filename
 
 class Reporter:
 
@@ -10,7 +10,9 @@ class Reporter:
 
     def generate_summary(self, present_rollcall_data, previous_rollcall_data, bill_folder_string):
         bill_name = present_rollcall_data['BillName']
-        bill_filepath = make_txt_filepath(bill_folder_string, bill_name)
+        bill_datetime = present_rollcall_data['BillDateTime']
+        dated_bill_name = make_dated_filename(bill_datetime, bill_name)
+        bill_filepath = make_txt_filepath(bill_folder_string, dated_bill_name)
 
         summary = None
 
@@ -19,10 +21,13 @@ class Reporter:
         if (previous_rollcall_data is not None) and \
             (bill_name != previous_rollcall_data['BillName']):
             previous_version_bill_name = previous_rollcall_data['BillName']
-            previous_version_bill_filepath = make_txt_filepath(bill_folder_string, previous_version_bill_name)
+            previous_version_bill_datetime = previous_rollcall_data['BillDateTime']
+            previous_version_dated_bill_name = make_dated_filename(previous_version_bill_datetime, previous_version_bill_name)
+            previous_version_bill_filepath = make_txt_filepath(bill_folder_string, previous_version_dated_bill_name)
 
             diff_string = get_diff(bill_filepath, previous_version_bill_filepath)
-            diff_filepath = save_txt_if_not_exists(bill_folder_string, bill_name + "-diffs", diff_string)
+
+            diff_filepath = save_txt_if_not_exists(bill_folder_string, f"{dated_bill_name}-diffs", diff_string)
             if file_exists(summary_filepath := make_summary_filepath(diff_filepath)):
                 print(f"Skipping summary because {summary_filepath} already exists")
                 summary = open(summary_filepath).read()
@@ -59,6 +64,11 @@ class Reporter:
         summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
 
         datetime_string = rollcall_data['ActionDateTime']
+
+        # Create {save_directory}/rollcalls directory if it doesn't exist
+        if not os.path.exists(f"{save_directory}/rollcalls"):
+            os.makedirs(f"{save_directory}/rollcalls")
+
         rollcall_file = f"{save_directory}/rollcalls/{datetime_string}-rollcall-{year}-{rollcall_id}.md"
 
         with open(rollcall_file, 'w') as file:
@@ -66,7 +76,9 @@ class Reporter:
             file.write(f"# Roll Call {year}-{rollcall_id}\n")
             file.write(f"\nRoll Call Time: {datetime_string}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
-            file.write(f"\nBill Version: {rollcall_data['BillName']}\n")
+
+            dated_bill_name = make_dated_filename(rollcall_data['BillDateTime'], rollcall_data['BillName'])
+            file.write(f"\nBill Version: {dated_bill_name}\n")
 
             if amendment_filename := rollcall_data['AmendmentName']:
                 amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
