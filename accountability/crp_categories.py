@@ -1,4 +1,4 @@
-def retrieve_catorders_and_industries(file_path):
+def process_crp_categories(file_path):
     catorder_industry = {}
     with open(file_path, 'r') as file:
         for line in file:
@@ -48,9 +48,3 @@ def retrieve_catorders_and_industries(file_path):
                 if catorder not in catorder_industry:
                     catorder_industry[catorder] = industry
     return catorder_industry
-
-if __name__ == "__main__":
-    file_path = "CRP_Categories"
-    catorder_industry = retrieve_catorders_and_industries(file_path)
-    for catorder, industry in catorder_industry.items():
-        print(f"{catorder}: {industry}")

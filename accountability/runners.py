@@ -8,9 +8,10 @@ from accountability.congress_database import CongressDatabase
 from accountability.reporter import Reporter
 from accountability.file_utils import save_txt_if_not_exists, make_bill_path_string, make_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
 from accountability.donorship import Donorship
+from accountability.crp_categories import process_crp_categories
 
 
-def run_setup(template_file, rollcall_id, year):
+def run_setup(template_file, rollcall_id, year, crp_filepath):
     # First, create a secrets parser
     secrets_parser = SecretsParser()
 
@@ -22,7 +23,13 @@ def run_setup(template_file, rollcall_id, year):
     # secrets_parser should now know how to create a template secrets file
     secrets_parser.create_template_secrets_file(template_file)
 
+    # Initialize the database
     congress_db = CongressDatabase()
+
+    # Store CRP categories in the database
+    crp_categories = process_crp_categories(crp_filepath)
+    for catorder, industry in crp_categories.items():
+        congress_db.add_crp_category(catorder, industry)
 
     if year is None:
         year = datetime.datetime.now().year
@@ -196,11 +203,13 @@ def run_get_donors_for_legislator(secrets_file, last_name, state_code):
     donorship = Donorship(secrets_parser)
     donorship.get_top_donors(last_name, state_code)
 
+
 def run_create_hr_legislator_profile(secrets_file, last_name, state_code):
     secrets_parser = SecretsParser()
     secrets_parser.parse_secrets_file(secrets_file)
 
     donorship = Donorship(secrets_parser)
+
 
     # First, check whether the legislator is already in the database
 

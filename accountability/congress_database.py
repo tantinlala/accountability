@@ -61,6 +61,12 @@ class CongressDatabase:
             CONSTRAINT DonorID PRIMARY KEY (CongressmanID, Industry)
             ); 
         """
+        create_crp_categories_sql = """ 
+            CREATE TABLE IF NOT EXISTS CRPCategories (
+                CatOrder TEXT PRIMARY KEY,
+                Industry TEXT NOT NULL
+            ); 
+        """
 
         try:
             c = self.conn.cursor()
@@ -69,6 +75,7 @@ class CongressDatabase:
             c.execute(create_congressmen_sql)
             c.execute(create_hr_votes_sql)
             c.execute(create_congressmen_donors_sql)
+            c.execute(create_crp_categories_sql)
         except sqlite3.Error as e:
             print(e)
 
@@ -334,6 +341,20 @@ class CongressDatabase:
         try:
             c = self.conn.cursor()
             c.execute(sql, (congressman_id, industry, donation_amount))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(e)
+
+    def add_crp_category(self, catorder, industry):
+        """Insert a CRP category into the database."""
+        sql = """ 
+            INSERT INTO CRPCategories(CatOrder, Industry)
+            VALUES(?, ?)
+            ON CONFLICT(CatOrder) DO UPDATE SET Industry = excluded.Industry; 
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (catorder, industry))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)

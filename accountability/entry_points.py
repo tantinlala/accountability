@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.runners import run_setup, run_summarize, run_process_hr_rollcalls, run_get_bill, \
-    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill
+    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill 
 
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
@@ -21,8 +21,9 @@ def setup():
     parser.add_argument('-t', '--template', default='template.yaml')
     parser.add_argument('-r', '--rollcall_id', type=int, default=0, help='The roll call ID to store in the database')
     parser.add_argument('-y', '--year', type=int, default=None, help='The year of the roll call. If not passed in, will use the current year')
+    parser.add_argument('-c', '--crp_filepath', help='The path to the CRP categories file', default='CRP_Categories')
     args = parser.parse_args()
-    run_setup(args.template, args.rollcall_id, args.year)
+    run_setup(args.template, args.rollcall_id, args.year, args.crp_filepath)
 
 
 def get_bill():
