@@ -52,6 +52,15 @@ class CongressDatabase:
                 CONSTRAINT VoteID PRIMARY KEY (ActionDateTime, CongressmanID)
             ); 
         """
+        create_congressmen_donors_sql = """ 
+            CREATE TABLE IF NOT EXISTS CongressmenDonors (
+            CongressmanID TEXT NOT NULL,
+            Industry TEXT NOT NULL,
+            DonationAmount REAL NOT NULL,
+            FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
+            CONSTRAINT DonorID PRIMARY KEY (CongressmanID, Industry)
+            ); 
+        """
 
         try:
             c = self.conn.cursor()
@@ -59,6 +68,7 @@ class CongressDatabase:
             c.execute(create_hr_rollcalls_sql)
             c.execute(create_congressmen_sql)
             c.execute(create_hr_votes_sql)
+            c.execute(create_congressmen_donors_sql)
         except sqlite3.Error as e:
             print(e)
 
@@ -314,3 +324,16 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
             return None
+
+    def add_congressman_donor(self, congressman_id, industry, donation_amount):
+        """Insert a congressman donor into the database."""
+        sql = """ 
+            INSERT INTO CongressmenDonors(CongressmanID, Industry, DonationAmount)
+            VALUES(?, ?, ?); 
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (congressman_id, industry, donation_amount))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(e)

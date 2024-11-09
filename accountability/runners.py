@@ -189,5 +189,22 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 
 
+def run_get_donors_for_legislator(secrets_file, last_name, state_code):
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    donorship = Donorship(secrets_parser)
+    donorship.get_top_donors(last_name, state_code)
+
+def run_create_hr_legislator_profile(secrets_file, last_name, state_code):
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    donorship = Donorship(secrets_parser)
+
+    # First, check whether the legislator is already in the database
+
+    donorship.get_top_donors(last_name, state_code)
+
 if __name__ == '__main__':
     run_process_hr_rollcalls('secrets.yaml', 'results')
