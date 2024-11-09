@@ -21,6 +21,19 @@ class OpenAIAssistant:
     def delete_file(self, file_id):
         self.client_.files.delete(file_id)
 
+    def prompt_for_json_response(self, prompt, response_format, system_message=None):
+        messages = []
+        if system_message is not None:
+            messages.append({"role": "system", "content": system_message})
+        messages.append({"role": "user", "content": prompt})
+
+        completion = self.client_.beta.chat.completions.parse(
+            model=self.MODEL_NAME,
+            messages=messages,
+            response_format=response_format)
+
+        return completion.choices[0].message.parsed
+
     def prompt_with_file(self, prompt, file_id):
         thread = self.client_.beta.threads.create(
             messages=[

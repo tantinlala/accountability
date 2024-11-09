@@ -10,6 +10,7 @@ from accountability.file_utils import save_txt_if_not_exists, make_bill_path_str
 from accountability.donorship import Donorship
 from accountability.crp_categories import process_crp_categories
 from accountability.industry_classifier import IndustryClassifier
+from accountability.openai_assistant import OpenAIAssistant
 
 
 def run_setup(template_file, rollcall_id, year, crp_filepath):
@@ -28,9 +29,9 @@ def run_setup(template_file, rollcall_id, year, crp_filepath):
     congress_db = CongressDatabase()
 
     # Store CRP categories in the database
-    crp_categories = process_crp_categories(crp_filepath)
-    for catorder, industry in crp_categories.items():
-        congress_db.add_crp_category(catorder, industry)
+    industries = process_crp_categories(crp_filepath)
+    for catorder, industry in industries.items():
+        congress_db.add_industry(catorder, industry)
 
     if year is None:
         year = datetime.datetime.now().year
@@ -199,18 +200,24 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
         congress_db.update_last_hr_rollcall_for_year(year, next_rollcall_id)
 
 
-def run_classify_bills_industry(text_filepath):
+def run_classify_bills_industry(secrets_file, text_filepath):
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+
+    assistant = OpenAIAssistant(secrets_parser)
     congress_db = CongressDatabase()
     industries = congress_db.get_all_industries()
 
     with open(text_filepath, 'r') as file:
         text = file.read()
 
-    classifier = IndustryClassifier(candidate_labels=industries)
-    result_list = classifier.classify(text)
+    classifier = IndustryClassifier(assistant=assistant, industries=industries)
+    classification_results = classifier.classify(text)
 
-    for result in result_list:
-        print(f"{result['label']}: {result['score']}")
+    for industry_code in classification_results.industry_codes:
+        description = industries[industry_code]
+        print(f"Industry Code: {industry_code}, Description: {description}")
+
 
 if __name__ == '__main__':
     run_process_hr_rollcalls('secrets.yaml', 'results')

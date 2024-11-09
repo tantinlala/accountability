@@ -56,9 +56,9 @@ class CongressDatabase:
             ); 
         """
         create_crp_categories_sql = """ 
-            CREATE TABLE IF NOT EXISTS CRPCategories (
-                CatOrder TEXT PRIMARY KEY,
-                Industry TEXT NOT NULL
+            CREATE TABLE IF NOT EXISTS Industries (
+                ID TEXT PRIMARY KEY,
+                Description TEXT NOT NULL
             ); 
         """
         create_bills_sql = """ 
@@ -347,27 +347,27 @@ class CongressDatabase:
             print(e)
             return None
 
-    def add_crp_category(self, catorder, industry):
-        """Insert a CRP category into the database."""
+    def add_industry(self, id, description):
+        """Insert an industry into the database."""
         sql = """ 
-            INSERT INTO CRPCategories(CatOrder, Industry)
+            INSERT INTO Industries(ID, Description)
             VALUES(?, ?)
-            ON CONFLICT(CatOrder) DO UPDATE SET Industry = excluded.Industry; 
+            ON CONFLICT(ID) DO UPDATE SET Description = excluded.Description; 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (catorder, industry))
+            c.execute(sql, (id, description))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
 
     def get_all_industries(self):
-        """Retrieve all industries from the CRPCategories table."""
-        sql = "SELECT Industry FROM CRPCategories"
+        """Retrieve all industries from the Industries table."""
+        sql = "SELECT ID, Description FROM Industries"
         try:
             c = self.conn.cursor()
             c.execute(sql)
-            industries = [row[0] for row in c.fetchall()]
+            industries = {row[0]: row[1] for row in c.fetchall()}
             return industries
         except sqlite3.Error as e:
             print(e)

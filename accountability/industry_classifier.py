@@ -1,45 +1,30 @@
-import torch
-from transformers import pipeline
+from pydantic import BaseModel
+
+class IndustrySchema(BaseModel):
+    industry_codes: list[str]
 
 class IndustryClassifier:
-    def __init__(self, candidate_labels):
+    def __init__(self, assistant, industries):
         """
         Initializes the IndustryClassifier with a list of industry labels.
         If no labels are provided, a default list of industries is used.
         
         Args:
-            candidate_labels (list, optional): A list of industry categories.
+            industries (list): A list of industry categories.
         """
-        self.candidate_labels = candidate_labels
+        self.industries = industries
+        self.assistant = assistant
 
-        # Initialize the zero-shot classification pipeline with a pre-trained model
-        if torch.backends.mps.is_available():
-            device = torch.device("mps")
-        elif torch.cuda.is_available():
-            device = torch.device("cuda")
-        else:
-            device = torch.device("cpu")
-
-        self.classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=device)
 
     def classify(self, text):
-        """
-        Classifies the input text into one of the predefined industry categories.
-        
-        Args:
-            text (str): The text to classify.
-        
-        Returns:
-            str: List of industry labels and scores sorted in descending order of score.
-        """
-        result = self.classifier(text, candidate_labels=self.candidate_labels)
+        system_message = "You are an assistant that classifies bill summaries into relevant industries based on their content."
+        industry_list = "\n".join([f"{key}: {self.industries[key]}" for key in self.industries.keys()])
+        prompt = f"Classify the following bill into the relevant industries. \
+            If none are relevant, provide an empty list. Your response should only contain the codes \
+                corresponding to relevant industries, not the description. \
+                    \n\n{text}\n\nAvailable industries:\n{industry_list}."
 
-        # Return a list of labels and scores sorted in descending order of score
-        result_list = []
-        for label, score in zip(result['labels'], result['scores']):
-            result_item = dict()
-            result_item['label'] = label
-            result_item['score'] = score
-            result_list.append(result_item)
+        print(prompt)
 
-        return result_list
+        industry_classifications = self.assistant.prompt_for_json_response(prompt, IndustrySchema, system_message)
+        return industry_classifications 

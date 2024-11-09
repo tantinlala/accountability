@@ -92,6 +92,7 @@ def process_hr_rollcalls():
 def classify_bills_industry():
     parser = argparse.ArgumentParser(
         description='Classify a text according to an industry from a list of industries')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
     parser.add_argument('-f', '--file', help='File containing text to classify')
     args = parser.parse_args()
-    run_classify_bills_industry(args.file)
+    run_classify_bills_industry(args.secrets_file, args.file)
