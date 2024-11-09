@@ -3,8 +3,10 @@ from accountability.file_utils import make_summary_filepath, make_txt_filepath, 
 
 class Reporter:
 
-    def __init__(self, summarizer):
+    def __init__(self, summarizer, industry_classifier, congress_db):
         self.summarizer_ = summarizer
+        self.industry_classifier_ = industry_classifier
+        self.congress_db_ = congress_db
         self.summary_filepath = None
 
 
@@ -49,6 +51,10 @@ class Reporter:
             elif summary := self.summarizer_.summarize_bill(bill_filepath):
                 with open(summary_filepath, 'w') as summary_file:
                     summary_file.write(summary)
+                # Classify the bill summary and add bill-industry pairs to the database
+                classification_results = self.industry_classifier_.classify(summary)
+                for industry_code in classification_results.industry_codes:
+                    self.congress_db_.add_bill_industry(present_rollcall_data['BillName'], industry_code)
             else:
                 print(f"Failed to summarize {bill_filepath}")
                 summary = "No summary available for bill"
@@ -57,9 +63,9 @@ class Reporter:
         return summary
 
 
-    def write_rollcall_report(self, rollcall_id, year, congress_db, save_directory, bill_folder_string):
-        rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
-        previous_rollcall_data = congress_db.get_previous_rollcall_data(rollcall_id, year)
+    def write_rollcall_report(self, rollcall_id, year, save_directory, bill_folder_string):
+        rollcall_data = self.congress_db_.get_rollcall_data(rollcall_id, year)
+        previous_rollcall_data = self.congress_db_.get_previous_rollcall_data(rollcall_id, year)
 
         summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
 

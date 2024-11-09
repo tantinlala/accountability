@@ -14,9 +14,6 @@ setup(
         'langchain',
         'langchain-openai',
         'langchain-community',
-        'transformers',
-        'torch',
-        'pandas',
     ],
     entry_points={
         "console_scripts": [

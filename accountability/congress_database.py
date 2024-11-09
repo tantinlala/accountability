@@ -68,6 +68,15 @@ class CongressDatabase:
                 PRIMARY KEY (BillName, BillDateTime)
             ); 
         """
+        create_bill_industries_sql = """ 
+            CREATE TABLE IF NOT EXISTS BillIndustries (
+                BillName TEXT NOT NULL,
+                IndustryID TEXT NOT NULL,
+                FOREIGN KEY (BillName) REFERENCES Bills (BillName),
+                FOREIGN KEY (IndustryID) REFERENCES Industries (ID),
+                PRIMARY KEY (BillName, IndustryID)
+            ); 
+        """
         try:
             c = self.conn.cursor()
             c.execute(create_last_hr_rollcall_for_year_sql)
@@ -76,6 +85,7 @@ class CongressDatabase:
             c.execute(create_hr_votes_sql)
             c.execute(create_crp_categories_sql)
             c.execute(create_bills_sql)
+            c.execute(create_bill_industries_sql)
         except sqlite3.Error as e:
             print(e)
 
@@ -170,6 +180,20 @@ class CongressDatabase:
         try:
             c = self.conn.cursor()
             c.execute(sql, (bill_name, bill_datetime))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(e)
+
+    def add_bill_industry(self, bill_name, industry_id):
+        """Insert a bill-industry pair into the database."""
+        sql = """ 
+            INSERT INTO BillIndustries(BillName, IndustryID)
+            VALUES(?, ?)
+            ON CONFLICT(BillName, IndustryID) DO NOTHING; 
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (bill_name, industry_id))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
