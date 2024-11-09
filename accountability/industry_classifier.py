@@ -6,10 +6,11 @@ class IndustrySchema(BaseModel):
 class IndustryClassifier:
     def __init__(self, assistant, industries):
         """
-        Initializes the IndustryClassifier with a list of industry labels.
+        Initializes the IndustryClassifier with an assistant and a list of industry labels.
         If no labels are provided, a default list of industries is used.
         
         Args:
+            assistant: An assistant instance used for classification.
             industries (list): A list of industry categories.
         """
         self.industries = industries
@@ -17,6 +18,15 @@ class IndustryClassifier:
 
 
     def classify(self, text):
+        """
+        Classifies the given text into relevant industries based on its content.
+
+        Args:
+            text (str): The text to be classified.
+
+        Returns:
+            list: A list of industry codes relevant to the text.
+        """
         system_message = "You are an assistant that classifies bill summaries into relevant industries based on their content."
         industry_list = "\n".join([f"{key}: {self.industries[key]}" for key in self.industries.keys()])
         prompt = f"Classify the following bill into the relevant industries. \
@@ -24,7 +34,5 @@ class IndustryClassifier:
                 corresponding to relevant industries, not the description. \
                     \n\n{text}\n\nAvailable industries:\n{industry_list}."
 
-        print(prompt)
-
         industry_classifications = self.assistant.prompt_for_json_response(prompt, IndustrySchema, system_message)
-        return industry_classifications 
+        return industry_classifications
