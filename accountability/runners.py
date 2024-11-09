@@ -218,5 +218,35 @@ def run_classify_bills_industry(secrets_file, text_filepath):
         print(f"Industry Code: {industry_code}, Description: {description}")
 
 
+def run_create_hr_legislator_report(secrets_file, last_name, state_code, save_directory):
+    secrets_parser = SecretsParser()
+    secrets_parser.parse_secrets_file(secrets_file)
+    
+    congress_db = CongressDatabase()
+    donorship = Donorship(secrets_parser)
+    reporter = Reporter(None, None, congress_db)  # Assuming summarizer and classifier are not needed for this report
+
+    # Get congressman ID
+    congressman_id = congress_db.get_congressman_id(last_name, state_code)
+    if not congressman_id:
+        print(f"No congressman found with last name {last_name} in {state_code}")
+        return
+
+    # Get top donors
+    top_donors = donorship.get_top_donors(last_name, state_code)
+    if not top_donors:
+        print(f"No top donors found for {last_name} in {state_code}")
+        return
+
+    # Store top donors in the database
+    for donor in top_donors['response']['industries']['industry']:
+        industry_id = donor['@attributes']['industry_code']
+        donation_amount = float(donor['@attributes']['total'])
+        congress_db.add_congressman_industry(congressman_id, industry_id, donation_amount)
+
+    # Generate report
+    reporter.write_hr_legislator_report(congressman_id, save_directory)
+
+
 if __name__ == '__main__':
     run_process_hr_rollcalls('secrets.yaml', 'results')

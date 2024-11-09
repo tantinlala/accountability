@@ -63,7 +63,7 @@ class HRRollCall:
         # Iterate through the XML elements to extract the votes
         for vote in root.findall('.//recorded-vote'):
             legislator = vote.find('legislator')
-            name = legislator.text
+            name = re.sub(r'\s*\(.*?\)\s*', '', legislator.text).strip()
 
             vote_string = vote.find('vote').text
             if vote_string == "No":

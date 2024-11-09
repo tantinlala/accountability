@@ -109,3 +109,38 @@ class Reporter:
                     file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} |\n")
 
         print(f"Saved votes for {rollcall_id} to {rollcall_file}")
+
+    def write_hr_legislator_report(self, congressman_id, save_directory):
+        """Generate a report for a congressman showing top industry donors and related bills."""
+        # Get congressman details
+        congressman_details = self.congress_db_.get_congressman_details(congressman_id)
+        if not congressman_details:
+            print(f"No congressman found with ID {congressman_id}")
+            return
+
+        last_name = congressman_details['last_name']
+        state_code = congressman_details['state_code']
+
+        # Get top industry donors
+        top_donors = self.congress_db_.get_top_donors(congressman_id)
+
+        # Get related bills
+        related_bills = self.congress_db_.get_related_bills(congressman_id)
+
+        # Create report file
+        report_file = f"{save_directory}/hr_legislators/{state_code}_{last_name}_report.md"
+        with open(report_file, 'w') as file:
+            file.write(f"# Report for {last_name} ({state_code})\n")
+            file.write("\n## Top Industry Donors\n")
+            file.write("| Industry Description | Donation Amount |\n")
+            file.write("|----------------------|-----------------|\n")
+            for donor in top_donors:
+                file.write(f"| {donor['Description']} | ${donor['DonationAmount']:,.2f} |\n")
+
+            file.write("\n## Related Bills\n")
+            file.write("| Bill Name |\n")
+            file.write("|-----------|\n")
+            for bill in related_bills:
+                file.write(f"| {bill[0]} |\n")
+
+        print(f"Report saved to {report_file}")

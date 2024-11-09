@@ -55,7 +55,7 @@ class CongressDatabase:
                 CONSTRAINT VoteID PRIMARY KEY (ActionDateTime, CongressmanID)
             ); 
         """
-        create_crp_categories_sql = """ 
+        create_industries_sql = """ 
             CREATE TABLE IF NOT EXISTS Industries (
                 ID TEXT PRIMARY KEY,
                 Description TEXT NOT NULL
@@ -77,15 +77,26 @@ class CongressDatabase:
                 PRIMARY KEY (BillName, IndustryID)
             ); 
         """
+        create_congressman_industries_sql = """ 
+            CREATE TABLE IF NOT EXISTS CongressmanIndustries (
+                CongressmanID TEXT NOT NULL,
+                IndustryID TEXT NOT NULL,
+                DonationAmount REAL NOT NULL,
+                FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
+                FOREIGN KEY (IndustryID) REFERENCES Industries (ID),
+                PRIMARY KEY (CongressmanID, IndustryID)
+            ); 
+        """
         try:
             c = self.conn.cursor()
             c.execute(create_last_hr_rollcall_for_year_sql)
             c.execute(create_hr_rollcalls_sql)
             c.execute(create_congressmen_sql)
             c.execute(create_hr_votes_sql)
-            c.execute(create_crp_categories_sql)
+            c.execute(create_industries_sql)
             c.execute(create_bills_sql)
             c.execute(create_bill_industries_sql)
+            c.execute(create_congressman_industries_sql)
         except sqlite3.Error as e:
             print(e)
 
@@ -396,3 +407,86 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
             return []
+
+    def add_congressman_industry(self, congressman_id, industry_id, donation_amount):
+        """Insert a congressman-industry pair into the database."""
+        sql = """ 
+            INSERT INTO CongressmanIndustries(CongressmanID, IndustryID, DonationAmount)
+            VALUES(?, ?, ?)
+            ON CONFLICT(CongressmanID, IndustryID) DO UPDATE SET DonationAmount = excluded.DonationAmount; 
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (congressman_id, industry_id, donation_amount))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(e)
+
+    def get_congressman_id(self, last_name, state_code):
+        """Retrieve the congressman ID based on last name and state code."""
+        sql = """
+            SELECT CongressmanID
+            FROM Congressmen
+            WHERE LOWER(Name) LIKE LOWER(?) AND LOWER(State) = LOWER(?)
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (f"%{last_name}%", state_code))
+            result = c.fetchone()
+            return result[0] if result else None
+        except sqlite3.Error as e:
+            print(e)
+            return None
+
+    def get_top_donors(self, congressman_id):
+        """Retrieve the top industry donors for a congressman."""
+        sql = """
+            SELECT IndustryID, DonationAmount
+            FROM CongressmanIndustries
+            WHERE CongressmanID = ?
+            ORDER BY DonationAmount DESC
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (congressman_id,))
+            return c.fetchall()
+        except sqlite3.Error as e:
+            print(e)
+            return []
+
+    def get_related_bills(self, congressman_id):
+        """Retrieve related bills for a congressman based on industry donations."""
+        sql = """
+            SELECT BillName
+            FROM BillIndustries
+            WHERE IndustryID IN (SELECT IndustryID FROM CongressmanIndustries WHERE CongressmanID = ?)
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (congressman_id,))
+            return c.fetchall()
+        except sqlite3.Error as e:
+            print(e)
+            return []
+
+    def get_congressman_details(self, congressman_id):
+        """Retrieve the details of a congressman based on their ID."""
+        sql = """
+            SELECT Name, State, Party
+            FROM Congressmen
+            WHERE CongressmanID = ?
+        """
+        try:
+            c = self.conn.cursor()
+            c.execute(sql, (congressman_id,))
+            result = c.fetchone()
+            if result:
+                return {
+                    'last_name': result[0],
+                    'state_code': result[1],
+                    'party': result[2]
+                }
+            return None
+        except sqlite3.Error as e:
+            print(e)
+            return None

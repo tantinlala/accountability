@@ -7,7 +7,7 @@ See entry_points in setup.py
 
 import argparse
 from accountability.runners import run_setup, run_summarize, run_process_hr_rollcalls, run_get_bill, \
-    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill, run_classify_bills_industry
+    run_get_amendment, run_diff_with_previous, run_get_older_rollcalls_for_bill, run_classify_bills_industry, run_create_hr_legislator_report
 
 
 SECRETS_FILE_HELP_STRING = 'Yaml file containing secrets needed for this program'
@@ -96,3 +96,14 @@ def classify_bills_industry():
     parser.add_argument('-f', '--file', help='File containing text to classify')
     args = parser.parse_args()
     run_classify_bills_industry(args.secrets_file, args.file)
+
+
+def create_hr_legislator_report():
+    parser = argparse.ArgumentParser(
+        description='Get the top donors for a congressman and generate a report')
+    parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
+    parser.add_argument('-l', '--last_name', help='The last name of the congressman')
+    parser.add_argument('-c', '--state_code', help='The state code of the congressman')
+    parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
+    args = parser.parse_args()
+    run_create_hr_legislator_report(args.secrets_file, args.last_name, args.state_code, args.save_directory)
