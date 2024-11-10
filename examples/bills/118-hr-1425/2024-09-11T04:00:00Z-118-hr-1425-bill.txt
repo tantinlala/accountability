@@ -1,0 +1,279 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 1425 Engrossed in House (EH)]
+
+&lt;DOC&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+118th CONGRESS
+  2d Session
+                                H. R. 1425
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+
+ 
+To require any convention, agreement, or other international instrument 
+on pandemic prevention, preparedness, and response reached by the World 
+         Health Assembly to be subject to Senate ratification.
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE.
+
+    This Act may be cited as the ``No WHO Pandemic Preparedness Treaty 
+Without Senate Approval Act''.
+
+SEC. 2. FINDINGS.
+
+    Congress makes the following findings:
+            (1) On May 18, 2020, President Donald Trump sent a letter 
+        to World Health Organization (referred to in this Act as 
+        ``WHO'') Director-General Tedros Adhanom Ghebreyesus (referred 
+        to in this Act as the ``Director-General''), announcing that--
+                    (A) United States contributions to WHO would be 
+                halted due its mismanagement of the COVID-19 outbreak 
+                and its lack of independence from the People's Republic 
+                of China; and
+                    (B) the United States would withdraw from WHO if it 
+                did not commit to substantive improvements within 30 
+                days.
+            (2) President Trump's May 18 letter cited numerous 
+        instances of WHO mismanagement of the COVID-19 pandemic, 
+        including--
+                    (A) unjustified delays informing member states 
+                about a potentially serious disease outbreak in Wuhan, 
+                China; and
+                    (B) repeated grossly inaccurate or misleading 
+                claims about the transmissibility of the virus and 
+                about the Government of China's handling of the 
+                outbreak.
+            (3) On June 30, 2020, Secretary of State Mike Pompeo 
+        formally notified the United Nations of the United States 
+        decision to withdraw from WHO, which would have taken effect on 
+        July 6, 2021, under the terms of a joint resolution adopted by 
+        Congress on June 14, 1948 (Public Law 80-643; 62 Stat. 441).
+            (4) A Pew Research Center survey conducted in April and May 
+        2020 indicated that 51 percent of Americans felt that WHO had 
+        done a poor or fair job in managing the COVID-19 pandemic.
+            (5) On January 20, 2021, President Joseph Biden sent United 
+        Nations Director-General Antonio Guterres a letter retracting 
+        the United States notice of withdrawal from WHO.
+            (6) On December 1, 2021, at the second special session of 
+        the World Health Assembly (referred to in this Act as the 
+        ``WHA'') decided--
+                    (A) to establish an intergovernmental negotiating 
+                body (referred to in this section as the ``INB'') to 
+                draft and negotiate a WHO convention (referred to in 
+                this section as the ``Convention''), agreement, or 
+                other international instrument on pandemic prevention, 
+                preparedness, and response, with a view to adoption 
+                under Article 19 or any other provision of the WHO 
+                Constitution; and
+                    (B) that the INB shall submit a progress report to 
+                the Seventy-sixth WHA and a working draft of the 
+                convention for consideration by the Seventy-seventh 
+                WHA, which is scheduled to take place beginning on 
+                March 18, 2024.
+            (7) On February 24, March 14 and 15, and June 6 through 8 
+        and 15 through 17, 2022, the INB held its inaugural meeting at 
+        which the Director-General proposed the following 5 themes to 
+        guide the INB's work in drafting the Convention:
+                    (A) Building national, regional, and global 
+                capacities based on a whole-of-government and whole-of-
+                society approach.
+                    (B) Establishing global access and benefit sharing 
+                for all pathogens, and determining a global policy for 
+                the equitable production and distribution of 
+                countermeasures.
+                    (C) Establishing robust systems and tools for 
+                pandemic preparedness and response.
+                    (D) Establishing a long-term plan for sustainable 
+                financing to ensure support for global health threat 
+                management and response systems.
+                    (E) Empowering WHO to fulfill its mandate as the 
+                directing and coordinating authority on international 
+                health work, including for pandemic preparedness and 
+                response.
+            (8) On July 18 through 22, 2022, the INB held its second 
+        meeting at which it agreed that the Convention would be adopted 
+        under Article 19 of the WHO Constitution and legally binding on 
+        the parties.
+            (9) On December 5 through 7, 2022, the INB held its third 
+        meeting at which it accepted a conceptual zero draft of the 
+        Convention and agreed to prepare a zero draft for consideration 
+        at the INB's next meeting.
+            (10) In early January 2023, an initial draft of the 
+        Convention was sent to WHO member states in advance of its 
+        formal introduction at the fourth meeting of the INB, which is 
+        scheduled for February 27 through March 3, 2023. The draft 
+        includes broad and binding provisions, including rules 
+        governing parties' access to pathogen genomic sequences and how 
+        the products or benefits of such access are to be distributed.
+            (11) Section 723.3 of title 11 of the Department of State's 
+        Foreign Affairs Manual states that when ``determining whether 
+        any international agreement should be brought into force as a 
+        treaty or as an international agreement other than a treaty, 
+        the utmost care is to be exercised to avoid any invasion or 
+        compromise of the constitutional powers of the President, the 
+        Senate, and the Congress as a whole'' and includes the 
+        following criteria to be considered when determining whether an 
+        international agreement should take the form of a treaty or an 
+        executive agreement:
+                    (A) ``The extent to which the agreement involves 
+                commitments or risks affecting the nation as a whole''.
+                    (B) ``Whether the agreement is intended to affect 
+                state laws''.
+                    (C) ``Whether the agreement can be given effect 
+                without the enactment of subsequent legislation by the 
+                Congress''.
+                    (D) ``Past U.S. practice as to similar 
+                agreements''.
+                    (E) ``The preference of the Congress as to a 
+                particular type of agreement''.
+                    (F) ``The degree of formality desired for an 
+                agreement''.
+                    (G) ``The proposed duration of the agreement, the 
+                need for prompt conclusion of an agreement, and the 
+                desirability of concluding a routine or short-term 
+                agreement''.
+                    (H) ``The general international practice as to 
+                similar agreements''.
+            (12) Article II, Section 2 of the United States 
+        Constitution provides that the President ``shall have Power, by 
+        and with the Advice and Consent of the Senate, to make 
+        Treaties, provided two-thirds of the Senators present concur''.
+            (13) Alexander Hamilton writes in Federalist Paper #75 
+        regarding the Treaty Making Powers of the Executive that ``Its 
+        objects are CONTRACTS with foreign nations, which have the 
+        force of law, but derive it from the obligations of good faith. 
+        They are not rules prescribed by the sovereign to the subject, 
+        but agreements between sovereign and sovereign. The power in 
+        question seems therefore to form a distinct department, and to 
+        belong, properly, neither to the legislative nor to the 
+        Executive. The qualities elsewhere detailed as indispensable in 
+        the management of foreign negotiations, point out the Executive 
+        as the most fit agent in those transactions; while the vast 
+        importance of the trust, and the operation of treaties as laws, 
+        plead strongly for the participation of the whole or a portion 
+        of the legislative body in the office of making them''.
+            (14) If any provisions of a treaty are to have legal 
+        bearing on United States citizens those provisions must pass 
+        both the United States House of Representatives and the Senate 
+        and be presented to the President, as all Federal laws must.
+            (15) The United States Constitution establishes a clear 
+        framework for making treaties by the Executive and with the 
+        advice and consent of the Senate. This process is indispensable 
+        for the Founders' vision of constitutional government.
+            (16) The United States House of Representatives does not 
+        vote for, ratify, affirm, or consent to treaties.
+
+SEC. 3. STATEMENT OF POLICY.
+
+    It is the policy of the United States to unequivocally support 
+Taiwan's full participation in the World Health Organization.
+
+SEC. 4. SENSE OF CONGRESS.
+
+    It is the sense of Congress that--
+            (1) a significant segment of the American public is deeply 
+        skeptical of the World Health Organization, its leadership, and 
+        its independence from the pernicious political influence of 
+        certain member states, including the People's Republic of 
+        China;
+            (2) Congress strongly prefers that any agreement related to 
+        pandemic prevention, preparedness, and response adopted by the 
+        World Health Assembly pursuant to the work of the INB be 
+        considered a treaty requiring the advice and consent of the 
+        Senate, with two-thirds of Senators concurring;
+            (3) the scope of the agreement which the INB has been 
+        tasked with drafting, as outlined by the Director-General, is 
+        so broad that any application of the factors referred to in 
+        section 2(11) will weigh strongly in favor of it being 
+        considered a treaty; and
+            (4) given the level of public distrust, any relevant new 
+        agreement by the World Health Assembly which cannot garner the 
+        two-thirds vote needed for Senate ratification should not be 
+        agreed to or implemented by the United States.
+
+SEC. 5. ANY WORLD HEALTH AGENCY CONVENTION OR AGREEMENT OR OTHER 
+              INTERNATIONAL INSTRUMENT RESULTING FROM THE INTERNATIONAL 
+              NEGOTIATING BODY'S FINAL REPORT DEEMED TO BE A TREATY 
+              SUBJECT TO ADVICE AND CONSENT OF THE SENATE.
+
+    Notwithstanding any other provision of law, any convention, 
+agreement, or other international instrument on pandemic prevention, 
+preparedness, and response reached by the World Health Assembly 
+pursuant to the recommendations, report, or work of the International 
+Negotiating Body established by the second special session of the World 
+Health Assembly is deemed to be a treaty that is subject to the 
+requirements of article II, section 2, clause 2 of the Constitution of 
+the United States, which requires the advice and consent of the Senate, 
+with two-thirds of Senators concurring.
+
+SEC. 6. NO FORCE OR EFFECT TO TREATY PRIOR TO RATIFICATION.
+
+    Notwithstanding any other provision of law, any convention, 
+agreement, or other international instrument on pandemic prevention, 
+preparedness, and response deemed to be a treaty by section 5--
+            (1) shall have no force or effect under the laws of the 
+        United States before the date on which such treaty is ratified 
+        with the advice and consent of the Senate; and
+            (2) may not be used, prior to such date, to establish or 
+        demonstrate the existence of a violation of United States law 
+        or an offense against the law of nations in United States 
+        courts, including--
+                    (A) to establish standing, a cause of action, or 
+                damages as a matter of law; or
+                    (B) to demonstrate whether an action by a Federal 
+                agency is arbitrary or capricious, an abuse of 
+                discretion, or otherwise not in accordance with law.
+
+            Passed the House of Representatives September 11, 2024.
+
+            Attest:
+
+                                                                 Clerk.
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 1425
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+To require any convention, agreement, or other international instrument 
+on pandemic prevention, preparedness, and response reached by the World 
+         Health Assembly to be subject to Senate ratification.
+</pre></body></html>

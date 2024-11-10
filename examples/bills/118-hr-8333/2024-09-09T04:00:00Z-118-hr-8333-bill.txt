@@ -1,0 +1,433 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 8333 Engrossed in House (EH)]
+
+&lt;DOC&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+118th CONGRESS
+  2d Session
+                                H. R. 8333
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+
+ 
+ To prohibit contracting with certain biotechnology providers, and for 
+                            other purposes.
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE.
+
+    This Act may be cited as the ``BIOSECURE Act''.
+
+SEC. 2. PROHIBITION ON CONTRACTING WITH CERTAIN BIOTECHNOLOGY 
+              PROVIDERS.
+
+    (a) In General.--The head of an executive agency may not--
+            (1) procure or obtain any biotechnology equipment or 
+        service produced or provided by a biotechnology company of 
+        concern; or
+            (2) enter into a contract or extend or renew a contract 
+        with any entity that--
+                    (A) uses biotechnology equipment or services 
+                produced or provided by a biotechnology company of 
+                concern and acquired after the applicable effective 
+                date in subsection (c) in performance of the contract 
+                with the executive agency; or
+                    (B) enters into any contract the performance of 
+                which such entity knows or has reason to believe will 
+                require, in performance of the contract with the 
+                executive agency, the use of biotechnology equipment or 
+                services produced or provided by a biotechnology 
+                company of concern and acquired after the applicable 
+                effective date in subsection (c).
+    (b) Prohibition on Loan and Grant Funds.--The head of an executive 
+agency may not obligate or expend loan or grant funds to, and a loan or 
+grant recipient may not use loan or grant funds to--
+            (1) procure, obtain, or use any biotechnology equipment or 
+        services produced or provided by a biotechnology company of 
+        concern; or
+            (2) enter into a contract or extend or renew a contract 
+        with an entity described in subsection (a)(2).
+    (c) Effective Dates.--
+            (1) Certain entities.--With respect to the biotechnology 
+        companies of concern covered by subsection (f)(2)(A), the 
+        prohibitions under subsections (a) and (b) shall take effect 60 
+        days after the issuance of the regulation in subsection (h).
+            (2) Other entities.--With respect to the biotechnology 
+        companies of concern covered by subsection (f)(2)(B), the 
+        prohibitions under subsections (a) and (b) shall take effect 
+        180 days after the issuance of the regulation in subsection 
+        (h).
+            (3) Rules of construction.--
+                    (A) Certain entities.--Prior to January 1, 2032, 
+                with respect to biotechnology companies of concern 
+                covered by subsections (f)(2)(A), subsections (a)(2) 
+                and (b)(2) shall not apply to biotechnology equipment 
+                or services produced or provided under a contract or 
+                agreement, including previously negotiated contract 
+                options, entered into before the effective date under 
+                paragraph (1).
+                    (B) Other entities.--Prior to the date that is five 
+                years after the issuance of the regulation in 
+                subsection (h) that identifies a biotechnology company 
+                of concern covered by subsections (f)(2)(B), 
+                subsections (a)(2) and (b)(2) shall not apply to 
+                biotechnology equipment or services produced or 
+                provided under a contract or agreement, including 
+                previously negotiated contract options, entered into 
+                before the effective date under paragraph (2).
+                    (C) Safe harbor.--The term ``biotechnology 
+                equipment or services produced or provided by a 
+                biotechnology company of concern'' shall not be 
+                construed to refer to any biotechnology equipment or 
+                services that were formerly, but are no longer, 
+                produced or provided by biotechnology companies of 
+                concern.
+    (d) Waiver Authorities.--
+            (1) Specific biotechnology exception.--
+                    (A) Waiver.--The head of the applicable executive 
+                agency may waive the prohibition under subsections (a) 
+                and (b) on a case-by-case basis--
+                            (i) with the approval of the Director of 
+                        the Office of Management and Budget, in 
+                        coordination with the Secretary of Defense; and
+                            (ii) if such head submits a notification 
+                        and justification to the appropriate 
+                        congressional committees not later than 30 days 
+                        after granting such waiver.
+                    (B) Duration.--
+                            (i) In general.--Except as provided in 
+                        clause (ii), a waiver granted under 
+                        subparagraph (A) shall last for a period of not 
+                        more than 365 days.
+                            (ii) Extension.--The head of the applicable 
+                        executive agency, with the approval of the 
+                        Director of the Office of Management and 
+                        Budget, and in coordination with the Secretary 
+                        of Defense, may extend a waiver granted under 
+                        subparagraph (A) one time, for a period up to 
+                        180 days after the date on which the waiver 
+                        would otherwise expire, if such an extension is 
+                        in the national security interests of the 
+                        United States and if such head submits a 
+                        notification and justification to the 
+                        appropriate congressional committees not later 
+                        than 10 days after granting such waiver 
+                        extension.
+            (2) Overseas health care services.--The head of an 
+        executive agency may waive the prohibitions under subsections 
+        (a) and (b) with respect to a contract, subcontract, or 
+        transaction for the acquisition or provision of health care 
+        services overseas on a case-by-case basis--
+                    (A) if the head of such executive agency determines 
+                that the waiver is--
+                            (i) necessary to support the mission or 
+                        activities of the employees of such executive 
+                        agency described in subsection (e)(2)(A); and
+                            (ii) in the interest of the United States;
+                    (B) with the approval of the Director of the Office 
+                of Management and Budget, in consultation with the 
+                Secretary of Defense; and
+                    (C) if such head submits a notification and 
+                justification to the appropriate congressional 
+                committees not later than 30 days after granting such 
+                waiver.
+    (e) Exceptions.--The prohibitions under subsections (a) and (b) 
+shall not apply to--
+            (1) any activity subject to the reporting requirements 
+        under title V of the National Security Act of 1947 (50 U.S.C. 
+        3091 et seq.) or any authorized intelligence activities of the 
+        United States;
+            (2) the acquisition or provision of health care services 
+        overseas for--
+                    (A) employees of the United States, including 
+                members of the uniformed services (as defined in 
+                section 101(a) of title 10, United States Code), whose 
+                official duty stations are located overseas or are on 
+                permissive temporary duty travel overseas; or
+                    (B) employees of contractors or subcontractors of 
+                the United States--
+                            (i) who are performing under a contract 
+                        that directly supports the missions or 
+                        activities of individuals described in 
+                        subparagraph (A); and
+                            (ii) whose primary duty stations are 
+                        located overseas or are on permissive temporary 
+                        duty travel overseas; or
+            (3) the acquisition, use, or distribution of human 
+        multiomic data, lawfully compiled, that is commercially or 
+        publicly available.
+    (f) Evaluation of Certain Biotechnology Entities.--
+            (1) Entity consideration.--Not later than 365 days after 
+        the date of the enactment of this Act, the Director of the 
+        Office of Management and Budget shall publish a list of the 
+        entities that constitute biotechnology companies of concern 
+        based on a list of suggested entities that shall be provided by 
+        the Secretary of Defense in coordination with the Attorney 
+        General, the Secretary of Health and Human Services, the 
+        Secretary of Commerce, the Director of National Intelligence, 
+        the Secretary of Homeland Security, the Secretary of State, and 
+        the National Cyber Director.
+            (2) Biotechnology companies of concern defined.--The term 
+        ``biotechnology company of concern'' means--
+                    (A) BGI, MGI, Complete Genomics, WuXi AppTec, and 
+                WuXi Biologics;
+                    (B) any entity that is determined by the process 
+                established in paragraph (1) to meet the following 
+                criteria--
+                            (i) is subject to the administrative 
+                        governance structure, direction, control, or 
+                        operates on behalf of the government of a 
+                        foreign adversary;
+                            (ii) is to any extent involved in the 
+                        manufacturing, distribution, provision, or 
+                        procurement of a biotechnology equipment or 
+                        service; and
+                            (iii) poses a risk to the national security 
+                        of the United States based on--
+                                    (I) engaging in joint research 
+                                with, being supported by, or being 
+                                affiliated with a foreign adversary's 
+                                military, internal security forces, or 
+                                intelligence agencies;
+                                    (II) providing multiomic data 
+                                obtained via biotechnology equipment or 
+                                services to the government of a foreign 
+                                adversary; or
+                                    (III) obtaining human multiomic 
+                                data via the biotechnology equipment or 
+                                services without express and informed 
+                                consent; and
+                    (C) any subsidiary, parent, affiliate, or successor 
+                of entities listed in subparagraphs (A) and (B), 
+                provided they meet the criteria in subparagraph (B)(i).
+            (3) Guidance.--Not later than 120 days after the date of 
+        the enactment of this Act for the biotechnology companies of 
+        concern named in paragraph (2)(A), and not later than 180 days 
+        after the development of the list pursuant to paragraph (1) and 
+        any update to the list pursuant to paragraph (4), the Director 
+        of the Office of Management and Budget, in coordination with 
+        the Secretary of Defense, the Attorney General, the Secretary 
+        of Health and Human Services, the Secretary of Commerce, the 
+        Director of National Intelligence, the Secretary of Homeland 
+        Security, the Secretary of State, and the National Cyber 
+        Director, shall establish guidance as necessary to implement 
+        the requirements of this section.
+            (4) Updates.--The Director of the Office of Management and 
+        Budget, in coordination with or based on a recommendation 
+        provided by the Secretary of Defense, the Attorney General, the 
+        Secretary of Health and Human Services, the Secretary of 
+        Commerce, the Director of National Intelligence, the Secretary 
+        of Homeland Security, the Secretary of State, and the National 
+        Cyber Director, shall periodically, though not less than 
+        annually, review and, as appropriate, modify the list of 
+        biotechnology companies of concern, and notify the appropriate 
+        congressional committees of any such modifications.
+            (5) Notice of a designation and review.--
+                    (A) In general.--A notice of a designation as a 
+                biotechnology company of concern under paragraph (2)(B) 
+                shall be issued to any biotechnology company of concern 
+                named in the designation--
+                            (i) advising that a designation has been 
+                        made;
+                            (ii) identifying the criteria relied upon 
+                        under such subparagraph and, to the extent 
+                        consistent with national security and law 
+                        enforcement interests, the information that 
+                        formed the basis for the designation;
+                            (iii) advising that, within 90 days after 
+                        receipt of notice, the biotechnology company of 
+                        concern may submit information and argument in 
+                        opposition to the designation;
+                            (iv) describing the procedures governing 
+                        the review and possible issuance of a 
+                        designation pursuant to paragraph (1); and
+                            (v) where practicable, identifying 
+                        mitigation steps that could be taken by the 
+                        biotechnology company of concern that may 
+                        result in the rescission of the designation.
+                    (B) Congressional notification requirements.--
+                            (i) Notice of designation.--The Director of 
+                        the Office of Management and Budget shall 
+                        submit the notice required under subparagraph 
+                        (A) to the Committee on Homeland Security and 
+                        Governmental Affairs of the Senate and the 
+                        Committee on Oversight and Accountability of 
+                        the House of Representatives.
+                            (ii) Information and argument in opposition 
+                        to designations.--Not later than 7 days after 
+                        receiving any information and argument in 
+                        opposition to a designation pursuant to 
+                        subparagraph (A)(iii), the Director of the 
+                        Office of Management and Budget shall submit 
+                        such information to the Committee on Homeland 
+                        Security and Governmental Affairs of the Senate 
+                        and the Committee on Oversight and 
+                        Accountability of the House of Representatives.
+                    (C) Exceptions.--The provisions under subparagraphs 
+                (A) and (B) shall not apply to an entity listed under 
+                paragraph (2)(A).
+            (6) No immediate public release.--Any designation made 
+        under paragraph (1) or paragraph (4) shall not be made publicly 
+        available until the Director of the Office of Management and 
+        Budget, in coordination with appropriate agencies, reviews all 
+        information submitted under paragraph (5)(A)(iii) and issues a 
+        final determination that a company shall remain listed as a 
+        biotechnology company of concern.
+    (g) Evaluation of National Security Risks Posed by Foreign 
+Adversary Acquisition of American Multiomic Data.--
+            (1) Assessment.--Not later than 270 days after the 
+        enactment of this Act, the Director of National Intelligence, 
+        in consultation with the Secretary of Defense, the Attorney 
+        General of the United States, the Secretary of Health and Human 
+        Services, the Secretary of Commerce, the Secretary of Homeland 
+        Security, the Secretary of State, and the National Cyber 
+        Director, shall complete an assessment of risks to national 
+        security posed by human multiomic data from United States 
+        citizens that is collected or stored by a foreign adversary 
+        from the provision of biotechnology equipment or services.
+            (2) Report requirement.--Not later than 30 days after the 
+        completion of the assessment developed under paragraph (1), the 
+        Director of National Intelligence shall submit a report with 
+        such assessment to the appropriate congressional committees.
+            (3) Form.--The report required under paragraph (2) shall be 
+        in unclassified form accompanied by a classified annex.
+    (h) Regulations.--Not later than one year after the date of 
+establishment of guidance required under subsection (f)(3), and as 
+necessary for subsequent updates, the Federal Acquisition Regulatory 
+Council shall revise the Federal Acquisition Regulation as necessary to 
+implement the requirements of this section.
+    (i) Reporting on Intelligence on Nefarious Activities of 
+Biotechnology Companies With Human Multiomic Data.--Not later than 180 
+days after the date of the enactment of this Act, and annually 
+thereafter, the Director of National Intelligence, in consultation with 
+the heads of executive agencies, shall submit to the appropriate 
+congressional committees a report on any intelligence in possession of 
+such agencies related to nefarious activities conducted by 
+biotechnology companies with human multiomic data. The report shall 
+include information pertaining to potential threats to national 
+security or public safety from the selling, reselling, licensing, 
+trading, transferring, sharing, or otherwise providing or making 
+available to any foreign country of any forms of multiomic data of a 
+United States citizen.
+    (j) No Additional Funds.--No additional funds are authorized to be 
+appropriated for the purpose of carrying out this section.
+    (k) Definitions.--In this section:
+            (1) Appropriate congressional committees.--The term 
+        ``appropriate congressional committees'' means--
+                    (A) the Committee on Armed Services, the Select 
+                Committee on Intelligence, and the Committee on 
+                Homeland Security and Governmental Affairs of the 
+                Senate; and
+                    (B) the Committee on Armed Services, the Permanent 
+                Select Committee on Intelligence, the Committee on 
+                Foreign Affairs, the Committee on Oversight and 
+                Accountability, the Committee on Energy and Commerce, 
+                and the Select Committee on Strategic Competition 
+                between the United States and the Chinese Communist 
+                Party of the House of Representatives.
+            (2) Biotechnology equipment or service.--The term 
+        ``biotechnology equipment or service'' means--
+                    (A) equipment, including genetic sequencers, 
+                combined mass spectrometry technologies, polymerase 
+                chain reaction machines, or any other instrument, 
+                apparatus, machine, or device, including components and 
+                accessories thereof, that is designed for use in the 
+                research, development, production, or analysis of 
+                biological materials as well as any software, firmware, 
+                or other digital components that are specifically 
+                designed for use in, and necessary for the operation 
+                of, such equipment;
+                    (B) any service for the research, development, 
+                production, analysis, detection, or provision of 
+                information, including data storage and transmission 
+                related to biological materials, including--
+                            (i) advising, consulting, or support 
+                        services with respect to the use or 
+                        implementation of a instrument, apparatus, 
+                        machine, or device described in subparagraph 
+                        (A); and
+                            (ii) disease detection, genealogical 
+                        information, and related services; and
+                    (C) any other service, instrument, apparatus, 
+                machine, component, accessory, device, software, or 
+                firmware that is designed for use in the research, 
+                development, production, or analysis of biological 
+                materials that the Director of the Office of Management 
+                and Budget, in consultation with the heads of Executive 
+                agencies, as determined appropriate by the Director of 
+                the Office of Management and Budget, determines 
+                appropriate in the interest of national security.
+            (3) Contract.--Except as the term is used under subsection 
+        (b)(2) and subsection (c)(3), the term ``contract'' means any 
+        contract subject to the Federal Acquisition Regulation issued 
+        under section 1303(a)(1) of title 41, United States Code.
+            (4) Control.--The term ``control'' has the meaning given to 
+        that term in section 800.208 of title 31, Code of Federal 
+        Regulations, or any successor regulations.
+            (5) Executive agency.--The term ``executive agency'' has 
+        the meaning given the term ``Executive agency'' in section 105 
+        of title 5, United States Code.
+            (6) Foreign adversary.--The term ``foreign adversary'' has 
+        the meaning given the term ``covered nation'' in section 
+        4872(d) of title 10, United States Code.
+            (7) Multiomic.--The term ``multiomic'' means data types 
+        that include genomics, epigenomics, transcriptomics, 
+        proteomics, and metabolomics.
+            (8) Overseas.--The term ``overseas'' means any area outside 
+        of the United States, the Commonwealth of Puerto Rico, or a 
+        territory or possession of the United States.
+
+            Passed the House of Representatives September 9, 2024.
+
+            Attest:
+
+                                                                 Clerk.
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 8333
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+ To prohibit contracting with certain biotechnology providers, and for 
+                            other purposes.
+</pre></body></html>

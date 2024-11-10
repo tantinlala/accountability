@@ -1,0 +1,2587 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 8790 Engrossed in House (EH)]
+
+&lt;DOC&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+118th CONGRESS
+  2d Session
+                                H. R. 8790
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+
+ 
+  To expedite under the National Environmental Policy Act of 1969 and 
+ improve forest management activities on National Forest System lands, 
+     on public lands under the jurisdiction of the Bureau of Land 
+  Management, and on Tribal lands to return resilience to overgrown, 
+           fire-prone forested lands, and for other purposes.
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE; TABLE OF CONTENTS.
+
+    (a) Short Title.--This Act may be cited as the ``Fix Our Forests 
+Act''.
+    (b) Table of Contents.--The table of contents for this Act is as 
+follows:
+
+Sec. 1. Short title; table of contents.
+Sec. 2. Definitions.
+                  TITLE I--LANDSCAPE-SCALE RESTORATION
+
+   Subtitle A--Addressing Emergency Wildfire Risks in High Priority 
+                               Firesheds
+
+Sec. 101. Designation of fireshed management areas.
+Sec. 102. Fireshed center.
+Sec. 103. Fireshed registry.
+Sec. 104. Shared stewardship.
+Sec. 105. Fireshed assessments.
+Sec. 106. Emergency fireshed management.
+Sec. 107. Sunset.
+ Subtitle B--Expanding Collaborative Tools to Reduce Wildfire Risk and 
+                         Improve Forest Health
+
+Sec. 111. Modification of the treatment of certain revenue and payments 
+                            under good neighbor agreements.
+Sec. 112. Fixing stewardship end result contracting.
+Sec. 113. Intra-agency strike teams.
+Sec. 114. Locally-led restoration.
+Sec. 115. Joint Chiefs landscape restoration partnership program.
+Sec. 116. Collaborative forest landscape restoration program.
+Sec. 117. Utilizing grazing for wildfire risk reduction.
+Sec. 118. Program to support priority reforestation and restoration 
+                            projects of Department of the Interior.
+                     Subtitle C--Litigation Reform
+
+Sec. 121. Commonsense litigation reform.
+Sec. 122. Consultation on forest plans.
+    TITLE II--PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE
+
+Sec. 201. Community wildfire risk reduction program.
+Sec. 202. Community wildfire defense research program.
+Sec. 203. Vegetation management, facility inspection, and operation and 
+                            maintenance relating to electric 
+                            transmission and distribution facility 
+                            rights-of-way.
+Sec. 204. Categorical exclusion for electric utility lines rights-of-
+                            way.
+Sec. 205. Seeds of success.
+                 TITLE III--TRANSPARENCY AND TECHNOLOGY
+
+Sec. 301. Biochar innovations and opportunities for conservation, 
+                            health, and advancements in research.
+Sec. 302. Accurate hazardous fuels reduction reports.
+Sec. 303. Public-private wildfire technology deployment and 
+                            demonstration partnership.
+Sec. 304. GAO study on Forest Service policies.
+Sec. 305. Forest Service Western headquarters study.
+Sec. 306. Keeping forest plans current and monitored.
+Sec. 307. Container Aerial Firefighting System (CAFFS).
+Sec. 308. Study on pine beetle infestation.
+      TITLE IV--ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS
+
+Sec. 401. Wildland Fire Management Casualty Assistance Program.
+                     TITLE V--WHITE OAK RESILIENCE
+
+Sec. 501. White Oak Restoration Initiative Coalition.
+Sec. 502. Forest Service pilot program.
+Sec. 503. Department of the Interior white oak review and restoration.
+Sec. 504. White oak regeneration and upland oak habitat.
+Sec. 505. Tree nursery shortages.
+Sec. 506. White oak research.
+Sec. 507. USDA formal initiative.
+Sec. 508. Authorities.
+ TITLE VI--EXPANSION OF PUBLIC-PRIVATE PARTNERSHIPS UNDER WATER SOURCE 
+                           PROTECTION PROGRAM
+
+Sec. 601. Water source protection program.
+Sec. 602. Watershed condition framework technical corrections.
+
+SEC. 2. DEFINITIONS.
+
+    In this Act:
+            (1) Director.--The term ``Director'' means the Director of 
+        the Fireshed Center appointed under section 102.
+            (2) Fireshed.--The term ``fireshed'' means a landscape-
+        scale area that faces similar wildfire threat where a response 
+        strategy could influence the wildfire outcome.
+            (3) Fireshed management project.--The term ``fireshed 
+        management project'' means a project under section 106.
+            (4) Fireshed registry.--The term ``Fireshed Registry'' 
+        means the fireshed registry established under section 103.
+            (5) Forest plan.--The term ``forest plan'' means--
+                    (A) a land use plan prepared by the Bureau of Land 
+                Management for public lands pursuant to section 202 of 
+                the Federal Land Policy and Management Act of 1976 (43 
+                U.S.C. 1712);
+                    (B) a land and resource management plan prepared by 
+                the Forest Service for a unit of the National Forest 
+                System pursuant to section 6 of the Forest and 
+                Rangeland Renewable Resources Planning Act of 1974 (16 
+                U.S.C. 1604); or
+                    (C) a forest management plan (as defined in section 
+                304 of the National Indian Forests Resources Management 
+                Act (25 U.S.C. 3104)) with respect to Indian forest 
+                land or rangeland.
+            (6) Governor.--The term ``Governor'' means the Governor or 
+        any other appropriate executive official of an affected State 
+        or Indian Tribe or the Commonwealth of Puerto Rico.
+            (7) Hazardous fuels management activities.--The term 
+        ``hazardous fuels management activities'' means any vegetation 
+        management activities (or combination thereof) that reduce the 
+        risk of wildfire, including mechanical thinning, mastication, 
+        prescribed burning, cultural burning (as determined by the 
+        applicable Indian Tribe), timber harvest, and grazing.
+            (8) HFRA terms.--The terms ``at-risk community'', 
+        ``community wildfire protection plan'', and ``wildland-urban 
+        interface'' have the meanings given such terms, respectively, 
+        in section 101 of the Healthy Forests Restoration Act of 2003 
+        (16 U.S.C. 6511).
+            (9) Indian forest land or rangeland.--The term ``Indian 
+        forest land or rangeland'' means land that--
+                    (A) is held in trust by, or with a restriction 
+                against alienation by, the United States for an Indian 
+                Tribe or a member of an Indian Tribe; and
+                    (B)(i)(I) is Indian forest land (as defined in 
+                section 304 of the National Indian Forest Resources 
+                Management Act (25 U.S.C. 3103)); or
+                                    (II) has a cover of grasses, brush, 
+                                or any similar vegetation; or
+                            (ii) formerly had a forest cover or 
+                        vegetative cover that is capable of 
+                        restoration.
+            (10) Indian tribe.--The term ``Indian Tribe'' has the 
+        meaning given that term in section 4 of the Indian Self-
+        Determination and Education Assistance Act (25 U.S.C. 5304).
+            (11) National forest system lands.--The term ``National 
+        Forest System lands'' has the meaning given the term in section 
+        11(a) of the Forest and Rangeland Renewable Resources Planning 
+        Act of 1974 (16 U.S.C. 1609).
+            (12) Public lands.--The term ``public lands'' has the 
+        meaning given that term in section 103 of the Federal Land 
+        Policy and Management Act of 1976 (43 U.S.C. 1702), except that 
+        the term includes Coos Bay Wagon Road Grant lands and Oregon 
+        and California Railroad Grant lands.
+            (13) Relevant congressional committees.--The term 
+        ``relevant Congressional Committees'' means--
+                    (A) the Committees on Natural Resources and 
+                Agriculture of the House of Representatives; and
+                    (B) the Committees on Energy and Natural Resources 
+                and Agriculture, Nutrition, and Forestry of the Senate.
+            (14) Responsible official.--The term ``responsible 
+        official'' means an employee of the Department of the Interior 
+        or Forest Service who has the authority to make and implement a 
+        decision on a proposed action.
+            (15) Secretaries.--The term ``Secretaries'' means each of--
+                    (A) the Secretary of the Interior; and
+                    (B) the Secretary of Agriculture.
+            (16) Secretary.--The term ``Secretary'' means the Secretary 
+        of Agriculture.
+            (17) Secretary concerned.--The term ``Secretary concerned'' 
+        means--
+                    (A) the Secretary of Agriculture, with respect to 
+                National Forest System lands; and
+                    (B) the Secretary of the Interior, with respect to 
+                public lands.
+            (18) Special district.--The term ``special district'' means 
+        a political subdivision of a State that--
+                    (A) has significant budgetary autonomy or control;
+                    (B) was created by or pursuant to the laws of the 
+                State for the purpose of performing a limited and 
+                specific governmental or proprietary function; and
+                    (C) is distinct from any other local government 
+                unit within the State.
+            (19) State.--The term ``State'' means each of the several 
+        States, the District of Columbia, and each territory of the 
+        United States.
+
+                  TITLE I--LANDSCAPE-SCALE RESTORATION
+
+   Subtitle A--Addressing Emergency Wildfire Risks in High Priority 
+                               Firesheds
+
+SEC. 101. DESIGNATION OF FIRESHED MANAGEMENT AREAS.
+
+    (a) Designation of Fireshed Management Areas.--
+            (1) Initial designations.--For the period beginning on the 
+        date of enactment of this Act and ending on the date that is 5 
+        years after the date of enactment of this Act, there are 
+        designated fireshed management areas, which--
+                    (A) shall be comprised of individual landscape-
+                scale firesheds identified as being a high risk 
+                fireshed in the ``Wildfire Crisis Strategy'' published 
+                by the Forest Service in January 2022;
+                    (B) shall be comprised of individual landscape-
+                scale firesheds identified by the Secretary, in 
+                consultation with the Secretary of the Interior, as 
+                being in the top 20 percent of the 7,688 firesheds 
+                published by the Rocky Mountain Research Station of the 
+                Forest Service in 2019 for wildfire exposure based on 
+                the following criteria--
+                            (i) wildfire exposure and corresponding 
+                        risk to communities, including risk to 
+                        structures and life;
+                            (ii) wildfire exposure and corresponding 
+                        risk to municipal watersheds, including tribal 
+                        water supplies and systems; and
+                            (iii) risk of forest conversion due to 
+                        wildfire;
+                    (C) shall not overlap with any other fireshed 
+                management areas;
+                    (D) may contain Federal and non-Federal land, 
+                including Indian forest lands or rangelands; and
+                    (E) where the Secretary concerned shall carry out 
+                fireshed management projects.
+            (2) Further fireshed management area designations.--
+                    (A) In general.--On the date that is 5 years after 
+                the date of the enactment of this Act and every 5 years 
+                thereafter, the Secretary, in consultation with the 
+                Secretary of the Interior, shall submit to the relevant 
+                Congressional Committees an updated map of firesheds 
+                based on the Fireshed Registry maintained under section 
+                103.
+                    (B) Designation.--Not later than 60 days after 
+                submitting an updated fireshed map under subparagraph 
+                (A), the Secretary shall, based on such map, designate 
+                additional fireshed management areas that are 
+                identified as being in the top 20 percent of firesheds 
+                at risk of wildfire exposure based on the criteria 
+                specified in subparagraphs (B), (C), (D), and (E) of 
+                paragraph (1).
+    (b) Applicability of Nepa.--The designation of fireshed management 
+areas under this section shall not be subject to the requirements of 
+the National Environmental Policy Act of 1969 (42 U.S.C. 4321 et seq.).
+
+SEC. 102. FIRESHED CENTER.
+
+    (a) Establishment.--
+            (1) In general.--The Secretary, acting through the Chief of 
+        the Forest Service, and the Secretary of the Interior, acting 
+        through the Director of the U.S. Geological Survey, shall 
+        jointly establish a Fireshed Center (hereinafter referred to as 
+        the ``Center'') comprised of at least one career representative 
+        from each of the following:
+                    (A) The Forest Service.
+                    (B) The Bureau of Land Management.
+                    (C) The National Park Service.
+                    (D) The Bureau of Indian Affairs.
+                    (E) The U.S. Fish and Wildlife Service.
+                    (F) The U.S. Geological Survey.
+                    (G) The Department of Defense.
+                    (H) The Department of Homeland Security.
+                    (I) The Department of Energy.
+                    (J) The Federal Emergency Management Agency.
+                    (K) The National Science Foundation.
+                    (L) The National Oceanic and Atmospheric 
+                Administration.
+                    (M) The National Aeronautics and Space 
+                Administration.
+                    (N) The National Institute of Standards and 
+                Technology.
+            (2) Director.--The Secretary, acting through the Chief of 
+        the Forest Service, and the Secretary of the Interior, acting 
+        through the Director of the U.S. Geological Survey, shall 
+        jointly appoint a Director of the Center, who--
+                    (A) shall be an employee of the U.S. Geological 
+                Survey or the Forest Service;
+                    (B) shall serve an initial term of not more than 7 
+                years; and
+                    (C) may serve one additional term of not more than 
+                7 years after the initial term described in 
+                subparagraph (B).
+            (3) Additional representation.--The Secretary, acting 
+        through the Chief of the Forest Service and the Secretary of 
+        the Interior, acting through the Director of the U.S. 
+        Geological Survey, may jointly appoint additional 
+        representatives of Federal agencies to the Center, as the 
+        Secretaries determine necessary.
+    (b) Purposes.--The purposes of the Center are to--
+            (1) comprehensively assess and predict, using data tools 
+        (including artificial intelligence) and other decision support 
+        products, fire and smoke in the wildland and built environment 
+        interface across jurisdictions to inform--
+                    (A) land and fuels management;
+                    (B) community (including at-risk communities 
+                identified in fireshed assessments conducted under 
+                section 105), public health, and built environment risk 
+                reduction; and
+                    (C) fire response and post-fire recovery;
+            (2) provide data aggregation, real-time land and fuels 
+        management services, and science-based decision support 
+        services;
+            (3) reduce fragmentation and duplication across Federal 
+        land management agencies with respect to predictive service and 
+        decision support functions related to wildland fire and smoke;
+            (4) promote coordination and sharing of data regarding 
+        wildland fire and smoke decision making between Federal 
+        agencies, States, Indian Tribes, local governments, academic or 
+        research institutions, and private entities;
+            (5) streamline procurement processes and cybersecurity 
+        systems related to addressing wildland fire and smoke;
+            (6) amplify and distribute existing, and develop as 
+        necessary, publicly accessible data, models, technologies 
+        (including mapping technologies), assessments, and National 
+        Weather Service fire weather forecasts to support short- and 
+        long-term planning regarding wildland fire and smoke risk 
+        reduction and post-fire recovery while avoiding duplicative 
+        efforts;
+            (7) maintain the Fireshed Registry established under 
+        section 103; and
+            (8) disseminate data tools (including artificial 
+        intelligence) and other decision support products, for use in 
+        manners consistent with the purposes described paragraphs (1) 
+        through (7), to the following:
+                    (A) Federal agencies.
+                    (B) Indian Tribes.
+                    (C) State and local governments.
+                    (D) Academic or research institutions.
+                    (E) Other entities, public or private, identified 
+                by the Director.
+    (c) Memoranda of Understanding.--The Center may enter into 
+memorandums of understanding, contracts, or other agreements with State 
+governments, Indian Tribes, local governments, academic or research 
+institutions, and private entities to improve the information and 
+operations of the Center.
+    (d) Administrative Support, Technical Services, and Staff 
+Support.--
+            (1) USGS support.--The Secretary of the Interior shall make 
+        personnel of the U.S. Geological Survey available to the Center 
+        for such administrative support, technical services, and 
+        development and dissemination of data as the Secretary 
+        determines necessary to carry out this section.
+            (2) USFS support.--The Secretary shall make personnel of 
+        the Forest Service available to the Center for such 
+        administrative support, technical services, and the development 
+        and dissemination of information related to fireshed management 
+        and the Fireshed Registry as the Secretary determines necessary 
+        to carry out this section.
+
+SEC. 103. FIRESHED REGISTRY.
+
+    (a) Fireshed Registry.--The Secretary, acting through the Director 
+of the Fireshed Center appointed under section 102, shall maintain a 
+Fireshed Registry on a publicly accessible website that provides 
+interactive geospatial data on individual firesheds, including 
+information on--
+            (1) wildfire exposure delineated by ownership, including 
+        rights-of-way for utilities and other public or private 
+        purposes;
+            (2) any hazardous fuels management activities that have 
+        occurred within an individual fireshed in the past 10 years;
+            (3) wildfire exposure with respect to such fireshed 
+        delineated by--
+                    (A) wildfire exposure and corresponding risk to 
+                communities, including risk to structures and life;
+                    (B) wildfire exposure and corresponding risk to 
+                municipal watersheds, including tribal water supplies 
+                and systems; and
+                    (C) risk of forest conversion due to wildfire;
+            (4) the percentage of the fireshed that has burned in 
+        wildfires in the past 10 years, including, to the extent 
+        practicable, delineations of acres that have burned at a high 
+        severity;
+            (5) spatial patterns of wildfire exposure, including 
+        plausible extreme fire events; and
+            (6) any hazardous fuels management activities planned for 
+        the fireshed, including fireshed management projects.
+    (b) Community Wildfire Protection Plans.--The Director shall make 
+data from the Fireshed Registry available to local communities 
+developing or updating community wildfire protection plans.
+    (c) Requirement to Maintain.--As part of the website containing the 
+Fireshed Registry, the Director shall--
+            (1) publish fireshed assessments created under section 105; 
+        and
+            (2) maintain a searchable database to track--
+                    (A) the status of Federal environmental reviews, 
+                permits, and authorizations for fireshed management 
+                projects, including--
+                            (i) a comprehensive permitting timetable;
+                            (ii) the status of the compliance of each 
+                        lead agency, cooperating agency, and 
+                        participating agency with the permitting 
+                        timetable with respect to such fireshed 
+                        management projects;
+                            (iii) any modifications of the permitting 
+                        timetable required under clause (i), including 
+                        an explanation as to why the permitting 
+                        timetable was modified; and
+                            (iv) information about project-related 
+                        public meetings, public hearings, and public 
+                        comment periods, which shall be presented in 
+                        English and the predominant language of the 
+                        community or communities most affected by the 
+                        project, as that information becomes available;
+                    (B) the projected cost of such fireshed management 
+                projects; and
+                    (C) in the case of completed fireshed management 
+                projects, the effectiveness of such projects in 
+                reducing the wildfire exposure within an applicable 
+                fireshed, including wildfire exposure described in 
+                subparagraphs (A) through (C) of subsection (a)(3).
+    (d) Reliance on Existing Assessments.--In carrying out this 
+section, the Director may rely on assessments completed or data gather 
+through existing partnerships, to the extent practicable.
+
+SEC. 104. SHARED STEWARDSHIP.
+
+    (a) Joint Agreements.--Not later than 90 days after receiving a 
+written request from a Governor of a State or an Indian Tribe, the 
+Secretary concerned shall enter into a shared stewardship agreement (or 
+similar agreement) with such Governor or Indian Tribe to jointly--
+            (1) promote the reduction of wildfire exposure, based on 
+        the criteria in section 101(a)(1)(B), in fireshed management 
+        areas across jurisdictional boundaries; and
+            (2) conduct fireshed assessments under section 105.
+    (b) Additional Fireshed Management Areas.--With respect to a shared 
+stewardship agreement (or similar agreement) with a Governor of a State 
+or an Indian Tribe entered into under subsection (a), the Secretary 
+concerned, if requested by such Governor or Indian Tribe, may--
+            (1) designate additional fireshed management areas under 
+        such agreement; and
+            (2) update such agreement to address new wildfire threats.
+
+SEC. 105. FIRESHED ASSESSMENTS.
+
+    (a) Fireshed Assessments.--
+            (1) In general.--Not later than 90 days after the date on 
+        which the Secretary concerned enters into an agreement with a 
+        Governor of a State or an Indian Tribe under section 104, the 
+        Secretary concerned and such Governor or Indian Tribe shall, 
+        with respect to the fireshed management areas designated in 
+        such State, jointly conduct a fireshed assessment that--
+                    (A) identifies--
+                            (i) using the best available science, 
+                        wildfire exposure risks within each such 
+                        fireshed management area, including scenario 
+                        planning and wildfire hazard mapping and 
+                        models; and
+                            (ii) each at-risk community within each 
+                        fireshed management area;
+                    (B) identifies potential fireshed management 
+                projects to be carried out in such fireshed management 
+                areas, giving priority--
+                            (i) primarily, to projects with the purpose 
+                        of reducing--
+                                    (I) wildfire exposure and 
+                                corresponding risk to communities, 
+                                including risk to structures and life;
+                                    (II) wildfire exposure and 
+                                corresponding risk to municipal 
+                                watersheds, including tribal water 
+                                supplies and systems;
+                                    (III) risk of forest conversion due 
+                                to wildfire; or
+                                    (IV) any combination of purposes 
+                                described in subclauses (I) through 
+                                (III); and
+                            (ii) secondarily, to projects with the 
+                        purpose of protecting--
+                                    (I) critical infrastructure, 
+                                including utility infrastructure;
+                                    (II) wildlife habitats, including 
+                                habitat for species listed under the 
+                                Endangered Species Act (16 U.S.C. 1531 
+                                et seq.);
+                                    (III) the built environment, 
+                                including residential and commercial 
+                                buildings;
+                                    (IV) resources of an Indian Tribe, 
+                                as defined by the Indian Tribe; or
+                                    (V) any combination of purposes 
+                                described in subclauses (I) through 
+                                (IV);
+                    (C) includes--
+                            (i) a strategy for reducing the threat of 
+                        wildfire to at-risk communities in the 
+                        wildland-urban interface on both Federal and 
+                        non-Federal land;
+                            (ii) a timeline for the implementation of 
+                        fireshed management projects;
+                            (iii) long-term benchmark goals for the 
+                        completion of fireshed management projects in 
+                        the highest wildfire exposure areas so that 
+                        such projects contribute to the development and 
+                        maintenance of healthy and resilient 
+                        landscapes;
+                            (iv) policies to ensure fireshed management 
+                        projects comply with applicable forest plans 
+                        and incorporate the best available science; and
+                            (v) a strategy for reducing the threat of 
+                        wildfire to improve the effectiveness of 
+                        wildland firefighting, particularly the 
+                        effectiveness of fuels treatments that would 
+                        improve wildland firefighter safety during 
+                        wildfires;
+                    (D) shall be regularly updated based on the best 
+                available science, as determined by the Secretary 
+                concerned; and
+                    (E) shall be publicly available on a website 
+                maintained by the Secretary concerned.
+            (2) Local government participation.--Upon the written 
+        request of a local government, the Secretary concerned and the 
+        Governor of the State in which the local government is located 
+        may allow such local government to participate in producing the 
+        fireshed assessment under paragraph (1) for such State.
+            (3) Information improvement.--
+                    (A) Memorandums of understanding.--In carrying out 
+                a fireshed assessment under this subsection, the 
+                Secretary concerned may enter into memorandums of 
+                understanding with other Federal agencies or 
+                departments (including the National Oceanic and 
+                Atmospheric Administration), States, Indian Tribes, 
+                private entities, or research or educational 
+                institutions to improve, with respect to such 
+                assessment, the use and integration of--
+                            (i) advanced remote sensing and geospatial 
+                        technologies;
+                            (ii) statistical modeling and analysis; or
+                            (iii) any other technology or combination 
+                        of technologies and analyses that the Secretary 
+                        concerned determines will benefit the quality 
+                        of information of such an assessment.
+                    (B) Best available science.--In using the best 
+                available science for the fireshed assessments 
+                completed under subsection (a)(1), the Secretary 
+                concerned and Governor shall, to the maximum extent 
+                practicable, incorporate--
+                            (i) traditional ecological knowledge from 
+                        Indian Tribes;
+                            (ii) data from State forest action plans 
+                        and State wildfire risk assessments;
+                            (iii) data from the Fireshed Registry 
+                        maintained under section 103; and
+                            (iv) data from other Federal, State, 
+                        Tribal, and local governments or agencies.
+    (b) Applicability of NEPA.--Fireshed assessments conducted under 
+this section shall not be subject to the requirements of the National 
+Environmental Policy Act of 1969 (42 U.S.C. 4321 et seq.).
+
+SEC. 106. EMERGENCY FIRESHED MANAGEMENT.
+
+    (a) Fireshed Management Projects.--
+            (1) In general.--The Secretary concerned, acting through a 
+        responsible official, shall carry out fireshed management 
+        projects in fireshed management areas designated under section 
+        101 in accordance with this section.
+            (2) Fireshed management projects.--The responsible official 
+        shall carry out the following forest and vegetation management 
+        activities as fireshed management projects under this section:
+                    (A) Conducting hazardous fuels management 
+                activities.
+                    (B) Creating fuel breaks and fire breaks.
+                    (C) Removing hazard trees, dead trees, dying trees, 
+                or trees at risk of dying, as determined by the 
+                responsible official.
+                    (D) Developing, approving, or conducting routine 
+                maintenance under a vegetation management, facility 
+                inspection, and operation and maintenance plan 
+                submitted under section 512(c)(1) of the Federal Land 
+                Policy and Management Act of 1976 (43 U.S.C. 
+                1772(c)(1)).
+                    (E) Removing trees to address overstocking or 
+                crowding in a forest stand, consistent with the 
+                appropriate basal area of the forest stand as 
+                determined by the responsible official.
+                    (F) Using chemical or re-seeding and planting 
+                treatments to address insects and disease and control 
+                vegetation competition or invasive species.
+                    (G) Any activities recommended by an applicable 
+                fireshed assessment carried out under section 105.
+                    (H) Any activities recommended by an applicable 
+                community wildfire protection plan.
+                    (I) Any combination of activities described in this 
+                paragraph.
+            (3) Emergency fireshed management.--
+                    (A) In general.--For any fireshed management area 
+                designated under section 101, the following shall have 
+                the force and effect of law:
+                            (i) Section 220.4(b) of title 36, Code of 
+                        Federal Regulations (as in effect on the date 
+                        of enactment of this Act), with respect to 
+                        lands under the jurisdiction of the Secretary.
+                            (ii) Section 46.150 of title 43, Code of 
+                        Federal Regulations (as in effect on the date 
+                        of enactment of this Act), with respect to 
+                        lands under the jurisdiction of the Secretary 
+                        of the Interior.
+                            (iii) Section 402.05 of title 50, Code of 
+                        Federal Regulations (as in effect on the date 
+                        of enactment of this Act).
+                            (iv) Section 800.12 of title 36, Code of 
+                        Federal Regulations (as in effect on the date 
+                        of enactment of this Act).
+                    (B) Utilization of existing streamlined authorities 
+                in fireshed management areas.--
+                            (i) In general.--Fireshed management 
+                        projects carried out under this section shall 
+                        be considered authorized projects under the 
+                        following categorical exclusions:
+                                    (I) Section 603(a) of the Healthy 
+                                Forests Restoration Act of 2003 (16 
+                                U.S.C. 6591b(a)).
+                                    (II) Section 605(a) of the Healthy 
+                                Forests Restoration Act of 2003 (16 
+                                U.S.C. 6591d(a)).
+                                    (III) Section 606(b) of the Healthy 
+                                Forests Restoration Act of 2003 (16 
+                                U.S.C. 6591e(b)).
+                                    (IV) Section 40806(b) of the 
+                                Infrastructure Investment and Jobs Act 
+                                (16 U.S.C. 6592b(b)).
+                                    (V) Section 4(c)(4) of the Lake 
+                                Tahoe Restoration Act (Public Law 106-
+                                506; 114 Stat. 2353).
+                                    (VI) Subject to subsection (d) of 
+                                section 40807 of the Infrastructure 
+                                Investment and Jobs Act (16 U.S.C. 
+                                6592c) in the same manner as authorized 
+                                emergency actions (as defined in 
+                                subsection (a) of such section) are 
+                                subject to such subsection.
+                            (ii) Use of expedited authorities.--In 
+                        carrying out a fireshed management project, the 
+                        Secretary shall apply a categorical exclusion 
+                        under clause (i)--
+                                    (I) in a manner consistent with the 
+                                statute establishing such categorical 
+                                exclusion; and
+                                    (II) in any area--
+                                            (aa) designated as suitable 
+                                        for timber production within 
+                                        the applicable forest plan; or
+                                            (bb) where timber harvest 
+                                        activities are not prohibited.
+                            (iii) Fiscal responsibility act 
+                        requirements.--In carrying out this section, 
+                        the Secretary concerned shall ensure compliance 
+                        with the amendments made to the National 
+                        Environmental Policy Act (42 U.S.C. 4321 et 
+                        seq.) by the Fiscal Responsibility Act of 2023 
+                        (Public Law 118-5).
+                            (iv) Use of other authorities.--To the 
+                        maximum extent practicable, the Secretary 
+                        concerned shall use the authorities provided 
+                        under this section in combination with other 
+                        authorities to carry out fireshed management 
+                        projects, including--
+                                    (I) good neighbor agreements 
+                                entered into under section 8206 of the 
+                                Agricultural Act of 2014 (16 U.S.C. 
+                                2113a) (as amended by this Act);
+                                    (II) stewardship contracting 
+                                projects entered into under section 604 
+                                of the Healthy Forests Restoration Act 
+                                of 2003 (16 U.S.C. 6591c) (as amended 
+                                by this Act);
+                                    (III) self-determination contracts 
+                                and self-governance compact agreements 
+                                entered into under the Indian Self-
+                                Determination and Education Assistance 
+                                Act (25 U.S.C. 5301 et seq.); and
+                                    (IV) agreements entered into under 
+                                the Tribal Forest Protection Act of 
+                                2004 (25 U.S.C. 3115a et seq.).
+    (b) Expansion.--
+            (1) HFRA amendments.--The Healthy Forests Restoration Act 
+        of 2003 is amended--
+                    (A) in section 3 (16 U.S.C. 6502), by inserting at 
+                the end the following:
+            ``(3) Local government.--The term `local government' means 
+        a county, municipality, or special district.
+            ``(4) Special district.--The term `special district' means 
+        a political subdivision of a State that--
+                    ``(A) has significant budgetary autonomy or 
+                control;
+                    ``(B) was created by or pursuant to the laws of the 
+                State for the purpose of performing a limited and 
+                specific governmental or proprietary function; and
+                    ``(C) is distinct from any other local government 
+                unit within the State.''.
+                    (B) in section 603(c)(1) (16 U.S.C. 6591b(c)(1)), 
+                by striking ``3000 acres'' and inserting ``10,000 
+                acres'';
+                    (C) in section 603(c)(2)(B) (16 U.S.C. 
+                6591b(c)(2)(B)), by striking ``Fire Regime Groups I, 
+                II, or III'' and inserting ``Fire Regime I, Fire Regime 
+                II, Fire Regime III, Fire Regime IV, or Fire Regime 
+                V'';
+                    (D) in section 605(c)(1) (16 U.S.C. 6591d(c)(1)), 
+                by striking ``3000 acres'' and inserting ``10,000 
+                acres''; and
+                    (E) in section 606(g) (16 U.S.C. 6591e(g)), by 
+                striking ``4,500 acres'' and inserting ``10,000 
+                acres''.
+            (2) Infrastructure investment and jobs act amendment.--
+        Section 40806(d)(1) of the Infrastructure Investment and Jobs 
+        Act (16 U.S.C. 6592b(d)(1)), by striking ``3,000 acres'' and 
+        inserting ``10,000 acres''.
+            (3) Lake tahoe restoration act amendments.--Section 
+        4(c)(4)(C) of the Lake Tahoe Restoration Act (Public Law 106-
+        506; 114 Stat. 2353) is amended--
+                    (A) by striking ``Lake Tahoe Basin Management 
+                Unit''; and
+                    (B) by inserting ``applicable to the area'' before 
+                the period at the end.
+
+SEC. 107. SUNSET.
+
+    The authority under this subtitle shall terminate on the date that 
+is 7 years after the date of enactment of this Act.
+
+ Subtitle B--Expanding Collaborative Tools to Reduce Wildfire Risk and 
+                         Improve Forest Health
+
+SEC. 111. MODIFICATION OF THE TREATMENT OF CERTAIN REVENUE AND PAYMENTS 
+              UNDER GOOD NEIGHBOR AGREEMENTS.
+
+    (a) Good Neighbor Authority.--Section 8206 of the Agricultural Act 
+of 2014 (16 U.S.C. 2113a) is amended--
+            (1) in subsection (a)(6), by striking ``or Indian tribe'';
+            (2) in subsection (a), by inserting the following:
+            ``(11) Special district.--The term `special district' means 
+        a political subdivision of a State that--
+                    ``(A) has significant budgetary autonomy or 
+                control;
+                    ``(B) was created by or pursuant to the laws of the 
+                State for the purpose of performing a limited and 
+                specific governmental or proprietary function; and
+                    ``(C) is distinct from any other local government 
+                unit within the State.''.
+            (3) in subsection (b)--
+                    (A) in paragraph (1)(A), by inserting ``, Indian 
+                tribe, special district,'' after ``Governor'';
+                    (B) in paragraph (2)(C)--
+                            (i) by striking clause (i) and inserting 
+                        the following:
+                            ``(i) In general.--Funds received from the 
+                        sale of timber or forest product by a Governor, 
+                        an Indian tribe, a special district, or a 
+                        county under a good neighbor agreement shall be 
+                        retained and used by the Governor, Indian 
+                        tribe, special district, or county, as 
+                        applicable--
+                                    ``(I) to carry out authorized 
+                                restoration services under the good 
+                                neighbor agreement;
+                                    ``(II) to carry out reconstruction, 
+                                repair, and restoration of non-National 
+                                Forest System roads necessary to 
+                                implement projects on Federal lands;
+                                    ``(III) to construct new permanent 
+                                roads on Federal lands that are--
+                                            ``(aa) necessary to 
+                                        implement authorized 
+                                        restoration activities; and
+                                            ``(bb) approved by the 
+                                        Federal agency through an 
+                                        environmental analysis or 
+                                        categorical exclusion decision;
+                                    ``(IV) to complete new permanent 
+                                road construction to replace and 
+                                decommission an existing permanent road 
+                                that is adversely impacting forest, 
+                                rangeland, or watershed health; and
+                                    ``(V) if there are funds remaining 
+                                after carrying out subclauses (I) 
+                                through (IV), to carry out authorized 
+                                restoration services under other good 
+                                neighbor agreements and for the 
+                                administration of a good neighbor 
+                                authority program by a Governor, Indian 
+                                tribe, special district, or county.''; 
+                                and
+                            (ii) in clause (ii), by striking ``2024'' 
+                        and inserting ``2029'';
+                    (C) in paragraph (3), by inserting ``, Indian 
+                tribe, special district,'' after ``Governor''; and
+                    (D) by striking paragraph (4).
+    (b) Conforming Amendments.--Section 8206(a) of the Agricultural Act 
+of 2014 (16 U.S.C. 2113a(a)) is amended--
+            (1) in paragraph (1)(B), by inserting ``, Indian tribe, 
+        special district,'' after ``Governor''; and
+            (2) in paragraph (5), by inserting ``, Indian tribe, 
+        special district,'' after ``Governor''.
+    (c) Effective Date.--The amendments made by this section apply to 
+any project initiated pursuant to a good neighbor agreement (as defined 
+in section 8206(a) of the Agricultural Act of 2014 (16 U.S.C. 
+2113a(a)))--
+            (1) before the date of enactment of this Act, if the 
+        project was initiated after the date of enactment of the 
+        Agriculture Improvement Act of 2018 (Public Law 115-334; 132 
+        Stat. 4490); or
+            (2) on or after the date of enactment of this Act.
+
+SEC. 112. FIXING STEWARDSHIP END RESULT CONTRACTING.
+
+    Section 604 of the Healthy Forests Restoration Act of 2003 (16 
+U.S.C. 6591c) is amended--
+            (1) in subsection (b), by inserting ``, including retaining 
+        and expanding existing forest products infrastructure'' before 
+        the period at the end;
+            (2) in subsection (d)(3)(B), by striking ``10 years'' and 
+        inserting ``20 years''; and
+            (3) in subsection (h), by adding at the end the following:
+            ``(4) Special rule for long-term stewardship contracts.--
+                    ``(A) In general.--A long-term agreement or 
+                contract entered into with an entity under subsection 
+                (b) by the Chief or the Director shall provide that in 
+                the case of the cancellation or termination by the 
+                Chief or the Director of such long-term agreement or 
+                contract, the Chief or the Director, as applicable, 
+                shall provide 10 percent of the agreement or contract 
+                amount to such entity as cancellation or termination 
+                costs.
+                    ``(B) Definition of long-term agreement or 
+                contract.--In this paragraph, the term `long-term 
+                agreement or contract' means an agreement or contract 
+                under subsection (b)--
+                            ``(i) with a term of more than 5 years; and
+                            ``(ii) entered into on or after the date of 
+                        the enactment of this paragraph.''.
+
+SEC. 113. INTRA-AGENCY STRIKE TEAMS.
+
+    (a) Establishment.--The Secretary concerned shall establish intra-
+agency strike teams to assist the Secretary concerned with--
+            (1) any reviews, including analysis under the National 
+        Environmental Policy Act of 1969 (42 U.S.C. 4321 et seq.), 
+        consultations under the National Historic Preservation Act of 
+        1966 (16 U.S.C. 470 et seq.), and consultations under the 
+        Endangered Species Act of 1973 (16 U.S.C. 1531 et seq.), with 
+        the intent to accelerate and streamline interagency 
+        consultation processes;
+            (2) the implementation of any necessary site preparation 
+        work in advance of or as part of a fireshed management project;
+            (3) the implementation of fireshed management projects 
+        under such section; and
+            (4) any combination of purposes under paragraphs (1) 
+        through (3).
+    (b) Members.--The Secretary concerned may appoint not more than 10 
+individuals to serve on an intra-agency strike team comprised of--
+            (1) employees of the Department under the jurisdiction of 
+        the Secretary concerned;
+            (2) employees of a different Federal agency, with the 
+        consent of that agency's Secretary;
+            (3) private contractors from any nonprofit organization, 
+        State government, Indian Tribe, local government, quasi-
+        governmental agency, academic institution, or private 
+        organization; and
+            (4) volunteers from any nonprofit organization, State 
+        government, Indian Tribe, local government, quasi-governmental 
+        agency, academic institution, or private organization.
+    (c) Sunset.--The authority provided under this section shall 
+terminate on the date that is 7 years after the date of enactment of 
+this Act.
+
+SEC. 114. LOCALLY-LED RESTORATION.
+
+    (a) Threshold Adjustment.--Section 14(d) of the National Forest 
+Management Act of 1976 (16 U.S.C. 472a(d)) is amended by--
+            (1) striking ``$10,000'' and inserting ``$55,000''; and
+            (2) by adding at the end the following: ``Beginning on 
+        January 1, 2025, and annually thereafter, the amount in the 
+        first sentence of this subsection shall be adjusted by the 
+        Secretary for changes in the Consumer Price Index of All Urban 
+        Consumers published by the Bureau of Labor Statistics of the 
+        Department of Labor.''.
+    (b) Fireshed Management Projects.--Beginning on the date that is 30 
+days after the date of enactment of this Act, the Secretary shall 
+solicit bids under section 14 of the National Forest Management Act of 
+1976 (16 U.S.C. 472a(d)) for fireshed management projects under section 
+106.
+
+SEC. 115. JOINT CHIEFS LANDSCAPE RESTORATION PARTNERSHIP PROGRAM.
+
+    Section 40808 of the Infrastructure Investment and Jobs Act (16 
+U.S.C. 6592d) is amended--
+            (1) in subsection (a)(2)--
+                    (A) in subparagraph (B), by striking ``or'' at the 
+                end;
+                    (B) in subparagraph (C), by striking the period at 
+                the end and inserting a semicolon; and
+                    (C) by adding at the end the following:
+                    ``(D) to recover from wildfires; or
+                    ``(E) to enhance soil, water, and related natural 
+                resources.'';
+            (2) in subsection (d)(1)--
+                    (A) in subparagraph (A), by inserting ``and post-
+                wildfire impacts'' after ``wildfire risk''; and
+                    (B) in subparagraph (F), by inserting ``, as 
+                identified in the corresponding State forest action 
+                plan or similar priority plan (such as a State wildlife 
+                or water plan)'' before the semicolon;
+            (3) in subsection (g)(2), by inserting ``and at least once 
+        every 2 fiscal years thereafter'' after ``and 2023''; and
+            (4) in subsection (h)(1), by striking ``and 2023'' and 
+        inserting ``through 2028''.
+
+SEC. 116. COLLABORATIVE FOREST LANDSCAPE RESTORATION PROGRAM.
+
+    Section 4003 of the Omnibus Public Land Management Act of 2009 (16 
+U.S.C. 7303) is amended--
+            (1) in subsection (b)(3)--
+                    (A) in subparagraph (D), by striking ``species;'' 
+                and inserting ``species or pathogens;'';
+                    (B) in subparagraph (G), by striking ``and'' at the 
+                end;
+                    (C) in subparagraph (H), by adding ``and'' after 
+                the semicolon at the end; and
+                    (D) by adding at the end the following:
+                    ``(I) address standardized monitoring questions and 
+                indicators;'';
+            (2) in subsection (c)(3)(A)--
+                    (A) in clause (i), by striking ``and'' at the end;
+                    (B) in clause (ii), by adding ``and'' at the end; 
+                and
+                    (C) by adding at the end the following:
+                            ``(iii) include a plan to provide support 
+                        to collaborative processes established pursuant 
+                        to subsection (b)(2);'';
+            (3) in subsection (d)--
+                    (A) in paragraph (2)--
+                            (i) in subparagraph (E), by striking 
+                        ``and'' at the end;
+                            (ii) in subparagraph (F), by striking the 
+                        period at the end and inserting ``; and''; and
+                            (iii) by adding at the end the following:
+                    ``(G) proposals that seek to use innovative 
+                implementation mechanisms, including good neighbor 
+                agreements entered into under section 8206 of the 
+                Agricultural Act of 2014 (16 U.S.C. 2113a);
+                    ``(H) proposals that seek to remove or treat 
+                insects or diseases, including the removal of trees 
+                killed by, or infested with, bark beetles in Arizona, 
+                California, Colorado, Idaho, Montana, Nebraska, Nevada, 
+                New Mexico, Oregon, South Dakota, Utah, Washington, and 
+                Wyoming;
+                    ``(I) proposals that seek to facilitate the sale of 
+                firewood and Christmas trees on lands under the 
+                jurisdiction of the Secretary or the Secretary of the 
+                Interior;
+                    ``(J) proposals that seek to reduce the risk of 
+                uncharacteristic wildfire or increase ecological 
+                restoration activities--
+                            ``(i) within areas across land ownerships, 
+                        including State, Tribal, and private land; and
+                            ``(ii) within the wildland-urban interface 
+                        (as defined in section 101 of the Healthy 
+                        Forests Restoration Act of 2003 (16 U.S.C. 
+                        6511)); and
+                    ``(K) proposals that seek to enhance watershed 
+                health and drinking water sources.''; and
+                    (B) in paragraph (3)--
+                            (i) by amending subparagraph (A) to read as 
+                        follows:
+                    ``(A) 4 proposals in any 1 region of the National 
+                Forest System to be funded during any fiscal year; 
+                and'';
+                            (ii) by striking subparagraph (B); and
+                            (iii) by redesignating subparagraph (C) as 
+                        subparagraph (B); and
+            (4) in subsection (f)(6), by striking ``2019 through 2023'' 
+        and inserting ``2023 through 2029''.
+
+SEC. 117. UTILIZING GRAZING FOR WILDFIRE RISK REDUCTION.
+
+    The Secretary of Agriculture, acting through the Chief of the 
+Forest Service, in coordination with holders of permits to graze 
+livestock on Federal land, shall develop a strategy to increase 
+opportunities to utilize livestock grazing as a wildfire risk reduction 
+strategy, including--
+            (1) completion of reviews (as required under the National 
+        Environmental Policy Act of 1969 (U.S.C. 4321 et seq.)) to 
+        allow permitted grazing on vacant grazing allotments during 
+        instances of drought, wildfire, or other natural disasters that 
+        disrupt grazing on allotments already permitted;
+            (2) use of targeted grazing;
+            (3) increased use of temporary permits to promote targeted 
+        fuels reduction and reduction of invasive annual grasses;
+            (4) increased use of grazing as a postfire recovery and 
+        restoration strategy, where appropriate; and
+            (5) use of all applicable authorities under the law.
+
+SEC. 118. PROGRAM TO SUPPORT PRIORITY REFORESTATION AND RESTORATION 
+              PROJECTS OF DEPARTMENT OF THE INTERIOR.
+
+    (a) In General.--Not later than 1 year after the date of enactment 
+of this Act, the Secretary of the Interior, in coordination with the 
+heads of covered Federal agencies, shall establish a program to provide 
+support for priority projects identified under subsection (c)(2), in 
+accordance with this section.
+    (b) Support.--In carrying out the program under subsection (a), the 
+Secretary may provide support through--
+            (1) cooperative agreements entered into in accordance with 
+        processes established by the Secretary; and
+            (2) contracts, including contracts established pursuant to 
+        the Indian Self-Determination and Education Assistance Act (25 
+        U.S.C. 5301 et seq.).
+    (c) Annual Identification of Priority Projects.--Not later than 1 
+year after the date of enactment of this Act and annually thereafter, 
+the Secretary of the Interior, in consultation with the heads of 
+covered Federal agencies, shall--
+            (1) identify lands of the United States administered by, or 
+        under the jurisdiction of, the Secretary of the Interior that 
+        require reforestation and restoration due to unplanned 
+        disturbances and that are unlikely to experience natural 
+        regeneration without assistance; and
+            (2) establish a list of priority projects for reforestation 
+        and restoration for the upcoming year, which may include 
+        activities to ensure adequate and appropriate seed and seedling 
+        availability to further the objectives of other priority 
+        projects.
+    (d) Consultation.--In carrying out the program under subsection (a) 
+and the requirements under subsection (c), the Secretary shall consult 
+or collaborate with, as appropriate, and inform the following:
+            (1) State and local governments.
+            (2) Indian Tribes.
+            (3) Covered institutions of higher education.
+            (4) Federal agencies that administer lands of the United 
+        States that adjoin or are proximal to lands that are the 
+        subject of priority projects and potential priority projects.
+            (5) Other stakeholders, as determined by the Secretary.
+    (e) Annual Report.--Not later than 2 years after the date of 
+enactment of this Act, and annually thereafter, the Secretary of the 
+Interior shall submit to the relevant Congressional Committees a report 
+that includes the following:
+            (1) An accounting of all lands identified under subsection 
+        (c)(1) for the period covered by the report.
+            (2) A list of priority projects identified under subsection 
+        (c)(2) for the period covered by the report and, with respect 
+        to each such priority project, any support issued under the 
+        program under subsection (a) and any progress made towards 
+        reforestation and restoration.
+            (3) An accounting of each contract and cooperative 
+        agreement established under the program under subsection (a).
+            (4) A description of the actions taken in accordance with 
+        subsection (d).
+            (5) Assessments with respect to--
+                    (A) gaps in--
+                            (i) the implementation of the program under 
+                        subsection (a); and
+                            (ii) the progress made under the program 
+                        with respect to priority projects; and
+                    (B) opportunities to procure funding necessary to 
+                address any such gaps.
+    (f) Nonduplication.--In carrying out this section, the Secretary of 
+the Interior shall collaborate with the Secretary of Agriculture and 
+the Secretary of Defense to ensure the nonduplication of activities 
+carried out under section 205.
+    (g) Sunset.--The authority provided under this section shall 
+terminate on the date that is 7 years after the date of enactment of 
+this Act.
+    (h) Definitions.--In this section:
+            (1) Covered federal agency.--The term ``covered Federal 
+        agency'' means the National Park Service, the United States 
+        Fish and Wildlife Service, the Bureau of Land Management, the 
+        Bureau of Reclamation, or the Bureau of Indian Affairs.
+            (2) Covered institution of higher education.--The term 
+        ``covered institution of higher education'' has the meaning 
+        given the term ``eligible institutions'' in section 301(e)(3)).
+            (3) Natural regeneration; reforestation.--The terms 
+        ``natural regeneration'' and ``reforestation'' have the 
+        meanings given such terms in section 3(e)(4)(A) of the Forest 
+        and Rangeland Renewable Resources Planning Act of 1974 (16 
+        U.S.C. 1601(3)(4)(A))
+            (4) Restoration.--The term ``restoration'' means activities 
+        that facilitate the recovery of an ecosystem that has been 
+        degraded, damaged, or destroyed, including the reestablishment 
+        of appropriate plant species composition and community 
+        structure.
+            (5) Unplanned ecosystem disturbance.--The term ``unplanned 
+        ecosystem disturbance'' means any unplanned disturbance that 
+        disrupts the structure or composition of an ecosystem, 
+        including a wildfire, an infestation of insects or disease, and 
+        a weather event.
+
+                     Subtitle C--Litigation Reform
+
+SEC. 121. COMMONSENSE LITIGATION REFORM.
+
+    (a) In General.--A court shall not enjoin a covered agency action 
+if the court determines that the plaintiff is unable to demonstrate 
+that the claim of the plaintiff is likely to succeed on the merits.
+    (b) Balancing Short-and Long-term Effects of Covered Agency Action 
+in Considering Injunctive Relief.--As part of its weighing the equities 
+while considering any request for an injunction that applies to a 
+covered agency action, the court reviewing such action shall balance 
+the impact to the ecosystem likely affected by such action of--
+            (1) the short- and long-term effects of undertaking such 
+        action; against
+            (2) the short- and long-term effects of not undertaking 
+        such action.
+    (c) Limitations on Judicial Review.--
+            (1) In general.--Notwithstanding any other provision of law 
+        (except this section), in the case of a claim arising under 
+        Federal law seeking judicial review of a covered agency 
+        action--
+                    (A) a court shall not hold unlawful, set aside, or 
+                otherwise limit, delay, stay, vacate, or enjoin such 
+                agency action unless the court determines that--
+                            (i) such action poses or will pose a risk 
+                        of a proximate and substantial environmental 
+                        harm; and
+                            (ii) there is no other equitable remedy 
+                        available as a matter of law; and
+                    (B) if a court determines that subparagraph (A) 
+                does not apply to the covered agency action the only 
+                remedy the court may order with regard to such agency 
+                action is to remand the matter to the agency with 
+                instructions to, during the 180-day period beginning on 
+                the date of the order, take such additional actions as 
+                may be necessary to redress any legal wrong suffered 
+                by, or adverse effect on, the plaintiff, except such 
+                additional actions may not include the preparation of a 
+                new agency document unless the court finds the agency 
+                was required and failed to prepare such agency 
+                document.
+            (2) Effect of remand.--In the case of a covered agency 
+        action to which paragraph (1)(B) applies, the agency may--
+                    (A) continue to carry out such agency action to the 
+                extent the action does not impact the additional 
+                actions required pursuant to such paragraph; and
+                    (B) if the agency action relates to an agency 
+                document, use any format to correct such document 
+                (including a supplemental environmental document, 
+                memorandum, or errata sheet).
+    (d) Limitations on Claims.--Notwithstanding any other provision of 
+law (except this section), a claim arising under Federal law seeking 
+judicial review of a covered agency action shall be barred unless--
+            (1) with respect to an agency document or the application 
+        of a categorical exclusion noticed in the Federal Register, 
+        such claim is filed not later than 120 days after the date of 
+        publication of a notice in the Federal Register of agency 
+        intent to carry out the fireshed management project relating to 
+        such agency document or application, unless a shorter period is 
+        specified in such Federal law;
+            (2) in the case of an agency document or the application of 
+        a categorical exclusion not described in paragraph (1), such 
+        claim is filed not later than 120 days after the date that is 
+        the earlier of--
+                    (A) the date on which such agency document or 
+                application is published; and
+                    (B) the date on which such agency document or 
+                application is noticed; and
+            (3) in the case of a covered agency action for which there 
+        was a public comment period, such claim--
+                    (A) is filed by a party that--
+                            (i) participated in the administrative 
+                        proceedings regarding the fireshed management 
+                        project relating to such action; and
+                            (ii) submitted a comment during such public 
+                        comment period and such comment was 
+                        sufficiently detailed to put the applicable 
+                        agency on notice of the issue upon which the 
+                        party seeks judicial review; and
+                    (B) is related to such comment.
+    (e) Definitions.--ln this section:
+            (1) Agency document.--The term ``agency document'' means, 
+        with respect to a fireshed management project, a record of 
+        decision, environmental document, or programmatic environmental 
+        document.
+            (2) Covered agency action.--The term ``covered agency 
+        action'' means--
+                    (A) the establishment of a fireshed management 
+                project by an agency;
+                    (B) the application of a categorical exclusion to a 
+                fireshed management project;
+                    (C) the preparation of any agency document for a 
+                fireshed management project; or
+                    (D) any other agency action as part of a fireshed 
+                management project.
+            (3) NEPA terms.--The terms ``categorical exclusion'', 
+        ``environmental document'', and ``programmatic environmental 
+        document'' have the meanings given such terms, respectively, in 
+        section 111 of the National Environmental Policy Act of 1969 
+        (42 U.S.C. 4336e).
+
+SEC. 122. CONSULTATION ON FOREST PLANS.
+
+    (a) Forest Service Plans.--Section 6(d)(2) of the Forest and 
+Rangeland Renewable Resources Planning Act of 1974 (16 U.S.C. 
+1604(d)(2)) is amended to read as follows:
+            ``(2) No additional consultation required under certain 
+        circumstances.--Notwithstanding any other provision of law, the 
+        Secretary shall not be required to reinitiate consultation 
+        under section 7(a)(2) of the Endangered Species Act of 1973 (16 
+        U.S.C. 1536(a)(2)) or section 402.16 of title 50, Code of 
+        Federal Regulations (or a successor regulation), on a land 
+        management plan approved, amended, or revised under this 
+        section when--
+                    ``(A) a new species is listed or critical habitat 
+                is designated under the Endangered Species Act of 1973 
+                (16 U.S.C. 1531 et seq.); or
+                    ``(B) new information reveals effects of the land 
+                management plan that may affect a species listed or 
+                critical habitat designated under that Act in a manner 
+                or to an extent not previously considered.''.
+    (b) Bureau of Land Management Plans.--Section 202 of the Federal 
+Land Policy and Management Act of 1976 (43 U.S.C. 1712) is amended by 
+adding at the end the following:
+    ``(g) No Additional Consultation Required Under Certain 
+Circumstances.--Notwithstanding any other provision of law, the 
+Secretary shall not be required to reinitiate consultation under 
+section 7(a)(2) of the Endangered Species Act of 1973 (16 U.S.C. 
+1536(a)(2)) or section 402.16 of title 50, Code of Federal Regulations 
+(or a successor regulation), on a land use plan approved, amended, or 
+revised under this section when--
+            ``(1) a new species is listed or critical habitat is 
+        designated under the Endangered Species Act of 1973 (16 U.S.C. 
+        1531 et seq.); or
+            ``(2) new information reveals effects of the land use plan 
+        that may affect a species listed or critical habitat designated 
+        under that Act in a manner or to an extent not previously 
+        considered.''.
+
+    TITLE II--PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE
+
+SEC. 201. COMMUNITY WILDFIRE RISK REDUCTION PROGRAM.
+
+    (a) Establishment.--Not later than 30 days after the date of 
+enactment of this Act, the Secretaries shall jointly establish an 
+interagency program to be known as the ``Community Wildfire Risk 
+Reduction Program'' that shall consist of at least one representative 
+from each of the following:
+            (1) The Office of Wildland Fire of the Department of the 
+        Interior.
+            (2) The National Park Service.
+            (3) The Bureau of Land Management.
+            (4) The United States Fish and Wildlife Service.
+            (5) The Bureau of Indian Affairs.
+            (6) The Forest Service.
+            (7) The Federal Emergency Management Agency.
+            (8) The United States Fire Administration.
+            (9) The National Institute of Standards and Technology.
+            (10) The National Oceanic and Atmospheric Administration.
+    (b) Purpose.--The purpose of the program established under 
+subsection (a) is to support interagency coordination in reducing the 
+risk of, and the damages resulting from, wildfires in communities 
+(including tribal communities) in the wildland-urban interface 
+through--
+            (1) advancing research and science in wildfire resilience 
+        and land management, including support for non-Federal research 
+        partnerships;
+            (2) supporting adoption by Indian Tribes and local 
+        governmental entities of fire-resistant building methods, 
+        codes, and standards;
+            (3) supporting efforts by Indian Tribes or local 
+        governmental entities to address the effects of wildland fire 
+        on such communities, including property damages, air quality, 
+        and water quality;
+            (4) encouraging public-private partnerships to conduct 
+        hazardous fuels management activities in the wildland-urban 
+        interface;
+            (5) providing technical and financial assistance targeted 
+        towards communities, including tribal communities, through 
+        streamlined and unified technical assistance and grant 
+        management mechanisms, including the portal and grant 
+        application established under subsection (c), to--
+                    (A) encourage critical risk reduction measures on 
+                private property with high wildfire risk exposure in 
+                such communities; and
+                    (B) mitigate costs for and improve capacity among 
+                such communities.
+    (c) Portal and Uniform Grant Application.--
+            (1) In general.--As part of the program established under 
+        subsection (a), the Secretaries and the Administrator of the 
+        Federal Emergency Management Agency shall establish a portal 
+        through which a person may submit a single, uniform application 
+        for any of the following:
+                    (A) A community wildfire defense grant under 
+                section 40803(f) of the Infrastructure Investment and 
+                Jobs Act (16 U.S.C. 6592(f)).
+                    (B) An emergency management performance grant under 
+                section 662 of the Post-Katrina Emergency Management 
+                Reform Act of 2006 (6 U.S.C. 761).
+                    (C) A grant under section 33 of the Federal Fire 
+                Prevention and Control Act of 1974 (15 U.S.C. 2229).
+                    (D) A grant under section 34 of the Federal Fire 
+                Prevention and Control Act of 1974 (15 U.S.C. 2229a).
+                    (E) Financial or technical assistance or a grant 
+                under sections 203, 205, 404, 406, or 420 of the Robert 
+                T. Stafford Disaster Relief and Emergency Assistance 
+                Act (42 U.S.C. 5133, 5135, 5170c, 5172, 5187).
+            (2) Simplification of application.--In establishing the 
+        portal and application under paragraph (1), the Secretaries and 
+        the Administrator shall seek to reduce the complexity and 
+        length of the application process for the grants described in 
+        paragraph (1).
+            (3) Technical assistance.--The Secretaries shall provide 
+        technical assistance to communities or persons seeking to apply 
+        for financial assistance through the portal using the 
+        application established under paragraph (1).
+    (d) Sunset.--The program established under this section shall 
+terminate on the date that is 7 years after the date of enactment of 
+this Act.
+
+SEC. 202. COMMUNITY WILDFIRE DEFENSE RESEARCH PROGRAM.
+
+    (a) In General.--The Secretaries shall, acting jointly, expand the 
+Joint Fire Science Program to include a performance-driven research and 
+development program known as the ``Community Wildfire Defense Research 
+Program'' for the purpose of testing and advancing innovative designs 
+to create or improve the wildfire-resistance of structures and 
+communities.
+    (b) Program Priorities.--In carrying out the program established 
+under subsection (a), the Secretaries shall evaluate opportunities to 
+create wildfire-resistant structures and communities through--
+            (1) different affordable building materials, including mass 
+        timber;
+            (2) home hardening, including policies to incentivize and 
+        incorporate defensible space;
+            (3) subdivision design and other land use planning and 
+        design;
+            (4) landscape architecture; and
+            (5) other wildfire-resistant designs, as determined by the 
+        Secretary.
+    (c) Community Wildfire Defense Innovation Prize.--
+            (1) In general.--In carrying out the program established 
+        under subsection (a), the Secretaries shall carry out a 
+        competition through which a person may submit to the 
+        Secretaries innovative designs for the creation or improvement 
+        of an ignition-resistant structure or fire-adapted communities.
+            (2) Prize.--Subject to the availability of appropriations 
+        made in advance for such purpose, the Secretaries may award a 
+        prize under the competition described in paragraph (1), based 
+        on criteria established by the Secretaries and in accordance 
+        with paragraph (3).
+            (3) Scale.--In awarding a prize under paragraph (2), the 
+        Secretaries shall prioritize for an award designs with the most 
+        potential to scale to existing infrastructure.
+    (d) Collaboration and Nonduplication.--In carrying out the program 
+established under subsection (a), the Secretaries shall ensure 
+collaboration and nonduplication of activities with the Building 
+Technologies Office of the Department of Energy.
+    (e) Sunset.--The program established under subsection (a) shall 
+terminate on the date that is 7 years after the date of enactment of 
+this Act.
+
+SEC. 203. VEGETATION MANAGEMENT, FACILITY INSPECTION, AND OPERATION AND 
+              MAINTENANCE RELATING TO ELECTRIC TRANSMISSION AND 
+              DISTRIBUTION FACILITY RIGHTS-OF-WAY.
+
+    (a) Hazard Trees Within 150 Feet of Electric Power Line.--Section 
+512(a)(1)(B)(ii) of the Federal Land Policy and Management Act of 1976 
+(43 U.S.C. 1772(a)(1)(B)(ii)) is amended by striking ``10'' and 
+inserting ``150''.
+    (b) Consultation With Private Landowners.--Section 512(c)(3)(E) of 
+such Act (43 U.S.C. 1772(c)(3)(E)) is amended--
+            (1) in clause (i), by striking ``and'' at the end;
+            (2) in clause (ii), by striking the period and inserting 
+        ``; and''; and
+            (3) by adding at the end the following:
+                            ``(iii) consulting with a private landowner 
+                        with respect to any hazard trees identified for 
+                        removal from land owned by the private 
+                        landowner.''.
+    (c) Review and Approval Process.--Section 512(c)(4)(A)(iv) of such 
+Act (43 U.S.C. 1772(c)(4)(A)(iv)) is amended to read as follows:
+                            ``(iv) ensures that--
+                                    ``(I) a plan submitted without a 
+                                modification under clause (iii) shall 
+                                be automatically approved 120 days 
+                                after being submitted; and
+                                    ``(II) with respect to a plan 
+                                submitted with a modification under 
+                                clause (iii), if not approved within 
+                                120 days after being submitted, the 
+                                Secretary concerned shall develop and 
+                                submit a letter to the owner and 
+                                operator describing--
+                                            ``(aa) a detailed timeline 
+                                        (to conclude within 165 days 
+                                        after the submission of the 
+                                        plan) for completing review of 
+                                        the plan;
+                                            ``(bb) any identified 
+                                        deficiencies with the plan and 
+                                        specific opportunities for the 
+                                        owner and operator to address 
+                                        such deficiencies; and
+                                            ``(cc) any other relevant 
+                                        information, as determined by 
+                                        the Secretary concerned.''.
+
+SEC. 204. CATEGORICAL EXCLUSION FOR ELECTRIC UTILITY LINES RIGHTS-OF-
+              WAY.
+
+    (a) Categorical Exclusion Established.--Forest management 
+activities described in subsection (b) are a category of activities 
+hereby designated as being categorically excluded from the preparation 
+of an environmental assessment or an environmental impact statement 
+under section 102 of the National Environmental Policy Act of 1969 (42 
+U.S.C. 4332).
+    (b) Forest Management Activities Designated for Categorical 
+Exclusion.--The forest management activities designated under 
+subsection (a) for a categorical exclusion are--
+            (1) the development and approval of a vegetation 
+        management, facility inspection, and operation and maintenance 
+        plan submitted under section 512(c)(1) of the Federal Land 
+        Policy and Management Act of 1976 (43 U.S.C. 1772(c)(1)) by the 
+        Secretary concerned; and
+            (2) the implementation of routine activities conducted 
+        under the plan referred to in paragraph (1).
+    (c) Availability of Categorical Exclusion.--On and after the date 
+of enactment of this Act, the Secretary concerned may use the 
+categorical exclusion established under subsection (a) in accordance 
+with this section.
+    (d) Exclusion of Certain Areas From Categorical Exclusion.--The 
+categorical exclusion established under subsection (a) shall not apply 
+to any forest management activity conducted--
+            (1) in a component of the National Wilderness Preservation 
+        System; or
+            (2) on National Forest System lands on which the removal of 
+        vegetation is restricted or prohibited by an Act of Congress.
+    (e) Permanent Roads.--
+            (1) Prohibition on establishment.--A forest management 
+        activity designated under subsection (b) shall not include the 
+        establishment of a permanent road.
+            (2) Existing roads.--The Secretary concerned may carry out 
+        necessary maintenance and repair on an existing permanent road 
+        for the purposes of conducting a forest management activity 
+        designated under subsection (b).
+            (3) Temporary roads.--The Secretary concerned shall 
+        decommission any temporary road constructed for carrying out a 
+        forest management activity designated under subsection (b) not 
+        later than the date that is 3 years after the date on which the 
+        forest management activity is completed.
+    (f) Applicable Laws.--Clauses (iii) and (iv) of section 106(a)(3) 
+shall apply to forest management activities designated under subsection 
+(b).
+
+SEC. 205. SEEDS OF SUCCESS.
+
+    (a) Strategy Established.--Not later than 2 years after the date of 
+enactment of this Act, the Secretaries and the Secretary of Defense 
+shall jointly develop and implement a strategy, to be known as the 
+``Seeds of Success strategy'', to enhance the domestic supply chain of 
+seeds.
+    (b) Elements.--The strategy required under subsection (a) shall 
+include a plan for each of the following:
+            (1) Facilitating sustained interagency coordination in, and 
+        a comprehensive approach to, native plant materials development 
+        and restoration.
+            (2) Promoting the re-seeding of native or fire-resistant 
+        vegetation post-wildfire, particularly in the wildland-urban 
+        interface.
+            (3) Creating and consolidating information on native or 
+        fire-resistant vegetation and sharing such information with 
+        State governments, Indian Tribes, and local governments.
+            (4) Building regional programs and partnerships to promote 
+        the development of materials made from plants native to the 
+        United States and restore such plants to their respective, 
+        native habitats within the United States, giving priority to 
+        the building of such programs and partnerships in regions of 
+        the Bureau of Land Management where such partnerships and 
+        programs do not already exist as of the date of enactment of 
+        this Act.
+            (5) Expanding seed storage and seed-cleaning 
+        infrastructure.
+            (6) Expanding the Warehouse System of the Bureau of Land 
+        Management, particularly the cold storage capacity of the 
+        Warehouse System.
+            (7) Shortening the timeline for the approval of permits to 
+        collect seeds on public lands managed by the Bureau of Land 
+        Management.
+    (c) Report.--The Secretaries and the Secretary of Defense shall 
+submit to the relevant Congressional Committees the strategy developed 
+under paragraph (1).
+
+                 TITLE III--TRANSPARENCY AND TECHNOLOGY
+
+SEC. 301. BIOCHAR INNOVATIONS AND OPPORTUNITIES FOR CONSERVATION, 
+              HEALTH, AND ADVANCEMENTS IN RESEARCH.
+
+    (a) Demonstration Projects.--
+            (1) Establishment.--
+                    (A) In general.--Subject to the availability of 
+                appropriations made in advance for such purpose, not 
+                later than 2 years after the date of enactment of this 
+                Act, the covered Secretaries shall establish a program 
+                to enter into partnerships with eligible entities to 
+                carry out demonstration projects to support the 
+                development and commercialization of biochar in 
+                accordance with this subsection.
+                    (B) Location of demonstration projects.--In 
+                carrying out the program established under subparagraph 
+                (A), the covered Secretaries shall, to the maximum 
+                extent practicable, enter into partnerships with 
+                eligible entities such that not fewer than one 
+                demonstration project is carried out in each region of 
+                the Forest Service and each region of the Bureau of 
+                Land Management.
+            (2) Proposals.--To be eligible to enter into a partnership 
+        to carry out a biochar demonstration project under paragraph 
+        (1)(A), an eligible entity shall submit to the covered 
+        Secretaries a proposal at such time, in such manner, and 
+        containing such information as the covered Secretaries may 
+        require.
+            (3) Priority.--In selecting proposals under paragraph (2), 
+        the covered Secretaries shall give priority to entering into 
+        partnerships with eligible entities that submit proposals to 
+        carry out biochar demonstration projects that--
+                    (A) have the most carbon sequestration potential;
+                    (B) have the most potential to create new jobs and 
+                contribute to local economies, particularly in rural 
+                areas;
+                    (C) have the most potential to demonstrate--
+                            (i) new and innovative uses of biochar;
+                            (ii) market viability for cost effective 
+                        biochar-based products;
+                            (iii) the ecosystem services created or 
+                        supported by the use of biochar;
+                            (iv) the restorative benefits of biochar 
+                        with respect to forest heath and resiliency, 
+                        including forest soils and watersheds; or
+                            (v) any combination of purposes specified 
+                        in clauses (i) through (iv); and
+                    (D) are located in areas that have a high need for 
+                biochar production, as determined by the covered 
+                Secretaries, due to--
+                            (i) nearby lands identified as having high 
+                        or very high or extreme risk of wildfire;
+                            (ii) availability of sufficient quantities 
+                        of feedstocks;
+                            (iii) a high level of demand for biochar or 
+                        other commercial byproducts of biochar; or
+                            (iv) any combination of purposes specified 
+                        in subparagraphs (A) through (D).
+            (4) Use of funds.--In carrying out the program established 
+        under paragraph (1)(A), the covered Secretaries may enter into 
+        partnerships and provide funding to such partnerships to carry 
+        out demonstration projects to--
+                    (A) acquire and test various feedstocks and their 
+                efficacy;
+                    (B) develop and optimize commercially and 
+                technologically viable biochar production units, 
+                including mobile and permanent units;
+                    (C) demonstrate--
+                            (i) the production of biochar from forest 
+                        residue; and
+                            (ii) the use of biochar to restore forest 
+                        health and resiliency;
+                    (D) build, expand, or establish biochar facilities;
+                    (E) conduct research on new and innovative uses of 
+                biochar;
+                    (F) demonstrate cost-effective market opportunities 
+                for biochar and biochar-based products;
+                    (G) carry out any other activities the covered 
+                Secretaries determine appropriate; or
+                    (H) any combination of the purposes specified in 
+                subparagraphs (A) through (F).
+            (5) Feedstock requirements.--To the maximum extent 
+        practicable, an eligible entity that carries out a biochar 
+        demonstration project under this subsection shall, with respect 
+        to the feedstock used under such project, derive at least 50 
+        percent of such feedstock from forest thinning and management 
+        activities, including mill residues, conducted on National 
+        Forest System lands or public lands.
+            (6) Review of biochar demonstration.--
+                    (A) In general.--The covered Secretaries shall 
+                conduct regionally-specific research, including 
+                economic analyses and life-cycle assessments, on any 
+                biochar produced from a demonstration project carried 
+                out under the program established in paragraph (1)(A), 
+                including--
+                            (i) the effects of such biochar on--
+                                    (I) forest health and resiliency;
+                                    (II) carbon capture and 
+                                sequestration, including increasing 
+                                soil carbon in the short-term and long-
+                                term;
+                                    (III) productivity, reduced input 
+                                costs, and water retention in 
+                                agricultural practices;
+                                    (IV) the health of soil and 
+                                grasslands used for grazing activities, 
+                                including grazing activities on 
+                                National Forest System land and public 
+                                land;
+                                    (V) environmental remediation 
+                                activities, including abandoned mine 
+                                land remediation; and
+                                    (VI) other ecosystem services 
+                                created or supported by the use of 
+                                biochar;
+                            (ii) the effectiveness of biochar as a co-
+                        product of biofuels or in biochemicals; and
+                            (iii) the effectiveness of other potential 
+                        uses of biochar to determine if any such use is 
+                        technologically and commercially viable.
+                    (B) Coordination.--The covered Secretaries shall, 
+                to the maximum extent practicable, provide data, 
+                analyses, and other relevant information collected 
+                under subparagraph (A) with recipients of a grant under 
+                subsection (b).
+            (7) Limitation on funding for establishing biochar 
+        facilities.--If the covered Secretaries provide to an eligible 
+        entity that enters into a partnership with the covered 
+        Secretaries under paragraph (1)(A) funding for establishing a 
+        biochar facility, such funding may not exceed 35 percent of the 
+        total capital cost of establishing such biochar facility.
+    (b) Biochar Research and Development Grant Program.--
+            (1) Establishment.--The Secretary of the Interior, in 
+        consultation with the Secretary of Energy, shall establish or 
+        expand an existing applied biochar research and development 
+        grant program to make competitive grants to eligible 
+        institutions to carry out the activities described in paragraph 
+        (3).
+            (2) Applications.--To be eligible to receive a grant under 
+        this subsection, an eligible institution shall submit to the 
+        Secretary a proposal at such time, in such manner, and 
+        containing such information as the Secretary may require.
+            (3) Use of funds.--An eligible institution that receives a 
+        grant under this subsection shall use the grant funds to 
+        conduct applied research on--
+                    (A) the effect of biochar on forest health and 
+                resiliency, accounting for variations in biochar, soil, 
+                climate, and other factors;
+                    (B) the effect of biochar on soil health and water 
+                retention, accounting for variations in biochar, soil, 
+                climate, and other factors;
+                    (C) the long-term carbon sequestration potential of 
+                biochar;
+                    (D) the best management practices with respect to 
+                biochar and biochar-based products that maximize--
+                            (i) carbon sequestration benefits; and
+                            (ii) the commercial viability and 
+                        application of such products in forestry, 
+                        agriculture, environmental remediation, water 
+                        quality improvement, and any other similar 
+                        uses, as determined by the Secretary;
+                    (E) the regional uses of biochar to increase 
+                productivity and profitability, including--
+                            (i) uses in agriculture and environmental 
+                        remediation; and
+                            (ii) use as a co-product in fuel 
+                        production;
+                    (F) new and innovative uses for biochar byproducts; 
+                and
+                    (G) opportunities to expand markets for biochar and 
+                create related jobs, particularly in rural areas.
+    (c) Reports.--
+            (1) Report to congress.--Not later than 2 years after the 
+        date of enactment of this Act, the covered Secretaries shall 
+        submit to Congress a report that--
+                    (A) includes policy and program recommendations to 
+                improve the widespread use of biochar;
+                    (B) identifies any area of research needed to 
+                advance biochar commercialization; and
+                    (C) identifies barriers to further biochar 
+                commercialization, including permitting and siting 
+                considerations.
+            (2) Materials submitted in support of the president's 
+        budget.--Beginning with the second fiscal year that begins 
+        after the date of enactment of this Act and annually thereafter 
+        until the date described in subsection (d), the covered 
+        Secretaries shall include in the materials submitted to 
+        Congress in support of the President's budget pursuant to 
+        section 1105 of title 31, United States Code, a report 
+        describing, for the fiscal year covered by the report, the 
+        status of each demonstration project carried out under 
+        subsection (a) and each research and development grant carried 
+        out under subsection (b).
+    (d) Sunset.--The authority to carry out this section shall 
+terminate on the date that is 7 years after the date of enactment of 
+this Act.
+    (e) Definitions.--In this section:
+            (1) Biochar.--The term ``biochar'' means carbonized biomass 
+        produced by converting feedstock through reductive thermal 
+        processing for non-fuel uses.
+            (2) Eligible entity.--The term ``eligible entity'' means--
+                    (A) a State, local, special district, or Tribal 
+                government;
+                    (B) an eligible institution;
+                    (C) a private, non-private, or cooperative entity 
+                or organization;
+                    (D) a National Laboratory (as such term is defined 
+                in section 2 of the Energy Policy Act of 2005 (42 
+                U.S.C. 15801)); or
+                    (E) a partnership or consortium of two or more 
+                entities described in subparagraphs (A) through (D).
+            (3) Eligible institution.--The term ``eligible 
+        institution'' means land-grant colleges and universities, 
+        including institutions eligible for funding under the--
+                    (A) Act of July 2, 1862 (12 Stat. 503, chapter 130; 
+                7 U.S.C. 301 et seq.);
+                    (B) Act of August 30, 1890 (26 Stat. 417, chapter 
+                841; 7 U.S.C. 321 et seq.), including Tuskegee 
+                University;
+                    (C) Public Law 87-788 (commonly known as the 
+                ``McIntire-Stennis Act of 1962''); or
+                    (D) Equity in Educational Land-Grant Status Act of 
+                1994 (7 U.S.C. 301 note; Public Law 103-382).
+            (4) Feedstock.--The term ``feedstock'' means excess biomass 
+        in the form of plant matter or materials that serves as the raw 
+        material for the production of biochar.
+            (5) Covered secretaries.--The term ``covered Secretaries'' 
+        means--
+                    (A) the Secretary of Agriculture, acting through 
+                the Chief of the Forest Service;
+                    (B) the Secretary of the Interior, acting through 
+                the Director of the Bureau of Land Management; and
+                    (C) the Secretary of Energy, acting through the 
+                Director of the Office of Science.
+
+SEC. 302. ACCURATE HAZARDOUS FUELS REDUCTION REPORTS.
+
+    (a) Inclusion of Hazardous Fuels Reduction Report in Materials 
+Submitted in Support of the President's Budget.--
+            (1) In general.--Beginning with the first fiscal year that 
+        begins after the date of enactment of this Act, and each fiscal 
+        year thereafter, the Secretary concerned shall include in the 
+        materials submitted to Congress in support of the President's 
+        budget pursuant to section 1105 of title 31, United States 
+        Code, a report on the number of acres of Federal land on which 
+        the Secretary concerned carried out hazardous fuels reduction 
+        activities during the preceding fiscal year.
+            (2) Requirements.--For purposes of the report required 
+        under paragraph (1), the Secretary concerned shall--
+                    (A) in determining the number of acres of Federal 
+                land on which the Secretary concerned carried out 
+                hazardous fuels reduction activities during the period 
+                covered by the report--
+                            (i) record acres of Federal land on which 
+                        hazardous fuels reduction activities were 
+                        completed during such period; and
+                            (ii) record each acre described in clause 
+                        (i) once in the report, regardless of whether 
+                        multiple hazardous fuels reduction activities 
+                        were carried out on such acre during such 
+                        period; and
+                    (B) with respect to the acres of Federal land 
+                recorded in the report, include information on--
+                            (i) which such acres are located in the 
+                        wildland-urban interface;
+                            (ii) the level of wildfire risk (high, 
+                        moderate, or low) on the first and last day of 
+                        the period covered by the report;
+                            (iii) the types of hazardous fuels 
+                        activities completed for such acres, 
+                        delineating between whether such activities 
+                        were conducted--
+                                    (I) in a wildfire managed for 
+                                resource benefits; or
+                                    (II) through a planned project;
+                            (iv) the cost per acre of hazardous fuels 
+                        activities carried out during the period 
+                        covered by the report;
+                            (v) the region or system unit in which the 
+                        acres are located; and
+                            (vi) the effectiveness of the hazardous 
+                        fuels reduction activities on reducing the risk 
+                        of wildfire.
+            (3) Transparency.--The Secretary concerned shall make each 
+        report submitted under paragraph (1) publicly available on the 
+        websites of the Department of Agriculture and the Department of 
+        the Interior, as applicable.
+    (b) Accurate Data Collection.--
+            (1) In general.--Not later than 90 days after the date of 
+        enactment of this Act, the Secretary concerned shall implement 
+        standardized procedures for tracking data related to hazardous 
+        fuels reduction activities carried out by the Secretary 
+        concerned.
+            (2) Elements.--The standardized procedures required under 
+        paragraph (1) shall include--
+                    (A) regular, standardized data reviews of the 
+                accuracy and timely input of data used to track 
+                hazardous fuels reduction activities;
+                    (B) verification methods that validate whether such 
+                data accurately correlates to the hazardous fuels 
+                reduction activities carried out by the Secretary 
+                concerned;
+                    (C) an analysis of the short- and long-term 
+                effectiveness of the hazardous fuels reduction 
+                activities on reducing the risk of wildfire; and
+                    (D) for hazardous fuels reduction activities that 
+                occur partially within the wildland-urban interface, 
+                methods to distinguish which acres are located within 
+                the wildland-urban interface and which acres are 
+                located outside the wildland-urban interface.
+            (3) Report.--Not later than 2 weeks after implementing the 
+        standardized procedures required under paragraph (1), the 
+        Secretary concerned shall submit to Congress a report that 
+        describes--
+                    (A) such standardized procedures; and
+                    (B) program and policy recommendations to Congress 
+                to address any limitations in tracking data related to 
+                hazardous fuels reduction activities under this 
+                subsection.
+    (c) GAO Study.--Not later than 2 years after the date of enactment 
+of this Act, the Comptroller General of the United States shall--
+            (1) conduct a study on the implementation of this section, 
+        including any limitations with respect to--
+                    (A) reporting hazardous fuels reduction activities 
+                under subsection (a); or
+                    (B) tracking data related to hazardous fuels 
+                reduction activities under subsection (b); and
+            (2) submit to Congress a report that describes the results 
+        of the study under paragraph (1).
+    (d) Definitions.--In this section:
+            (1) Hazardous fuels reduction activity.--The term 
+        ``hazardous fuels reduction activity''--
+                    (A) means any vegetation management activity to 
+                reduce the risk of wildfire, including mechanical 
+                treatments, grazing, and prescribed burning; and
+                    (B) does not include the awarding of contracts to 
+                conduct hazardous fuels reduction activities.
+            (2) Federal lands.--The term ``Federal lands'' means lands 
+        under the jurisdiction of the Secretary of the Interior or the 
+        Secretary of Agriculture.
+    (e) No Additional Funds Authorized.--No additional funds are 
+authorized to carry out the requirements of this section, and the 
+activities authorized by this section are subject to the availability 
+of appropriations made in advance for such purposes.
+
+SEC. 303. PUBLIC-PRIVATE WILDFIRE TECHNOLOGY DEPLOYMENT AND 
+              DEMONSTRATION PARTNERSHIP.
+
+    (a) Definitions.--In this section:
+            (1) Covered agency.--The term ``covered agency'' means--
+                    (A) each Federal land management agency (as such 
+                term is defined in the Federal Lands Recreation 
+                Enhancement Act (16 U.S.C. 6801));
+                    (B) the National Oceanic and Atmospheric 
+                Administration;
+                    (C) the United States Fire Administration;
+                    (D) the Federal Emergency Management Agency;
+                    (E) the National Aeronautics and Space 
+                Administration;
+                    (F) the Bureau of Indian Affairs;
+                    (G) the Department of Defense;
+                    (H) a State, Tribal, county, or municipal fire 
+                department or district operating through the United 
+                States Fire Administration or pursuant to an agreement 
+                with a Federal agency; and
+                    (I) any other Federal agency involved in wildfire 
+                response.
+            (2) Covered entity.--The term ``covered entity'' means--
+                    (A) a private entity;
+                    (B) a nonprofit organization; or
+                    (C) an institution of higher education (as defined 
+                in section 101 of the Higher Education Act of 1965 (20 
+                U.S.C. 1001)).
+    (b) In General.--Not later than 1 year after the date of enactment 
+of this Act, the Secretaries, in coordination with the heads of the 
+covered agencies, shall establish a deployment and demonstration pilot 
+program (in this section referred to as ``Pilot Program'') for new and 
+innovative wildfire prevention, detection, communication, and 
+mitigation technologies.
+    (c) Functions.--In carrying out the Pilot Program, the Secretaries 
+shall--
+            (1) incorporate the Pilot Program into the National 
+        Wildfire Coordinating Group;
+            (2) in consultation with the heads of covered agencies, 
+        identify and advance the demonstration and deployment of key 
+        technology priority areas with respect to wildfire prevention, 
+        detection, communication, and mitigation technologies, 
+        including--
+                    (A) hazardous fuels reduction treatments or 
+                activities;
+                    (B) dispatch communications;
+                    (C) remote sensing, detection, and tracking;
+                    (D) safety equipment;
+                    (E) common operating pictures or operational 
+                dashboards; and
+                    (F) interoperable commercial data; and
+            (3) connect each covered entity selected to participate in 
+        the Pilot Program with the appropriate covered agency to 
+        coordinate real-time and on-the-ground testing of technology 
+        during wildland fire mitigation activities and training.
+    (d) Applications.--To be eligible to be selected to participate in 
+the Pilot Program, a covered entity shall submit to the Secretaries an 
+application at such time, in such manner, and containing such 
+information as the Secretaries may require, including a proposal to 
+demonstrate technologies specific to the key technology priority areas 
+identified pursuant to subsection (c)(2).
+    (e) Prioritization of Emerging Technologies.--In selecting covered 
+entities to participate in the Pilot Program, the Secretaries shall 
+give priority to covered entities--
+            (1) that have participated in the Fire Weather Testbed of 
+        the National Oceanic and Atmospheric Administration; or
+            (2) developing and applying emerging technologies for 
+        wildfire mitigation, including artificial intelligence, quantum 
+        sensing, computing and quantum-hybrid applications, thermal 
+        mid-wave infrared equipped low earth orbit satellites, 
+        augmented reality, 5G private networks, and device-to-device 
+        communications supporting nomadic mesh networks and detection.
+    (f) Outreach.--The Secretaries, in coordination with the heads of 
+covered agencies, shall make public the key technology priority areas 
+identified pursuant to subsection (c)(2) and invite covered entities to 
+apply under subsection (d) to deploy and demonstrate their technologies 
+to address such priority areas.
+    (g) Reports and Recommendations.--Not later than 1 year after the 
+date of enactment of this Act, and annually thereafter for the duration 
+of the Pilot Program, the Secretaries shall submit to the relevant 
+Congressional Committees, the Committee on Science, Space, and 
+Technology of the House of Representatives, and the Committee on 
+Commerce, Science, and Transportation of the Senate a report that 
+includes, with respect to the Pilot Program, the following:
+            (1) A list of participating covered entities.
+            (2) A brief description of the technologies deployed and 
+        demonstrated by each such covered entity.
+            (3) An estimate of the cost of acquiring each such 
+        technology and applying the technology at scale.
+            (4) Outreach efforts by Federal agencies to covered 
+        entities developing wildfire technologies.
+            (5) Assessments of, and recommendations relating to, new 
+        technologies with potential adoption and application at-scale 
+        in Federal land management agencies' wildfire prevention, 
+        detection, communication, and mitigation efforts.
+            (6) A description of the relationship and coordination 
+        between the Pilot Program and the activities of the National 
+        Oceanic and Atmospheric Administration, including the Fire 
+        Weather Testbed.
+    (h) Sunset.--The authority to carry out this section shall 
+terminate on the date that is 7 years after the date of enactment of 
+this Act.
+
+SEC. 304. GAO STUDY ON FOREST SERVICE POLICIES.
+
+    Not later than 3 years after the date of enactment of this Act, the 
+Comptroller General of the United States shall--
+            (1) conduct a study evaluating--
+                    (A) the effectiveness of Forest Service wildland 
+                firefighting operations;
+                    (B) transparency and accountability measures in the 
+                Forest Service's budget and accounting process; and
+                    (C) the suitability and feasibility of establishing 
+                a new Federal agency with the responsibility of 
+                responding and suppressing wildland fires on Federal 
+                lands; and
+            (2) submit to Congress a report that describes the results 
+        of the study required under paragraph (1).
+
+SEC. 305. FOREST SERVICE WESTERN HEADQUARTERS STUDY.
+
+    Not later than 5 years after the date of enactment of this Act, the 
+Chief of the Forest Service shall--
+            (1) conduct a study evaluating--
+                    (A) potential locations for a Western headquarters 
+                for the Forest Service, including potential locations 
+                in at least 3 different States located west of the 
+                Mississippi river; and
+                    (B) the potential benefits of creating a Western 
+                headquarters for the Forest Service, including 
+                expected--
+                            (i) improvements to customer service;
+                            (ii) improvements to employee recruitment 
+                        and retention; and
+                            (iii) operational efficiencies and cost 
+                        savings; and
+            (2) submit to Congress a report that describes the results 
+        of the study required under paragraph (1).
+
+SEC. 306. KEEPING FOREST PLANS CURRENT AND MONITORED.
+
+    (a) In General.--The Secretary--
+            (1) to the greatest extent practicable and subject to the 
+        availability of appropriations made in advance for such 
+        purpose--
+                    (A) ensure forest plans comply with the 
+                requirements of section 6(f)(5)(A) of the Forest and 
+                Rangeland Resources Planning Act of 1974 (16 U.S.C. 
+                1604(f)(5)(A)); and
+                    (B) prioritize revising any forest plan not in 
+                compliance with such section 6(f)(5)(A);
+            (2) not be considered to be in violation of section 
+        6(f)(5)(A) of the Forest and Rangeland Renewable Resources 
+        Planning Act of 1974 (16 U.S.C. 1604(f)(5)(A)) solely because 
+        more than 15 years have passed without revision of the plan for 
+        a unit of the National Forest System;
+            (3) not later than 120 days after the date of the enactment 
+        of this Act, submit to the relevant Congressional Committees 
+        the date on which each forest plan required by such section 6 
+        was most recently revised, amended, or modified;
+            (4) seek to publish a new, complete version of a forest 
+        plan that the Secretary has been directed to amend, revise, or 
+        modify by a court order within 60 days of such amendment, 
+        revision, or modification, subject to the availability of 
+        appropriations made in advance for such purpose; and
+            (5) maintain a central, publicly accessible website with 
+        links to--
+                    (A) the most recently available forest plan 
+                adopted, amended, or modified by a court order as a 
+                single document; and
+                    (B) the most recently published forest plan 
+                monitoring report for each unit of the National Forest 
+                System.
+    (b) Good Faith Updates.--If the Secretary is not acting 
+expeditiously and in good faith, within the funding available to 
+revise, amend, or modify a plan for a unit of the National Forest 
+System as required by law or a court order, subsection (a) shall be 
+void with respect to such plan and a court of proper jurisdiction may 
+order completion of the plan on an accelerated basis.
+    (c) Report.--Not later than 1 year after the date of the enactment 
+of this Act, the Secretary shall submit a report to the relevant 
+Congressional Committees summarizing the implementation of this 
+section.
+
+SEC. 307. CONTAINER AERIAL FIREFIGHTING SYSTEM (CAFFS).
+
+    (a) Evaluation.--Not later than 90 days after the date of the 
+enactment of this Act, the Secretary of Agriculture and the Secretary 
+of the Interior, in consultation with the National Interagency Aviation 
+Committee and the Interagency Airtanker Board, shall jointly conduct an 
+evaluation of the container aerial firefighting system to assess the 
+use of such system to mitigate and suppress wildfires.
+    (b) Report.--Not later than 120 days after the date of the 
+enactment of this Act, the Secretary of Agriculture and the Secretary 
+of the Interior, in consultation with the National Interagency Aviation 
+Committee and the Interagency Airtanker Board, shall jointly submit to 
+the appropriate committees a report that includes the results of the 
+evaluation required under subsection (a).
+    (c) Appropriate Committees Defined.--In this section, the term 
+``appropriate committees'' means--
+            (1) the Committees on Agriculture and Natural Resources of 
+        the House of Representatives; and
+            (2) the Committees on Agriculture, Nutrition, and Forestry 
+        and Energy and Natural Resources of the Senate.
+
+SEC. 308. STUDY ON PINE BEETLE INFESTATION.
+
+    Not later than 1 year after the date of the enactment of this Act, 
+the Secretary of Agriculture, acting through the Chief of the Forest 
+Service, shall--
+            (1) carry out a study on the causes and effects of, and 
+        solutions for, the infestation of pine beetles in the North 
+        Eastern region of the United States; and
+            (2) submit to the relevant Congressional Committees a 
+        report that includes the results of the study required under 
+        paragraph (1).
+
+      TITLE IV--ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS
+
+SEC. 401. WILDLAND FIRE MANAGEMENT CASUALTY ASSISTANCE PROGRAM.
+
+    (a) Development of Program.--Not later than 6 months after the date 
+of the enactment of this Act, the Secretary of the Interior shall 
+develop a Wildland Fire Management Casualty Assistance Program 
+(referred to in this section as the ``Program'') to provide assistance 
+to the next-of-kin of--
+            (1) firefighters who, while in the line of duty, suffer 
+        illness or are critically injured or killed; and
+            (2) wildland fire support personnel critically injured or 
+        killed in the line of duty.
+    (b) Aspects of Program.--The Program shall address the following:
+            (1) The initial and any subsequent notifications to the 
+        next-of-kin of a firefighter or wildland fire support personnel 
+        who--
+                    (A) is killed in the line of duty; or
+                    (B) requires hospitalization or treatment at a 
+                medical facility due to a line-of-duty injury or 
+                illness.
+            (2) The reimbursement of next-of-kin for expenses 
+        associated with travel to visit a firefighter or wildland fire 
+        support personnel who--
+                    (A) is killed in the line of duty; or
+                    (B) requires hospitalization or treatment at a 
+                medical facility due to a line-of-duty injury or 
+                illness.
+            (3) The qualifications, assignment, training, duties, 
+        supervision, and accountability for the performance of casualty 
+        assistance responsibilities.
+            (4) The relief or transfer of casualty assistance officers, 
+        including notification to survivors of critical injury or 
+        illness in the line of duty and next-of-kin of the reassignment 
+        of such officers to other duties.
+            (5) Centralized, short-term and long-term case management 
+        procedures for casualty assistance, including rapid access by 
+        survivors of firefighters or wildland fire support personnel 
+        and casualty assistance officers to expert case managers and 
+        counselors.
+            (6) The provision, through a computer accessible website 
+        and other means and at no cost to survivors and next-of-kin of 
+        firefighters or wildland fire support personnel, of 
+        personalized, integrated information on the benefits and 
+        financial assistance available to such survivors from the 
+        Federal Government.
+            (7) The provision of information to survivors and next-of-
+        kin of firefighters or wildland fire support personnel on 
+        mechanisms for registering complaints about, or requests for, 
+        additional assistance related to casualty assistance.
+            (8) Liaison with the Department of the Interior, the 
+        Department of Justice, and the Social Security Administration 
+        to ensure prompt and accurate resolution of issues relating to 
+        benefits administered by those agencies for survivors of 
+        firefighters or wildland fire support personnel.
+            (9) Data collection, in consultation with the United States 
+        Fire Administration and the National Institute for Occupational 
+        Safety and Health, regarding the incidence and quality of 
+        casualty assistance provided to survivors of firefighters or 
+        wildland fire support personnel.
+    (c) Line of Duty Death Benefits.--The Program shall not affect 
+existing authorities for Line of Duty Death benefits for Federal 
+firefighters and wildland fire support personnel.
+    (d) Next-of-Kin Defined.--In this section, the term ``next-of-kin'' 
+means person or persons in the highest category of priority as 
+determined by the following list (categories appear in descending order 
+of priority):
+            (1) Surviving legal spouse.
+            (2) Children (whether by current or prior marriage) age 18 
+        years or older in descending precedence by age.
+            (3) Father or mother, unless by court order custody has 
+        been vested in another (adoptive parent takes precedence over 
+        natural parent).
+            (4) Siblings (whole or half) age 18 years or older in 
+        descending precedence by age.
+            (5) Grandfather or grandmother.
+            (6) Any other relative (precedence to be determined in 
+        accordance with the civil law of descent of the deceased former 
+        member's State of domicile at time of death).
+
+                     TITLE V--WHITE OAK RESILIENCE
+
+SEC. 501. WHITE OAK RESTORATION INITIATIVE COALITION.
+
+    (a) In General.--The White Oak Restoration Initiative Coalition 
+shall be established--
+            (1) as a voluntary collaborative group of Federal, State, 
+        Tribal, and local governments and private and non-governmental 
+        organizations to carry out the duties described in subsection 
+        (b); and
+            (2) in accordance with the charter titled ``White Oak 
+        Initiative Coalition Charter'' adopted by the White Oak 
+        Initiative Board of Directors on March 21, 2023 (or a successor 
+        charter).
+    (b) Duties.--In addition to the duties specified in the charter 
+described in subsection (a)(2), the duties of the White Oak Restoration 
+Initiative Coalition are--
+            (1) to coordinate Federal, State, Tribal, local, private, 
+        and non-governmental restoration of white oak in the United 
+        States; and
+            (2) to make program and policy recommendations, consistent 
+        with applicable forest management plans, with respect to--
+                    (A) changes necessary to address Federal and State 
+                policies that impede activities to improve the health, 
+                resiliency, and natural regeneration of white oak;
+                    (B) adopting or modifying Federal and State 
+                policies to increase the pace and scale of white oak 
+                regeneration and resiliency of white oak;
+                    (C) options to enhance communication, coordination, 
+                and collaboration between forest land owners, 
+                particularly for cross-boundary projects, to improve 
+                the health, resiliency, and natural regeneration of 
+                white oak;
+                    (D) research gaps that should be addressed to 
+                improve the best available science on white oak;
+                    (E) outreach to forest landowners with white oak or 
+                white oak regeneration potential; and
+                    (F) options and policies necessary to improve the 
+                quality and quantity of white oak in tree nurseries.
+    (c) Administrative Support, Technical Services, and Staff 
+Support.--The Secretary of the Interior and the Secretary of 
+Agriculture shall make such personnel available to the White Oak 
+Restoration Initiative Coalition for administrative support, technical 
+services, and development and dissemination of educational materials as 
+the Secretaries determine necessary to carry out this section.
+    (d) Private Funding of White Oak Restoration Projects.--Subject to 
+the availability of appropriations made in advance for such purpose, 
+the Secretary of Agriculture may make funds available to the White Oak 
+Restoration Initiative Coalition to carry out this section from the 
+account established pursuant to section 1241(f) of the Food Security 
+Act of 1985 (16 U.S.C. 3841(f)).
+
+SEC. 502. FOREST SERVICE PILOT PROGRAM.
+
+    (a) In General.--The Secretary of Agriculture, acting through the 
+Chief of the Forest Service, shall establish and carry out 5 pilot 
+projects in national forests to restore white oak in such forests 
+through white oak restoration and natural regeneration practices that 
+are consistent with applicable forest management plans.
+    (b) National Forests Reserved or Withdrawn From the Public 
+Domain.--At least 3 pilot projects required under subsection (a) shall 
+be carried out on national forests reserved or withdrawn from the 
+public domain.
+    (c) Authority To Enter Into Cooperative Agreements.--The Secretary 
+of Agriculture may enter into cooperative agreements to carry out the 
+pilot projects required under subsection (a).
+    (d) Sunset.--The authority under this section shall terminate on 
+the date that is 7 years after the date of the enactment of this Act.
+
+SEC. 503. DEPARTMENT OF THE INTERIOR WHITE OAK REVIEW AND RESTORATION.
+
+    (a) Assessment.--
+            (1) In general.--The Secretary of the Interior shall carry 
+        out an assessment of land under the administrative jurisdiction 
+        of the Department of the Interior, including fish and wildlife 
+        refuges and abandoned mine land, to evaluate--
+                    (A) whether white oak is present on such land; and
+                    (B) the potential to restore white oak forests on 
+                such land.
+            (2) Use of information.--In carrying out the assessment 
+        under paragraph (1), the Secretary may use information from 
+        sources other than the Department of the Interior, including 
+        from the White Oak Initiative and the Forest Service.
+            (3) Report.--Not later than 90 days after the date of the 
+        enactment of this section, the Secretary shall submit to 
+        Congress, and make publicly available on the website of the 
+        Department of the Interior, a report regarding the results of 
+        the assessment carried out under this subsection.
+    (b) Pilot Projects.--After the date on which the report required 
+under subsection (a)(3) is submitted, the Secretary shall establish and 
+carry out 5 pilot projects in different areas of land described in 
+subsection (a)(1) to restore and naturally regenerate white oak.
+    (c) Authority to Enter Into Cooperative Agreements.--The Secretary 
+of the Interior may enter into cooperative agreements to carry out the 
+pilot projects required under subsection (b).
+    (d) Sunset.--The authority under this section shall terminate on 
+the date that is 7 years after the date of the enactment of this Act.
+
+SEC. 504. WHITE OAK REGENERATION AND UPLAND OAK HABITAT.
+
+    (a) Establishment.--Not later than 180 days after the date of the 
+enactment of this Act, the Secretary of Agriculture (in this section 
+referred to as the ``Secretary'') shall establish a non-regulatory 
+program to be known as the ``White Oak and Upland Oak Habitat 
+Regeneration Program'' (in this section referred to as the 
+``Program'').
+    (b) Duties.--In carrying out the Program, the Secretary shall--
+            (1) draw upon the best available science and management 
+        plans for species of white oak to identify, prioritize, and 
+        implement restoration and conservation activities that will 
+        improve the growth of white oak within the United States;
+            (2) collaborate and coordinate with the White Oak 
+        Restoration Initiative Coalition to prioritize white oak 
+        restoration initiatives;
+            (3) adopt a white oak restoration strategy that--
+                    (A) supports the implementation of a shared set of 
+                science-based restoration and conservation activities 
+                developed in accordance with paragraph (1);
+                    (B) targets cost effective projects with measurable 
+                results; and
+                    (C) maximizes restoration outcomes with no net gain 
+                of Federal full-time equivalent employees; and
+            (4) establish the voluntary grant and technical assistance 
+        programs in accordance with subsection (e).
+    (c) Coordination.--In establishing the Program the Secretary, 
+acting through the Chief of the Forest Service, shall consult with--
+            (1) the heads of Federal agencies, including--
+                    (A) the Director of the United States Fish and 
+                Wildlife Service; and
+                    (B) the Chief of the Natural Resources Conservation 
+                Service; and
+            (2) the Governor of each State in which restoration efforts 
+        will be carried out pursuant to the Program.
+    (d) Purposes.--The purposes of the Program include--
+            (1) coordinating restoration and conservation activities 
+        among Federal, State, local, and Tribal entities and 
+        conservation partners to address white oak restoration 
+        priorities;
+            (2) improving and regenerating white oak and upland oak 
+        forests and the wildlife habitat such forests provide;
+            (3) carrying out coordinated restoration and conservation 
+        activities that lead to the increased growth of species of 
+        white oak in native white oak regions on Federal, State, 
+        Tribal, and private land;
+            (4) facilitating strategic planning to maximize the 
+        resilience of white oak systems and habitats under changing 
+        climate conditions;
+            (5) engaging the public through outreach, education, and 
+        citizen involvement to increase capacity and support for 
+        coordinated restoration and conservation activities for species 
+        of white oak; and
+            (6) increasing scientific capacity to support the planning, 
+        monitoring, and research activities necessary to carry out such 
+        coordinated restoration and conservation activities.
+    (e) Grants and Assistance.--
+            (1) In general.--To the extent that funds are available to 
+        carry out this section, the Secretary shall establish a 
+        voluntary grant and technical assistance program (in this 
+        section referred to as the ``grant program'') to achieve the 
+        purposes of the Program described in subsection (d).
+            (2) Administration.--
+                    (A) In general.--The Secretary shall enter into a 
+                cooperative agreement with the National Fish and 
+                Wildlife Foundation (in this subsection referred to as 
+                the ``Foundation'') to manage and administer the grant 
+                program.
+                    (B) Funding.--Subject to the availability of 
+                appropriations made in advance for such purpose, after 
+                the Secretary enters into a cooperative agreement with 
+                the Foundation under subparagraph (A), the Foundation 
+                shall for each fiscal year, receive amounts to carry 
+                out this subsection in an advance payment of the entire 
+                amount on October 1, or as soon as practicable 
+                thereafter, of that fiscal year.
+            (3) Application of national fish and wildlife foundation 
+        establishment act.--Amounts received by the Foundation to carry 
+        out the grant program shall be subject to the National Fish and 
+        Wildlife Foundation Establishment Act (16 U.S.C. 3701 et seq.), 
+        excluding section 10(a) of that Act (16 U.S.C. 3709(a)).
+    (f) Sunset.--The authority under this section shall terminate on 
+the date that is 7 years after the date of the enactment of this Act.
+
+SEC. 505. TREE NURSERY SHORTAGES.
+
+    (a) In General.--Not later than 1 year after the date of the 
+enactment of this section, the Secretary of Agriculture, acting through 
+the Chief of the Forest Service, shall--
+            (1) develop and implement a national strategy to increase 
+        the capacity of Federal, State, Tribal, and private tree 
+        nurseries to address the nationwide shortage of tree seedlings; 
+        and
+            (2) coordinate such strategy with--
+                    (A) the national reforestation strategy of the 
+                Forest Service; and
+                    (B) each regional implementation plan for National 
+                Forests.
+    (b) Elements.--The strategy required under subsection (a) shall--
+            (1) be based on the best available science and data; and
+            (2) identify and address--
+                    (A) regional seedling shortages of bareroot and 
+                container tree seedlings;
+                    (B) regional reforestation opportunities and the 
+                seedling supply necessary to fulfill such 
+                opportunities;
+                    (C) opportunities to enhance seedling diversity and 
+                close gaps in seed inventories; and
+                    (D) barriers to expanding, enhancing, or creating 
+                new infrastructure to increase nursery capacity.
+
+SEC. 506. WHITE OAK RESEARCH.
+
+    (a) In General.--The Secretary of Agriculture may enter into a 
+memorandum of understanding with a Tribe or institution, including a 
+covered land grant college, to collaboratively conduct research on--
+            (1) white oak genes with resistance or tolerance to stress;
+            (2) white oak trees that exhibit vigor for the purpose of 
+        increasing survival and growth;
+            (3) establishing a genetically diverse white oak seeds bank 
+        capable of responding to stressors;
+            (4) providing a sustainable supply of white oak seedlings 
+        and genetic resources;
+            (5) improved methods for aligning seed sources with the 
+        future climate at planting sites;
+            (6) reforestation of white oak through natural and 
+        artificial regeneration;
+            (7) improved methods for retaining and increasing white oak 
+        trees in forests;
+            (8) improved methods for reforesting abandoned mine land 
+        sites; and
+            (9) economic and social aspects of white oak forest 
+        management across land ownerships.
+    (b) Consult.--In carrying out the research under subsection (a), 
+the Tribe or institution, including a covered land grant college, that 
+enters into the memorandum of understanding under such subsection may 
+consult with such States, nonprofit organizations, institutions of 
+higher education, and other scientific bodies, as the entity subject to 
+such memorandum determines appropriate.
+    (c) Sunset.--The authority under this section shall terminate on 
+the date that is 7 years after the date of the enactment of this Act.
+    (d) Covered Land Grant College Defined.--In this section, the term 
+``covered land grant college'' means an 1862 Institution, an 1890 
+Institution, or a 1994 Institution (as such terms are defined, 
+respectively, in section 2 of the Agricultural Research, Extension, and 
+Education Reform Act of 1998 (7 U.S.C. 7601)).
+
+SEC. 507. USDA FORMAL INITIATIVE.
+
+    (a) In General.--The Secretary of Agriculture, acting through the 
+Chief of the Natural Resources Conservation Service and in coordination 
+with the Chief of the Forest Service, shall establish a formal 
+initiative on white oak to--
+            (1) re-establish white oak forests where appropriate;
+            (2) improve management of existing white oak forests to 
+        foster natural regeneration of white oak;
+            (3) provide technical assistance to private landowners to 
+        re-establish, improve management of, and naturally regenerate 
+        white oak;
+            (4) improve and expand white oak nursery stock; and
+            (5) adapt and improve white oak seedlings.
+    (b) Sunset.--The authority under this section shall terminate on 
+the date that is 7 years after the date of the enactment of this Act.
+
+SEC. 508. AUTHORITIES.
+
+    To the maximum extent practicable, the Secretary of the Interior 
+and the Secretary of Agriculture shall use the authorities provided 
+under this title in combination with other authorities to carry out 
+projects, including--
+            (1) good neighbor agreements entered into under section 
+        8206 of the Agricultural Act of 2014 (16 U.S.C. 2113); and
+            (2) stewardship contracting projects entered into under 
+        section 604 of the Healthy Forests Restoration Act of 2003 (16 
+        U.S.C. 6591).
+
+ TITLE VI--EXPANSION OF PUBLIC-PRIVATE PARTNERSHIPS UNDER WATER SOURCE 
+                           PROTECTION PROGRAM
+
+SEC. 601. WATER SOURCE PROTECTION PROGRAM.
+
+    Section 303 of the Healthy Forests Restoration Act of 2003 (16 
+U.S.C. 6542(g)(4)(B)) is amended--
+            (1) in subsection (a)--
+                    (A) by redesignating paragraphs (1) through (7) as 
+                paragraphs (2) through (8), respectively;
+                    (B) by inserting before paragraph (2), as so 
+                redesignated, the following:
+            ``(1) Adjacent land.--The term `adjacent land' means non-
+        Federal land, including State, local, and private land, that is 
+        adjacent to, and within the same watershed as, National Forest 
+        System land on which a watershed protection and restoration 
+        project is carried out under this section.''; and
+                    (C) in paragraph (2), as so redesignated--
+                            (i) by redesignating subparagraphs (G) and 
+                        (H) as subparagraphs (K) and (L), respectively; 
+                        and
+                            (ii) by inserting after subparagraph (F) 
+                        the following:
+                    ``(G) an acequia association;
+                    ``(H) a local, regional, or other public entity 
+                that manages stormwater or wastewater resources or 
+                other related water infrastructure;
+                    ``(I) a land-grant mercedes;
+                    ``(J) a local, regional, or other private entity 
+                that has water delivery authority;'';
+            (2) in subsection (b)--
+                    (A) by striking ``The Secretary shall'' and 
+                inserting the following:
+            ``(1) In general.--The Secretary shall''; and
+                    (B) by adding at the end the following:
+            ``(2) Requirements.--A watershed protection and restoration 
+        project under the Program shall be designed to--
+                    ``(A) protect and restore watershed health, water 
+                supply and quality, a municipal or agricultural water 
+                supply system, and water-related infrastructure;
+                    ``(B) protect and restore forest health from insect 
+                infestation and disease or wildfire; or
+                    ``(C) advance any combination of the purposes 
+                described in subparagraphs (A) and (B).
+            ``(3) Priorities.--In selecting watershed protection and 
+        restoration projects under the Program, the Secretary shall 
+        give priority to projects that would--
+                    ``(A) provide risk management benefits associated 
+                with: drought; wildfire; post-wildfire conditions; 
+                extreme weather; flooding; resilience to climate 
+                change; and watershed and fire resilience, including 
+                minimizing risks to watershed health, water supply and 
+                quality, and water-related infrastructure, including 
+                municipal and agricultural water supply systems;
+                    ``(B) support aquatic restoration and conservation 
+                efforts that complement existing or planned forest 
+                restoration or wildfire risk reduction efforts; or
+                    ``(C) provide quantifiable benefits to water supply 
+                or quality and include the use of nature-based 
+                solutions, such as restoring wetland and riparian 
+                ecosystems.
+            ``(4) Conditions for projects on adjacent land.--
+                    ``(A) In general.--No project or activity may be 
+                carried out under this section on adjacent land unless 
+                the owner of the adjacent land agrees in writing that 
+                the owner is a willing and engaged partner in carrying 
+                out that project or activity.
+                    ``(B) Effect.--Nothing in this section shall be 
+                construed to authorize any change in--
+                            ``(i) the ownership of adjacent land on 
+                        which a project or activity is carried out 
+                        under this section; or
+                            ``(ii) the management of adjacent land on 
+                        which a project or activity is carried out 
+                        under this section, except during the carrying 
+                        out of that project or activity.'';
+            (3) in subsection (c)--
+                    (A) in paragraph (1), by striking ``with end water 
+                users'' and inserting ``with end water users to protect 
+                and restore the condition of National Forest watersheds 
+                and adjacent land that provide water--
+                    ``(A) to the end water users subject to the 
+                agreement; or
+                    ``(B) for the benefit of another end water user.'';
+                    (B) in paragraph (2)--
+                            (i) in subparagraph (C), by striking ``or'' 
+                        at the end;
+                            (ii) by redesignating subparagraph (D) as 
+                        subparagraph (E); and
+                            (iii) by inserting after subparagraph (C) 
+                        the following:
+                    ``(D) a good neighbor agreement entered into under 
+                section 8206 of the Agricultural Act of 2014 (16 U.S.C. 
+                2113a); or''; and
+                    (C) by adding at the end the following:
+            ``(3) Cooperation with non-federal partners.--The Secretary 
+        shall cooperate with non-Federal partners in carrying out 
+        assessments, planning, project design, and project 
+        implementation under this section.'';
+            (4) in subsection (d)--
+                    (A) by amending paragraph (2) to read as follows:
+            ``(2) Requirement.--A water source management plan shall 
+        be--
+                    ``(A) designed to protect and restore ecological 
+                integrity (as defined in section 219.19 of title 36, 
+                Code of Federal Regulations (as in effect on the date 
+                of enactment of this subparagraph));
+                    ``(B) based on the best available scientific 
+                information; and
+                    ``(C) conducted in a manner consistent with the 
+                forest plan applicable to the National Forest System 
+                land on which the watershed protection and restoration 
+                project is carried out.''; and
+                    (B) by adding at the end the following:
+            ``(4) Reducing redundancy.--An existing watershed plan, 
+        such as a watershed protection and restoration action plan 
+        developed under section 304(a)(3), or other applicable 
+        watershed planning documents as approved by the Secretary may 
+        be used as the basis for a water source management plan under 
+        this subsection.''; and
+            (5) in subsection (e)(1), by striking ``primary purpose 
+        of'' and all that follows through the period at the end and 
+        inserting ``primary purpose of advancing any of the purposes 
+        described in subsection (b)(2).''.
+
+SEC. 602. WATERSHED CONDITION FRAMEWORK TECHNICAL CORRECTIONS.
+
+    Section 304(a) of the Healthy Forests Restoration Act of 2003 (16 
+U.S.C. 6543(a)) is amended in paragraphs (3) and (5) by striking 
+``protection and''.
+
+            Passed the House of Representatives September 24, 2024.
+
+            Attest:
+
+                                                                 Clerk.
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 8790
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+  To expedite under the National Environmental Policy Act of 1969 and 
+ improve forest management activities on National Forest System lands, 
+     on public lands under the jurisdiction of the Bureau of Land 
+  Management, and on Tribal lands to return resilience to overgrown, 
+           fire-prone forested lands, and for other purposes.
+</pre></body></html>

@@ -1,0 +1,2099 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 4790 Engrossed in House (EH)]
+
+&lt;DOC&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+118th CONGRESS
+  2d Session
+                                H. R. 4790
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+
+ 
+To amend the Federal securities laws with respect to the materiality of 
+   disclosure requirements, to establish the Public Company Advisory 
+                   Committee, and for other purposes.
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE; TABLE OF CONTENTS.
+
+    (a) Short Title.--This Act may be cited as the ``Prioritizing 
+Economic Growth Over Woke Policies Act''.
+    (b) Table of Contents.--The table of contents for this Act is as 
+follows:
+
+Sec. 1. Short title; table of contents.
+                   DIVISION A--GUARDRAIL ACT OF 2023
+
+Sec. 1001. Short title; table of contents.
+               TITLE I--MANDATORY MATERIALITY REQUIREMENT
+
+Sec. 1101. Limitation on disclosure requirements.
+    TITLE II--SEC JUSTIFICATION OF NON-MATERIAL DISCLOSURE MANDATES
+
+Sec. 1201. SEC justification of non-material disclosure mandates.
+              TITLE III--PUBLIC COMPANY ADVISORY COMMITTEE
+
+Sec. 1301. Public Company Advisory Committee.
+             TITLE IV--PROTECTING U.S. BUSINESS SOVEREIGNTY
+
+Sec. 1401. Study on detrimental impact of the Directive on Corporate 
+                            Sustainability Due Diligence and Corporate 
+                            Sustainability Reporting Directive.
+               DIVISION B--BUSINESSES OVER ACTIVISTS ACT
+
+Sec. 2001. Short title.
+Sec. 2002. Limitation with respect to compelling the inclusion or 
+                            discussion of shareholder proposals.
+ DIVISION C--PROTECTING AMERICANS' RETIREMENT SAVINGS FROM POLITICS ACT
+
+Sec. 3001. Short title; Table of contents.
+                   TITLE I--PERFORMANCE OVER POLITICS
+
+Sec. 3101. Exclusion of certain substantially similar shareholder 
+                            proposals.
+              TITLE II--NO EXPENSIVE, STIFLING GOVERNANCE
+
+Sec. 3201. Exclusion of certain shareholder proposals.
+       TITLE III--EXCLUSION OF CERTAIN ESG SHAREHOLDER PROPOSALS
+
+Sec. 3301. Exclusion of certain ESG shareholder proposals.
+TITLE IV--EXCLUSIONS AVAILABLE REGARDLESS OF SIGNIFICANT SOCIAL POLICY 
+                                 ISSUE
+
+Sec. 3401. Exclusions available regardless of significant social policy 
+                            issue.
+               TITLE V--CORPORATE GOVERNANCE EXAMINATION
+
+Sec. 3501. Study of certain issues with respect to shareholder 
+                            proposals, proxy advisory firms, and the 
+                            proxy process.
+             TITLE VI--REGISTRATION OF PROXY ADVISORY FIRMS
+
+Sec. 3601. Registration of proxy advisory firms.
+    TITLE VII--LIABILITY FOR CERTAIN FAILURES TO DISCLOSE MATERIAL 
+            INFORMATION OR MAKING OF MATERIAL MISSTATEMENTS
+
+Sec. 3701. Liability for certain failures to disclose material 
+                            information or making of material 
+                            misstatements.
+TITLE VIII--DUTIES OF INVESTMENT ADVISORS, ASSET MANAGERS, AND PENSION 
+                                 FUNDS
+
+Sec. 3801. Duties of investment advisors, asset managers, and pension 
+                            funds.
+                TITLE IX--PROTECTING AMERICANS' SAVINGS
+
+Sec. 3901. Requirements related to proxy voting.
+                    TITLE X--EMPOWERING SHAREHOLDERS
+
+Sec. 3911. Proxy voting of passively managed funds.
+             TITLE XI--PROTECTING RETAIL INVESTORS' SAVINGS
+
+Sec. 3921. Best interest based on pecuniary factors.
+Sec. 3922. Study on climate change and other environmental disclosures 
+                            in municipal bond market.
+Sec. 3923. Study on solicitation of municipal securities business.
+                 DIVISION D--AMERICAN FIRST ACT OF 2023
+
+Sec. 4001. Short title; Table of contents.
+         TITLE I--STOP EXECUTIVE CAPTURE OF BANKING REGULATORS
+
+Sec. 4101. Report on the implementation of recommendations from the 
+                            FSOC Chairperson and Executive Orders.
+    TITLE II--ENSURING U.S. AUTHORITY OVER U.S. BANKING REGULATIONS
+
+Sec. 4201. Requirements in connection with rulemakings implementing 
+                            policies of non-governmental international 
+                            organizations.
+Sec. 4202. Report on certain climate-related interactions with covered 
+                            international organizations.
+          TITLE III--BANKING REGULATOR INTERNATIONAL REPORTING
+
+Sec. 4301. Reporting on interactions with non-governmental 
+                            international organizations.
+                      TITLE IV--SUPERVISION REFORM
+
+Sec. 4401. Removal of the Vice Chairman for Supervision designation.
+               DIVISION E--LIMITATION ON SEC RESERVE FUND
+
+Sec. 5001. Limitation.
+
+                   DIVISION A--GUARDRAIL ACT OF 2023
+
+SEC. 1001. SHORT TITLE; TABLE OF CONTENTS.
+
+    (a) Short Title.--This division may be cited as the ``Guiding 
+Uniform and Responsible Disclosure Requirements and Information Limits 
+Act of 2023'' or the ``GUARDRAIL Act of 2023''.
+    (b) Table of Contents.--The table of contents for this division is 
+as follows:
+
+Sec. 1001. Short title; table of contents.
+               TITLE I--MANDATORY MATERIALITY REQUIREMENT
+
+Sec. 1101. Limitation on disclosure requirements.
+    TITLE II--SEC JUSTIFICATION OF NON-MATERIAL DISCLOSURE MANDATES
+
+Sec. 1201. SEC justification of non-material disclosure mandates.
+              TITLE III--PUBLIC COMPANY ADVISORY COMMITTEE
+
+Sec. 1301. Public Company Advisory Committee.
+             TITLE IV--PROTECTING U.S. BUSINESS SOVEREIGNTY
+
+Sec. 1401. Study on detrimental impact of the Directive on Corporate 
+                            Sustainability Due Diligence and Corporate 
+                            Sustainability Reporting Directive.
+
+               TITLE I--MANDATORY MATERIALITY REQUIREMENT
+
+SEC. 1101. LIMITATION ON DISCLOSURE REQUIREMENTS.
+
+    (a) Securities Act of 1933.--Section 2(b) of the Securities Act of 
+1933 (15 U.S.C. 77b(b)) is amended--
+            (1) in the subsection heading, by inserting ``; Limitation 
+        on Disclosure Requirements'' after ``Formation'';
+            (2) by striking ``Whenever'' and inserting the following:
+            ``(1) In general.--Whenever''; and
+            (3) by adding at the end the following:
+            ``(2) Limitation.--
+                    ``(A) In general.--Whenever pursuant to this title 
+                the Commission is engaged in rulemaking regarding 
+                disclosure obligations of issuers, the Commission shall 
+                expressly provide that an issuer is only required to 
+                disclose information in response to such disclosure 
+                obligations to the extent the issuer has determined 
+                that such information is material with respect to a 
+                voting or investment decision regarding the securities 
+                of such issuer.
+                    ``(B) Applicability.--Subparagraph (A) shall not 
+                apply with respect to the removal of any disclosure 
+                requirement with respect to an issuer.
+                    ``(C) Rule of construction.--For the purposes of 
+                this paragraph, information is considered material with 
+                respect to a voting or investment decision regarding 
+                the securities of an issuer if there is a substantial 
+                likelihood that a reasonable investor would view the 
+                failure to disclose that information as having 
+                significantly altered the total mix of information made 
+                available to the investor.''.
+    (b) Securities Exchange Act of 1934.--Section 3(f) of the 
+Securities Exchange Act of 1934 (15 U.S.C. 78c(f)) is amended--
+            (1) in the subsection heading, by inserting ``; Limitation 
+        on Disclosure Requirements'' after ``Formation'';
+            (2) by striking ``Whenever'' and inserting the following:
+            ``(1) In general.--Whenever''; and
+            (3) by adding at the end the following:
+            ``(2) Limitation.--
+                    ``(A) In general.--Whenever pursuant to this title 
+                the Commission is engaged in rulemaking regarding 
+                disclosure obligations of issuers, the Commission shall 
+                expressly provide that an issuer is only required to 
+                disclose information in response to such disclosure 
+                obligations to the extent the issuer has determined 
+                that such information is material with respect to a 
+                voting or investment decision regarding the securities 
+                of such issuer.
+                    ``(B) Applicability.--Subparagraph (A) shall not 
+                apply with respect to the removal of any disclosure 
+                requirement with respect to an issuer.
+                    ``(C) Rule of construction.--For the purposes of 
+                this paragraph, information is considered material with 
+                respect to a voting or investment decision regarding 
+                the securities of an issuer if there is a substantial 
+                likelihood that a reasonable investor would view the 
+                failure to disclose that information as having 
+                significantly altered the total mix of information made 
+                available to the investor.''.
+
+    TITLE II--SEC JUSTIFICATION OF NON-MATERIAL DISCLOSURE MANDATES
+
+SEC. 1201. SEC JUSTIFICATION OF NON-MATERIAL DISCLOSURE MANDATES.
+
+    Section 23 of the Securities Exchange Act of 1934 (15 U.S.C. 78w) 
+is amended by adding at the end the following:
+    ``(e) Non-material Disclosure Mandates.--
+            ``(1) Disclosure.--The Commission shall maintain a list on 
+        the website of the Commission that contains--
+                    ``(A) each mandate under the Federal securities 
+                laws and regulations that requires the disclosure of 
+                non-material information; and
+                    ``(B) for each such disclosure mandate, an 
+                explanation of why the mandate is required.
+            ``(2) Study and report.--The Commission shall, every 5 
+        years, issue a report to the Congress justifying each 
+        disclosure contained on the list required under paragraph (1).
+            ``(3) No private liability for failing to make a non-
+        material disclosure.--A person who fails to disclose non-
+        material information required to be disclosed under the Federal 
+        securities laws or regulations shall not be liable for such 
+        failure in any private action.''.
+
+              TITLE III--PUBLIC COMPANY ADVISORY COMMITTEE
+
+SEC. 1301. PUBLIC COMPANY ADVISORY COMMITTEE.
+
+    The Securities Exchange Act of 1934 is amended by inserting after 
+section 40 (15 U.S.C. 78qq) the following:
+
+``SEC. 40A. PUBLIC COMPANY ADVISORY COMMITTEE.
+
+    ``(a) Establishment and Purpose.--
+            ``(1) Establishment.--There is established within the 
+        Commission the Public Company Advisory Committee (referred to 
+        in this section as the `Committee').
+            ``(2) Purpose.--The Committee shall--
+                    ``(A) provide the Commission with advice on its 
+                rules, regulations, and policies with regard to its 
+                mission of protecting investors, maintaining fair, 
+                orderly, and efficient markets, and facilitating 
+                capital formation, as they relate to--
+                            ``(i) existing and emerging regulatory 
+                        priorities of the Commission;
+                            ``(ii) issues relating to the public 
+                        reporting and corporate governance of public 
+                        companies;
+                            ``(iii) issues relating to the proxy 
+                        process for shareholder meetings held by public 
+                        companies;
+                            ``(iv) issues relating to trading in the 
+                        securities of public companies; and
+                            ``(v) issues relating to capital formation; 
+                        and
+                    ``(B) submit to the Commission such findings and 
+                recommendations as the Committee determines are 
+                appropriate, including recommendations for proposed 
+                regulatory and legislative changes.
+    ``(b) Membership.--
+            ``(1) In general.--The membership of the Committee shall be 
+        not fewer than 10, and not more than 20, members appointed by 
+        the Commission from among individuals who--
+                    ``(A) are officers, directors, or senior officials 
+                of public companies registered with the Commission 
+                under the Securities Act or 1933 and this Act, except 
+                for those public companies that own asset management, 
+                fixed income, investment advisory, broker-dealer, or 
+                proxy services businesses;
+                    ``(B) are executives or other individuals with 
+                senior managerial responsibility in business, 
+                professional, trade, and industry associations that 
+                represent the interests of such public companies; or
+                    ``(C) are professional advisers and service 
+                providers to such public companies (including 
+                attorneys, accountants, investment bankers, and 
+                financial advisers).
+            ``(2) Qualifications.--At least 50 percent of the Committee 
+        membership shall be drawn from individuals who would qualify 
+        for membership under paragraph (1)(A).
+            ``(3) Term.--
+                    ``(A) In general.--Each member of the Committee 
+                appointed under paragraph (1) shall serve for a term of 
+                4 years.
+                    ``(B) Vacancies.--Vacancies among the members, 
+                whether caused by the resignation, death, removal, 
+                expiration of a term, or otherwise, will be filled 
+                consistent with the Commission's procedures then in 
+                effect.
+                    ``(C) Staggered terms.--The members of the 
+                Committee shall serve staggered terms, with one-third 
+                of the initial members of the Committee each serving 
+                for 1, 2, or 3 years.
+            ``(4) Members not on other advisory committees.--Public 
+        companies and other organizations that are currently 
+        represented on any other Commission Advisory Committee are not 
+        eligible to have representatives also serve on the Public 
+        Company Advisory Committee.
+            ``(5) Members not commission employees.-- Members appointed 
+        under paragraph (1) shall not be considered to be employees or 
+        agents of the Commission solely because of membership on the 
+        Committee.
+    ``(c) Chair; Vice Chair; Secretary; Assistant Secretary.--
+            ``(1) In general.--The members of the Committee shall 
+        elect, from among the members of the Committee--
+                    ``(A) a Chair;
+                    ``(B) a Vice Chair;
+                    ``(C) a Secretary; and
+                    ``(D) an Assistant Secretary.
+            ``(2) Term.--Each member elected under paragraph (1) shall 
+        serve for a term of two years in the capacity the member was 
+        elected under paragraph (1).
+            ``(3) Subcommittees.--The Chair may create subcommittees 
+        that hold public or non-public meetings and provide 
+        recommendations to the full Committee.
+    ``(d) Meetings.--
+            ``(1) Frequency of meetings.--The Committee shall meet--
+                    ``(A) not less frequently than twice annually, at 
+                the call of the Chair of the Committee; and
+                    ``(B) from time to time, at the call of the 
+                Commission.
+            ``(2) Notice.--The Chair of the Committee shall give the 
+        members of the Committee written notice of each meeting, not 
+        later than two weeks before the date of the meeting.
+    ``(e) Compensation and Travel Expenses.--Each member of the 
+Committee who is not a full-time employee of the United States shall--
+            ``(1) be entitled to receive compensation at a rate not to 
+        exceed the daily equivalent of the annual rate of basic pay in 
+        effect for a position at level V of the Executive Schedule 
+        under section 5316 of title 5, United States Code, for each day 
+        during which the members is engaged in the actual performance 
+        of the duties of the Committee; and
+            ``(2) while away from the home or regular place of business 
+        of the member in the performance of services for the Committee, 
+        be allowed travel expenses, including per diem in lieu of 
+        subsistence, in the same manner as persons employed 
+        intermittently in the Government service are allowed expenses 
+        under section 5703(b) of title 5, United States Code.
+    ``(f) Staff.--The Commission shall make available to the Committee 
+such staff as the Chair of the Committee determines are necessary to 
+carry out this section.
+    ``(g) Review by Commission.--The Commission shall--
+            ``(1) review the findings and recommendations of the 
+        Committee; and
+            ``(2) each time the Committee submits a finding or 
+        recommendation to the Commission, promptly issue a public 
+        statement--
+                    ``(A) assessing the finding or recommendation of 
+                the Committee; and
+                    ``(B) disclosing the action, if any, the Commission 
+                intends to take with respect to the finding or 
+                recommendation.
+    ``(h) Committee Findings.--Nothing in this section shall require 
+the Commission to agree to or act upon any finding or recommendation of 
+the Committee.
+    ``(i) Nonapplicability of FACA.--Chapter 10 of part I of title 5, 
+United States Code, shall not apply to the Committee and its 
+activities.''.
+
+             TITLE IV--PROTECTING U.S. BUSINESS SOVEREIGNTY
+
+SEC. 1401. STUDY ON DETRIMENTAL IMPACT OF THE DIRECTIVE ON CORPORATE 
+              SUSTAINABILITY DUE DILIGENCE AND CORPORATE SUSTAINABILITY 
+              REPORTING DIRECTIVE.
+
+    (a) Study.--The Securities and Exchange Commission shall conduct a 
+study to examine and evaluate--
+            (1) the detrimental impact and potential detrimental impact 
+        of each of the Directives on--
+                    (A) United States companies, consumers, and 
+                investors; and
+                    (B) the economy of the United States;
+            (2) the extent to which each of the Directives aligns with 
+        international conventions and declarations on human rights and 
+        environmental obligations; and
+            (3) the legal basis for the extraterritorial reach of each 
+        of the Directives.
+    (b) Report.--Not later than 1 year after the date of the enactment 
+of this Act, the Securities and Exchange Commission shall submit to the 
+Committee on Banking, Housing, and Urban Affairs of the Senate, the 
+Committee on Financial Services of the House of Representatives, the 
+Secretary of State, the Secretary of Commerce, and the United States 
+Trade Representative a report that includes--
+            (1) the results of the study conducted under this section; 
+        and
+            (2) recommendations for policymakers and relevant 
+        stakeholders on potential mitigating measures, alternative 
+        approaches, or modifications to each of the Directives that 
+        would address any concerns identified in the study.
+    (c) Access to Information.--The Securities and Exchange Commission 
+may request from private entities such relevant data and information as 
+the Securities and Exchange Commission determines necessary to carry 
+out the study required under this section and such private entities 
+shall provide such requested data and information to the Securities and 
+Exchange Commission.
+    (d) Directives Defined.--In this section the term ``Directives'' 
+means--
+            (1) the proposed directive entitled ``Corporate 
+        Sustainability Due Diligence'' adopted by the European 
+        Commission on February 23, 2022; and
+            (2) the Corporate Sustainability Reporting Directive of the 
+        European Commission effective January 5, 2023.
+
+               DIVISION B--BUSINESSES OVER ACTIVISTS ACT
+
+SEC. 2001. SHORT TITLE.
+
+    This division may be cited as the ``Businesses Over Activists 
+Act''.
+
+SEC. 2002. LIMITATION WITH RESPECT TO COMPELLING THE INCLUSION OR 
+              DISCUSSION OF SHAREHOLDER PROPOSALS.
+
+    Section 14(a) of the Securities Exchange Act of 1934 (15 U.S.C. 
+78n(a)) is amended by adding at the end the following:
+            ``(3) Limitation with respect to compelling inclusion or 
+        discussion of shareholder proposals.--Except as provided in 
+        paragraph (2), the Commission may not compel an issuer to 
+        include in a proxy statement of the issuer--
+                    ``(A) any shareholder proposal; or
+                    ``(B) any discussion (either from the issuer or 
+                otherwise) related to a shareholder proposal contained 
+                in the proxy statement.
+            ``(4) Rule of construction relating to state authority.--
+        Nothing in this Act or any other securities law shall be 
+        construed to provide the Commission the authority to preempt 
+        the State regulation of shareholder proposals or proxy or 
+        consent solicitation materials.''.
+
+ DIVISION C--PROTECTING AMERICANS' RETIREMENT SAVINGS FROM POLITICS ACT
+
+SEC. 3001. SHORT TITLE; TABLE OF CONTENTS.
+
+    (a) Short Title.--This division may be cited as the ``Protecting 
+Americans' Retirement Savings from Politics Act''.
+    (b) Table of Contents.--The table of contents for this division is 
+as follows:
+
+Sec. 3001. Short title; Table of contents.
+                   TITLE I--PERFORMANCE OVER POLITICS
+
+Sec. 3101. Exclusion of certain substantially similar shareholder 
+                            proposals.
+              TITLE II--NO EXPENSIVE, STIFLING GOVERNANCE
+
+Sec. 3201. Exclusion of certain shareholder proposals.
+       TITLE III--EXCLUSION OF CERTAIN ESG SHAREHOLDER PROPOSALS
+
+Sec. 3301. Exclusion of certain ESG shareholder proposals.
+TITLE IV--EXCLUSIONS AVAILABLE REGARDLESS OF SIGNIFICANT SOCIAL POLICY 
+                                 ISSUE
+
+Sec. 3401. Exclusions available regardless of significant social policy 
+                            issue.
+               TITLE V--CORPORATE GOVERNANCE EXAMINATION
+
+Sec. 3501. Study of certain issues with respect to shareholder 
+                            proposals, proxy advisory firms, and the 
+                            proxy process.
+             TITLE VI--REGISTRATION OF PROXY ADVISORY FIRMS
+
+Sec. 3601. Registration of proxy advisory firms.
+    TITLE VII--LIABILITY FOR CERTAIN FAILURES TO DISCLOSE MATERIAL 
+            INFORMATION OR MAKING OF MATERIAL MISSTATEMENTS
+
+Sec. 3701. Liability for certain failures to disclose material 
+                            information or making of material 
+                            misstatements.
+TITLE VIII--DUTIES OF INVESTMENT ADVISORS, ASSET MANAGERS, AND PENSION 
+                                 FUNDS
+
+Sec. 3801. Duties of investment advisors, asset managers, and pension 
+                            funds.
+                TITLE IX--PROTECTING AMERICANS' SAVINGS
+
+Sec. 3901. Requirements related to proxy voting.
+                    TITLE X--EMPOWERING SHAREHOLDERS
+
+Sec. 3911. Proxy voting of passively managed funds.
+             TITLE XI--PROTECTING RETAIL INVESTORS' SAVINGS
+
+Sec. 3921. Best interest based on pecuniary factors.
+Sec. 3922. Study on climate change and other environmental disclosures 
+                            in municipal bond market.
+Sec. 3923. Study on solicitation of municipal securities business.
+
+                   TITLE I--PERFORMANCE OVER POLITICS
+
+SEC. 3101. EXCLUSION OF CERTAIN SUBSTANTIALLY SIMILAR SHAREHOLDER 
+              PROPOSALS.
+
+    The Securities and Exchange Commission shall revise the 
+resubmission requirements in section 240.14a-8(i)(12) of title 17, Code 
+of Federal Regulations, to provide that a shareholder proposal may be 
+excluded by an issuer from its proxy or consent solicitation material 
+for a meeting of the shareholders of such issuer if the shareholder 
+proposal addresses substantially the same subject matter as a proposal, 
+or proposals, previously included in the proxy or consent solicitation 
+material for a meeting of the shareholders of such issuer--
+            (1) for a meeting of the shareholders conducted in the 
+        preceding 5 calendar years; and
+            (2) if the most recent vote--
+                    (A) occurred in the preceding 3 calendar years; and
+                    (B)(i) if voted on once during such 5-year period, 
+                received less than 10 percent of the votes cast;
+                    (ii) if voted on twice during such 5-year period, 
+                received less than 20 percent of the votes cast; or
+                    (iii) if voted on three or more times during such 
+                5-year period, received less than 40 percent of the 
+                votes cast.
+
+              TITLE II--NO EXPENSIVE, STIFLING GOVERNANCE
+
+SEC. 3201. EXCLUSION OF CERTAIN SHAREHOLDER PROPOSALS.
+
+    (a) Exclusion of Certain Shareholder Proposals.--A shareholder 
+proposal submitted to an issuer pursuant to section 240.14a-8 of title 
+17, Code of Federal Regulations, may be excluded by an issuer from its 
+proxy or consent solicitation material for a meeting of the 
+shareholders of such issuer if the shareholder proposal--
+            (1) has been substantially implemented by the issuer by 
+        implementing policies, practices, or procedures that compare 
+        favorably with the guidelines of the proposal and address the 
+        proposal's underlying concerns; or
+            (2) substantially duplicates by having the same principal 
+        thrust or principal focus as another proposal previously 
+        submitted to the issuer by another proponent that will be 
+        included in such material.
+    (b) Nullification of Proposed Rule.--The Securities and Exchange 
+Commission may not finalize or apply the positions contained in the 
+proposed rule entitled ``Substantial Implementation, Duplication, and 
+Resubmission of Shareholder Proposals under Exchange Act Rule 14a-8'' 
+(87 Fed. Reg. 45052), issue any substantially similar rule, or apply 
+any substantially similar rule, including with respect to a no-action 
+or other interpretive request.
+
+       TITLE III--EXCLUSION OF CERTAIN ESG SHAREHOLDER PROPOSALS
+
+SEC. 3301. EXCLUSION OF CERTAIN ESG SHAREHOLDER PROPOSALS.
+
+    A shareholder proposal submitted to an issuer pursuant to section 
+240.14a-8 of title 17, Code of Federal Regulations, may be excluded by 
+an issuer from its proxy or consent solicitation material for a meeting 
+of the shareholders of such issuer if the subject matter of the 
+shareholder proposal is environmental, social, or political (or a 
+similar subject matter).
+
+TITLE IV--EXCLUSIONS AVAILABLE REGARDLESS OF SIGNIFICANT SOCIAL POLICY 
+                                 ISSUE
+
+SEC. 3401. EXCLUSIONS AVAILABLE REGARDLESS OF SIGNIFICANT SOCIAL POLICY 
+              ISSUE.
+
+    An issuer may exclude a shareholder proposal pursuant to section 
+240.14a-8(i) of title 17, Code of Federal Regulations, without regard 
+to whether such shareholder proposal relates to a significant social 
+policy issue.
+
+               TITLE V--CORPORATE GOVERNANCE EXAMINATION
+
+SEC. 3501. STUDY OF CERTAIN ISSUES WITH RESPECT TO SHAREHOLDER 
+              PROPOSALS, PROXY ADVISORY FIRMS, AND THE PROXY PROCESS.
+
+    Section 4(j) of the Securities Exchange Act of 1934 (15 U.S.C. 
+78d(j)) is amended by adding at the end the following:
+            ``(10) Study of certain issues with respect to shareholder 
+        proposals, proxy advisory firms, and the proxy process.--
+                    ``(A) In general.--Not later than 180 days after 
+                the date of the enactment of this paragraph, and every 
+                5 years thereafter, the Commission shall conduct a 
+                comprehensive study on shareholder proposals, proxy 
+                advisory firms, and the proxy process.
+                    ``(B) Scope of study.--The studies required under 
+                subparagraph (A) shall cover--
+                            ``(i) the previous 10 years, with respect 
+                        to the initial study; and
+                            ``(ii) the previous 5 years, with respect 
+                        to each other study.
+                    ``(C) Contents.--Each study required under 
+                subparagraph (A) shall address the following issues:
+                            ``(i) The financial and other incentives 
+                        and obligations of all groups involved in the 
+                        proxy process.
+                            ``(ii) A consideration of whether financial 
+                        and other incentives have created a process 
+                        that no longer serves the economic interests of 
+                        long-term retail investors.
+                            ``(iii) An analysis of whether regulations 
+                        and financial incentives have created and 
+                        protected the outsized influence of proxy 
+                        advisors or a duopoly in proxy advice, and if 
+                        so, what are the benefits and costs of that 
+                        outsized influence or duopoly.
+                            ``(iv) The costs incurred by issuers in 
+                        responding to politically-, environmentally-, 
+                        or socially-motivated shareholder proposals.
+                            ``(v) An assessment, including a cost-
+                        benefit analysis, of the adequacy of the 
+                        current submission thresholds in Rule 14a-8 (17 
+                        CFR 240.14a-8) to ensure that shareholder 
+                        proponents have demonstrated a meaningful 
+                        economic stake in a company, which is 
+                        appropriate to effectively serve markets and 
+                        shareholders at large.
+                            ``(vi) An examination of the extent to 
+                        which the politicization of the shareholder 
+                        proposal process is increasing the operating 
+                        costs of public companies.
+                            ``(vii) An analysis of the impact that 
+                        shareholder proposals have on discouraging 
+                        private companies from going public.
+                            ``(viii) An evaluation of the risk that 
+                        shareholder proposals may contribute to the 
+                        balkanization of the U.S. economy over time.
+                            ``(ix) A thorough assessment of the 
+                        economic analysis, if any, conducted by proxy 
+                        advisory firms and institutional shareholders 
+                        when recommending or voting in favor of 
+                        shareholder proposals.
+                            ``(x) A review of the extent to which 
+                        institutional investors, who owe fiduciary 
+                        duties, rely on proxy advisory firm 
+                        recommendations.
+                            ``(xi) An assessment of whether, in light 
+                        of their significant influence on corporate 
+                        actions and vote outcomes, proxy advisors are 
+                        subject to sufficient and effective regulation 
+                        to ensure that their policies and 
+                        recommendations are accurate, free of 
+                        conflicts, and benefit the economic best 
+                        interest of shareholders at large.
+                    ``(D) Report.--At the completion of each study 
+                required under subparagraph (A) the Commission shall 
+                issue a report to the Committee on Banking, Housing, 
+                and Urban Affairs of the Senate and the Committee on 
+                Financial Services of the House of Representatives that 
+                includes the results of the study.''.
+
+             TITLE VI--REGISTRATION OF PROXY ADVISORY FIRMS
+
+SEC. 3601. REGISTRATION OF PROXY ADVISORY FIRMS.
+
+    (a) Amendment.--The Securities Exchange Act of 1934 (15 U.S.C. 78a 
+et seq.) is amended by inserting after section 15G the following new 
+section:
+
+``SEC. 15H. REGISTRATION OF PROXY ADVISORY FIRMS.
+
+    ``(a) Conduct Prohibited.--It shall be unlawful for a proxy 
+advisory firm to make use of the mails or any means or instrumentality 
+of interstate commerce to provide proxy voting advice, research, 
+analysis, ratings or recommendations to any client, unless such proxy 
+advisory firm is registered under this section.
+    ``(b) Registration Procedures.--
+            ``(1) Application for registration.--
+                    ``(A) In general.--A proxy advisory firm shall file 
+                with the Commission an application for registration, in 
+                such form as the Commission shall require, by rule, and 
+                containing the information described in subparagraph 
+                (B).
+                    ``(B) Required information.--An application for 
+                registration under this section shall contain--
+                            ``(i) a certification that the applicant is 
+                        able to consistently provide proxy advice based 
+                        on accurate information;
+                            ``(ii) with respect to clients of the 
+                        applicant that vote shares held on behalf of 
+                        shareholders, a certification that the 
+                        applicant--
+                                    ``(I) will provide proxy voting 
+                                advice only in the best economic 
+                                interest of those shareholders; and
+                                    ``(II) has the requisite expertise 
+                                to ensure that voting recommendations 
+                                are in the best economic interest of 
+                                those shareholders;
+                            ``(iii) information on the procedures and 
+                        methodologies that the applicant uses to ensure 
+                        that proxy voting recommendations are in the 
+                        best economic interest of the ultimate 
+                        shareholders;
+                            ``(iv) information on the organizational 
+                        structure of the applicant;
+                            ``(v) an explanation of whether or not the 
+                        applicant has in effect a code of ethics, and 
+                        if not, the reasons therefor;
+                            ``(vi) a description of any potential or 
+                        actual conflict of interest relating to the 
+                        provision of proxy advisory services, including 
+                        those arising out of or resulting from the 
+                        ownership structure of the applicant or the 
+                        provision of other services by the applicant or 
+                        any person associated with the applicant;
+                            ``(vii) the policies and procedures in 
+                        place to publicly disclose and manage conflicts 
+                        of interest under subsection (f);
+                            ``(viii) information related to the 
+                        professional and academic qualifications of 
+                        staff tasked with providing proxy advisory 
+                        services; and
+                            ``(ix) any other information and documents 
+                        concerning the applicant and any person 
+                        associated with such applicant as the 
+                        Commission, by rule, may prescribe as necessary 
+                        or appropriate in the public interest or for 
+                        the protection of investors.
+            ``(2) Review of application.--
+                    ``(A) Initial determination.--Not later than 90 
+                days after the date on which the application for 
+                registration is filed with the Commission under 
+                paragraph (1) (or within such longer period as to which 
+                the applicant consents) the Commission shall--
+                            ``(i) by order, grant registration; or
+                            ``(ii) institute proceedings to determine 
+                        whether registration should be denied.
+                    ``(B) Conduct of proceedings.--
+                            ``(i) Content.--Proceedings referred to in 
+                        subparagraph (A)(ii) shall--
+                                    ``(I) include notice of the grounds 
+                                for denial under consideration and an 
+                                opportunity for hearing; and
+                                    ``(II) be concluded not later than 
+                                120 days after the date on which the 
+                                application for registration is filed 
+                                with the Commission under paragraph 
+                                (1).
+                            ``(ii) Determination.--At the conclusion of 
+                        such proceedings, the Commission, by order, 
+                        shall grant or deny such application for 
+                        registration.
+                            ``(iii) Extension authorized.--The 
+                        Commission may extend the time for conclusion 
+                        of such proceedings for not longer than 90 
+                        days, if the Commission finds good cause for 
+                        such extension and publishes its reasons for so 
+                        finding, or for such longer period as to which 
+                        the applicant consents.
+                    ``(C) Grounds for decision.--The Commission shall 
+                grant registration under this subsection--
+                            ``(i) if the Commission finds that the 
+                        requirements of this section are satisfied; and
+                            ``(ii) unless the Commission finds (in 
+                        which case the Commission shall deny such 
+                        registration) that--
+                                    ``(I) the applicant has failed to 
+                                certify to the Commission's 
+                                satisfaction that it is able to 
+                                consistently provide proxy advice based 
+                                on accurate information and to 
+                                materially comply with the procedures 
+                                and methodologies disclosed under 
+                                paragraph (1)(B) and with subsections 
+                                (f) and (g); or
+                                    ``(II) if the applicant were so 
+                                registered, its registration would be 
+                                subject to suspension or revocation 
+                                under subsection (d).
+            ``(3) Public availability of information.--Subject to 
+        section 24, the Commission shall make the information and 
+        documents submitted to the Commission by a proxy advisory firm 
+        in its completed application for registration, or in any 
+        amendment submitted under paragraph (1) or (2) of subsection 
+        (c), publicly available on the Commission's website, or through 
+        another comparable, readily accessible means.
+    ``(c) Update of Registration.--
+            ``(1) Update.--Each registered proxy advisory firm shall 
+        promptly amend and update its application for registration 
+        under this section if any information or document provided 
+        therein becomes materially inaccurate, except that a registered 
+        proxy advisory firm is not required to amend the information 
+        required to be filed under subsection (b)(1)(B)(i) by filing 
+        information under this paragraph, but shall amend such 
+        information in the annual submission of the organization under 
+        paragraph (2) of this subsection.
+            ``(2) Certification.--Not later than 90 calendar days after 
+        the end of each calendar year, each registered proxy advisory 
+        firm shall file with the Commission an amendment to its 
+        registration, in such form as the Commission, by rule, may 
+        prescribe as necessary or appropriate in the public interest or 
+        for the protection of investors--
+                    ``(A) certifying that the information and documents 
+                in the application for registration of such registered 
+                proxy advisory firm continue to be accurate in all 
+                material respects; and
+                    ``(B) listing any material change that occurred to 
+                such information or documents during the previous 
+                calendar year.
+    ``(d) Censure, Denial, or Suspension of Registration; Notice and 
+Hearing.--The Commission, by order, shall censure, place limitations on 
+the activities, functions, or operations of, suspend for a period not 
+exceeding 12 months, or revoke the registration of any registered proxy 
+advisory firm if the Commission finds, on the record after notice and 
+opportunity for hearing, that such censure, placing of limitations, 
+suspension, or revocation is necessary for the protection of investors 
+and in the public interest and that such registered proxy advisory 
+firm, or any person associated with such an organization, whether prior 
+to or subsequent to becoming so associated--
+            ``(1) has committed or omitted any act, or is subject to an 
+        order or finding, enumerated in subparagraph (A), (D), (E), 
+        (H), or (G) of section 15(b)(4), has been convicted of any 
+        offense specified in section 15(b)(4)(B), or is enjoined from 
+        any action, conduct, or practice specified in subparagraph (C) 
+        of section 15(b)(4), during the 10-year period preceding the 
+        date of commencement of the proceedings under this subsection, 
+        or at any time thereafter;
+            ``(2) has been convicted during the 10-year period 
+        preceding the date on which an application for registration is 
+        filed with the Commission under this section, or at any time 
+        thereafter, of--
+                    ``(A) any crime that is punishable by imprisonment 
+                for 1 or more years, and that is not described in 
+                section 15(b)(4)(B); or
+                    ``(B) a substantially equivalent crime by a foreign 
+                court of competent jurisdiction;
+            ``(3) is subject to any order of the Commission barring or 
+        suspending the right of the person to be associated with a 
+        registered proxy advisory firm;
+            ``(4) fails to furnish the certifications required under 
+        subsections (b)(2)(C)(ii)(I) and (c)(2);
+            ``(5) has engaged in one or more prohibited acts enumerated 
+        in paragraph (1);
+            ``(6) fails to maintain adequate financial and managerial 
+        resources to consistently offer advisory services to clients 
+        that vote shares held on behalf of shareholders consistent with 
+        the best economic interest of those shareholders, including by 
+        failing to comply with subsections (f) or (g);
+            ``(7) fails to maintain adequate expertise to ensure that 
+        proxy advisory services for clients that vote shares held on 
+        behalf of shareholders are tied to the best economic interest 
+        of those shareholders; or
+            ``(8) engages in a prohibited act enumerated in subsection 
+        (j).
+    ``(e) Termination of Registration.--
+            ``(1) Voluntary withdrawal.--A registered proxy advisory 
+        firm may, upon such terms and conditions as the Commission may 
+        establish as necessary in the public interest or for the 
+        protection of investors, which terms and conditions shall 
+        include at a minimum that the registered proxy advisory firm 
+        will no longer conduct such activities as to bring it within 
+        the definition of proxy advisory firm in section 3(a)(82), 
+        withdraw from registration by filing a written notice of 
+        withdrawal to the Commission.
+            ``(2) Commission authority.--In addition to any other 
+        authority of the Commission under this title, if the Commission 
+        finds that a registered proxy advisory firm is no longer in 
+        existence or has ceased to do business as a proxy advisory 
+        firm, the Commission, by order, shall cancel the registration 
+        under this section of such registered proxy advisory firm.
+    ``(f) Management of Conflicts of Interest.--
+            ``(1) Organization policies and procedures.--Each 
+        registered proxy advisory firm shall establish, maintain, and 
+        enforce written policies and procedures reasonably designed, 
+        taking into consideration the nature of the business of such 
+        registered proxy advisory firm and associated persons, to 
+        publicly disclose and manage any conflicts of interest that 
+        arise or would reasonably be expected to arise from such 
+        business.
+            ``(2) Commission authority.--The Commission shall, within 
+        one year of the date of enactment of this section, issue final 
+        rules to prohibit, or require the management and public 
+        disclosure of, any conflicts of interest relating to the 
+        offering of proxy advisory services by a registered proxy 
+        advisory firm, including, without limitation, conflicts of 
+        interest relating to--
+                    ``(A) the manner in which a registered proxy 
+                advisory firm is compensated by the client, any 
+                affiliate of the client, or any other person for 
+                providing proxy advisory services;
+                    ``(B) business relationships, ownership interests, 
+                or any other financial or personal interests between a 
+                registered proxy advisory firm, or any person 
+                associated with such registered proxy advisory firm, 
+                and any client, or any affiliate of such client;
+                    ``(C) the formulation of proxy voting policies;
+                    ``(D) the execution, or assistance with the 
+                execution, of proxy votes if such votes are based upon 
+                recommendations made by the proxy advisory firm in 
+                which a person other than the issuer is a proponent; 
+                and
+                    ``(E) any other potential conflict of interest, as 
+                the Commission deems necessary or appropriate in the 
+                public interest or for the protection of investors.
+            ``(3) Disclosure on factors influencing recommendations.--
+        Each registered proxy advisory firm shall annually disclose to 
+        the Commission and make publicly available the economic and 
+        other factors that a reasonable investor would expect to 
+        influence the recommendations of such proxy advisory firm, 
+        including the ownership composition of such proxy advisory firm 
+        and any meetings with, or feedback received from, outside 
+        entities.
+    ``(g) Reliability of Proxy Advisory Firm Services.--
+            ``(1) In general.--Each registered proxy advisory firm 
+        shall--
+                    ``(A) have staff and other resources sufficient to 
+                produce proxy voting recommendations that are based on 
+                accurate and current information and designed for 
+                clients that vote shares held on behalf of shareholders 
+                to advance the best economic interest of those 
+                shareholders;
+                    ``(B) implement procedures that permit issuers that 
+                are the subject of proxy voting recommendations--
+                            ``(i) access in a reasonable time to data 
+                        and information used to make recommendations; 
+                        and
+                            ``(ii) a reasonable opportunity to provide 
+                        meaningful comment and corrections to such data 
+                        and information, including the opportunity to 
+                        present (in person or telephonically) details 
+                        to the person responsible for developing such 
+                        data and information prior to the publication 
+                        of proxy voting recommendations to clients;
+                    ``(C) employ an ombudsman to receive complaints 
+                about the accuracy of information used in making 
+                recommendations from the companies that are the subject 
+                of the proxy advisory firm's voting recommendations and 
+                seek to resolve those complaints in a timely fashion 
+                and prior to the publication of proxy voting 
+                recommendations to clients; and
+                    ``(D) if the ombudsman is unable to resolve a 
+                complaint to a company's satisfaction prior to the 
+                publication of proxy voting recommendations to clients, 
+                include in the final report of the firm to clients--
+                            ``(i) a statement detailing the company's 
+                        complaints, if requested in writing by the 
+                        company; and
+                            ``(ii) a statement explaining why the proxy 
+                        voting recommendation is in the best economic 
+                        interest of shareholders.
+            ``(2) Definitions.--In this subsection:
+                    ``(A) Data and information used to make 
+                recommendations.--The term `data and information used 
+                to make voting recommendations'--
+                            ``(i) means the financial, operational, or 
+                        descriptive data and information on an issuer 
+                        used by proxy advisory firms and any contextual 
+                        or substantive analysis impacting the 
+                        recommendation; and
+                            ``(ii) does not include the entirety of the 
+                        proxy advisory firm's final report to its 
+                        clients.
+                    ``(B) Reasonable time.--The term `reasonable 
+                time'--
+                            ``(i) means not less than 1 week before the 
+                        publication of proxy voting recommendations for 
+                        clients; and
+                            ``(ii) shall not otherwise interfere with a 
+                        proxy advisory firm's ability to provide its 
+                        clients with timely access to accurate proxy 
+                        voting research, analysis, or recommendations.
+    ``(h) Private Right of Action With Respect to Illegal 
+Recommendations.--Any proxy advisory firm that endorses a proposal that 
+is not supported by the issuer but is approved and subsequently found 
+by a court of competent jurisdiction to violate State or Federal law 
+shall be liable to the applicable issuer for the costs associated with 
+the approval of such proposal, including implementation costs and any 
+penalties incurred by the issuer.
+    ``(i) Designation of Compliance Officer.--Each registered proxy 
+advisory firm shall designate an individual who reports directly to 
+senior management as responsible for administering the policies and 
+procedures that are required to be established pursuant to subsections 
+(f) and (g), and for ensuring compliance with the securities laws and 
+the rules and regulations thereunder, including those promulgated by 
+the Commission pursuant to this section.
+    ``(j) Prohibited Conduct.--
+            ``(1) Prohibited acts and practices.--Not later than one 
+        year after the date of enactment of this section, the 
+        Commission shall issue final rules to prohibit any act or 
+        practice relating to the offering of proxy advisory services by 
+        a registered proxy advisory firm that the Commission determines 
+        to be unfair, coercive, or abusive, including any act or 
+        practice relating to--
+                    ``(A) advisory or consulting services (offered 
+                directly or indirectly, including through an affiliate) 
+                related to corporate governance issues; or
+                    ``(B) modifying a voting recommendation or 
+                otherwise departing from its adopted systematic 
+                procedures and methodologies in the provision of proxy 
+                advisory services, based on whether an issuer, or 
+                affiliate thereof, subscribes or will subscribe to 
+                other services or product of the registered proxy 
+                advisory firm or any person associated with such 
+                organization.
+            ``(2) Rule of construction.--Nothing in paragraph (1), or 
+        in any rules or regulations adopted thereunder, may be 
+        construed to modify, impair, or supersede the operation of any 
+        of the antitrust laws (as defined in the first section of the 
+        Clayton Act, except that such term includes section 5 of the 
+        Federal Trade Commission Act, to the extent that such section 5 
+        applies to unfair methods of competition).
+    ``(k) Statements of Financial Condition.--Each registered proxy 
+advisory firm shall, on a confidential basis, file with the Commission, 
+at intervals determined by the Commission, such financial statements, 
+certified (if required by the rules or regulations of the Commission) 
+by an independent public auditor, and information concerning its 
+financial condition, as the Commission, by rule, may prescribe as 
+necessary or appropriate in the public interest or for the protection 
+of investors.
+    ``(l) Annual Report.--
+            ``(1) In general.--Each registered proxy advisory firm 
+        shall, not later than 90 calendar days after the end of each 
+        fiscal year, file with the Commission and make publicly 
+        available an annual report in such form as the Commission, by 
+        rule, may prescribe as necessary or appropriate in the public 
+        interest or for the protection of investors.
+            ``(2) Contents.--Each annual report required under 
+        paragraph (1) shall include, at a minimum, disclosure by the 
+        registered proxy advisory firm of the following:
+                    ``(A) A list of shareholder proposals the staff of 
+                the registered proxy advisory firm reviewed in the 
+                prior fiscal year.
+                    ``(B) A list of the recommendations made in the 
+                prior fiscal year.
+                    ``(C) The economic analysis conducted to determine 
+                that final recommendations provided in the prior fiscal 
+                year (other than recommendations relating to an issuer-
+                sponsored proposal or recommendations consistent with 
+                that of a board of directors composed of a majority of 
+                independent directors) delivered to clients that vote 
+                shares held on behalf of shareholders were in the best 
+                economic interest of those shareholders.
+                    ``(D) The staff who reviewed and made 
+                recommendations on such proposals in the prior fiscal 
+                year.
+                    ``(E) The qualifications of such staff to ensure 
+                that each of the recommendations for clients that vote 
+                shares held on behalf of shareholders were tied to the 
+                best economic interest of those shareholders.
+                    ``(F) The recommendations made in the prior fiscal 
+                year where the proponent of such recommendation was a 
+                client of or received services from the proxy advisory 
+                firm.
+                    ``(G) A certification by the chief executive 
+                officer, chief financial officer, and the primary 
+                executive responsible for overseeing the compilation 
+                and dissemination of proxy voting advice that the final 
+                recommendations (other than recommendations relating to 
+                an issuer-sponsored proposal or recommendations 
+                consistent with that of a board of directors composed 
+                of a majority of independent directors) delivered to 
+                clients that vote shares held on behalf of shareholders 
+                in the last fiscal year--
+                            ``(i) were based on internal controls and 
+                        procedures that are designed to ensure accurate 
+                        information and that such internal controls and 
+                        procedures are effective;
+                            ``(ii) do not violate applicable State or 
+                        Federal law; and
+                            ``(iii) were based on the best economic 
+                        interest of those shareholders.
+                    ``(H) The economic and other factors that a 
+                reasonable investor would expect to influence the 
+                recommendations of such proxy advisory firm, including 
+                the ownership composition of such proxy advisory firm.
+    ``(m) Transparent Policies.--Each registered proxy advisory firm 
+shall file with the Commission and make publicly available its 
+methodology for the formulation of proxy voting policies and voting 
+recommendations to clients that vote shares held on behalf of 
+shareholders and how that methodology ensures that the firm's voting 
+recommendations are in the best economic interest of those 
+shareholders.
+    ``(n) Rules of Construction.--Registration under and compliance 
+with this section does not constitute a waiver of, or otherwise 
+diminish, any right, privilege, or defense that a registered proxy 
+advisory firm may otherwise have under any provision of State or 
+Federal law, including any rule, regulation, or order thereunder.
+    ``(o) Regulations.--
+            ``(1) New provisions.--Such rules and regulations as are 
+        required by this section or are otherwise necessary to carry 
+        out this section, including the application form required under 
+        subsection (a)--
+                    ``(A) shall be issued by the Commission, not later 
+                than 180 days after the date of enactment of this 
+                section; and
+                    ``(B) shall become effective not later than 1 year 
+                after the date of enactment of this section.
+            ``(2) Review of existing regulations.--Not later than 270 
+        days after the date of enactment of this section, the 
+        Commission shall--
+                    ``(A) review its existing rules and regulations 
+                which affect the operations of proxy advisory firms; 
+                and
+                    ``(B) amend or revise such rules and regulations in 
+                accordance with the purposes of this section, and issue 
+                such guidance as the Commission may prescribe as 
+                necessary or appropriate in the public interest or for 
+                the protection of investors.
+    ``(p) Applicability.--This section, other than subsection (n), 
+which shall apply on the date of enactment of this section, shall apply 
+on the earlier of--
+            ``(1) the date on which regulations are issued in final 
+        form under subsection (o)(1); or
+            ``(2) 270 days after the date of enactment of this section.
+    ``(q) Best Economic Interest Defined.--In this section, the term 
+`best economic interest' means decisions that seek to maximize 
+investment returns over a time horizon consistent with the investment 
+objectives and risk management profile of the fund in which the 
+shareholders are invested.''.
+    (b) Conforming Amendment.--Section 17(a)(1) of the Securities 
+Exchange Act of 1934 (15 U.S.C. 78q(a)(1)) is amended by inserting 
+``proxy advisory firm,'' after ``nationally recognized statistical 
+rating organization,''.
+    (c) Proxy Advisory Firm Definitions.--Section 3(a) of the 
+Securities Exchange Act of 1934 (15 U.S.C. 78c(a)) is amended--
+            (1) by redesignating the second paragraph (80) (relating to 
+        funding portal) as paragraph (81); and
+            (2) by adding at the end the following:
+            ``(82) Proxy advisory firm.--The term `proxy advisory 
+        firm'--
+                    ``(A) means any person who is primarily engaged in 
+                the business of providing proxy voting advice, 
+                research, analysis, ratings, or recommendations to 
+                clients, which conduct constitutes a solicitation 
+                within the meaning of section 14; and
+                    ``(B) does not include any person that is exempt 
+                under law or regulation from the requirements otherwise 
+                applicable to persons engaged in such a solicitation.
+            ``(83) Person associated with a proxy advisory firm.--With 
+        respect to a proxy advisory firm--
+                    ``(A) a person is `associated' with the proxy 
+                advisory firm if the person is--
+                            ``(i) a partner, officer, or director of 
+                        the proxy advisory firm (or any person 
+                        occupying a similar status or performing 
+                        similar functions);
+                            ``(ii) a person directly or indirectly 
+                        controlling, controlled by, or under common 
+                        control with the proxy advisory firm;
+                            ``(iii) an employee of the proxy advisory 
+                        firm; or
+                            ``(iv) a person the Commission determines 
+                        by rule is controlled by the proxy advisory 
+                        firm; and
+                    ``(B) a person is not `associated' with the proxy 
+                advisory firm if the person only performs clerical or 
+                ministerial functions with respect to a proxy advisory 
+                firm.''.
+
+    TITLE VII--LIABILITY FOR CERTAIN FAILURES TO DISCLOSE MATERIAL 
+            INFORMATION OR MAKING OF MATERIAL MISSTATEMENTS
+
+SEC. 3701. LIABILITY FOR CERTAIN FAILURES TO DISCLOSE MATERIAL 
+              INFORMATION OR MAKING OF MATERIAL MISSTATEMENTS.
+
+    Section 14 of the Securities Exchange Act of 1934 (15 U.S.C. 78n) 
+is amended by adding at the end the following:
+    ``(l) False or Misleading Statements.--For purposes of section 18, 
+the failure to disclose material information (such as a proxy voting 
+advice business's methodology, sources of information, or conflicts of 
+interest) or the making of a material misstatement regarding proxy 
+voting advice that makes a recommendation to a security holder as to 
+the security holder's vote, consent, or authorization on a specific 
+matter for which security holder approval is solicited, and that is 
+furnished by a person that markets the person's expertise as a provider 
+of such proxy voting advice separately from other forms of investment 
+advice, and sells such proxy voting advice for a fee, shall be 
+considered to be false or misleading with respect to a material 
+fact.''.
+
+TITLE VIII--DUTIES OF INVESTMENT ADVISORS, ASSET MANAGERS, AND PENSION 
+                                 FUNDS
+
+SEC. 3801. DUTIES OF INVESTMENT ADVISORS, ASSET MANAGERS, AND PENSION 
+              FUNDS.
+
+    Section 13(f) of the Securities Exchange Act of 1934 (15 U.S.C. 
+78m(f)) is amended by adding at the end the following:
+            ``(7) Disclosures by institutional investment managers in 
+        connection with proxy advisory firms.--
+                    ``(A) In general.--Every institutional investment 
+                manager which uses the mails, or any means or 
+                instrumentality of interstate commerce in the course of 
+                its business as an institutional investment manager, 
+                which engages a proxy advisory firm, and which 
+                exercises voting power with respect to accounts holding 
+                equity securities of a class described in subsection 
+                (d)(1) or otherwise becomes or is deemed to become a 
+                beneficial owner of any security of a class described 
+                in subsection (d)(1) upon the purchase or sale of a 
+                security-based swap that the Commission may define by 
+                rule, shall file an annual report with the Commission 
+                containing--
+                            ``(i) an explanation of how the 
+                        institutional investment manager voted with 
+                        respect to each shareholder proposal;
+                            ``(ii) the percentage of votes cast on 
+                        shareholder proposals that were consistent with 
+                        proxy advisory firm recommendations, for each 
+                        proxy advisory firm retained by the 
+                        institutional investment manager;
+                            ``(iii) an explanation of--
+                                    ``(I) how the institutional 
+                                investment manager took into 
+                                consideration proxy advisory firm 
+                                recommendations in making voting 
+                                decisions, including the degree to 
+                                which the institutional investment 
+                                manager used those recommendations in 
+                                making voting decisions;
+                                    ``(II) how often the institutional 
+                                investment manager voted consistent 
+                                with a recommendation made by a proxy 
+                                advisory firm, expressed as a 
+                                percentage;
+                                    ``(III) how such votes are 
+                                reconciled with the fiduciary duty of 
+                                the institutional investment manager to 
+                                vote in the best economic interests of 
+                                shareholders;
+                                    ``(IV) how frequently votes were 
+                                changed when an error occurred or due 
+                                to new information from issuers; and
+                                    ``(V) the degree to which 
+                                investment professionals of the 
+                                institutional investment manager were 
+                                involved in proxy voting decisions; and
+                            ``(iv) a certification that the voting 
+                        decisions of the institutional investment 
+                        manager were based solely on the best economic 
+                        interest of the shareholders on behalf of whom 
+                        the institutional investment manager holds 
+                        shares.
+                    ``(B) Requirements for larger institutional 
+                investment managers.--Every institutional investment 
+                manager described in subparagraph (A) that has assets 
+                under management with an aggregate fair market value on 
+                the last trading day in any of the preceding twelve 
+                months of at least $100,000,000,000 shall--
+                            ``(i) in any materials provided to 
+                        customers and related to customers voting their 
+                        shares, clarify that shareholders are not 
+                        required to vote on every proposal;
+                            ``(ii) with respect to each shareholder 
+                        proposal for which the institutional investment 
+                        manager votes (other than votes consistent with 
+                        the recommendation of a board of directors 
+                        composed of a majority of independent 
+                        directors) perform an economic analysis before 
+                        making such vote, to determine that the vote is 
+                        in the best economic interest of the 
+                        shareholders on behalf of whom the 
+                        institutional investment manager holds shares; 
+                        and
+                            ``(iii) include each economic analysis 
+                        required under clause (ii) in the annual report 
+                        required under subparagraph (A).
+                    ``(C) Best economic interest defined.--In this 
+                paragraph, the term `best economic interest' means 
+                decisions that seek to maximize investment returns over 
+                a time horizon consistent with the investment 
+                objectives and risk management profile of the fund in 
+                which shareholders are invested.''.
+
+                TITLE IX--PROTECTING AMERICANS' SAVINGS
+
+SEC. 3901. REQUIREMENTS RELATED TO PROXY VOTING.
+
+    Section 14 of the Securities Exchange Act of 1934 (15 U.S.C. 78n), 
+as amended by section 3701, is further amended by adding at the end the 
+following:
+    ``(m) Prohibition on Robovoting.--
+            ``(1) In general.--The Commission shall issue final rules 
+        prohibiting the use of robovoting with respect to votes related 
+        to proxy or consent solicitation materials.
+            ``(2) Robovoting defined.--In this subsection, the term 
+        `robovoting' means the practice of automatically voting in a 
+        manner consistent with the recommendations of a proxy advisory 
+        firm or pre-populating votes on a proxy advisory firm's 
+        electronic voting platform with the proxy advisory firm's 
+        recommendations, in either case, without independent review and 
+        analysis.
+    ``(n) Prohibition on Outsourcing Voting Decisions by Institutional 
+Investors.--With respect to votes related to proxy or consent 
+solicitation materials, an institutional investor may not outsource 
+voting decisions to any person other than an investment adviser or a 
+broker or dealer that is registered with the Commission and has a 
+fiduciary or best interest duty to the institutional investor.
+    ``(o) No Requirement to Vote.--No person may be required to cast 
+votes related to proxy or consent solicitation materials.
+    ``(p) Proxy Advisory Firm Calculation of Votes.--With respect to 
+votes related to proxy or consent solicitation materials with respect 
+to an issuer, a proxy advisor firm shall calculate the vote result 
+consistent with the law of the State in which the issuer is 
+incorporated.''.
+
+                    TITLE X--EMPOWERING SHAREHOLDERS
+
+SEC. 3911. PROXY VOTING OF PASSIVELY MANAGED FUNDS.
+
+    (a) In General.--The Investment Advisers Act of 1940 (15 U.S.C. 
+80b-1 et seq.) is amended by inserting after section 208 (15 U.S.C. 
+80b-8) the following:
+
+``SEC. 208A. PROXY VOTING OF PASSIVELY MANAGED FUNDS.
+
+    ``(a) Investment Adviser Proxy Voting.--
+            ``(1) In general.--An investment adviser that holds 
+        authority to vote a proxy solicited by an issuer pursuant to 
+        section 14 of the Securities Exchange Act of 1934 (15 U.S.C. 
+        78n) in connection with any vote of covered securities held by 
+        a passively managed fund shall--
+                    ``(A) vote in accordance with the instructions of 
+                the beneficial owner of a voting security of the 
+                passively managed fund;
+                    ``(B) vote in accordance with the voting 
+                recommendations of such issuer; or
+                    ``(C) abstain from voting but make reasonable 
+                efforts to be considered present for purposes of 
+                establishing a quorum.
+            ``(2) Exception.--Paragraph (1) shall not apply with 
+        respect to a vote on a routine matter.
+    ``(b) Safe Harbor.--With respect to a matter that is not a routine 
+matter, in the case of a vote described in subsection (a)(1), an 
+investment adviser shall not be liable to any person under any law or 
+regulation of the United States, any constitution, law, or regulation 
+of any State or political subdivision thereof, or under any contract or 
+other legally enforceable agreement (including any arbitration 
+agreement), for any of the following:
+            ``(1) Voting in accordance with the instructions of the 
+        beneficial owner of a voting security of the passively managed 
+        fund.
+            ``(2) Not soliciting voting instructing from any person 
+        under subsection (a)(1) with respect to such vote.
+            ``(3) Voting in accordance with the voting recommendations 
+        of an issuer pursuant to subparagraph (B) of such subsection.
+            ``(4) Abstaining from voting in accordance with 
+        subparagraph (C) of such subsection.
+    ``(c) Foreign Private Issuers Exemption.--Subsection (a) shall not 
+apply with respect to a foreign private issuer if the voting policy of 
+the investment advisor with respect to such foreign private issuers is 
+fully and fairly disclosed to beneficial owners, including the extent 
+to which such policy differs from the voting policy for non-exempt 
+issuers.
+    ``(d) Definitions.--In this section:
+            ``(1) Covered security.--The term `covered security'--
+                    ``(A) means a voting security, as that term is 
+                defined in section 2(a) of the Investment Company Act 
+                of 1940 (15 U.S.C. 80a-2(a)), in which a qualified fund 
+                is invested; and
+                    ``(B) does not include any voting security (as 
+                defined in subparagraph (A)) of an issuer registered 
+                with the Commission as an investment company under 
+                section 8 of the Investment Company Act of 1940 (15 
+                U.S.C. 80a-8).
+            ``(2) Passively managed fund.--The term `passively managed 
+        fund' means a qualified fund that--
+                    ``(A) is designed to track, or is derived from, an 
+                index of securities or a portion of such an index;
+                    ``(B) discloses that the qualified fund is a 
+                passive index fund; or
+                    ``(C) allocates not less than 60 percent of the 
+                total assets of the qualified fund to an investment 
+                strategy that is designed to track, or is derived from, 
+                an index of securities or a portion of such an index 
+                fund.
+            ``(3) Qualified fund.--The term `qualified fund' means--
+                    ``(A) an investment company, as that term is 
+                defined in section 3 of the Investment Company Act of 
+                1940 (15 U.S.C. 80a-3);
+                    ``(B) a private fund;
+                    ``(C) an eligible deferred compensation plan, as 
+                that term is defined in section 457(b) of the Internal 
+                Revenue Code of 1986;
+                    ``(D) a trust, plan, account, or other entity 
+                described in section 3(c)(11) of the Investment Company 
+                Act of 1940 (15 U.S.C. 80a-3(c)(11));
+                    ``(E) a plan maintained by an employer described in 
+                clause (i), (ii), or (iii) of section 403(b)(1)(A) of 
+                the Internal Revenue Code of 1986 to provide annuity 
+                contracts described in section 403(b) of such Code;
+                    ``(F) a common trust fund, or similar fund, 
+                maintained by a bank;
+                    ``(G) any fund established under section 8438(b)(1) 
+                of title 5, United States Code; or
+                    ``(H) any separate managed account of a client of 
+                an investment adviser.
+            ``(4) Registrant.--The term `registrant' means an issuer of 
+        covered securities.
+            ``(5) Routine matter.--The term `routine matter'--
+                    ``(A) includes a proposal that relates to--
+                            ``(i) an election with respect to the board 
+                        of directors of the registrant;
+                            ``(ii) the compensation of management or 
+                        the board of directors of the registrant;
+                            ``(iii) the selection of auditors;
+                            ``(iv) a matter where there is a material 
+                        conflict of interest between or among the 
+                        issuer, members of management, members of the 
+                        board of directors, or an affiliate of the 
+                        issuer;
+                            ``(v) declassification; or
+                            ``(vi) transactions that would transform 
+                        the structure of the registrant, including--
+                                    ``(I) a merger or consolidation; 
+                                and
+                                    ``(II) the sale, lease, or exchange 
+                                of all, or substantially all, of the 
+                                property and assets of a registrant; 
+                                and
+                    ``(B) does not include--
+                            ``(i) a proposal that is not submitted to a 
+                        holder of covered securities by means of a 
+                        proxy statement comparable to that described in 
+                        section 240.14a-101 of title 17, Code of 
+                        Federal Regulations, or any successor 
+                        regulation; or
+                            ``(ii) a proposal that is--
+                                    ``(I) the subject of a counter-
+                                solicitation; or
+                                    ``(II) part of a proposal made by a 
+                                person other than the applicable 
+                                registrant.''.
+    (b) Effective Date.--The amendment made by this section shall take 
+effect on the first August 1 that occurs after the date that is 2 years 
+after the date of enactment of this Act.
+
+             TITLE XI--PROTECTING RETAIL INVESTORS' SAVINGS
+
+SEC. 3921. BEST INTEREST BASED ON PECUNIARY FACTORS.
+
+    (a) In General.--Section 211(g) of the Investment Advisers Act of 
+1940 (15 U.S.C. 80b-11(g)) is amended by adding at the end the 
+following:
+            ``(3) Best interest based on pecuniary factors.--
+                    ``(A) In general.--For purposes of paragraph (1), 
+                the best interest of a customer shall be determined 
+                using pecuniary factors, which may not be subordinated 
+                to or limited by non-pecuniary factors, unless the 
+                customer provides informed consent, in writing, that 
+                such non-pecuniary factors be considered.
+                    ``(B) Disclosure of pecuniary factors.--If a 
+                customer provides a broker, dealer, or investment 
+                adviser with the informed consent to consider non-
+                pecuniary factors described under subparagraph (A), the 
+                broker, dealer, or investment adviser shall--
+                            ``(i) disclose the expected pecuniary 
+                        effects to the customer over a time period 
+                        selected by the customer and not to exceed 
+                        three years; and
+                            ``(ii) at the end of the time period 
+                        described in clause (i), disclose, by 
+                        comparison to a reasonably comparable index or 
+                        basket of securities selected by the customer, 
+                        the actual pecuniary effects of that time 
+                        period, including all fees, costs, and other 
+                        expenses incurred to consider non-pecuniary 
+                        factors.
+                    ``(C) Pecuniary factor defined.--In this paragraph, 
+                the term `pecuniary factor' means a factor that a 
+                fiduciary prudently determines is expected to have a 
+                material effect on the risk or return of an investment 
+                based on appropriate investment horizons.''.
+    (b) Rulemaking.--Not later than the end of the 12-month period 
+beginning on the date of enactment of this Act, the Securities and 
+Exchange Commission shall revise or issue such rules as may be 
+necessary to implement the amendment made by subsection (a).
+    (c) Applicability.--The amendment made by subsection (a) shall 
+apply to actions taken by a broker, dealer, or investment adviser 
+beginning on the date that is 12 months after the date of enactment of 
+this Act.
+
+SEC. 3922. STUDY ON CLIMATE CHANGE AND OTHER ENVIRONMENTAL DISCLOSURES 
+              IN MUNICIPAL BOND MARKET.
+
+    (a) In General.--The Securities and Exchange Commission shall--
+            (1) conduct a study to determine the extent to which 
+        issuers of municipal securities (as such term is defined in 
+        section 3(a)(29) of the Securities Exchange Act of 1934 (15 
+        U.S.C. 78c(a)(29)) make disclosures to investors regarding 
+        climate change and other environmental matters; and
+            (2) solicit public comment with respect to such study.
+    (b) Contents.--The study required under subsection (a) shall 
+consider and analyze--
+            (1) the frequency with which disclosures described in 
+        subsection (a)(1) are made;
+            (2) whether such disclosures made by issuers of municipal 
+        securities in connection with offerings of securities align 
+        with such disclosures made by issuers of municipal securities 
+        in other contexts or to audiences other than investors;
+            (3) any voluntary or mandatory disclosure standards 
+        observed by issuers of municipal securities in the course of 
+        making such disclosures;
+            (4) the degree to which investors consider such disclosures 
+        in connection with making an investment decision; and
+            (5) such other information as the Securities and Exchange 
+        Commission determines appropriate.
+    (c) Report.--Not later than 1 year after the date of the enactment 
+of this Act, the Securities and Exchange Commission shall submit to the 
+Committee on Banking, Housing, and Urban Affairs of the Senate and the 
+Committee on Financial Services of the House of Representatives a 
+report that includes--
+            (1) the results of the study required under this section;
+            (2) a detailed discussion of the financial risks to 
+        investors from investments in municipal securities;
+            (3) whether such risks are adequately disclosed to 
+        investors; and
+            (4) recommended regulatory or legislative steps to address 
+        any concerns identified in the study.
+
+SEC. 3923. STUDY ON SOLICITATION OF MUNICIPAL SECURITIES BUSINESS.
+
+    (a) In General.--The Securities and Exchange Commission shall--
+            (1) conduct a study on the effectiveness of each covered 
+        rule in preventing the payment of funds to elected officials or 
+        candidates for elected office in exchange for the receipt of 
+        government business in connection with the offer or sale of 
+        municipal securities; and
+            (2) solicit public comment with respect to such study.
+    (b) Contents.--The study required under subsection (a) shall 
+consider and analyze--
+            (1) the effectiveness of each covered rule, including 
+        whether each covered rule accomplishes the intended effect of 
+        such covered rule and has any unintended adverse effects;
+            (2) the frequency and scope of enforcement actions 
+        undertaken pursuant to each covered rule;
+            (3) the degree to which--
+                    (A) persons subject to each covered rule--
+                            (i) have in effect policies and procedures 
+                        intended to ensure compliance with each such 
+                        covered rule; and
+                            (ii) are disadvantaged from participating 
+                        in the political process generally and in 
+                        relation to persons who solicit or receive 
+                        government business or government licenses, 
+                        permits, and approvals other than in connection 
+                        with the offer or sale of municipal securities; 
+                        and
+                    (B) other State and Federal laws and regulations 
+                impact the solicitation of municipal securities 
+                business; and
+            (4) such other information as the Securities and Exchange 
+        Commission determines appropriate.
+    (c) Report.--Not later than 1 year after the date of the enactment 
+of this Act, the Securities and Exchange Commission shall submit to the 
+Committee on Banking, Housing, and Urban Affairs of the Senate and the 
+Committee on Financial Services of the House of Representatives a 
+report that includes--
+            (1) the results of the study required under this section;
+            (2) an analysis of the extent to which persons affiliated 
+        with small businesses, as well as persons affiliated with 
+        minority and women opened businesses, have been affected by the 
+        covered rules; and
+            (3) recommended regulatory or legislative steps to address 
+        any concerns identified in the study.
+    (d) Definitions.--In this section:
+            (1) Covered rule.--The term ``covered rule'' means--
+                    (A) Rule G-38 of the Municipal Securities 
+                Rulemaking Board; and
+                    (B) Rule 206(4)-5 (17 CFR 275.206(4)-5).
+            (2) Municipal securities.--The term ``municipal 
+        securities'' has the meaning given the term in section 3(a)(29) 
+        of the Securities Exchange Act of 1934 (15 U.S.C. 78c(a)(29)).
+
+                 DIVISION D--AMERICAN FIRST ACT OF 2023
+
+SEC. 4001. SHORT TITLE; TABLE OF CONTENTS.
+
+    (a) Short Title.--This division may be cited as the ``American 
+Financial Institution Regulatory Sovereignty and Transparency Act of 
+2023'' or the ``American FIRST Act of 2023''.
+    (b) Table of Contents.--The table of contents for this division is 
+as follows:
+
+Sec. 4001. Short title; Table of contents.
+         TITLE I--STOP EXECUTIVE CAPTURE OF BANKING REGULATORS
+
+Sec. 4101. Report on the implementation of recommendations from the 
+                            FSOC Chairperson and Executive Orders.
+    TITLE II--ENSURING U.S. AUTHORITY OVER U.S. BANKING REGULATIONS
+
+Sec. 4201. Requirements in connection with rulemakings implementing 
+                            policies of non-governmental international 
+                            organizations.
+Sec. 4202. Report on certain climate-related interactions with covered 
+                            international organizations.
+          TITLE III--BANKING REGULATOR INTERNATIONAL REPORTING
+
+Sec. 4301. Reporting on interactions with non-governmental 
+                            international organizations.
+                      TITLE IV--SUPERVISION REFORM
+
+Sec. 4401. Removal of the Vice Chairman for Supervision designation.
+
+         TITLE I--STOP EXECUTIVE CAPTURE OF BANKING REGULATORS
+
+SEC. 4101. REPORT ON THE IMPLEMENTATION OF RECOMMENDATIONS FROM THE 
+              FSOC CHAIRPERSON AND EXECUTIVE ORDERS.
+
+    (a) Board of Governors of the Federal Reserve System.--Section 10 
+of the Federal Reserve Act (12 U.S.C. 247b), as amended by section 
+4401(b), is further amended by adding at the end the following:
+            ``(11) Report on the implementation of recommendations from 
+        the fsoc chairperson and executive orders.--The Board of 
+        Governors of the Federal Reserve System may not implement a 
+        non-binding recommendation made by the Chairperson of the 
+        Financial Stability Oversight Council or contained in an 
+        Executive Order unless the Board of Governors first provides 
+        the Committee on Financial Services of the House of 
+        Representatives and the Committee on Banking, Housing, and 
+        Urban Affairs of the Senate with--
+                    ``(A) notice that the Board of Governors intends to 
+                implement such recommendation;
+                    ``(B) a report containing the proposed 
+                implementation by the Board of Governors and a 
+                justification for such implementation; and
+                    ``(C) upon request, not later than the end of the 
+                120-day period beginning on the date of the notice 
+                under subparagraph (A), testimony on such proposed 
+                implementation.''.
+    (b) Office of the Comptroller of the Currency.--Section 324 of the 
+Revised Statutes of the United States (12 U.S.C. 1) is amended by 
+adding at the end the following:
+    ``(c) Report on the Implementation of Recommendations From the FSOC 
+Chairperson and Executive Orders.--The Comptroller of the Currency may 
+not implement a non-binding recommendation made by the Chairperson of 
+the Financial Stability Oversight Council or contained in an Executive 
+Order unless the Comptroller of the Currency first provides the 
+Committee on Financial Services of the House of Representatives and the 
+Committee on Banking, Housing, and Urban Affairs of the Senate with--
+            ``(1) notice that the Comptroller of the Currency intends 
+        to implement such recommendation;
+            ``(2) a report containing the proposed implementation by 
+        the Comptroller of the Currency and a justification for such 
+        implementation; and
+            ``(3) upon request, not later than the end of the 120-day 
+        period beginning on the date of the notice under paragraph (1), 
+        testimony on such proposed implementation.''.
+    (c) Federal Deposit Insurance Corporation.--Section 2 of the 
+Federal Deposit Insurance Act (12 U.S.C. 1812) is amended by inserting 
+after subsection (f) the following:
+    ``(g) Report on the Implementation of Recommendations From the FSOC 
+Chairperson and Executive Orders.--The Board of Directors of the 
+Corporation may not implement a non-binding recommendation made by the 
+Chairperson of the Financial Stability Oversight Council or contained 
+in an Executive Order unless the Board of Directors first provides the 
+Committee on Financial Services of the House of Representatives and the 
+Committee on Banking, Housing, and Urban Affairs of the Senate with--
+            ``(1) notice that the Board of Directors intends to 
+        implement such recommendation;
+            ``(2) a report containing the proposed implementation by 
+        the Board of Directors and a justification for such 
+        implementation; and
+            ``(3) upon request, not later than the end of the 120-day 
+        period beginning on the date of the notice under paragraph (1), 
+        testimony on such proposed implementation.''.
+    (d) National Credit Union Administration.--Section 102 of the 
+Federal Credit Union Act (12 U.S.C. 1752a) is amended by adding at the 
+end the following:
+    ``(g) Report on the Implementation of Recommendations From the FSOC 
+Chairperson and Executive Orders.--The Board may not implement a non-
+binding recommendation made by the Chairperson of the Financial 
+Stability Oversight Council or contained in an Executive Order unless 
+the Board first provides the Committee on Financial Services of the 
+House of Representatives and the Committee on Banking, Housing, and 
+Urban Affairs of the Senate with--
+            ``(1) notice that the Board intends to implement such 
+        recommendation;
+            ``(2) a report containing the proposed implementation by 
+        the Board and a justification for such implementation; and
+            ``(3) upon request, not later than the end of the 120-day 
+        period beginning on the date of the notice under paragraph (1), 
+        testimony on such proposed implementation.''.
+    (e) Federal Housing Finance Agency.--Section 1311 of the Housing 
+and Community Development Act of 1992 (12 U.S.C. 4511) is amended by 
+adding at the end the following:
+    ``(d) Report on the Implementation of Recommendations From the FSOC 
+Chairperson and Executive Orders.--The Director may not implement a 
+non-binding recommendation made by the Chairperson of the Financial 
+Stability Oversight Council or contained in an Executive Order unless 
+the Director first provides the Committee on Financial Services of the 
+House of Representatives and the Committee on Banking, Housing, and 
+Urban Affairs of the Senate with--
+            ``(1) notice that the Director intends to implement such 
+        recommendation;
+            ``(2) a report containing the proposed implementation by 
+        the Director and a justification for such implementation; and
+            ``(3) upon request, not later than the end of the 120-day 
+        period beginning on the date of the notice under paragraph (1), 
+        testimony on such proposed implementation.''.
+
+    TITLE II--ENSURING U.S. AUTHORITY OVER U.S. BANKING REGULATIONS
+
+SEC. 4201. REQUIREMENTS IN CONNECTION WITH RULEMAKINGS IMPLEMENTING 
+              POLICIES OF NON-GOVERNMENTAL INTERNATIONAL ORGANIZATIONS.
+
+    (a) Board of Governors of the Federal Reserve System.--Section 10 
+of the Federal Reserve Act (12 U.S.C. 247b), as amended by section 
+4101(a), is further amended by inserting after paragraph (11) the 
+following:
+            ``(12) Requirements in connection with rulemakings 
+        implementing policies of non-governmental international 
+        organizations.--
+                    ``(A) In general.--The Board of Governors of the 
+                Federal Reserve System may not propose or finalize a 
+                major covered rule unless, not later than 120 days 
+                before issuing such a proposed or final rule, the Board 
+                of Governors provides the Committee on Financial 
+                Services of the House of Representatives and the 
+                Committee on Banking, Housing, and Urban Affairs of the 
+                Senate with notice, testimony, and a detailed economic 
+                analysis with respect to the proposed or final rule, 
+                including projections of economic costs, sectoral 
+                effects, and effects on the availability of credit, the 
+                gross domestic product, and employment.
+                    ``(B) Major covered rule defined.--In this 
+                paragraph, the term `major covered rule' means a rule--
+                            ``(i) that the Board of Governors 
+                        determines would have an effect, in the 
+                        aggregate, on the economy of the United States 
+                        of $10,000,000,000 or more during the 10-year 
+                        period beginning on the date the rule takes 
+                        effect; and
+                            ``(ii) that is intended to align or conform 
+                        with a recommendation from a non-governmental 
+                        international organization (including the 
+                        Financial Stability Board, the Bank for 
+                        International Settlements, the Network of 
+                        Central Banks and Supervisors for Greening the 
+                        Financial System, and the Basel Committee on 
+                        Banking Supervision).''.
+    (b) Office of the Comptroller of the Currency.--Section 324 of the 
+Revised Statutes of the United States (12 U.S.C. 1), as amended by 
+section 4101(b), is further amended by adding at the end the following:
+    ``(d) Requirements in Connection With Rulemakings Implementing 
+Policies of Non-governmental International Organizations.--
+            ``(1) In general.--The Comptroller of the Currency may not 
+        propose or finalize a major covered rule unless, not later than 
+        120 days before issuing such a proposed or final rule, the 
+        Comptroller of the Currency provides the Committee on Financial 
+        Services of the House of Representatives and the Committee on 
+        Banking, Housing, and Urban Affairs of the Senate with notice, 
+        testimony, and a detailed economic analysis with respect to the 
+        proposed or final rule, including projections of economic 
+        costs, sectoral effects, and effects on the availability of 
+        credit, the gross domestic product, and employment.
+            ``(2) Major covered rule defined.--In this subsection, the 
+        term `major covered rule' means a rule--
+                    ``(A) that the Comptroller of the Currency 
+                determines would have an effect, in the aggregate, on 
+                the economy of the United States of $10,000,000,000 or 
+                more during the 10-year period beginning on the date 
+                the rule takes effect; and
+                    ``(B) that is intended to align or conform with a 
+                recommendation from a non-governmental international 
+                organization (including the Financial Stability Board, 
+                the Bank for International Settlements, the Network of 
+                Central Banks and Supervisors for Greening the 
+                Financial System, and the Basel Committee on Banking 
+                Supervision).''.
+    (c) Federal Deposit Insurance Corporation.--Section 2 of the 
+Federal Deposit Insurance Act (12 U.S.C. 1812), as amended by section 
+4101(c), is further amended by inserting after subsection (g) the 
+following:
+    ``(h) Requirements in Connection With Rulemakings Implementing 
+Policies of Non-governmental International Organizations.--
+            ``(1) In general.--The Board of Directors of the 
+        Corporation may not propose or finalize a major covered rule 
+        unless, not later than 120 days before issuing such a proposed 
+        or final rule, the Board of Directors provides the Committee on 
+        Financial Services of the House of Representatives and the 
+        Committee on Banking, Housing, and Urban Affairs of the Senate 
+        with notice, testimony, and a detailed economic analysis with 
+        respect to the proposed or final rule, including projections of 
+        economic costs, sectoral effects, and effects on the 
+        availability of credit, the gross domestic product, and 
+        employment.
+            ``(2) Major covered rule defined.--In this subsection, the 
+        term `major covered rule' means a rule--
+                    ``(A) that the Board of Directors determines would 
+                have an effect, in the aggregate, on the economy of the 
+                United States of $10,000,000,000 or more during the 10-
+                year period beginning on the date the rule takes 
+                effect; and
+                    ``(B) that is intended to align or conform with a 
+                recommendation from a non-governmental international 
+                organization (including the Financial Stability Board, 
+                the Bank for International Settlements, the Network of 
+                Central Banks and Supervisors for Greening the 
+                Financial System, and the Basel Committee on Banking 
+                Supervision).''.
+    (d) National Credit Union Administration.--Section 102 of the 
+Federal Credit Union Act (12 U.S.C. 1752a), as amended by section 
+4101(d), is further amended by adding at the end the following:
+    ``(h) Requirements in Connection With Rulemakings Implementing 
+Policies of Non-governmental International Organizations.--
+            ``(1) In general.--The Board may not propose or finalize a 
+        major covered rule unless, not later than 120 days before 
+        issuing such a proposed or final rule, the Board provides the 
+        Committee on Financial Services of the House of Representatives 
+        and the Committee on Banking, Housing, and Urban Affairs of the 
+        Senate with notice, testimony, and a detailed economic analysis 
+        with respect to the proposed or final rule, including 
+        projections of economic costs, sectoral effects, and effects on 
+        the availability of credit, the gross domestic product, and 
+        employment.
+            ``(2) Major covered rule defined.--In this subsection, the 
+        term `major covered rule' means a rule--
+                    ``(A) that the Board determines would have an 
+                effect, in the aggregate, on the economy of the United 
+                States of $10,000,000,000 or more during the 10-year 
+                period beginning on the date the rule takes effect; and
+                    ``(B) that is intended to align or conform with a 
+                recommendation from a non-governmental international 
+                organization (including the Financial Stability Board, 
+                the Bank for International Settlements, the Network of 
+                Central Banks and Supervisors for Greening the 
+                Financial System, and the Basel Committee on Banking 
+                Supervision).''.
+    (e) Federal Housing Finance Agency.--Section 1311 of the Housing 
+and Community Development Act of 1992 (12 U.S.C. 4511), as amended by 
+section 4101(e), is further amended by adding at the end the following:
+    ``(e) Requirements in Connection With Rulemakings Implementing 
+Policies of Non-governmental International Organizations.--
+            ``(1) In general.--The Director may not propose or finalize 
+        a major covered rule unless, not later than 120 days before 
+        issuing such a proposed or final rule, the Director provides 
+        the Committee on Financial Services of the House of 
+        Representatives and the Committee on Banking, Housing, and 
+        Urban Affairs of the Senate with notice, testimony, and a 
+        detailed economic analysis with respect to the proposed or 
+        final rule, including projections of economic costs, sectoral 
+        effects, and effects on the availability of credit, the gross 
+        domestic product, and employment.
+            ``(2) Major covered rule defined.--In this subsection, the 
+        term `major covered rule' means a rule--
+                    ``(A) that the Director determines would have an 
+                effect, in the aggregate, on the economy of the United 
+                States of $10,000,000,000 or more during the 10-year 
+                period beginning on the date the rule takes effect; and
+                    ``(B) that is intended to align or conform with a 
+                recommendation from a non-governmental international 
+                organization (including the Financial Stability Board, 
+                the Bank for International Settlements, the Network of 
+                Central Banks and Supervisors for Greening the 
+                Financial System, and the Basel Committee on Banking 
+                Supervision).''.
+
+SEC. 4202. REPORT ON CERTAIN CLIMATE-RELATED INTERACTIONS WITH COVERED 
+              INTERNATIONAL ORGANIZATIONS.
+
+    (a) In General.--A Federal banking regulator may not meet with or 
+otherwise engage with a covered international organization on the topic 
+of climate-related financial risk during a calendar year unless the 
+Federal banking regulator has issued a report to the Committee on 
+Financial Services of the House of Representatives and the Committee on 
+Banking, Housing, and Urban Affairs of the Senate containing, for the 
+previous calendar year--
+            (1) a complete description of the activities of the covered 
+        international organization in which the Federal banking 
+        regulator participates (including any task force, committee, or 
+        other organizational unit thereof); and
+            (2) a detailed accounting of the governmental and non-
+        governmental funding sources of the covered international 
+        organization (including any task force, committee, or other 
+        organizational unit thereof).
+    (b) Definitions.--In this section:
+            (1) Covered international organization.--The term ``covered 
+        international organization'' means the Financial Stability 
+        Board, the Bank for International Settlements, the Network of 
+        Central Banks and Supervisors for Greening the Financial 
+        System, and the Basel Committee on Banking Supervision.
+            (2) Federal banking regulator.--The term ``Federal banking 
+        regulator'' means the Board of Governors of the Federal Reserve 
+        System, the Federal Deposit Insurance Corporation, the Federal 
+        Housing Finance Agency, the National Credit Union 
+        Administration, and the Office of the Comptroller of the 
+        Currency.
+
+          TITLE III--BANKING REGULATOR INTERNATIONAL REPORTING
+
+SEC. 4301. REPORTING ON INTERACTIONS WITH NON-GOVERNMENTAL 
+              INTERNATIONAL ORGANIZATIONS.
+
+    (a) Board of Governors of the Federal Reserve System.--Section 10 
+of the Federal Reserve Act (12 U.S.C. 247b), as amended by section 
+4201(a), is further amended by inserting after paragraph (12) the 
+following:
+            ``(13) Reporting on interactions with non-governmental 
+        international organizations.--With respect to interactions 
+        between the Board of Governors of the Federal Reserve System 
+        and a non-governmental international organization (including 
+        the Financial Stability Board, the Bank for International 
+        Settlements, the Network of Central Banks and Supervisors for 
+        Greening the Financial System, and the Basel Committee on 
+        Banking Supervision), the Board of Governors shall--
+                    ``(A) keep a complete record of all such 
+                interactions, including minutes of all meetings and any 
+                recommendations made during such interaction for 
+                international standardization with respect to open-
+                market policies and operations, discount lending and 
+                operations (including collateral policies), or 
+                supervisory policies and operations; and
+                    ``(B) issue an annual report to the Committee on 
+                Financial Services of the House of Representatives and 
+                the Committee on Banking, Housing, and Urban Affairs of 
+                the Senate containing--
+                            ``(i) all of the information recorded 
+                        pursuant to subparagraph (A) with respect to 
+                        the previous year; and
+                            ``(ii) with respect to each non-
+                        governmental international organization with 
+                        which the Board of Governors had an interaction 
+                        in the previous year, a description of the 
+                        funding sources of the non-governmental 
+                        international organization.''.
+    (b) Office of the Comptroller of the Currency.--Section 324 of the 
+Revised Statutes of the United States (12 U.S.C. 1), as amended by 
+section 4201(b), is further amended by adding at the end the following:
+    ``(e) Reporting on Interactions With Non-governmental International 
+Organizations.--With respect to interactions between the Office of the 
+Comptroller of the Currency and a non-governmental international 
+organization (including the Financial Stability Board, the Bank for 
+International Settlements, the Network of Central Banks and Supervisors 
+for Greening the Financial System, and the Basel Committee on Banking 
+Supervision), the Comptroller of the Currency shall--
+            ``(1) keep a complete record of all such interactions, 
+        including minutes of all meetings and any recommendations made 
+        during such interaction for international standardization with 
+        respect to discount lending and operations (including 
+        collateral policies) or supervisory policies and operations; 
+        and
+            ``(2) issue an annual report to the Committee on Financial 
+        Services of the House of Representatives and the Committee on 
+        Banking, Housing, and Urban Affairs of the Senate containing--
+                    ``(A) all of the information recorded pursuant to 
+                paragraph (1) with respect to the previous year; and
+                    ``(B) with respect to each non-governmental 
+                international organization with which the Office of the 
+                Comptroller of the Currency had an interaction in the 
+                previous year, a description of the funding sources of 
+                the non-governmental international organization.''.
+    (c) Federal Deposit Insurance Corporation.--Section 2 of the 
+Federal Deposit Insurance Act (12 U.S.C. 1812), as amended by section 
+4201(c), is further amended is amended by inserting after subsection 
+(h) the following:
+    ``(i) Reporting on Interactions With Non-governmental International 
+Organizations.--With respect to interactions between the Federal 
+Deposit Insurance Corporation and a non-governmental international 
+organization (including the Financial Stability Board, the Bank for 
+International Settlements, the Network of Central Banks and Supervisors 
+for Greening the Financial System, and the Basel Committee on Banking 
+Supervision), the Board of Directors of the Corporation shall--
+            ``(1) keep a complete record of all such interactions, 
+        including minutes of all meetings and any recommendations made 
+        during such interaction for international standardization with 
+        respect to discount lending and operations (including 
+        collateral policies) or supervisory policies and operations; 
+        and
+            ``(2) issue an annual report to the Committee on Financial 
+        Services of the House of Representatives and the Committee on 
+        Banking, Housing, and Urban Affairs of the Senate containing--
+                    ``(A) all of the information recorded pursuant to 
+                paragraph (1) with respect to the previous year; and
+                    ``(B) with respect to each non-governmental 
+                international organization with which the Corporation 
+                had an interaction in the previous year, a description 
+                of the funding sources of the non-governmental 
+                international organization.''.
+    (d) National Credit Union Administration.--Section 102 of the 
+Federal Credit Union Act (12 U.S.C. 1752a), as amended by section 
+4201(d), is further amended by adding at the end the following:
+    ``(i) Reporting on Interactions With Non-governmental International 
+Organizations.--With respect to interactions between the Administration 
+and a non-governmental international organization (including the 
+Financial Stability Board, the Bank for International Settlements, the 
+Network of Central Banks and Supervisors for Greening the Financial 
+System, and the Basel Committee on Banking Supervision), the Board 
+shall--
+            ``(1) keep a complete record of all such interactions, 
+        including minutes of all meetings and any recommendations made 
+        during such interaction for international standardization with 
+        respect to discount lending and operations (including 
+        collateral policies) or supervisory policies and operations; 
+        and
+            ``(2) issue an annual report to the Committee on Financial 
+        Services of the House of Representatives and the Committee on 
+        Banking, Housing, and Urban Affairs of the Senate containing--
+                    ``(A) all of the information recorded pursuant to 
+                paragraph (1) with respect to the previous year; and
+                    ``(B) with respect to each non-governmental 
+                international organization with which the 
+                Administration had an interaction in the previous year, 
+                a description of the funding sources of the non-
+                governmental international organization.''.
+    (e) Federal Housing Finance Agency.--Section 1311 of the Housing 
+and Community Development Act of 1992 (12 U.S.C. 4511), as amended by 
+section 4201(e), is further amended by adding at the end the following:
+    ``(f) Reporting on Interactions With Non-governmental International 
+Organizations.--With respect to interactions between the Federal 
+Housing Finance Agency and a non-governmental international 
+organization (including the Financial Stability Board, the Bank for 
+International Settlements, the Network of Central Banks and Supervisors 
+for Greening the Financial System, and the Basel Committee on Banking 
+Supervision), the Director shall--
+            ``(1) keep a complete record of all such interactions, 
+        including minutes of all meetings and any recommendations made 
+        during such interaction for international standardization with 
+        respect to discount lending and operations (including 
+        collateral policies) or supervisory policies and operations; 
+        and
+            ``(2) issue an annual report to the Committee on Financial 
+        Services of the House of Representatives and the Committee on 
+        Banking, Housing, and Urban Affairs of the Senate containing--
+                    ``(A) all of the information recorded pursuant to 
+                paragraph (1) with respect to the previous year; and
+                    ``(B) with respect to each non-governmental 
+                international organization with which the Federal 
+                Housing Finance Agency had an interaction in the 
+                previous year, a description of the funding sources of 
+                the non-governmental international organization.''.
+
+                      TITLE IV--SUPERVISION REFORM
+
+SEC. 4401. REMOVAL OF THE VICE CHAIRMAN FOR SUPERVISION DESIGNATION.
+
+    (a) In General.--The second undesignated paragraph of section 10 of 
+the Federal Reserve Act (12 U.S.C. 242) (relating to the Chairman and 
+Vice Chairman of the Board) is amended by striking ``and 2 shall be 
+designated by the President, by and with the advice and consent of the 
+Senate, to serve as Vice Chairmen of the Board, each for a term of 4 
+years, 1 of whom shall serve in the absence of the Chairman, as 
+provided in the fourth undesignated paragraph of this section, and 1 of 
+whom shall be designated Vice Chairman for Supervision. The Vice 
+Chairman for Supervision shall develop policy recommendations for the 
+Board regarding supervision and regulation of depository institution 
+holding companies and other financial firms supervised by the Board, 
+and shall oversee the supervision and regulation of such firms.'' and 
+inserting ``and 1 shall be designated by the President, by and with the 
+consent of the Senate, to serve as Vice Chairman of the Board for a 
+term of 4 years.''.
+    (b) Conforming Amendment.--Section 10 of the Federal Reserve Act 
+(12 U.S.C. 241 et seq.) is amended by striking paragraph (12).
+
+               DIVISION E--LIMITATION ON SEC RESERVE FUND
+
+SEC. 5001. LIMITATION.
+
+    During fiscal years 2026 and 2027, registration fees collected by 
+the Securities and Exchange Commission shall not be deposited in the 
+Securities and Exchange Commission Reserve Fund.
+
+            Passed the House of Representatives September 19, 2024.
+
+            Attest:
+
+                                                                 Clerk.
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 4790
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+To amend the Federal securities laws with respect to the materiality of 
+   disclosure requirements, to establish the Public Company Advisory 
+                   Committee, and for other purposes.
+</pre></body></html>

@@ -1,0 +1,405 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 7213 Reported in House (RH)]
+
+&lt;DOC&gt;
+
+
+
+
+
+                                                 Union Calendar No. 518
+118th CONGRESS
+  2d Session
+                                H. R. 7213
+
+                          [Report No. 118-620]
+
+ To amend the Public Health Service Act to [enhance activities of the 
+   National Institutes of Health with respect to research on autism 
+spectrum disorder and enhance programs relating to autism / reauthorize 
+ certain programs with respect to autism spectrum disorder?], and for 
+                            other purposes.
+
+
+_______________________________________________________________________
+
+
+                    IN THE HOUSE OF REPRESENTATIVES
+
+                            February 1, 2024
+
+ Mr. Smith of New Jersey (for himself and Mr. Cuellar) introduced the 
+   following bill; which was referred to the Committee on Energy and 
+                                Commerce
+
+                             July 30, 2024
+
+Additional sponsors: Mr. Carter of Georgia, Mrs. Dingell, Mr. Molinaro, 
+ Ms. Kuster, Mr. Fitzpatrick, Mr. Moulton, Mr. Kean of New Jersey, Mr. 
+   Soto, Mr. Kiley, Mr. Gottheimer, Mr. Davis of North Carolina, Ms. 
+Matsui, Mr. Stauber, Ms. Clarke of New York, Mr. Bacon, Ms. Spanberger, 
+ Mr. Harder of California, Ms. Tlaib, Mr. Moore of Utah, Ms. Slotkin, 
+ Ms. Omar, Mr. Joyce of Pennsylvania, Mr. Kim of New Jersey, Ms. Blunt 
+  Rochester, Ms. Kaptur, Ms. Salazar, Ms. Tenney, Mr. Harris, Mr. Van 
+Drew, Mrs. Miller of West Virginia, Mr. Graves of Louisiana, Mr. Larson 
+ of Connecticut, Ms. Waters, Ms. Sewell, Mr. Suozzi, Mr. Panetta, Mrs. 
+  Peltola, Mr. Ryan, Mr. Lawler, Mr. Pappas, Ms. Adams, Mr. Kelly of 
+ Pennsylvania, Mr. Van Orden, Mr. Neguse, Ms. Stevens, Ms. Budzinski, 
+ Mr. Bilirakis, Ms. Pingree, Ms. Tokuda, Ms. Pettersen, Mr. Courtney, 
+ Mr. Landsman, Mr. Jackson of Illinois, Mr. Thompson of Pennsylvania, 
+Mr. Pocan, Mr. Schneider, Ms. Lee of Nevada, Mr. Williams of New York, 
+                        Mr. Meuser, and Mr. Crow
+
+                             July 30, 2024
+
+Reported with amendments, committed to the Committee of the Whole House 
+          on the State of the Union, and ordered to be printed
+ [Strike out all after the enacting clause and insert the part printed 
+                               in italic]
+    [For text of introduced bill, see copy of bill as introduced on 
+                           February 1, 2024]
+
+
+_______________________________________________________________________
+
+                                 A BILL
+
+
+ 
+ To amend the Public Health Service Act to [enhance activities of the 
+   National Institutes of Health with respect to research on autism 
+spectrum disorder and enhance programs relating to autism / reauthorize 
+ certain programs with respect to autism spectrum disorder?], and for 
+                            other purposes.
+
+
+ 
+
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE.
+
+     This Act may be cited as the ``Autism Collaboration, 
+Accountability, Research, Education, and Support Act of 2024'' or the 
+``Autism CARES Act of 2024''.
+
+SEC. 2. NATIONAL INSTITUTES OF HEALTH ACTIVITIES.
+
+    (a) Expansion of Activities.--Paragraph (1) of section 409C(a) of 
+the Public Health Service Act (42 U.S.C. 284g(a)) is amended to read as 
+follows:
+            ``(1) Expansion of activities.--The Director of NIH (in 
+        this section referred to as the `Director'), in coordination 
+        and consultation with the Administrator of the Administration 
+        for Community Living, and other agencies as appropriate, 
+        shall--
+                    ``(A) subject to the availability of 
+                appropriations, expand, intensify, and coordinate the 
+                activities of the National Institutes of Health with 
+                respect to research on autism spectrum disorder, 
+                including--
+                            ``(i) basic and clinical research in fields 
+                        including pathology, developmental 
+                        neurobiology, genetics, epigenetics, 
+                        pharmacology, nutrition, immunology, 
+                        neuroimmunology, neurobehavioral development, 
+                        endocrinology, gastroenterology, toxicology, 
+                        speech, language and hearing science, 
+                        psychiatry, psychology, developmental 
+                        behavioral pediatrics, and gerontology; and
+                            ``(ii) research on interventions to 
+                        maximize outcomes for individuals with autism 
+                        spectrum disorder; and
+                    ``(B) ensure that research referred to in 
+                subparagraph (A)--
+                            ``(i) investigates the causes (including 
+                        possible environmental causes), diagnosis or 
+                        ruling out, early and ongoing detection, 
+                        prevention, intervention, services, supports 
+                        across the lifespan for autistic individuals 
+                        and caregivers, and treatment for autism 
+                        spectrum disorder and co-occurring conditions, 
+                        including dissemination and implementation of 
+                        clinical care, supports, interventions, and 
+                        treatments; and
+                            ``(ii) reflects the entire population of 
+                        individuals with autism spectrum disorder, 
+                        including the full range of cognitive, 
+                        communicative, behavioral, and adaptive 
+                        functioning, as well as co-occurring conditions 
+                        and needs for support and services, including 
+                        care necessary for physical safety.''.
+    (b) Centers of Excellence.--Section 409C(b) of the Public Health 
+Service Act (42 U.S.C. 284g(b)) is amended--
+            (1) in paragraph (2)--
+                    (A) by striking ``prevention, and treatment'' and 
+                inserting ``prevention, services, and treatment'';
+                    (B) by striking ``including the fields'' and 
+                inserting ``including in the fields''; and
+                    (C) by striking ``behavioral psychology, and 
+                clinical psychology'' and inserting ``behavioral 
+                psychology, clinical psychology, and gerontology'';
+            (2) in paragraph (5)(A), by striking ``not less than five 
+        centers'' and inserting ``not fewer than six centers''; and
+            (3) in paragraph (5)(B), by striking ``period of not to 
+        exceed'' and inserting ``period not to exceed''.
+    (c) Public Input.--Section 409C(d) of the Public Health Service Act 
+(42 U.S.C. 284g(d)) is amended to read as follows:
+    ``(d) Public Input.--
+            ``(1) In general.--The Director shall under subsection 
+        (a)(1) provide for means through which the public can obtain 
+        information on the existing and planned programs and activities 
+        of the National Institutes of Health with respect to autism 
+        spectrum disorder and through which the Director can receive 
+        comments from the public regarding such programs and 
+        activities.
+            ``(2) Opportunities.--Such public input opportunities may 
+        include encouraging the centers under subsection (b)(1) to 
+        establish an external advisory board or adopting a 
+        comprehensive plan to ensure individuals with various 
+        backgrounds and perspectives are represented, among other 
+        activities. Such opportunities should consider including, as 
+        appropriate, individuals, family members, and caregivers of 
+        individuals with autism spectrum disorder who represent the 
+        entire population of individuals with autism spectrum disorder, 
+        including the full range of cognitive, communicative, 
+        behavioral, and adaptive functioning, to better inform research 
+        findings and future studies.''.
+
+SEC. 3. PROGRAMS RELATING TO AUTISM.
+
+    (a) Developmental Disabilities Surveillance and Research Program.--
+Section 399AA of the Public Health Service Act (42 U.S.C. 280i) is 
+amended--
+            (1) in subsection (b)(1), by striking ``and causes'' and 
+        inserting ``causes, and life course''; and
+            (2) in subsection (e), by striking ``2024'' and inserting 
+        ``2029''.
+    (b) Autism Education, Early Detection, and Intervention.--Section 
+399BB of the Public Health Service Act (42 U.S.C. 280i-1) is amended--
+            (1) in subsection (a)(2), by striking ``subsequent 
+        interventions'' and inserting ``subsequent interventions and 
+        services'';
+            (2) in subsection (b)(1), by striking ``culturally 
+        competent information'' and inserting ``culturally and 
+        linguistically responsive information'';
+            (3) in subsection (b)(2)--
+                    (A) by striking ``promote research'' and inserting 
+                ``promote research, which may include community-based 
+                participatory research,''; and
+                    (B) by striking ``screening tools'' each place it 
+                appears and inserting ``screening and diagnostic 
+                tools'';
+            (4) in subsection (b)(3), by striking ``at higher risk'' 
+        and inserting ``at increased likelihood'';
+            (5) in subsection (b)(4), by inserting ``, which may 
+        include such individuals utilizing parents and guardians 
+        trained to provide interventions, services, and supports'' 
+        before the semicolon at the end;
+            (6) in subsection (c)(1), by striking ``culturally 
+        competent information'' and inserting ``culturally and 
+        linguistically responsive information'';
+            (7) in subsection (c)(2)(A)(ii)--
+                    (A) by striking ``advocates,'' and inserting 
+                ``advocates, self-advocates,''; and
+                    (B) by striking ``culturally competent 
+                information'' and inserting ``culturally and 
+                linguistically responsive information'';
+            (8) by amending paragraph (1) of subsection (e) to read as 
+        follows:
+            ``(1) Training.--The Secretary, in coordination with 
+        activities conducted under title V of the Social Security Act, 
+        shall, subject to the availability of appropriations, 
+        strengthen the capacity of existing training programs and 
+        expand existing interdisciplinary training opportunities or 
+        opportunities to increase the number of programs that address 
+        the health and well-being of individuals who have or are at 
+        increased likelihood for autism spectrum disorder and other 
+        neurodevelopmental disabilities across their lifespan. 
+        Activities under the preceding sentence shall include--
+                    ``(A) awarding competitive grants or cooperative 
+                agreements to public or nonprofit agencies, including 
+                institutions of higher education, to expand existing or 
+                develop new maternal and child health interdisciplinary 
+                leadership education in neurodevelopmental and related 
+                disabilities programs (similar to the programs 
+                developed under section 501(a)(2) of the Social 
+                Security Act) in States that do not have such a 
+                program;
+                    ``(B) ensuring that trainees under such training 
+                programs--
+                            ``(i) receive an appropriate balance of 
+                        academic, clinical, and community 
+                        opportunities;
+                            ``(ii) are culturally and linguistically 
+                        responsive;
+                            ``(iii) are from various backgrounds;
+                            ``(iv) demonstrate a capacity to evaluate, 
+                        diagnose or rule out, develop, and provide 
+                        evidence-based interventions and programs to 
+                        individuals with autism spectrum disorder and 
+                        other developmental disabilities across their 
+                        lifespan; and
+                            ``(v) demonstrate an ability to use a 
+                        person- and family-centered approach, which may 
+                        include collaborating with research centers or 
+                        networks to provide training for providers of 
+                        respite care (as defined in section 2901);
+                    ``(C) ensuring that program sites provide 
+                culturally and linguistically responsive services; and
+                    ``(D) encouraging training programs to partner with 
+                appropriate entities to build community capacity.'';
+            (9) in subsection (e)(2), by adding at the end the 
+        following new subparagraph:
+                    ``(C) Report.--Not later than 2 years after 
+                September 30, 2024, the Comptroller General of the 
+                United States shall prepare and submit to the Committee 
+                on Energy and Commerce of the House of Representatives 
+                and the Committee on Health, Education, Labor, and 
+                Pensions of the Senate a report examining how to 
+                increase the number of developmental-behavioral 
+                pediatricians, including through the developmental 
+                behavioral pediatrician training program.'';
+            (10) in subsection (f)--
+                    (A) by striking ``promote research'' and inserting 
+                ``promote research, including community-based 
+                participatory research,'';
+                    (B) by striking ``physical and behavioral health of 
+                individuals'' and inserting ``physical and behavioral 
+                health, and communication needs, of individuals''; and
+                    (C) by striking ``disseminate information related 
+                to such research and guidelines'' and inserting 
+                ``disseminate information relating to such research and 
+                guidelines to improve the quality of life and long-term 
+                outcomes''; and
+            (11) in subsection (g), by striking ``2024'' and inserting 
+        ``2029''.
+    (c) Interagency Autism Coordinating Committee.--Section 399CC of 
+the Public Health Service Act (42 U.S.C. 280i-2) is amended--
+            (1) in subsection (b)--
+                    (A) in paragraph (2), by striking ``develop a 
+                summary'' and inserting ``develop and update a 
+                summary'';
+                    (B) in paragraphs (3) and (4), by striking ``make 
+                recommendations'' and inserting ``make and update 
+                recommendations''; and
+                    (C) by striking paragraphs (5) and (6) and 
+                inserting the following:
+            ``(5) develop and update a strategic plan for the conduct 
+        of, and support for, autism spectrum disorder research, 
+        including as practicable for services and supports, for 
+        individuals with an autism spectrum disorder across the 
+        lifespan of such individuals and the families of such 
+        individuals, and across the entire population of individuals 
+        with autism spectrum disorder, including the full range of 
+        cognitive, communicative, behavioral, and adaptive functioning, 
+        as well as co-occurring conditions and needs for support and 
+        services, including care necessary for physical safety, which 
+        such plan shall include proposed budgetary requirements and 
+        recommendations to ensure that autism spectrum disorder 
+        research, and services and support activities to the extent 
+        practicable, of the Department of Health and Human Services and 
+        of other Federal departments and agencies are not unnecessarily 
+        duplicative; and
+            ``(6) submit to the Congress and President--
+                    ``(A) an annual update on the summary of advances 
+                described in paragraph (2); and
+                    ``(B) each update to the strategic plan described 
+                in paragraph (5), including any steps that have already 
+                been taken to implement the recommendations in such 
+                updated strategic plan and progress made in achieving 
+                the goals outlined in such updated strategic plan.''; 
+                and
+            (2) in subsection (f), by striking ``2024'' and inserting 
+        ``2029''.
+    (d) Reports to Congress.--Section 399DD of the Public Health 
+Service Act (42 U.S.C. 280i-3) is amended--
+            (1) by striking ``Autism CARES Act of 2019'' each place it 
+        appears and inserting ``Autism CARES Act of 2024'';
+            (2) in subsection (a), by amending paragraph (1) to read as 
+        follows:
+            ``(1) In general.--Not later than 4 years after September 
+        30, 2024, the Secretary, in consultation and coordination with 
+        other Federal departments and agencies that serve individuals 
+        with autism spectrum disorder, shall prepare and submit to the 
+        Committee on Health, Education, Labor, and Pensions of the 
+        Senate and the Committee on Energy and Commerce of the House of 
+        Representatives, and make publicly available, including through 
+        posting on the internet website of the Department of Health and 
+        Human Services, a progress report on activities related to 
+        autism spectrum disorder and other developmental disabilities. 
+        Such report shall include activities and research related to 
+        the entire population of individuals with autism spectrum 
+        disorder, including the full range of cognitive, communicative, 
+        behavioral, and adaptive functioning, as well as co-occurring 
+        conditions and needs for support and services, including care 
+        necessary for physical safety.''; and
+            (3) by adding at the end the following:
+    ``(c) Update on Young Adults and Youth Transitioning to 
+Adulthood.--Not later than 2 years after the date of enactment of the 
+Autism CARES Act of 2024, the Secretary, in coordination with other 
+Federal departments and agencies that serve individuals with autism 
+spectrum disorder, shall prepare and submit to the Committee on Energy 
+and Commerce of the House of Representatives and the Committee on 
+Health, Education, Labor, and Pensions of the Senate an update to the 
+report required pursuant to section 6 of the Autism Cares Act of 2014 
+(Public Law 113-157) concerning young adults with autism spectrum 
+disorder and the challenges related to the transition from existing 
+school-based services to those services available during adulthood.
+    ``(d) Professional Judgment Budget.--For each fiscal year through 
+fiscal year 2029, the Director of the National Institutes of Health, in 
+coordination with other relevant agencies, as appropriate, shall 
+prepare and submit, directly to the President for review and 
+transmittal to Congress, after reasonable opportunity for comment, but 
+without change, by the Secretary and the Interagency Autism 
+Coordinating Committee established under section 399CC(a), an annual 
+budget estimate for carrying out the strategic plan developed and 
+updated under section 399CC(b)(5).''.
+    (e) Authorization of Appropriations.--Section 399EE of the Public 
+Health Service Act (42 U.S.C. 280i-4) is amended--
+            (1) in subsection (a), by striking ``$23,100,000 for each 
+        of fiscal years 2020 through 2024'' and inserting ``$28,100,000 
+        for each of fiscal years 2025 through 2029'';
+            (2) in subsection (b), by striking ``$50,599,000 for each 
+        of fiscal years 2020 through 2024'' and inserting ``$56,344,000 
+        for each of fiscal years 2025 through 2029''; and
+            (3) in subsection (c), by striking ``there are authorized 
+        to be appropriated $296,000,000 for each of fiscal years 2020 
+        through 2024'' and inserting ``there is authorized to be 
+        appropriated $341,000,000 for each of fiscal years 2025 through 
+        2029''.
+            Amend the title so as to read: ``A bill to amend the Public 
+        Health Service Act to enhance and reauthorize activities and 
+        programs relating to autism spectrum disorder, and for other 
+        purposes.''.
+                                                 Union Calendar No. 518
+
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 7213
+
+                          [Report No. 118-620]
+
+_______________________________________________________________________
+
+                                 A BILL
+
+ To amend the Public Health Service Act to [enhance activities of the 
+   National Institutes of Health with respect to research on autism 
+spectrum disorder and enhance programs relating to autism / reauthorize 
+ certain programs with respect to autism spectrum disorder?], and for 
+                            other purposes.
+
+_______________________________________________________________________
+
+                             July 30, 2024
+
+Reported with amendments, committed to the Committee of the Whole House 
+          on the State of the Union, and ordered to be printed
+</pre></body></html>

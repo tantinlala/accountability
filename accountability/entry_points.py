@@ -21,7 +21,7 @@ def setup():
     parser.add_argument('-t', '--template', default='template.yaml')
     parser.add_argument('-r', '--rollcall_id', type=int, default=0, help='The roll call ID to store in the database')
     parser.add_argument('-y', '--year', type=int, default=None, help='The year of the roll call. If not passed in, will use the current year')
-    parser.add_argument('-c', '--crp_filepath', help='The path to the CRP categories file', default='CRP_Categories')
+    parser.add_argument('-c', '--crp_filepath', help='The path to the CRP categories file', default='CRP_Categories.txt')
     args = parser.parse_args()
     run_setup(args.template, args.rollcall_id, args.year, args.crp_filepath)
 

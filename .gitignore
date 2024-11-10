@@ -4,6 +4,8 @@ jupyter/sandbox/
 **/.cache/
 **/.ipynb_checkpoints/
 *.txt
+!CRP_Categories.txt
+!examples/**/*.txt
 *.json
 *.yaml
 *.db

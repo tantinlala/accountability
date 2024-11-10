@@ -1,0 +1,139 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 7980 Engrossed in House (EH)]
+
+&lt;DOC&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+118th CONGRESS
+  2d Session
+                                H. R. 7980
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+
+ 
+  To amend the Internal Revenue Code of 1986 to exclude vehicles the 
+ batteries of which contain materials sourced from prohibited foreign 
+                entities from the clean vehicle credit.
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE.
+
+    This Act may be cited as the ``End Chinese Dominance of Electric 
+Vehicles in America Act of 2024''.
+
+SEC. 2. EXCLUSION FROM CLEAN VEHICLE CREDIT OF VEHICLES CONTAINING 
+              MATERIALS SOURCED FROM PROHIBITED FOREIGN ENTITIES.
+
+    (a) In General.--Section 30D(d)(7) of the Internal Revenue Code of 
+1986 is amended to read as follows:
+            ``(7) Excluded entities.--
+                    ``(A) In general.--For purposes of this section, 
+                the term `new clean vehicle' shall not include any 
+                vehicle--
+                            ``(i) with respect to which any of the 
+                        components contained in the drive battery or 
+                        any material contained in such a component was 
+                        extracted, processed, recycled, manufactured, 
+                        or assembled by a prohibited foreign entity, or
+                            ``(ii) the drive battery of which is 
+                        designed, manufactured, or produced using any 
+                        process attributable to any licensing, royalty, 
+                        service, or similar agreement with a prohibited 
+                        foreign entity the estimated total contract 
+                        cost, including variable, contingent, or sales-
+                        based payments, of which exceeds $5,000,000.
+                    ``(B) Prohibited foreign entity.--For purposes of 
+                subparagraph (A), the term `prohibited foreign entity' 
+                means--
+                            ``(i) any foreign entity of concern (as 
+                        defined in section 40207(a)(5) of the 
+                        Infrastructure Investment and Jobs Act),
+                            ``(ii) any entity with respect to which the 
+                        government of a covered nation has the right or 
+                        power (directly or indirectly) to appoint or 
+                        approve the appointment of a covered officer, 
+                        or
+                            ``(iii) any entity 25 percent or more of 
+                        the capital or profits interests of which are 
+                        owned (directly or indirectly) in the aggregate 
+                        by 1 or more of the following:
+                                    ``(I) A covered nation or an entity 
+                                described in clause (i) or (ii).
+                                    ``(II) A citizen, national, or 
+                                resident of a covered nation.
+                                    ``(III) An entity organized under 
+                                the laws of a covered nation.
+                    ``(C) Covered officer.--For purposes of this 
+                paragraph, the term `covered officer' means--
+                            ``(i) any member of the board of directors, 
+                        board of supervisors, or an equivalent 
+                        governing body,
+                            ``(ii) the president, senior vice 
+                        president, chief executive officer, chief 
+                        operating officer, chief financial officer, or 
+                        general counsel, or
+                            ``(iii) any individual who performs duties 
+                        usually associated with a title listed in 
+                        clause (i) or (ii).
+                    ``(D) Covered nation.--For purposes of this 
+                paragraph, the term `covered nation' has the meaning 
+                given such term in section 4872(d) of title 10, United 
+                States Code.
+                    ``(E) Drive battery.--For purposes of this 
+                paragraph, the term `drive battery' means, with respect 
+                to a vehicle, the battery from which the electric motor 
+                of such vehicle draws electricity.''.
+    (b) Effective Date.--The amendment made by this section shall apply 
+to vehicles placed in service after the date of enactment of this Act.
+
+            Passed the House of Representatives September 12, 2024.
+
+            Attest:
+
+                                                                 Clerk.
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 7980
+
+_______________________________________________________________________
+
+                                 AN ACT
+
+  To amend the Internal Revenue Code of 1986 to exclude vehicles the 
+ batteries of which contain materials sourced from prohibited foreign 
+                entities from the clean vehicle credit.
+</pre></body></html>
