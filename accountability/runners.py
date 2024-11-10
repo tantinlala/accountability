@@ -6,7 +6,9 @@ from accountability.congress_api import CongressAPI
 from accountability.hr_rollcall import HRRollCall
 from accountability.congress_database import CongressDatabase
 from accountability.reporter import Reporter
-from accountability.file_utils import save_txt_if_not_exists, make_bill_path_string, make_dated_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists
+from accountability.file_utils import save_txt_if_not_exists, make_bill_path_string, \
+    make_dated_filename, get_previous_version_file, get_diff, make_summary_filepath, file_exists, \
+    make_txt_filepath
 from accountability.donorship import Donorship
 from accountability.crp_categories import process_crp_categories
 from accountability.industry_classifier import IndustryClassifier
@@ -110,23 +112,42 @@ def run_get_older_rollcalls_for_bill(secrets_file, congress, bill_id, rollcall_i
         _save_rollcall_data(congress_api, congress_db, old_hr_rollcall, bill_folder_string)
 
 
-def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase, hr_rollcall: HRRollCall, save_directory):
+def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase, hr_rollcall: HRRollCall, save_directory_for_bill):
     rollcall_id = hr_rollcall.get_rollcall_id()
     congress = hr_rollcall.get_congress()
     bill_id = hr_rollcall.get_bill_id()
     action_datetime = hr_rollcall.get_datetime()
     question = hr_rollcall.get_vote_question()
 
-    (bill_name, bill_datetime, bill_text, bill_title) = congress_api.download_bill_text(congress, bill_id, action_datetime)
-    dated_bill_name = make_dated_filename(bill_datetime, bill_name)
-    bill_filepath = save_txt_if_not_exists(save_directory, dated_bill_name, bill_text)
+    year = action_datetime.year
+
+    # Try to get the bill name and bill datetime from the database
+    rollcall_data = congress_db.get_rollcall_data(rollcall_id, year)
+    if rollcall_data:
+        bill_name = rollcall_data['BillName']
+        bill_datetime = rollcall_data['BillDateTime']
+        bill_title = rollcall_data['BillTitle']
+
+        # Check whether the bill text already exists
+        dated_bill_name = make_dated_filename(bill_datetime, bill_name)
+        bill_filepath = make_txt_filepath(save_directory_for_bill, dated_bill_name)
+        if not file_exists(bill_filepath):
+            (bill_name, bill_datetime, bill_text, bill_title) = congress_api.download_bill_text(congress, bill_id, action_datetime)
+            save_txt_if_not_exists(save_directory_for_bill, dated_bill_name, bill_text)
+
+    else:
+        # If not found in the database, download the bill text
+        (bill_name, bill_datetime, bill_text, bill_title) = congress_api.download_bill_text(congress, bill_id, action_datetime)
+        dated_bill_name = make_dated_filename(bill_datetime, bill_name)
+        bill_filepath = save_txt_if_not_exists(save_directory_for_bill, dated_bill_name, bill_text)
 
     dated_amendment_name = None
     amendment_filepath = None
     if hr_rollcall.is_amendment_vote():
+        # TODO: download amendent text only when necessary
         (amendment_name, amendment_datetime, amendment_text) = congress_api.download_amendment_text(congress, bill_id, action_datetime)
         dated_amendment_name = make_dated_filename(amendment_datetime, amendment_name)
-        amendment_filepath = save_txt_if_not_exists(save_directory, dated_amendment_name, amendment_text)
+        amendment_filepath = save_txt_if_not_exists(save_directory_for_bill, dated_amendment_name, amendment_text)
 
     year = action_datetime.year
 

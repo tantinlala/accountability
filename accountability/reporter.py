@@ -88,14 +88,14 @@ class Reporter:
             dated_bill_name = make_dated_filename(rollcall_data['BillDateTime'], rollcall_data['BillName'])
             bill_name_without_suffix = rollcall_data['BillName'].replace('-bill', '')
             bill_folder = "../bills/" + bill_name_without_suffix
-            file.write(f"\nBill Title: {bill_title}\n")
-            file.write(f"\nBill Version: [{dated_bill_name}]({bill_folder})\n")
+            file.write(f"\n# Bill Title:\n{bill_title}\n")
+            file.write(f"\n# Bill Version:\n[{dated_bill_name}]({bill_folder})\n")
 
             if amendment_filename := rollcall_data['AmendmentName']:
                 amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
                 amendment_str = open(amendment_filepath).read()
                 amendment_summary_link = os.path.relpath(amendment_filepath, save_directory)
-                file.write(f"\nAmendment Version: [{amendment_filename}](../{amendment_summary_link})\n")
+                file.write(f"\n# Amendment Version: [{amendment_filename}](../{amendment_summary_link})\n")
                 file.write(f"\n# Amendment Summary\n{amendment_str}\n")
 
             if summary:
