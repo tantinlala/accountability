@@ -501,7 +501,7 @@ class CongressDatabase:
     def get_related_rollcall_votes(self, legislator_id):
         """Retrieve all roll call votes for bills that are related to at least one of the legislator's donors."""
         sql = """
-            SELECT rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question, GROUP_CONCAT(i.Description), b.BillTitle
+            SELECT rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question, GROUP_CONCAT(i.Description), b.BillTitle, rc.ActionDateTime
             FROM RollCalls rc
             JOIN Votes v ON rc.ActionDateTime = v.ActionDateTime
             JOIN BillIndustries bi ON rc.BillName = bi.BillName
@@ -511,12 +511,12 @@ class CongressDatabase:
                 SELECT IndustryID FROM LegislatorIndustries WHERE LegislatorID = ?
             )
             AND v.LegislatorID = ?
-            GROUP BY rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question, b.BillTitle
+            GROUP BY rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question, b.BillTitle, rc.ActionDateTime
         """
         try:
             c = self.conn.cursor()
             c.execute(sql, (legislator_id, legislator_id))
-            return [{'BillName': row[0], 'BillDateTime': row[1], 'RollCallID': row[2], 'Year': row[3], 'Vote': row[4], 'Question': row[5], 'RelatedIndustries': row[6].split(','), 'BillTitle': row[7]} for row in c.fetchall()]
+            return [{'BillName': row[0], 'BillDateTime': row[1], 'RollCallID': row[2], 'Year': row[3], 'Vote': row[4], 'Question': row[5], 'RelatedIndustries': row[6].split(','), 'BillTitle': row[7], 'ActionDateTime': datetime.strptime(row[8], '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%dT%H:%M:%SZ')} for row in c.fetchall()]
         except sqlite3.Error as e:
             print(e)
             return []
