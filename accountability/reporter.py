@@ -97,35 +97,35 @@ class Reporter:
 
             # Loop through each vote and write to the file as a markdown table
             # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
-            previous_votes = {vote['CongressmanID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
+            previous_votes = {vote['LegislatorID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
             file.write("\n# Votes\n")
             file.write("\n| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
             file.write("|------|-------|-------|------" + ("|---------------|\n" if previous_votes else "|\n"))
             for vote in rollcall_data['Votes']:
                 if previous_votes:
-                    previous_vote = previous_votes.get(vote['CongressmanID'])
+                    previous_vote = previous_votes.get(vote['LegislatorID'])
                     file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} | {previous_vote} |\n")
                 else:
                     file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} |\n")
 
         print(f"Saved votes for {rollcall_id} to {rollcall_file}")
 
-    def write_hr_legislator_report(self, congressman_id, save_directory):
-        """Generate a report for a congressman showing top industry donors and related bills."""
-        # Get congressman details
-        congressman_details = self.congress_db_.get_congressman_details(congressman_id)
-        if not congressman_details:
-            print(f"No congressman found with ID {congressman_id}")
+    def write_hr_legislator_report(self, legislator_id, save_directory):
+        """Generate a report for a legislator showing top industry donors and related bills."""
+        # Get legislator details
+        legislator_details = self.congress_db_.get_legislator_details(legislator_id)
+        if not legislator_details:
+            print(f"No legislator found with ID {legislator_id}")
             return
 
-        last_name = congressman_details['last_name']
-        state_code = congressman_details['state_code']
+        last_name = legislator_details['last_name']
+        state_code = legislator_details['state_code']
 
         # Get top industry donors
-        top_donors = self.congress_db_.get_top_donors(congressman_id)
+        top_donors = self.congress_db_.get_top_donors(legislator_id)
 
         # Get related roll call votes
-        related_votes = self.congress_db_.get_related_rollcall_votes(congressman_id)
+        related_votes = self.congress_db_.get_related_rollcall_votes(legislator_id)
 
         # Create {save_directory}/hr_legislators directory if it doesn't exist
         if not os.path.exists(f"{save_directory}/hr_legislators"):

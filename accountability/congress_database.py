@@ -37,9 +37,9 @@ class CongressDatabase:
             FOREIGN KEY (BillName, BillDateTime) REFERENCES Bills (BillName, BillDateTime)
             ); 
         """
-        create_congressmen_sql = """ 
-            CREATE TABLE IF NOT EXISTS Congressmen (
-                CongressmanID TEXT PRIMARY KEY,
+        create_legislators_sql = """ 
+            CREATE TABLE IF NOT EXISTS Legislators (
+                LegislatorID TEXT PRIMARY KEY,
                 Name TEXT,
                 State TEXT,
                 Party TEXT
@@ -47,12 +47,12 @@ class CongressDatabase:
         """
         create_hr_votes_sql = """ 
             CREATE TABLE IF NOT EXISTS Votes (
-                CongressmanID TEXT NOT NULL,
+                LegislatorID TEXT NOT NULL,
                 Vote TEXT NOT NULL,
                 ActionDateTime TIMESTAMP NOT NULL,
                 FOREIGN KEY (ActionDateTime) REFERENCES RollCalls (ActionDateTime),
-                FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
-                CONSTRAINT VoteID PRIMARY KEY (ActionDateTime, CongressmanID)
+                FOREIGN KEY (LegislatorID) REFERENCES Legislators (LegislatorID),
+                CONSTRAINT VoteID PRIMARY KEY (ActionDateTime, LegislatorID)
             ); 
         """
         create_industries_sql = """ 
@@ -77,26 +77,26 @@ class CongressDatabase:
                 PRIMARY KEY (BillName, IndustryID)
             ); 
         """
-        create_congressman_industries_sql = """ 
-            CREATE TABLE IF NOT EXISTS CongressmanIndustries (
-                CongressmanID TEXT NOT NULL,
+        create_legislator_donors_sql = """ 
+            CREATE TABLE IF NOT EXISTS LegislatorIndustries (
+                LegislatorID TEXT NOT NULL,
                 IndustryID TEXT NOT NULL,
                 DonationAmount REAL NOT NULL,
-                FOREIGN KEY (CongressmanID) REFERENCES Congressmen (CongressmanID),
+                FOREIGN KEY (LegislatorID) REFERENCES Legislators (LegislatorID),
                 FOREIGN KEY (IndustryID) REFERENCES Industries (ID),
-                PRIMARY KEY (CongressmanID, IndustryID)
+                PRIMARY KEY (LegislatorID, IndustryID)
             ); 
         """
         try:
             c = self.conn.cursor()
             c.execute(create_last_hr_rollcall_for_year_sql)
             c.execute(create_hr_rollcalls_sql)
-            c.execute(create_congressmen_sql)
+            c.execute(create_legislators_sql)
             c.execute(create_hr_votes_sql)
             c.execute(create_industries_sql)
             c.execute(create_bills_sql)
             c.execute(create_bill_industries_sql)
-            c.execute(create_congressman_industries_sql)
+            c.execute(create_legislator_donors_sql)
         except sqlite3.Error as e:
             print(e)
 
@@ -238,20 +238,20 @@ class CongressDatabase:
         try:
             c.execute(votes_sql, (rollcall_data['ActionDateTime'],))
             votes = c.fetchall()
-            rollcall_data['Votes'] = [{'CongressmanID': vote[0], 'Vote': vote[1]} for vote in votes]
+            rollcall_data['Votes'] = [{'LegislatorID': vote[0], 'Vote': vote[1]} for vote in votes]
         except sqlite3.Error as e:
             print(e)
             return None
 
-        # Add congressman's name, state, and party to each vote
+        # Add legislator's name, state, and party to each vote
         for vote in rollcall_data['Votes']:
-            congressman_sql = "SELECT * FROM Congressmen WHERE CongressmanID = ?"
+            legislator_sql = "SELECT * FROM Legislators WHERE LegislatorID = ?"
             try:
-                c.execute(congressman_sql, (vote['CongressmanID'],))
-                congressman = c.fetchone()
-                vote['Name'] = congressman[1]
-                vote['State'] = congressman[2]
-                vote['Party'] = congressman[3]
+                c.execute(legislator_sql, (vote['LegislatorID'],))
+                legislator = c.fetchone()
+                vote['Name'] = legislator[1]
+                vote['State'] = legislator[2]
+                vote['Party'] = legislator[3]
             except sqlite3.Error as e:
                 print(e)
                 return None
@@ -265,57 +265,57 @@ class CongressDatabase:
         return rollcall_data
 
 
-    def add_congressman(self, congressman_id, name, state, party):
-        """Insert a congressman into the database."""
-        # Return if the congressman already exists
-        if self.congressman_exists(congressman_id):
+    def add_legislator(self, legislator_id, name, state, party):
+        """Insert a legislator into the database."""
+        # Return if the legislator already exists
+        if self.legislator_exists(legislator_id):
             return
 
         sql = """ 
-            INSERT INTO Congressmen(CongressmanID, Name, State, Party)
+            INSERT INTO Legislators(LegislatorID, Name, State, Party)
             VALUES(?, ?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id, name, state, party))
+            c.execute(sql, (legislator_id, name, state, party))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
 
-    def congressman_exists(self, congressman_id):
-        """Check if a congressman exists in the database."""
-        sql = "SELECT * FROM Congressmen WHERE CongressmanID = ?"
+    def legislator_exists(self, legislator_id):
+        """Check if a legislator exists in the database."""
+        sql = "SELECT * FROM Legislators WHERE LegislatorID = ?"
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id,))
+            c.execute(sql, (legislator_id,))
             return c.fetchone() is not None
         except sqlite3.Error as e:
             print(e)
         return False
 
-    def vote_exists(self, action_datetime, congressman_id):
+    def vote_exists(self, action_datetime, legislator_id):
         """Check if a vote exists in the database."""
-        sql = "SELECT * FROM Votes WHERE ActionDateTime = ? AND CongressmanID = ?"
+        sql = "SELECT * FROM Votes WHERE ActionDateTime = ? AND LegislatorID = ?"
         try:
             c = self.conn.cursor()
-            c.execute(sql, (action_datetime, congressman_id))
+            c.execute(sql, (action_datetime, legislator_id))
             return c.fetchone() is not None
         except sqlite3.Error as e:
             print(e)
         return False
 
-    def add_vote(self, action_datetime, congressman_id, vote):
-        if self.vote_exists(action_datetime, congressman_id):
+    def add_vote(self, action_datetime, legislator_id, vote):
+        if self.vote_exists(action_datetime, legislator_id):
             return
 
         """Insert a vote into the database."""
         sql = """ 
-            INSERT INTO Votes(ActionDateTime, CongressmanID, Vote)
+            INSERT INTO Votes(ActionDateTime, LegislatorID, Vote)
             VALUES(?, ?, ?); 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (action_datetime, congressman_id, vote))
+            c.execute(sql, (action_datetime, legislator_id, vote))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
@@ -364,15 +364,15 @@ class CongressDatabase:
             votes_sql = "SELECT * FROM Votes WHERE ActionDateTime = ?"
             c.execute(votes_sql, (previous_rollcall_data['ActionDateTime'],))
             votes = c.fetchall()
-            previous_rollcall_data['Votes'] = [{'CongressmanID': vote[0], 'Vote': vote[1]} for vote in votes]
+            previous_rollcall_data['Votes'] = [{'LegislatorID': vote[0], 'Vote': vote[1]} for vote in votes]
 
             for vote in previous_rollcall_data['Votes']:
-                congressman_sql = "SELECT * FROM Congressmen WHERE CongressmanID = ?"
-                c.execute(congressman_sql, (vote['CongressmanID'],))
-                congressman = c.fetchone()
-                vote['Name'] = congressman[1]
-                vote['State'] = congressman[2]
-                vote['Party'] = congressman[3]
+                legislator_sql = "SELECT * FROM Legislators WHERE LegislatorID = ?"
+                c.execute(legislator_sql, (vote['LegislatorID'],))
+                legislator = c.fetchone()
+                vote['Name'] = legislator[1]
+                vote['State'] = legislator[2]
+                vote['Party'] = legislator[3]
 
             previous_rollcall_data['ActionDateTime'] = previous_rollcall_data['ActionDateTime'].replace(" ", "T") + "Z"
             previous_rollcall_data['Votes'] = sorted(previous_rollcall_data['Votes'], key=lambda x: x['State'])
@@ -408,25 +408,25 @@ class CongressDatabase:
             print(e)
             return []
 
-    def add_congressman_industry(self, congressman_id, industry_id, donation_amount):
-        """Insert a congressman-industry pair into the database."""
+    def add_legislator_industry(self, legislator_id, industry_id, donation_amount):
+        """Insert a legislator-industry pair into the database."""
         sql = """ 
-            INSERT INTO CongressmanIndustries(CongressmanID, IndustryID, DonationAmount)
+            INSERT INTO LegislatorIndustries(LegislatorID, IndustryID, DonationAmount)
             VALUES(?, ?, ?)
-            ON CONFLICT(CongressmanID, IndustryID) DO UPDATE SET DonationAmount = excluded.DonationAmount; 
+            ON CONFLICT(LegislatorID, IndustryID) DO UPDATE SET DonationAmount = excluded.DonationAmount; 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id, industry_id, donation_amount))
+            c.execute(sql, (legislator_id, industry_id, donation_amount))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
 
-    def get_congressman_id(self, last_name, state_code):
-        """Retrieve the congressman ID based on last name and state code."""
+    def get_legislator_id(self, last_name, state_code):
+        """Retrieve the legislator ID based on last name and state code."""
         sql = """
-            SELECT CongressmanID
-            FROM Congressmen
+            SELECT LegislatorID
+            FROM Legislators
             WHERE LOWER(Name) LIKE LOWER(?) AND LOWER(State) = LOWER(?)
         """
         try:
@@ -438,48 +438,48 @@ class CongressDatabase:
             print(e)
             return None
 
-    def get_top_donors(self, congressman_id):
-        """Retrieve the top industry donors for a congressman."""
+    def get_top_donors(self, legislator_id):
+        """Retrieve the top industry donors for a legislator."""
         sql = """
-            SELECT i.Description, ci.DonationAmount
-            FROM CongressmanIndustries ci
-            JOIN Industries i ON ci.IndustryID = i.ID
-            WHERE ci.CongressmanID = ?
-            ORDER BY ci.DonationAmount DESC
+            SELECT i.Description, li.DonationAmount
+            FROM LegislatorIndustries li
+            JOIN Industries i ON li.IndustryID = i.ID
+            WHERE li.LegislatorID = ?
+            ORDER BY li.DonationAmount DESC
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id,))
+            c.execute(sql, (legislator_id,))
             return [{'Description': row[0], 'DonationAmount': row[1]} for row in c.fetchall()]
         except sqlite3.Error as e:
             print(e)
             return []
 
-    def get_related_bills(self, congressman_id):
-        """Retrieve related bills for a congressman based on industry donations."""
+    def get_related_bills(self, legislator_id):
+        """Retrieve related bills for a legislator based on industry donations."""
         sql = """
             SELECT BillName
             FROM BillIndustries
-            WHERE IndustryID IN (SELECT IndustryID FROM CongressmanIndustries WHERE CongressmanID = ?)
+            WHERE IndustryID IN (SELECT IndustryID FROM LegislatorIndustries WHERE LegislatorID = ?)
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id,))
+            c.execute(sql, (legislator_id,))
             return c.fetchall()
         except sqlite3.Error as e:
             print(e)
             return []
 
-    def get_congressman_details(self, congressman_id):
-        """Retrieve the details of a congressman based on their ID."""
+    def get_legislator_details(self, legislator_id):
+        """Retrieve the details of a legislator based on their ID."""
         sql = """
             SELECT Name, State, Party
-            FROM Congressmen
-            WHERE CongressmanID = ?
+            FROM Legislators
+            WHERE LegislatorID = ?
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id,))
+            c.execute(sql, (legislator_id,))
             result = c.fetchone()
             if result:
                 return {
@@ -492,8 +492,8 @@ class CongressDatabase:
             print(e)
             return None
 
-    def get_related_rollcall_votes(self, congressman_id):
-        """Retrieve all roll call votes for bills that are related to at least one of the congressman's donors."""
+    def get_related_rollcall_votes(self, legislator_id):
+        """Retrieve all roll call votes for bills that are related to at least one of the legislator's donors."""
         sql = """
             SELECT rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question, GROUP_CONCAT(i.Description)
             FROM RollCalls rc
@@ -501,14 +501,14 @@ class CongressDatabase:
             JOIN BillIndustries bi ON rc.BillName = bi.BillName
             JOIN Industries i ON bi.IndustryID = i.ID
             WHERE bi.IndustryID IN (
-            SELECT IndustryID FROM CongressmanIndustries WHERE CongressmanID = ?
+            SELECT IndustryID FROM LegislatorIndustries WHERE LegislatorID = ?
             )
-            AND v.CongressmanID = ?
+            AND v.LegislatorID = ?
             GROUP BY rc.BillName, rc.BillDateTime, rc.RollCallID, rc.Year, v.Vote, rc.Question
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (congressman_id, congressman_id))
+            c.execute(sql, (legislator_id, legislator_id))
             return [{'BillName': row[0], 'BillDateTime': row[1], 'RollCallID': row[2], 'Year': row[3], 'Vote': row[4], 'Question': row[5], 'RelatedIndustries': row[6].split(',')} for row in c.fetchall()]
         except sqlite3.Error as e:
             print(e)

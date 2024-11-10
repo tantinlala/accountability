@@ -100,10 +100,10 @@ def classify_bills_industry():
 
 def create_hr_legislator_report():
     parser = argparse.ArgumentParser(
-        description='Get the top donors for a congressman and generate a report')
+        description='Get the top donors for a legislator and generate a report')
     parser.add_argument('-s', '--secrets_file', help=SECRETS_FILE_HELP_STRING, default='secrets.yaml')
-    parser.add_argument('-l', '--last_name', help='The last name of the congressman')
-    parser.add_argument('-c', '--state_code', help='The state code of the congressman')
+    parser.add_argument('-l', '--last_name', help='The last name of the legislator')
+    parser.add_argument('-c', '--state_code', help='The state code of the legislator')
     parser.add_argument('-d', '--save_directory', help=SAVE_DIRECTORY_HELP_STRING, default='results')
     args = parser.parse_args()
     run_create_hr_legislator_report(args.secrets_file, args.last_name, args.state_code, args.save_directory)
