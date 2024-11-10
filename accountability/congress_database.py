@@ -65,6 +65,7 @@ class CongressDatabase:
             CREATE TABLE IF NOT EXISTS Bills (
                 BillName TEXT NOT NULL,
                 BillDateTime TIMESTAMP NOT NULL,
+                BillTitle TEXT,
                 PRIMARY KEY (BillName, BillDateTime)
             ); 
         """
@@ -161,10 +162,10 @@ class CongressDatabase:
             print(e)
         return False
 
-    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name):
+    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name, bill_title):
         """Insert a roll call into the database."""
 
-        self.add_bill(bill_name, bill_datetime)
+        self.add_bill(bill_name, bill_datetime, bill_title)
 
         # Return if the roll call already exists
         if self.rollcall_exists(action_datetime):
@@ -181,16 +182,16 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def add_bill(self, bill_name, bill_datetime):
+    def add_bill(self, bill_name, bill_datetime, bill_title):
         """Insert a bill into the database."""
         sql = """ 
-            INSERT INTO Bills(BillName, BillDateTime)
-            VALUES(?, ?)
-            ON CONFLICT(BillName, BillDateTime) DO NOTHING; 
+            INSERT INTO Bills(BillName, BillDateTime, BillTitle)
+            VALUES(?, ?, ?)
+            ON CONFLICT(BillName, BillDateTime) DO UPDATE SET BillTitle = excluded.BillTitle; 
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (bill_name, bill_datetime))
+            c.execute(sql, (bill_name, bill_datetime, bill_title))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
@@ -214,7 +215,12 @@ class CongressDatabase:
         rollcall_data = {}
         
         # Get roll call meta data
-        rollcall_sql = "SELECT * FROM RollCalls WHERE RollCallID = ? AND Year = ?"
+        rollcall_sql = """
+            SELECT rc.*, b.BillTitle
+            FROM RollCalls rc
+            JOIN Bills b ON rc.BillName = b.BillName AND rc.BillDateTime = b.BillDateTime
+            WHERE rc.RollCallID = ? AND rc.Year = ?
+        """
         try:
             c = self.conn.cursor()
             c.execute(rollcall_sql, (rollcall_id, year))
@@ -227,6 +233,7 @@ class CongressDatabase:
                 rollcall_data['BillName'] = rollcall_meta[4]
                 rollcall_data['BillDateTime'] = datetime.strptime(rollcall_meta[5], '%Y-%m-%d %H:%M:%S')
                 rollcall_data['AmendmentName'] = rollcall_meta[6]
+                rollcall_data['BillTitle'] = rollcall_meta[7]
             else:
                 return None
         except sqlite3.Error as e:
@@ -263,7 +270,6 @@ class CongressDatabase:
         rollcall_data['Votes'] = sorted(rollcall_data['Votes'], key=lambda x: x['State'])
 
         return rollcall_data
-
 
     def add_legislator(self, legislator_id, name, state, party):
         """Insert a legislator into the database."""

@@ -117,7 +117,7 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     action_datetime = hr_rollcall.get_datetime()
     question = hr_rollcall.get_vote_question()
 
-    (bill_name, bill_datetime, bill_text) = congress_api.download_bill_text(congress, bill_id, action_datetime)
+    (bill_name, bill_datetime, bill_text, bill_title) = congress_api.download_bill_text(congress, bill_id, action_datetime)
     dated_bill_name = make_dated_filename(bill_datetime, bill_name)
     bill_filepath = save_txt_if_not_exists(save_directory, dated_bill_name, bill_text)
 
@@ -131,7 +131,7 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     year = action_datetime.year
 
     # Add the roll call data to the database
-    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, bill_name, bill_datetime, dated_amendment_name)
+    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, bill_name, bill_datetime, dated_amendment_name, bill_title)
 
     # Save information on each legislator and each legislator's vote to the database
     for vote in hr_rollcall.get_votes():
@@ -149,9 +149,8 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
     congress_api = CongressAPI(secrets_parser)
     congress_db = CongressDatabase()
     summarizer = Summarizer(secrets_parser)
-    industries = congress_db.get_all_industries()
     assistant = OpenAIAssistant(secrets_parser)
-    classifier = IndustryClassifier(assistant=assistant, industries=industries)
+    classifier = IndustryClassifier(assistant=assistant, industries=congress_db.get_all_industries())
     reporter = Reporter(summarizer, classifier, congress_db)
 
     next_rollcall_id, year = congress_db.get_last_hr_rollcall_id()

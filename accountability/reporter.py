@@ -71,6 +71,7 @@ class Reporter:
         summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
 
         datetime_string = rollcall_data['ActionDateTime']
+        bill_title = rollcall_data['BillTitle']
 
         # Create {save_directory}/rollcalls directory if it doesn't exist
         if not os.path.exists(f"{save_directory}/rollcalls"):
@@ -85,8 +86,10 @@ class Reporter:
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
 
             dated_bill_name = make_dated_filename(rollcall_data['BillDateTime'], rollcall_data['BillName'])
-            bill_summary_link = os.path.relpath(make_summary_filepath(make_txt_filepath(bill_folder_string, dated_bill_name)), save_directory)
-            file.write(f"\nBill Version: [{dated_bill_name}](../{bill_summary_link})\n")
+            bill_name_without_suffix = rollcall_data['BillName'].replace('-bill', '')
+            bill_folder = "../bills/" + bill_name_without_suffix
+            file.write(f"\nBill Title: {bill_title}\n")
+            file.write(f"\nBill Version: [{dated_bill_name}]({bill_folder})\n")
 
             if amendment_filename := rollcall_data['AmendmentName']:
                 amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
@@ -145,12 +148,14 @@ class Reporter:
                 file.write(f"| {donor['Description']} | ${donor['DonationAmount']:,.2f} |\n")
 
             file.write("\n## Roll Call Votes Related To Top Industry Donors\n")
-            file.write("| Bill Name | Bill DateTime | Roll Call ID | Year | Question | Vote | Related Industries |\n")
-            file.write("|-----------|---------------|--------------|------|----------|------|--------------------|\n")
+            file.write("| Bill Title | Bill ID | Roll Call ID | Year | Question | Vote | Related Industries |\n")
+            file.write("|------------|---------|--------------|------|----------|------|--------------------|\n")
             for vote in related_votes:
                 bill_datetime_obj = datetime.strptime(vote['BillDateTime'], '%Y-%m-%d %H:%M:%S')
+                bill_id = f"{bill_datetime_obj.strftime('%Y-%m-%dT%H:%M:%SZ')}-{vote['BillName']}"
                 bill_name_without_suffix = vote['BillName'].replace('-bill', '')
-                bill_summary_link = "../bills/" + bill_name_without_suffix + "/" + make_dated_filename(bill_datetime_obj, vote['BillName']) + "-summary.md"
-                file.write(f"| {vote['BillName']} | [{vote['BillDateTime']}]({bill_summary_link}) | {vote['RollCallID']} | {vote['Year']} | {vote['Question']} | {vote['Vote']} | {', '.join(vote['RelatedIndustries'])} |\n")
+                bill_folder = "../bills/" + bill_name_without_suffix
+                bill_title = vote['BillTitle']
+                file.write(f"| {bill_title} | [{bill_id}]({bill_folder}) | {vote['RollCallID']} | {vote['Year']} | {vote['Question']} | {vote['Vote']} | {', '.join(vote['RelatedIndustries'])} |\n")
 
         print(f"Report saved to {report_file}")

@@ -62,6 +62,10 @@ class CongressAPI:
         :param action_datetime: The datetime of the bill action
         :param save_directory: The directory where the bill text file will be saved.
         """
+        response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}", params={'api_key': self.api_key})
+        response.raise_for_status()
+        bill_meta_data = response.json()
+        bill_title = bill_meta_data['bill']['title']
 
         endpoint = f"{self.BASE_URL}/bill/{congress}/{bill_id}/text"
         result = self._download_text(endpoint, action_datetime)
@@ -72,7 +76,7 @@ class CongressAPI:
         (bill_text, bill_datetime) = result
 
         bill_name = f"{congress}-{bill_id.replace('/', '-')}-bill"
-        return (bill_name, bill_datetime, bill_text)
+        return (bill_name, bill_datetime, bill_text, bill_title)
         
     def download_amendment_text(self, congress, bill_id, action_datetime):
         response = requests.get(f"{self.BASE_URL}/bill/{congress}/{bill_id}/amendments", params={'api_key': self.api_key})
