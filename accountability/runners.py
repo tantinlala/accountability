@@ -234,17 +234,22 @@ def run_create_hr_legislator_report(secrets_file, last_name, state_code, save_di
         print(f"No legislator found with last name {last_name} in {state_code}")
         return
 
-    # Get top donors
-    top_donors = donorship.get_top_donors(last_name, state_code)
+    # Check if top donors already exist in the database
+    top_donors = congress_db.get_top_donors(legislator_id)
     if not top_donors:
-        print(f"No top donors found for {last_name} in {state_code}")
-        return
+        print(f"No top donors found for {last_name} in {state_code} in the database.")
 
-    # Store top donors in the database
-    for donor in top_donors['response']['industries']['industry']:
-        industry_id = donor['@attributes']['industry_code']
-        donation_amount = float(donor['@attributes']['total'])
-        congress_db.add_legislator_industry(legislator_id, industry_id, donation_amount)
+        # Get top donors from online if not in the database
+        top_donors = donorship.get_top_donors(last_name, state_code)
+        if not top_donors:
+            print(f"No top donors found for {last_name} in {state_code} from online.")
+            return
+
+        # Store top donors in the database
+        for donor in top_donors['response']['industries']['industry']:
+            industry_id = donor['@attributes']['industry_code']
+            donation_amount = float(donor['@attributes']['total'])
+            congress_db.add_legislator_industry(legislator_id, industry_id, donation_amount)
 
     # Generate report
     reporter.write_hr_legislator_report(legislator_id, save_directory)
