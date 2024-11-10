@@ -151,6 +151,8 @@ class Reporter:
             file.write("| Bill Title | Bill ID | Roll Call ID | Year | Question | Vote | Related Industries |\n")
             file.write("|------------|---------|--------------|------|----------|------|--------------------|\n")
             for vote in related_votes:
+                if vote['Question'] == "On Motion to Recommit":
+                    continue
                 bill_datetime_obj = datetime.strptime(vote['BillDateTime'], '%Y-%m-%d %H:%M:%S')
                 bill_id = f"{bill_datetime_obj.strftime('%Y-%m-%dT%H:%M:%SZ')}-{vote['BillName']}"
                 bill_name_without_suffix = vote['BillName'].replace('-bill', '')
