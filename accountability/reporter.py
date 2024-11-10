@@ -151,7 +151,15 @@ class Reporter:
             file.write("| Bill Title | Bill ID | Roll Call ID | Year | Question | Vote | Related Industries |\n")
             file.write("|------------|---------|--------------|------|----------|------|--------------------|\n")
             for vote in related_votes:
-                if vote['Question'] == "On Motion to Recommit":
+                valid_questions = [
+                    "On Agreeing to the Resolution",
+                    "On Motion to Suspend the Rules and Pass",
+                    "On Passage",
+                    "On Motion to Suspend the Rules and Pass, as Amended",
+                    "On Agreeing to the Amendment",
+                    "On Motion to Suspend the Rules and Concur in the Senate Amendment"
+                ]
+                if vote['Question'] not in valid_questions:
                     continue
                 bill_datetime_obj = datetime.strptime(vote['BillDateTime'], '%Y-%m-%d %H:%M:%S')
                 bill_id = f"{bill_datetime_obj.strftime('%Y-%m-%dT%H:%M:%SZ')}-{vote['BillName']}"
