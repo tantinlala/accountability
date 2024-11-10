@@ -134,7 +134,7 @@ class Reporter:
         # Create report file
         report_file = f"{save_directory}/hr_legislators/{state_code}-{last_name}.md"
         with open(report_file, 'w') as file:
-            file.write(f"# Report for {last_name} ({state_code})\n")
+            file.write(f"# Report for Representative {last_name} ({state_code})\n")
             file.write("\n## Top Industry Donors\n")
             file.write("| Industry Description | Donation Amount |\n")
             file.write("|----------------------|-----------------|\n")

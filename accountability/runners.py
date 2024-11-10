@@ -154,12 +154,7 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
     classifier = IndustryClassifier(assistant=assistant, industries=industries)
     reporter = Reporter(summarizer, classifier, congress_db)
 
-    year = datetime.datetime.now().year
-
-    if not congress_db.year_exists(year):
-        congress_db.add_year(year)
-
-    next_rollcall_id = congress_db.get_last_hr_rollcall_for_year(year)
+    next_rollcall_id, year = congress_db.get_last_hr_rollcall_id()
 
     while True:
         next_rollcall_id += 1
@@ -167,8 +162,15 @@ def run_process_hr_rollcalls(secrets_file, save_directory):
 
         hr_rollcall = HRRollCall()
         success = hr_rollcall.process_rollcall(year, next_rollcall_id)
+
         if not success:
-            print(f"No roll call found for {next_rollcall_id}")
+            print(f"No roll call found for rollcall ID {next_rollcall_id} and year {year}. Trying next year.")
+            year += 1
+            next_rollcall_id = 1
+            success = hr_rollcall.process_rollcall(year, next_rollcall_id)
+
+        if not success:
+            print(f"No roll call found for rollcall ID {next_rollcall_id} and year {year}. Exiting.")
             break
 
         congress = hr_rollcall.get_congress()

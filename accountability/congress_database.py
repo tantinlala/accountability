@@ -138,17 +138,17 @@ class CongressDatabase:
         except sqlite3.Error as e:
             print(e)
 
-    def get_last_hr_rollcall_for_year(self, year):
-        """Retrieve the most recent roll call ID for a given year."""
-        sql = "SELECT RollCallID FROM RecentRollCall WHERE Year = ?"
+    def get_last_hr_rollcall_id(self):
+        """Retrieve the most recent roll call ID and the corresponding year."""
+        sql = "SELECT Year, RollCallID FROM RecentRollCall ORDER BY Year DESC, RollCallID DESC LIMIT 1"
         try:
             c = self.conn.cursor()
-            c.execute(sql, (year,))
+            c.execute(sql)
             result = c.fetchone()
-            return result[0] if result else None
+            return (result[1], result[0]) if result else (None, None)
         except sqlite3.Error as e:
             print(e)
-        return None
+        return (None, None)
 
     def rollcall_exists(self, action_datetime):
         """Check if a roll call exists in the database."""
