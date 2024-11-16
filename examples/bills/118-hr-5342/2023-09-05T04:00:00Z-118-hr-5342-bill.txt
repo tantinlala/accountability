@@ -1,0 +1,340 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 5342 Introduced in House (IH)]
+
+&lt;DOC&gt;
+
+
+
+
+
+
+118th CONGRESS
+  1st Session
+                                H. R. 5342
+
+ To amend title II of the Social Security Act to replace the windfall 
+ elimination provision with a formula equalizing benefits for certain 
+    individuals with noncovered employment, and for other purposes.
+
+
+_______________________________________________________________________
+
+
+                    IN THE HOUSE OF REPRESENTATIVES
+
+                           September 5, 2023
+
+Mr. Arrington (for himself, Mr. Vicente Gonzalez of Texas, Ms. Granger, 
+   Ms. Van Duyne, Mr. Guthrie, Mr. Van Drew, Mr. Latta, Mr. Weber of 
+ Texas, Mr. Moran, Mr. Pfluger, Mr. Murphy, Mr. Carter of Georgia, Mr. 
+   Crenshaw, Mr. Good of Virginia, Mr. Bacon, Mr. Smucker, Mr. Tony 
+  Gonzales of Texas, Mr. Roy, and Mr. Gosar) introduced the following 
+      bill; which was referred to the Committee on Ways and Means
+
+_______________________________________________________________________
+
+                                 A BILL
+
+
+ 
+ To amend title II of the Social Security Act to replace the windfall 
+ elimination provision with a formula equalizing benefits for certain 
+    individuals with noncovered employment, and for other purposes.
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE.
+
+    This Act may be cited as the ``Equal Treatment of Public Servants 
+Act of 2023''.
+
+SEC. 2. REPLACEMENT OF THE WINDFALL ELIMINATION PROVISION WITH A 
+              FORMULA EQUALIZING BENEFITS FOR CERTAIN INDIVIDUALS WITH 
+              NONCOVERED EMPLOYMENT.
+
+    (a) In General.--Section 215(a) of the Social Security Act (42 
+U.S.C. 415(a)) is amended by inserting after paragraph (7) the 
+following:
+    ``(8)(A) In the case of an individual whose primary insurance 
+amount would be computed under paragraph (1) of this subsection--
+            ``(i) who first becomes eligible for an old-age or 
+        disability insurance benefit after 2067,
+            ``(ii) who subsequently becomes entitled to such benefit, 
+        and
+            ``(iii) who has earnings derived from noncovered service 
+        performed in a year after 1977,
+the primary insurance amount of such individual shall be the amount 
+computed or recomputed under this paragraph.
+    ``(B) The primary insurance amount of an individual described in 
+subparagraph (A), as computed or recomputed under this paragraph, shall 
+be the product derived by multiplying--
+            ``(i) the individual's primary insurance amount, as 
+        determined under paragraph (1) of this subsection and 
+        subparagraph (C) of this paragraph, by
+            ``(ii) a fraction--
+                    ``(I) the numerator of which is the individual's 
+                average indexed monthly earnings (determined without 
+                regard to subparagraph (C)), and
+                    ``(II) the denominator of which is an amount equal 
+                to the individual's average indexed monthly earnings 
+                (as determined under subparagraph (C)),
+rounded, if not a multiple of $0.10, to the next lower multiple of 
+$0.10.
+    ``(C)(i) For purposes of determining an individual's primary 
+insurance amount pursuant to clauses (i) and (ii)(II) of subparagraph 
+(B), the individual's average indexed monthly earnings shall be 
+determined by treating all recorded noncovered earnings (as defined in 
+clause (ii)(I)) derived by the individual from noncovered service 
+performed in each year after 1977 as `wages' (as defined in section 209 
+for purposes of this title), which shall be treated as included in the 
+individual's adjusted total covered earnings (as defined in clause 
+(ii)(II)) for such calendar year together with amounts consisting of 
+`wages' (as so defined without regard to this subparagraph) paid during 
+such calendar year and self-employment income (as defined in section 
+211(b)) for taxable years ending with or during such calendar year.
+    ``(ii) For purposes of this subparagraph:
+            ``(I) The term `recorded noncovered earnings' means 
+        earnings derived from noncovered service (other than noncovered 
+        service as a member of a uniformed service (as defined in 
+        section 210(m)) for which satisfactory evidence is determined 
+        by the Commissioner to be available in the records of the 
+        Commissioner.
+            ``(II) The term `adjusted total covered earnings' means, in 
+        connection with an individual for any calendar year, the sum of 
+        the wages paid to the individual during such calendar year (as 
+        adjusted under subsection (b)(3)) plus the self-employment 
+        income derived by the individual during any taxable year ending 
+        with or during such calendar year (as adjusted under subsection 
+        (b)(3)).
+    ``(iii) The Commissioner of Social Security shall provide by 
+regulation or other public guidance for methods for determining whether 
+satisfactory evidence is available in the records of the Commissioner 
+for earnings for noncovered service (other than noncovered service as a 
+member of a uniformed service (as defined in section 210(m))) to be 
+treated as recorded noncovered earnings. Such methods shall provide for 
+reliance on earnings information which is provided to the Commissioner 
+by employers and which, as determined by the Commissioner, constitute a 
+reasonable basis for treatment of earnings for noncovered service as 
+recorded noncovered earnings. In making determinations under this 
+clause, the Commissioner shall also take into account any documentary 
+or other evidence of earnings derived from noncovered service by an 
+individual which is provided by the individual to the Commissioner and 
+which the Commissioner considers appropriate as a reasonable basis for 
+treatment of such earnings as recorded noncovered earnings.
+    ``(D) Upon the death of an individual whose primary insurance 
+amount is computed or recomputed under this paragraph, such primary 
+insurance amount shall be computed or recomputed under paragraph (1) of 
+this subsection.
+    ``(E) In the case of any individual whose primary insurance amount 
+would be computed under this paragraph who first becomes entitled after 
+1985 to a monthly periodic payment made by a foreign employer or 
+foreign country that is based in whole or in part upon noncovered 
+service, the primary insurance amount of such individual shall be 
+computed or recomputed under paragraph (7) or paragraph (1), as 
+applicable, for months beginning with the first month of the 
+individual's initial entitlement to such monthly periodic payment.''.
+    (b) Conforming Amendments.--Section 215(a)(7)(A) of such Act (42 
+U.S.C. 415(a)(7)(A)) is amended--
+            (1) in clause (i)--
+                    (A) by striking ``after 1985'' and inserting 
+                ``after 1985 and before 2068''; and
+                    (B) by striking ``or'' at the end;
+            (2) in clause (ii)--
+                    (A) by striking ``after 1985'' each place it 
+                appears and inserting ``after 1985 and before 2068''; 
+                and
+                    (B) by adding ``or'' at the end;
+            (3) by inserting after clause (ii) the following:
+            ``(iii) is an individual described in paragraph (8)(E),''; 
+        and
+            (4) by striking ``hereafter in this paragraph and in 
+        subsection (d)(3)'' and inserting ``in this paragraph, 
+        paragraphs (8) and (9), and subsection (d)(3)''.
+    (c) Effective Date.--The amendments made by this section shall 
+apply with respect to monthly insurance benefits payable on or after 
+January 1, 2025.
+
+SEC. 3. BENEFIT CALCULATION DURING TRANSITION PERIOD.
+
+    (a) In General.--Section 215(a) of the Social Security Act (42 
+U.S.C. 415(a)), as amended by section 2, is further amended by 
+inserting after paragraph (8) the following:
+    ``(9) In the case of an individual whose primary insurance amount 
+would be computed under paragraph (1) of this subsection--
+            ``(A) who first becomes eligible for an old-age or 
+        disability insurance benefit after 2024 and before 2068,
+            ``(B) who subsequently becomes entitled to such benefit, 
+        and
+            ``(C) who has earnings derived from noncovered service 
+        performed in a year after 1977,
+the primary insurance amount of such individual shall be the higher of 
+the amount computed or recomputed under paragraph (7) without regard to 
+this paragraph or the amount that would be computed or recomputed under 
+paragraph (8) if the individual were an individual described in 
+subparagraph (A) of such paragraph.''.
+    (b) Conforming Amendment.--Section 215(a)(7)(A) of such Act (42 
+U.S.C. 415(a)(7)(A)), as amended by section 2(b), is further amended by 
+striking ``shall be computed or recomputed'' and inserting ``shall, 
+subject to paragraph (9), be computed or recomputed''.
+    (c) Effective Date.--The amendments made by this section shall 
+apply with respect to monthly insurance benefits payable on or after 
+January 1, 2025.
+
+SEC. 4. ADDITIONAL MONTHLY PAYMENT FOR INDIVIDUALS WHOSE BENEFIT AMOUNT 
+              IS REDUCED BY THE WINDFALL ELIMINATION PROVISION.
+
+    (a) In General.--Section 215(a) of such Act (42 U.S.C. 415(a)), as 
+amended by sections 2 and 3, is further amended by adding at the end 
+the following:
+    ``(10)(A) For any month beginning at least 270 days after the date 
+of enactment of the Equal Treatment of Public Servants Act of 2023, the 
+Commissioner of Social Security shall, subject to subparagraphs (C) and 
+(D), make an additional monthly payment of $100 to each individual who 
+is an eligible individual for such month, and an additional monthly 
+payment of $50 to each individual (other than an eligible individual) 
+who is entitled to a benefit under section 202 for such month on the 
+basis of the wages and self-employment income of such eligible 
+individual.
+    ``(B) For purposes of this paragraph, the term `eligible 
+individual' for a month means an individual who--
+            ``(i)(I) first becomes eligible for an old-age or 
+        disability insurance benefit under this title before 2025, or
+            ``(II) is an individual described in paragraph (8)(E), and
+            ``(ii) is entitled to an old-age or disability insurance 
+        benefit under this title for such month based on a primary 
+        insurance amount that was computed or recomputed under 
+        paragraph (7) (and not subsequently recomputed under any other 
+        paragraph of this subsection).
+    ``(C) In any case in which this title provides that no monthly 
+benefit under section 202 or 223 shall be paid to an individual for a 
+month, no additional monthly payment shall be paid to the individual 
+for such month. This subparagraph shall not apply in the case of an 
+individual whose monthly benefit under section 202 or 223 is reduced, 
+regardless of the amount of the reduction, based on the individual's 
+receipt of other income or benefits for such month or the application 
+of section 203(a) or due to the adjustment or recovery of an 
+overpayment under section 204.
+    ``(D)(i) An individual is not entitled to receive more than one 
+additional monthly payment for a month under this paragraph.
+    ``(ii) An eligible individual who is entitled to a benefit under 
+section 202 on the basis of the wages and self-employment income of 
+another eligible individual for a month shall receive an additional 
+monthly payment under this paragraph in the amount of $100 for such 
+month.
+    ``(E) Except for purposes of adjustment or recovery of an 
+overpayment under section 204, an additional monthly payment under this 
+paragraph shall not be subject to any reduction or deduction under this 
+title.
+    ``(F) Whenever benefit amounts under this title are increased by 
+any percentage effective with any month as a result of a determination 
+made under subsection (i), each of the dollar amounts in subparagraph 
+(A) shall be increased by the same percentage for months beginning with 
+such month.''.
+    (b) Effective Date.--The amendments made by this section shall 
+apply with respect to monthly insurance benefits payable for months 
+beginning at least 270 days after the date of enactment of this Act.
+
+SEC. 5. REPORTING OF NONCOVERED EARNINGS ON SOCIAL SECURITY ACCOUNT 
+              STATEMENTS.
+
+    (a) In General.--Section 1143(a)(2) of the Social Security Act (42 
+U.S.C. 1320b-13(a)(2)) is amended--
+            (1) by redesignating subparagraphs (B) through (E) as 
+        subparagraphs (C) through (F); and
+            (2) by inserting after subparagraph (A) the following:
+                    ``(B) the amount of earnings derived by the 
+                eligible individual from service performed after 1977 
+                which did not constitute employment (as defined in 
+                section 210), not including service as a member of a 
+                uniformed service (as defined in section 210(m)), as 
+                shown by the records of the Commissioner at the date of 
+                the request;''.
+    (b) Effective Date.--The amendments made by this section shall 
+apply with respect to Social Security account statements issued on or 
+after January 1, 2025.
+
+SEC. 6. STUDY ON PARTNERING WITH STATE AND LOCAL PENSION SYSTEMS.
+
+    (a) Study.--
+            (1) In general.--The Commissioner of Social Security shall 
+        study and test the administrative feasibility of partnering 
+        with State and local pension systems, or other governmental 
+        entities, to improve the collection and sharing of information 
+        relating to State and local noncovered pensions.
+            (2) Coordination with state and local pension systems.--In 
+        conducting the study described in paragraph (1), the 
+        Commissioner shall coordinate with State and local pension 
+        systems that reflect the diversity of systems and individual 
+        experiences to explore the development of automated data 
+        exchange agreements that facilitate reporting of information 
+        relating to noncovered pensions.
+    (b) Report.--The Commissioner of Social Security shall conclude the 
+study described in subsection (a) not later than 4 years after the date 
+of enactment of this Act. As soon as possible after conclusion of the 
+study and not later than 4\1/2\ years after the date of enactment of 
+this Act, the Commissioner shall submit to the Committee on Ways and 
+Means of the House of Representatives and the Committee on Finance of 
+the Senate a report on the results of the study. Such report shall 
+include the following:
+            (1) A discussion of how the automated data exchange 
+        agreements could be implemented to cover noncovered pensions 
+        nationally, including the range of implementation timelines 
+        across State and local pension systems, or with other 
+        governmental entities.
+            (2) An analysis of the barriers to developing automated 
+        data exchange agreements and lessons learned that can help 
+        address these barriers.
+            (3) A description of alternative methods for obtaining 
+        information related to noncovered pensions, and an analysis of 
+        the barriers to obtaining noncovered pension data through such 
+        methods.
+            (4) An explanation of how coverage information is obtained 
+        by the Social Security Administration when an individual 
+        purchases service credits to apply to a new covered or 
+        noncovered pension after moving from another covered or 
+        noncovered pension within the State or in another State.
+            (5) An estimate of the total amount, as of the date of the 
+        enactment of this Act, of noncovered pensions not reported to 
+        the Social Security Administration as a result of noncompliance 
+        with voluntary reporting policies.
+    (c) State and Local Pension Information To Be Requested by the 
+Commissioner.--Section 202 of the Social Security Act (42 U.S.C. 402) 
+is amended by inserting after subsection (l) the following:
+    ``(m) State and Local Pension Information To Be Requested by the 
+Commissioner.--
+            ``(1) The Commissioner may partner with States to request 
+        information, including the information specified in paragraph 
+        (2), with respect to any designated distribution (as defined in 
+        section 3405(e)(1) of the Internal Revenue Code of 1986) from 
+        an employer deferred compensation plan (as defined in section 
+        3405(e)(5) of such Code) of the State (or political subdivision 
+        thereof) to a participant of such plan in any case in which any 
+        portion of such participant's earnings for service under such 
+        plan did not constitute `employment' as defined in section 210 
+        for purposes of this title.
+            ``(2) The information specified in this paragraph is the 
+        following:
+                    ``(A) The name and Social Security account number 
+                of the participant receiving the designated 
+                distribution.
+                    ``(B) The dollar amount of the designated 
+                distribution and the date paid.
+                    ``(C) The date on which the participant initially 
+                became eligible for a designated distribution under the 
+                plan and, if different, the date of payment of the 
+                initial designated distribution.
+                    ``(D) The dates of each period of service under the 
+                plan that did not constitute `employment' as defined in 
+                section 210 for purposes of this title, and the dates 
+                of any other period of service under the plan.''.
+    (d) Definitions.--In this section--
+            (1) the term ``noncovered pension'' means a pension any 
+        part of which is based on noncovered service (within the 
+        meaning of section 215(a)(7) of the Social Security Act (42 
+        U.S.C. 415(a)(7))); and
+            (2) the term ``covered pension'' means any other pension.
+                                 &lt;all&gt;
+</pre></body></html>

@@ -1,0 +1,407 @@
+<html><body><pre>
+[Congressional Bills 118th Congress]
+[From the U.S. Government Publishing Office]
+[H.R. 9495 Reported in House (RH)]
+
+&lt;DOC&gt;
+
+
+
+
+
+                                                 Union Calendar No. 616
+118th CONGRESS
+  2d Session
+                                H. R. 9495
+
+                          [Report No. 118-729]
+
+ To amend the Internal Revenue Code of 1986 to postpone tax deadlines 
+   and reimburse paid late fees for United States nationals who are 
+unlawfully or wrongfully detained or held hostage abroad, to terminate 
+ the tax-exempt status of terrorist supporting organizations, and for 
+                            other purposes.
+
+
+_______________________________________________________________________
+
+
+                    IN THE HOUSE OF REPRESENTATIVES
+
+                           September 9, 2024
+
+  Ms. Tenney (for herself, Mr. Kustoff, Mr. Schneider, and Ms. Titus) 
+ introduced the following bill; which was referred to the Committee on 
+                             Ways and Means
+
+                            November 8, 2024
+
+                  Additional sponsor: Ms. Malliotakis
+
+                            November 8, 2024
+
+  Reported with an amendment, committed to the Committee of the Whole 
+       House on the State of the Union, and ordered to be printed
+ [Strike out all after the enacting clause and insert the part printed 
+                               in italic]
+    [For text of introduced bill, see copy of bill as introduced on 
+                           September 9, 2024]
+
+
+_______________________________________________________________________
+
+                                 A BILL
+
+
+ 
+ To amend the Internal Revenue Code of 1986 to postpone tax deadlines 
+   and reimburse paid late fees for United States nationals who are 
+unlawfully or wrongfully detained or held hostage abroad, to terminate 
+ the tax-exempt status of terrorist supporting organizations, and for 
+                            other purposes.
+
+
+ 
+
+
+    Be it enacted by the Senate and House of Representatives of the 
+United States of America in Congress assembled,
+
+SECTION 1. SHORT TITLE.
+
+    This Act may be cited as the ``Stop Terror-Financing and Tax 
+Penalties on American Hostages Act''.
+
+SEC. 2. POSTPONEMENT OF TAX DEADLINES FOR HOSTAGES AND INDIVIDUALS 
+              WRONGFULLY DETAINED ABROAD.
+
+    (a) In General.--Chapter 77 of the Internal Revenue Code of 1986 is 
+amended by inserting after section 7510 the following new section:
+
+``SEC. 7511. TIME FOR PERFORMING CERTAIN ACTS POSTPONED FOR HOSTAGES 
+              AND INDIVIDUALS WRONGFULLY DETAINED ABROAD.
+
+    ``(a) Time To Be Disregarded.--
+            ``(1) In general.--The period during which an applicable 
+        individual was unlawfully or wrongfully detained abroad, or 
+        held hostage abroad, shall be disregarded in determining, under 
+        the internal revenue laws, in respect of any tax liability of 
+        such individual--
+                    ``(A) whether any of the acts described in section 
+                7508(a)(1) were performed within the time prescribed 
+                thereof (determined without regard to extension under 
+                any other provision of this subtitle for periods after 
+                the initial date (as determined by the Secretary) on 
+                which such individual was unlawfully or wrongfully 
+                detained abroad or held hostage abroad),
+                    ``(B) the amount of any interest, penalty, 
+                additional amount, or addition to the tax for periods 
+                after such date, and
+                    ``(C) the amount of any credit or refund.
+            ``(2) Application to spouse.--The provisions of paragraph 
+        (1) shall apply to the spouse of any individual entitled to the 
+        benefits of such paragraph.
+    ``(b) Applicable Individual.--
+            ``(1) In general.--For purposes of this section, the term 
+        `applicable individual' means any individual who is--
+                    ``(A) a United States national unlawfully or 
+                wrongfully detained abroad, as determined under section 
+                302 of the Robert Levinson Hostage Recovery and 
+                Hostage-Taking Accountability Act (22 U.S.C. 1741), or
+                    ``(B) a United States national taken hostage 
+                abroad, as determined pursuant to the findings of the 
+                Hostage Recovery Fusion Cell (as described in section 
+                304 of the Robert Levinson Hostage Recovery and 
+                Hostage-Taking Accountability Act (22 U.S.C. 1741b)).
+            ``(2) Information provided to treasury.--For purposes of 
+        identifying individuals described in paragraph (1), not later 
+        than January 1, 2025, and annually thereafter--
+                    ``(A) the Secretary of State shall provide the 
+                Secretary with a list of the individuals described in 
+                paragraph (1)(A), as well as any other information 
+                necessary to identify such individuals, and
+                    ``(B) the Attorney General, acting through the 
+                Hostage Recovery Fusion Cell, shall provide the 
+                Secretary with a list of the individuals described in 
+                paragraph (1)(B), as well as any other information 
+                necessary to identify such individuals.
+    ``(c) Modification of Treasury Databases and Information Systems.--
+The Secretary shall ensure that databases and information systems of 
+the Department of the Treasury are updated as necessary to ensure that 
+statute expiration dates, interest and penalty accrual, and collection 
+activities are suspended consistent with the application of subsection 
+(a).
+    ``(d) Refund and Abatement of Penalties and Fines Imposed Prior to 
+Identification as Applicable Individual.--In the case of any applicable 
+individual--
+            ``(1) for whom any interest, penalty, additional amount, or 
+        addition to the tax in respect to any tax liability for any 
+        taxable year ending during the period described in subsection 
+        (a)(1) was assessed or collected, and
+            ``(2) who was, subsequent to such assessment or collection, 
+        determined to be an individual described in subparagraph (A) or 
+        (B) of subsection (b)(1),
+the Secretary shall abate any such assessment and refund any amount 
+collected to such applicable individual in the same manner as any 
+refund of an overpayment of tax under section 6402.''.
+    (b) Clerical Amendment.--The table of sections for chapter 77 of 
+the Internal Revenue Code of 1986 is amended by inserting after the 
+item relating to section 7510 the following new item:
+
+``Sec. 7511. Time for performing certain acts postponed for hostages 
+                            and individuals wrongfully detained 
+                            abroad.''.
+    (c) Effective Date.--The amendments made by this section shall 
+apply to taxable years ending after the date of enactment of this Act.
+
+SEC. 3. REFUND AND ABATEMENT OF PENALTIES AND FINES PAID BY ELIGIBLE 
+              INDIVIDUALS.
+
+    (a) In General.--Section 7511 of the Internal Revenue Code of 1986, 
+as added by section 2, is amended by adding at the end the following 
+new subsection:
+    ``(e) Refund and Abatement of Penalties and Fines Paid by Eligible 
+Individuals With Respect to Periods Prior to Date of Enactment of This 
+Section.--
+            ``(1) In general.--
+                    ``(A) Establishment.--Not later than January 1, 
+                2025, the Secretary (in consultation with the Secretary 
+                of State and the Attorney General) shall establish a 
+                program to allow any eligible individual (or the spouse 
+                or any dependent (as defined in section 152) of such 
+                individual) to apply for a refund or an abatement of 
+                any amount described in paragraph (2) (including 
+                interest) to the extent such amount was attributable to 
+                the applicable period.
+                    ``(B) Identification of individuals.--Not later 
+                than January 1, 2025, the Secretary of State and the 
+                Attorney General, acting through the Hostage Recovery 
+                Fusion Cell (as described in section 304 of the Robert 
+                Levinson Hostage Recovery and Hostage-Taking 
+                Accountability Act (22 U.S.C. 1741b)), shall--
+                            ``(i) compile a list, based on such 
+                        information as is available, of individuals who 
+                        were applicable individuals during the 
+                        applicable period, and
+                            ``(ii) provide the list described in clause 
+                        (i) to the Secretary.
+                    ``(C) Notice.--For purposes of carrying out the 
+                program described in subparagraph (A), the Secretary 
+                (in consultation with the Secretary of State and the 
+                Attorney General) shall, with respect to any individual 
+                identified under subparagraph (B), provide notice to 
+                such individual--
+                            ``(i) in the case of an individual who has 
+                        been released on or before the date of 
+                        enactment of this subsection, not later than 90 
+                        days after the date of enactment of this 
+                        subsection, or
+                            ``(ii) in the case of an individual who is 
+                        released after the date of enactment of this 
+                        subsection, not later than 90 days after the 
+                        date on which such individual is released,
+                that such individual may be eligible for a refund or an 
+                abatement of any amount described in paragraph (2) 
+                pursuant to the program described in subparagraph (A).
+                    ``(D) Authorization.--
+                            ``(i) In general.--Subject to clause (ii), 
+                        in the case of any refund described in 
+                        subparagraph (A), the Secretary shall issue 
+                        such refund to the eligible individual in the 
+                        same manner as any refund of an overpayment of 
+                        tax.
+                            ``(ii) Extension of limitation on time for 
+                        refund.--With respect to any refund under 
+                        subparagraph (A)--
+                                    ``(I) the 3-year period of 
+                                limitation prescribed by section 
+                                6511(a) shall be extended until the end 
+                                of the 1-year period beginning on the 
+                                date that the notice described in 
+                                subparagraph (C) is provided to the 
+                                eligible individual, and
+                                    ``(II) any limitation under section 
+                                6511(b)(2) shall not apply.
+            ``(2) Eligible individual.--For purposes of this 
+        subsection, the term `eligible individual' means any applicable 
+        individual who, for any taxable year ending during the 
+        applicable period, paid or incurred any interest, penalty, 
+        additional amount, or addition to the tax in respect to any tax 
+        liability for such year of such individual based on a 
+        determination that an act described in section 7508(a)(1) which 
+        was not performed by the time prescribed therefor (without 
+        regard to any extensions).
+            ``(3) Applicable period.--For purposes of this subsection, 
+        the term `applicable period' means the period--
+                    ``(A) beginning on January 1, 2021, and
+                    ``(B) ending on the date of enactment of this 
+                subsection.''.
+    (b) Effective Date.--The amendment made by this section shall apply 
+to taxable years ending on or before the date of enactment of this Act.
+
+SEC. 4. TERMINATION OF TAX-EXEMPT STATUS OF TERRORIST SUPPORTING 
+              ORGANIZATIONS.
+
+    (a) In General.--Section 501(p) of the Internal Revenue Code of 
+1986 is amended by adding at the end the following new paragraph:
+            ``(8) Application to terrorist supporting organizations.--
+                    ``(A) In general.--For purposes of this subsection, 
+                in the case of any terrorist supporting organization--
+                            ``(i) such organization (and the 
+                        designation of such organization under 
+                        subparagraph (B)) shall be treated as described 
+                        in paragraph (2), and
+                            ``(ii) the period of suspension described 
+                        in paragraph (3) with respect to such 
+                        organization shall be treated as beginning on 
+                        the date that the Secretary designates such 
+                        organization under subparagraph (B) and ending 
+                        on the date that the Secretary rescinds such 
+                        designation under subparagraph (D).
+                    ``(B) Terrorist supporting organization.--For 
+                purposes of this paragraph, the term `terrorist 
+                supporting organization' means any organization which 
+                is designated by the Secretary as having provided, 
+                during the 3-year period ending on the date of such 
+                designation, material support or resources (within the 
+                meaning of section 2339B of title 18, United States 
+                Code) to an organization described in paragraph (2) 
+                (determined after the application of this paragraph to 
+                such organization) in excess of a de minimis amount.
+                    ``(C) Designation procedure.--
+                            ``(i) Notice requirement.--Prior to 
+                        designating any organization as a terrorist 
+                        supporting organization under subparagraph (B), 
+                        the Secretary shall mail to the most recent 
+                        mailing address provided by such organization 
+                        on the organization's annual return or notice 
+                        under section 6033 (or subsequent form 
+                        indicating a change of address) a written 
+                        notice which includes--
+                                    ``(I) a statement that the 
+                                Secretary will designate such 
+                                organization as a terrorist supporting 
+                                organization unless the organization 
+                                satisfies the requirements of subclause 
+                                (I) or (II) of clause (ii),
+                                    ``(II) the name of the organization 
+                                or organizations with respect to which 
+                                the Secretary has determined such 
+                                organization provided material support 
+                                or sources as described in subparagraph 
+                                (B), and
+                                    ``(III) a description of such 
+                                material support or resources to the 
+                                extent consistent with national 
+                                security and law enforcement interests.
+                            ``(ii) Opportunity to cure.--In the case of 
+                        any notice provided to an organization under 
+                        clause (i), the Secretary shall, at the close 
+                        of the 90-day period beginning on the date that 
+                        such notice was sent, designate such 
+                        organization as a terrorist supporting 
+                        organization under subparagraph (B) if (and 
+                        only if) such organization has not (during such 
+                        period)--
+                                    ``(I) demonstrated to the 
+                                satisfaction of the Secretary that such 
+                                organization did not provide the 
+                                material support or resources referred 
+                                to in subparagraph (B), or
+                                    ``(II) made reasonable efforts to 
+                                have such support or resources returned 
+                                to such organization and certified in 
+                                writing to the Secretary that such 
+                                organization will not provide any 
+                                further support or resources to 
+                                organizations described in paragraph 
+                                (2).
+                        A certification under subclause (II) shall not 
+                        be treated as valid if the organization making 
+                        such certification has provided any other such 
+                        certification during the preceding 5 years.
+                    ``(D) Rescission.--The Secretary shall rescind a 
+                designation under subparagraph (B) if (and only if)--
+                            ``(i) the Secretary determines that such 
+                        designation was erroneous,
+                            ``(ii) after the Secretary receives a 
+                        written certification from an organization that 
+                        such organization did not receive the notice 
+                        described in subparagraph (C)(i)--
+                                    ``(I) the Secretary determines that 
+                                it is reasonable to believe that such 
+                                organization did not receive such 
+                                notice, and
+                                    ``(II) such organization satisfies 
+                                the requirements of subclause (I) or 
+                                (II) of subparagraph (C)(ii) 
+                                (determined after taking into account 
+                                the last sentence thereof), or
+                            ``(iii) the Secretary determines, with 
+                        respect to all organizations to which the 
+                        material support or resources referred to in 
+                        subparagraph (B) were provided, the periods of 
+                        suspension under paragraph (3) have ended.
+                A certification described in the matter preceding 
+                subclause (I) of clause (II) shall not be treated as 
+                valid if the organization making such certification has 
+                provided any other such certification during the 
+                preceding 5 years.
+                    ``(E) Administrative review by internal revenue 
+                service independent office of appeals.--In the case of 
+                the designation of an organization by the Secretary as 
+                a terrorist supporting organization under subparagraph 
+                (B), a dispute regarding such designation shall be 
+                subject to resolution by the Internal Revenue Service 
+                Independent Office of Appeals under section 7803(e) in 
+                the same manner as if such designation were made by the 
+                Internal Revenue Service and paragraph (5) of this 
+                subsection did not apply.
+                    ``(F) Jurisdiction of united states courts.--
+                Notwithstanding paragraph (5), the United States 
+                district courts shall have exclusive jurisdiction to 
+                review a final determination with respect to an 
+                organization's designation as a terrorist supporting 
+                organization under subparagraph (B). In the case of any 
+                such determination which was based on classified 
+                information (as defined in section 1(a) of the 
+                Classified Information Procedures Act), such 
+                information may be submitted to the reviewing court ex 
+                parte and in camera. For purposes of this subparagraph, 
+                a determination with respect to an organization's 
+                designation as a terrorist supporting organization 
+                shall not fail to be treated as a final determination 
+                merely because such organization fails to utilize the 
+                dispute resolution process of the Internal Revenue 
+                Service Independent Office of Appeals provided under 
+                subparagraph (E).''.
+    (b) Effective Date.--The amendment made by this section shall apply 
+to designations made after the date of the enactment of this Act in 
+taxable years ending after such date.
+                                                 Union Calendar No. 616
+
+118th CONGRESS
+
+  2d Session
+
+                               H. R. 9495
+
+                          [Report No. 118-729]
+
+_______________________________________________________________________
+
+                                 A BILL
+
+ To amend the Internal Revenue Code of 1986 to postpone tax deadlines 
+   and reimburse paid late fees for United States nationals who are 
+unlawfully or wrongfully detained or held hostage abroad, to terminate 
+ the tax-exempt status of terrorist supporting organizations, and for 
+                            other purposes.
+
+_______________________________________________________________________
+
+                            November 8, 2024
+
+  Reported with an amendment, committed to the Committee of the Whole 
+       House on the State of the Union, and ordered to be printed
+</pre></body></html>
