@@ -72,6 +72,7 @@ class Reporter:
 
         datetime_string = rollcall_data['ActionDateTime']
         bill_title = rollcall_data['BillTitle']
+        vote_result = rollcall_data['VoteResult']  # New line to get vote result
 
         # Create {save_directory}/rollcalls directory if it doesn't exist
         if not os.path.exists(f"{save_directory}/rollcalls"):
@@ -84,6 +85,7 @@ class Reporter:
             file.write(f"# Roll Call {year}-{rollcall_id}\n")
             file.write(f"\nRoll Call Time: {datetime_string}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
+            file.write(f"\nVote Result: {vote_result}\n")  # New line to write vote result
 
             dated_bill_name = make_dated_filename(rollcall_data['BillDateTime'], rollcall_data['BillName'])
             bill_name_without_suffix = rollcall_data['BillName'].replace('-bill', '')

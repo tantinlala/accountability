@@ -14,6 +14,7 @@ class HRRollCall:
         self.vote_question_ = None
         self.is_amendment_vote_ = False
         self.rollcall_id_ = None
+        self.vote_result_ = None
 
     def process_rollcall(self, year, rollcall_id):
         # Construct the URL with the roll call number
@@ -33,6 +34,7 @@ class HRRollCall:
         # Extract the bill being voted upon
         self.congress_ = root.find('.//vote-metadata/congress').text
         self.vote_question_ = root.find('.//vote-metadata/vote-question').text
+        self.vote_result_ = root.find('.//vote-metadata/vote-result').text
 
         # Check whether the vote is for an amendment vote
         if root.find('.//vote-metadata/amendment-num') is not None:
@@ -103,3 +105,6 @@ class HRRollCall:
 
     def get_vote_question(self):
         return self.vote_question_
+
+    def get_vote_result(self):
+        return self.vote_result_  # New method to get vote result
