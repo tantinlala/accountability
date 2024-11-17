@@ -157,8 +157,8 @@ class Reporter:
                 file.write(f"| {donor['Description']} | ${donor['DonationAmount']:,.2f} |\n")
 
             file.write("\n## Roll Call Votes Related To Top Industry Donors\n")
-            file.write("| Bill Title | Vote | Related Industries | Bill ID | Roll Call | Question |\n")
-            file.write("|------------|------|--------------------|---------|-----------|----------|\n")
+            file.write("| Bill Title | Related Industries | Vote | Roll Call | Question |\n")
+            file.write("|------------|--------------------|------|-----------|----------|\n")
             for vote in related_votes:
                 valid_questions = [
                     "On Agreeing to the Resolution",
@@ -172,11 +172,9 @@ class Reporter:
                     continue
                 bill_datetime_obj = datetime.strptime(vote['BillDateTime'], '%Y-%m-%d %H:%M:%S')
                 bill_id = f"{bill_datetime_obj.strftime('%Y-%m-%dT%H:%M:%SZ')}-{vote['BillName']}"
-                bill_name_without_suffix = vote['BillName'].replace('-bill', '')
-                bill_folder = "../bills/" + bill_name_without_suffix
                 bill_title = vote['BillTitle']
                 roll_call = f"{vote['Year']}-{vote['RollCallID']}"
-                roll_call_link = f"../rollcalls/{vote['ActionDateTime']}-rollcall-{vote['Year']}-{vote['RollCallID']}.md"
-                file.write(f"| {bill_title} | {vote['Vote']} | {', '.join(vote['RelatedIndustries'])} | [{bill_id}]({bill_folder}) | [{roll_call}]({roll_call_link}) | {vote['Question']} |\n")
+                roll_call_link = f"../rollcalls/rollcall-{vote['Year']}-{vote['RollCallID']}.md"
+                file.write(f"| {bill_title} | {', '.join(vote['RelatedIndustries'])} | {vote['Vote']} | [{roll_call}]({roll_call_link}) | {vote['Question']} |\n")
 
         print(f"Report saved to {report_file}")
