@@ -72,7 +72,8 @@ class Reporter:
 
         bill_title = rollcall_data['BillTitle']
         vote_result = rollcall_data['VoteResult']
-        url = rollcall_data['Url']
+        rollcall_url = rollcall_data['RollcallUrl']
+        bill_url = rollcall_data['BillUrl']
 
         # Create {save_directory}/rollcalls directory if it doesn't exist
         if not os.path.exists(f"{save_directory}/rollcalls"):
@@ -83,9 +84,9 @@ class Reporter:
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
             file.write(f"# Roll Call {year}-{rollcall_id}\n")
-            file.write(f"\nSource: {url}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
             file.write(f"\nVote Result: {vote_result}\n")  # New line to write vote result
+            file.write(f"\nSource: {rollcall_url}\n")
 
             # Provide table showing changes in votes
             previous_votes = {vote['LegislatorID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
@@ -103,11 +104,12 @@ class Reporter:
                             found_change = True
                         file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {present_vote} | {previous_vote} |\n")
 
-            dated_bill_name = make_dated_filename(rollcall_data['BillDateTime'], rollcall_data['BillName'])
             bill_name_without_suffix = rollcall_data['BillName'].replace('-bill', '')
-            bill_folder = "../bills/" + bill_name_without_suffix
-            file.write(f"\n# Bill Title:\n{bill_title}\n")
-            file.write(f"\n# Bill Version:\n[{dated_bill_name}]({bill_folder})\n")
+            file.write(f"\n# Bill Information\n")
+            file.write(f"\nBill Title: {bill_title}\n")
+            file.write(f"\nBill ID: {bill_name_without_suffix}\n")
+            file.write(f"\nDate/Time: {rollcall_data['BillDateTime']}\n")
+            file.write(f"\nSource: {bill_url}\n")
             file.write("\n# Questions?\n")
             file.write(f"\nGo to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill {bill_name_without_suffix}\n")
 

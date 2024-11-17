@@ -46,7 +46,7 @@ def run_get_bill(secrets_file, congress, bill_id, datetime_string, save_director
 
     congress_api = CongressAPI(secrets_parser)
     datetime_obj = datetime.datetime.strptime(datetime_string, "%Y-%m-%dT%H:%M:%SZ")
-    (bill_name, bill_datetime, bill_text) = congress_api.download_bill_text(congress, bill_id, datetime_obj)
+    (bill_name, bill_datetime, bill_text, _) = congress_api.download_bill_text(congress, bill_id, datetime_obj)
     dated_bill_name = make_dated_filename(bill_datetime, bill_name)
     bill_save_directory = make_bill_path_string(save_directory, congress, bill_id)
     save_txt_if_not_exists(bill_save_directory, dated_bill_name, bill_text)
@@ -119,7 +119,7 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     action_datetime = hr_rollcall.get_datetime()
     question = hr_rollcall.get_vote_question()
     vote_result = hr_rollcall.get_vote_result()
-    url = hr_rollcall.get_url()
+    rollcall_url = hr_rollcall.get_url()
 
     year = action_datetime.year
 
@@ -129,17 +129,18 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
         bill_name = rollcall_data['BillName']
         bill_datetime = rollcall_data['BillDateTime']
         bill_title = rollcall_data['BillTitle']
+        bill_url = rollcall_data['BillUrl']
 
         # Check whether the bill text already exists
         dated_bill_name = make_dated_filename(bill_datetime, bill_name)
         bill_filepath = make_txt_filepath(save_directory_for_bill, dated_bill_name)
         if not file_exists(bill_filepath):
-            (bill_name, bill_datetime, bill_text, bill_title) = congress_api.download_bill_text(congress, bill_id, action_datetime)
+            (bill_name, bill_datetime, bill_text, bill_title, bill_url) = congress_api.download_bill_text(congress, bill_id, action_datetime)
             save_txt_if_not_exists(save_directory_for_bill, dated_bill_name, bill_text)
 
     else:
         # If not found in the database, download the bill text
-        (bill_name, bill_datetime, bill_text, bill_title) = congress_api.download_bill_text(congress, bill_id, action_datetime)
+        (bill_name, bill_datetime, bill_text, bill_title, bill_url) = congress_api.download_bill_text(congress, bill_id, action_datetime)
         dated_bill_name = make_dated_filename(bill_datetime, bill_name)
         bill_filepath = save_txt_if_not_exists(save_directory_for_bill, dated_bill_name, bill_text)
 
@@ -154,7 +155,7 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     year = action_datetime.year
 
     # Add the roll call data to the database
-    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, bill_name, bill_datetime, dated_amendment_name, bill_title, vote_result, url)
+    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, bill_name, bill_datetime, dated_amendment_name, bill_title, vote_result, rollcall_url, bill_url)
 
     # Save information on each legislator and each legislator's vote to the database
     for vote in hr_rollcall.get_votes():
