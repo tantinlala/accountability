@@ -16,8 +16,6 @@ Date/Time: 2024-11-15 05:00:00
 
 Source: https://www.congress.gov/118/bills/hr8932/BILLS-118hr8932eh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-8932
 
 # Bill Summary

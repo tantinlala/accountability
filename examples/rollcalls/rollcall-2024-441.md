@@ -16,8 +16,6 @@ Date/Time: 2024-09-23 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr8958/BILLS-118hr8958rh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-8958
 
 # Bill Summary

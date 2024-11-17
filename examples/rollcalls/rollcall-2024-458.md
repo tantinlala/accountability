@@ -16,8 +16,6 @@ Date/Time: 2024-11-08 05:00:00
 
 Source: https://www.congress.gov/118/bills/hr9495/BILLS-118hr9495rh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-9495
 
 # Bill Summary

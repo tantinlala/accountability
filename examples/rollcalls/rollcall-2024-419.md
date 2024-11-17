@@ -16,8 +16,6 @@ Date/Time: 2024-05-08 04:00:00
 
 Source: https://www.congress.gov/118/bills/s2861/BILLS-118s2861es.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-s-2861
 
 # Bill Summary

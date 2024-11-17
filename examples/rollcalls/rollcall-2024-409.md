@@ -16,13 +16,13 @@ Date/Time: 2024-09-11 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr1425/BILLS-118hr1425eh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-1425
 
-# Amendment Version: [2024-09-12T12:57:30Z-118-hr-1425-hamdt-1190](../bills/118-hr-1425/2024-09-12T12:57:30Z-118-hr-1425-hamdt-1190.txt)
+# Amendment
 
-# Amendment Summary
+Amendment ID: 2024-09-12T12:57:30Z-118-hr-1425-hamdt-1190
+
+Summary:
 An amendment numbered 1 printed in Part B of House Report 118-656 to offer a statement of policy in support of Taiwan's full participation at the World Health Organization.
 
 # Bill Summary

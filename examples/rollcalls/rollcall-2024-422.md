@@ -16,8 +16,6 @@ Date/Time: 2023-10-30 04:00:00
 
 Source: https://www.congress.gov/118/bills/s1146/BILLS-118s1146es.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-s-1146
 
 # Bill Summary

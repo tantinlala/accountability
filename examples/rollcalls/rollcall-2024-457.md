@@ -16,8 +16,6 @@ Date/Time: 2023-09-05 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr5342/BILLS-118hr5342ih.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-5342
 
 # Bill Summary

@@ -16,8 +16,6 @@ Date/Time: 2024-09-11 04:00:00
 
 Source: https://www.congress.gov/118/bills/s3764/BILLS-118s3764es.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-s-3764
 
 # Bill Summary

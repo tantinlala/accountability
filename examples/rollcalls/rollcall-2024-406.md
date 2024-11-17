@@ -16,13 +16,13 @@ Date/Time: 2024-09-10 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr1516/BILLS-118hr1516eh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-1516
 
-# Amendment Version: [2024-09-12T08:09:13Z-118-hr-1516-hamdt-1181](../bills/118-hr-1516/2024-09-12T08:09:13Z-118-hr-1516-hamdt-1181.txt)
+# Amendment
 
-# Amendment Summary
+Amendment ID: 2024-09-12T08:09:13Z-118-hr-1516-hamdt-1181
+
+Summary:
 An amendment numbered 4 printed in Part C of House Report 118-656 to require the Secretary of Homeland Security to report to Congress any institution of higher education that has a relationship with a Confucius Institute or Chinese entity of concern and receives funds from the Department of Homeland Security.
 
 # Bill Summary

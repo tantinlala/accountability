@@ -16,8 +16,6 @@ Date/Time: 2023-12-14 05:00:00
 
 Source: https://www.congress.gov/118/bills/s2228/BILLS-118s2228es.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-s-2228
 
 # Bill Summary

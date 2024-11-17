@@ -16,13 +16,13 @@ Date/Time: 2024-09-25 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr3334/BILLS-118hr3334eh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-3334
 
-# Amendment Version: [2024-10-02T08:09:13Z-118-hr-3334-hamdt-1220](../bills/118-hr-3334/2024-10-02T08:09:13Z-118-hr-3334-hamdt-1220.txt)
+# Amendment
 
-# Amendment Summary
+Amendment ID: 2024-10-02T08:09:13Z-118-hr-3334-hamdt-1220
+
+Summary:
 An amendment numbered 1 printed in Part B of House Report 118-705 to add to the sanction list under section 4 any Chinese State-Owned Enterprise that knowingly manufactures or distributes any chemicals used in the production of illicit fentanyl.
 
 # Bill Summary

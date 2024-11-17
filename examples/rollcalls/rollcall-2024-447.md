@@ -16,8 +16,6 @@ Date/Time: 2024-09-20 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr7073/BILLS-118hr7073rh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-7073
 
 # Bill Summary

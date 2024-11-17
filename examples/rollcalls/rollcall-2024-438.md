@@ -16,8 +16,6 @@ Date/Time: 2024-09-20 04:00:00
 
 Source: https://www.congress.gov/118/bills/hjres136/BILLS-118hjres136eh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hjres-136
 
 # Bill Summary

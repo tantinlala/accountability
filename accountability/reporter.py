@@ -110,15 +110,14 @@ class Reporter:
             file.write(f"\nBill ID: {bill_name_without_suffix}\n")
             file.write(f"\nDate/Time: {rollcall_data['BillDateTime']}\n")
             file.write(f"\nSource: {bill_url}\n")
-            file.write("\n# Questions?\n")
             file.write(f"\nGo to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill {bill_name_without_suffix}\n")
 
             if amendment_filename := rollcall_data['AmendmentName']:
                 amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
                 amendment_str = open(amendment_filepath).read()
-                amendment_summary_link = os.path.relpath(amendment_filepath, save_directory)
-                file.write(f"\n# Amendment Version: [{amendment_filename}](../{amendment_summary_link})\n")
-                file.write(f"\n# Amendment Summary\n{amendment_str}\n")
+                file.write(f"\n# Amendment\n")
+                file.write(f"\nAmendment ID: {amendment_filename}\n")
+                file.write(f"\nSummary:\n{amendment_str}\n")
 
             if summary:
                 file.write(f"\n{summary}\n")

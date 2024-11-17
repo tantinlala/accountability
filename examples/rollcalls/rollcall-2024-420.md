@@ -16,8 +16,6 @@ Date/Time: 2024-09-17 04:00:00
 
 Source: https://www.congress.gov/118/bills/hres1455/BILLS-118hres1455rh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hres-1455
 
 # Bill Summary

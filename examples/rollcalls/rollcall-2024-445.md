@@ -16,8 +16,6 @@ Date/Time: 2023-07-27 04:00:00
 
 Source: https://www.congress.gov/118/bills/hr3208/BILLS-118hr3208rh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hr-3208
 
 # Bill Summary

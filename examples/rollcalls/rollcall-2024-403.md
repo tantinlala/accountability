@@ -16,8 +16,6 @@ Date/Time: 2024-09-10 04:00:00
 
 Source: https://www.congress.gov/118/bills/hres1430/BILLS-118hres1430rh.htm
 
-# Questions?
-
 Go to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill 118-hres-1430
 
 # Bill Summary
