@@ -35,6 +35,7 @@ class CongressDatabase:
             BillDateTime TIMESTAMP NOT NULL,
             AmendmentName TEXT,
             VoteResult TEXT,
+            Url TEXT,
             FOREIGN KEY (BillName, BillDateTime) REFERENCES Bills (BillName, BillDateTime)
             ); 
         """
@@ -163,14 +164,14 @@ class CongressDatabase:
             print(e)
         return False
 
-    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name, bill_title, vote_result):
+    def add_rollcall_data(self, rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name, bill_title, vote_result, url):
         """Insert a roll call into the database."""
 
         self.add_bill(bill_name, bill_datetime, bill_title)
 
         sql = """ 
-            INSERT INTO RollCalls(RollCallID, Year, ActionDateTime, Question, BillName, BillDateTime, AmendmentName, VoteResult)
-            VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO RollCalls(RollCallID, Year, ActionDateTime, Question, BillName, BillDateTime, AmendmentName, VoteResult, Url)
+            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(ActionDateTime) DO UPDATE SET 
             RollCallID = excluded.RollCallID,
             Year = excluded.Year,
@@ -178,11 +179,12 @@ class CongressDatabase:
             BillName = excluded.BillName,
             BillDateTime = excluded.BillDateTime,
             AmendmentName = excluded.AmendmentName,
-            VoteResult = excluded.VoteResult; 
+            VoteResult = excluded.VoteResult,
+            Url = excluded.Url;
         """
         try:
             c = self.conn.cursor()
-            c.execute(sql, (rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name, vote_result))
+            c.execute(sql, (rollcall_id, year, action_datetime, question, bill_name, bill_datetime, amendment_name, vote_result, url))
             self.conn.commit()
         except sqlite3.Error as e:
             print(e)
@@ -239,7 +241,8 @@ class CongressDatabase:
                 rollcall_data['BillDateTime'] = datetime.strptime(rollcall_meta[5], '%Y-%m-%d %H:%M:%S')
                 rollcall_data['AmendmentName'] = rollcall_meta[6]
                 rollcall_data['VoteResult'] = rollcall_meta[7]
-                rollcall_data['BillTitle'] = rollcall_meta[8]
+                rollcall_data['Url'] = rollcall_meta[8]
+                rollcall_data['BillTitle'] = rollcall_meta[9]
             else:
                 return None
         except sqlite3.Error as e:

@@ -70,22 +70,38 @@ class Reporter:
 
         summary = self.generate_summary(rollcall_data, previous_rollcall_data, bill_folder_string)
 
-        datetime_string = rollcall_data['ActionDateTime']
         bill_title = rollcall_data['BillTitle']
-        vote_result = rollcall_data['VoteResult']  # New line to get vote result
+        vote_result = rollcall_data['VoteResult']
+        url = rollcall_data['Url']
 
         # Create {save_directory}/rollcalls directory if it doesn't exist
         if not os.path.exists(f"{save_directory}/rollcalls"):
             os.makedirs(f"{save_directory}/rollcalls")
 
-        rollcall_file = f"{save_directory}/rollcalls/{datetime_string}-rollcall-{year}-{rollcall_id}.md"
+        rollcall_file = f"{save_directory}/rollcalls/rollcall-{year}-{rollcall_id}.md"
 
         with open(rollcall_file, 'w') as file:
             # Get file name from file path
             file.write(f"# Roll Call {year}-{rollcall_id}\n")
-            file.write(f"\nRoll Call Time: {datetime_string}\n")
+            file.write(f"\nSource: {url}\n")
             file.write(f"\nVote Question: {rollcall_data['Question']}\n")
             file.write(f"\nVote Result: {vote_result}\n")  # New line to write vote result
+
+            # Provide table showing changes in votes
+            previous_votes = {vote['LegislatorID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
+
+            if previous_votes:
+                found_change = False
+                for vote in rollcall_data['Votes']:
+                    present_vote = vote['Vote']
+                    previous_vote = previous_votes.get(vote['LegislatorID'])
+                    if previous_vote != present_vote:
+                        if not found_change:
+                            file.write("\n# Changes in Votes\n")
+                            file.write("\n| Name | Party | State | Vote | Previous Vote |\n")
+                            file.write("|------|-------|-------|------|------|\n")
+                            found_change = True
+                        file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {present_vote} | {previous_vote} |\n")
 
             dated_bill_name = make_dated_filename(rollcall_data['BillDateTime'], rollcall_data['BillName'])
             bill_name_without_suffix = rollcall_data['BillName'].replace('-bill', '')
@@ -102,19 +118,6 @@ class Reporter:
 
             if summary:
                 file.write(f"\n{summary}\n")
-
-            # Loop through each vote and write to the file as a markdown table
-            # Each vote has the following format {'name': name, 'party': party, 'state': state, 'vote': vote_type}
-            previous_votes = {vote['LegislatorID']: vote['Vote'] for vote in previous_rollcall_data['Votes']} if previous_rollcall_data else None
-            file.write("\n# Votes\n")
-            file.write("\n| Name | Party | State | Vote " + ("| Previous Vote |\n" if previous_votes else "|\n"))
-            file.write("|------|-------|-------|------" + ("|---------------|\n" if previous_votes else "|\n"))
-            for vote in rollcall_data['Votes']:
-                if previous_votes:
-                    previous_vote = previous_votes.get(vote['LegislatorID'])
-                    file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} | {previous_vote} |\n")
-                else:
-                    file.write(f"| {vote['Name']} | {vote['Party']} | {vote['State']} | {vote['Vote']} |\n")
 
         print(f"Saved votes for {rollcall_id} to {rollcall_file}")
 

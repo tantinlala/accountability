@@ -118,7 +118,8 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     bill_id = hr_rollcall.get_bill_id()
     action_datetime = hr_rollcall.get_datetime()
     question = hr_rollcall.get_vote_question()
-    vote_result = hr_rollcall.get_vote_result()  # New line to get vote result
+    vote_result = hr_rollcall.get_vote_result()
+    url = hr_rollcall.get_url()
 
     year = action_datetime.year
 
@@ -153,7 +154,7 @@ def _save_rollcall_data(congress_api: CongressAPI, congress_db: CongressDatabase
     year = action_datetime.year
 
     # Add the roll call data to the database
-    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, bill_name, bill_datetime, dated_amendment_name, bill_title, vote_result)  # Updated line to include vote result
+    congress_db.add_rollcall_data(rollcall_id, year, action_datetime, question, bill_name, bill_datetime, dated_amendment_name, bill_title, vote_result, url)
 
     # Save information on each legislator and each legislator's vote to the database
     for vote in hr_rollcall.get_votes():

@@ -15,6 +15,7 @@ class HRRollCall:
         self.is_amendment_vote_ = False
         self.rollcall_id_ = None
         self.vote_result_ = None
+        self.url_ = None
 
     def process_rollcall(self, year, rollcall_id):
         # Construct the URL with the roll call number
@@ -30,6 +31,8 @@ class HRRollCall:
         # Parse the XML data
         xml_data = response.content
         root = ET.fromstring(xml_data)
+
+        self.url_ = url
 
         # Extract the bill being voted upon
         self.congress_ = root.find('.//vote-metadata/congress').text
@@ -108,3 +111,6 @@ class HRRollCall:
 
     def get_vote_result(self):
         return self.vote_result_  # New method to get vote result
+
+    def get_url(self):
+        return self.url_
