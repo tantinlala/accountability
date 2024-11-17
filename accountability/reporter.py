@@ -108,6 +108,8 @@ class Reporter:
             bill_folder = "../bills/" + bill_name_without_suffix
             file.write(f"\n# Bill Title:\n{bill_title}\n")
             file.write(f"\n# Bill Version:\n[{dated_bill_name}]({bill_folder})\n")
+            file.write("\n# Questions?\n")
+            file.write(f"\nGo to https://chatgpt.com/g/g-UN9NGOG2T-chat-with-us-legislation and ask ChatGPT about bill {bill_name_without_suffix}\n")
 
             if amendment_filename := rollcall_data['AmendmentName']:
                 amendment_filepath = make_txt_filepath(bill_folder_string, amendment_filename)
